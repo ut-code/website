@@ -118,6 +118,15 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
         </div>
       </section>
       <section>
+        <iframe
+          title="ut.code(); 紹介動画"
+          className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[600px]"
+          src="https://www.youtube-nocookie.com/embed/R9bC7bue_4Y?rel=0"
+          allow="picture-in-picture; web-share"
+          allowFullScreen
+        />
+      </section>
+      <section>
         <div className="container mx-auto px-4 py-12">
           <SectionHeader title="Projects" subtitle="実施中のプロジェクト" />
           <ProjectList className="mt-10" projects={data.latestProjects.nodes} />
