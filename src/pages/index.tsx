@@ -8,7 +8,6 @@ import {
 } from "react-icons/fi";
 import { StaticImage } from "gatsby-plugin-image";
 import GlobalHeader from "../components/GlobalHeader";
-import heroImage from "../images/hero.jpg";
 import ActionButton from "../components/ActionButton";
 import GlobalFooter from "../components/GlobalFooter";
 import ProjectList from "../components/ProjectList";
@@ -39,10 +38,10 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
       >
         <GlobalHeader />
         <div style={{ gridArea: "2 / 1" }}>
-          <img
+          <StaticImage
             alt="活動の様子"
             className="w-full h-full object-cover"
-            src={heroImage}
+            src="../images/hero.jpg"
           />
         </div>
         <div
@@ -148,12 +147,14 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
               JOIN US
             </ActionButton>
           </div>
-          <StaticImage
-            alt="背景"
-            src="../images/lab-cafe.jpg"
-            width={600}
-            className="hidden lg:block self-stretch flex-shrink object-cover rounded-3xl"
-          />
+          <div className="hidden lg:block self-stretch flex-shrink">
+            <StaticImage
+              alt="背景"
+              src="../images/lab-cafe.jpg"
+              width={600}
+              className="w-full h-full object-cover rounded-3xl overflow-clip"
+            />
+          </div>
         </div>
       </section>
       <section>
@@ -166,7 +167,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
         </div>
       </section>
       <section className="bg-gray-100">
-        <div className="container mx-auto px-8 py-12">
+        <div className="container mx-auto py-12">
           <SectionHeader title="About us" subtitle="団体概要" />
           <ul className="grid lg:grid-cols-2 gap-x-8 mt-8 text-lg text-gray-800">
             {[
@@ -175,14 +176,14 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
               { title: "部室", content: "駒場キャンパス学生会館 313B 教室" },
               { title: "Twitter", content: "@utokyo_code" },
               { title: "LINE", content: "@nlr3843e" },
-              { title: "主な活動場所", content: "部室, KOMAD, その他施設" },
+              { title: "活動場所", content: "部室, KOMAD, その他施設" },
               { title: "所属", content: "東京大学工学部丁友会 (2022 年度)" },
             ].map(({ title, content }) => (
               <li
                 key={title}
                 className="flex gap-4 border-b border-gray-400 px-6 py-3"
               >
-                <div className="w-36">{title}</div>
+                <div className="w-24">{title}</div>
                 <div className="flex-1">{content}</div>
               </li>
             ))}

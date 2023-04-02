@@ -58,14 +58,17 @@ function Section({
   return (
     <section className="mt-16 lg:grid lg:items-center">
       <div style={{ gridArea: "1 / 1" }}>
-        {renderImage(
-          clsx(
-            "block h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] lg:w-1/2",
-            { left: "lg:ml-auto lg:rounded-l-2xl", right: "lg:rounded-r-2xl" }[
-              edge
-            ]
-          )
-        )}
+        <div
+          className={clsx(
+            "overflow-clip h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] lg:w-1/2",
+            {
+              left: "lg:ml-auto lg:rounded-l-2xl",
+              right: "lg:rounded-r-2xl",
+            }[edge]
+          )}
+        >
+          {renderImage("w-full h-full")}
+        </div>
       </div>
       <div
         style={{ gridArea: "1 / 1" }}

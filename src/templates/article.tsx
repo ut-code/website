@@ -54,9 +54,9 @@ export default function ArticlePage({
         </div>
       )}
       {imageData && (
-        <div className="mt-6 lg:mt-12 lg:px-8">
+        <div className="w-max mt-6 lg:mt-12 mx-auto lg:px-8">
           <GatsbyImage
-            className="block w-full max-w-screen-lg max-h-[500px] mx-auto lg:rounded-2xl lg:overflow-clip lg:isolate"
+            className="w-full max-w-screen-lg max-h-[500px] lg:rounded-2xl lg:overflow-clip lg:isolate"
             alt="イメージ画像"
             image={imageData}
           />
