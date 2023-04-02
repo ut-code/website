@@ -1,0 +1,23 @@
+# Cloudflare Pages が Node.js v18 に対応するまでは GitHub Actions 側でビルドする
+on:
+  push: { branches: [main] }
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - run: npm ci
+      - run: npm run build
+      - uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: utcode-website
+          directory: ./public
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
