@@ -10,7 +10,7 @@ export default function JoinPage() {
   const [emailAddress, setEmailAddress] = useState<string | null>(null);
   useEffect(() => {
     const timerId = setTimeout(() => {
-      setEmailAddress(`welecome${String.fromCharCode(64)}utcode.net`);
+      setEmailAddress(`welcome${String.fromCharCode(64)}utcode.net`);
     }, 1000 * 3);
     return () => {
       clearTimeout(timerId);
