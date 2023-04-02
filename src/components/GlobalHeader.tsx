@@ -1,0 +1,68 @@
+import React from "react";
+import { Popover, Transition } from "@headlessui/react";
+import { FiMenu } from "react-icons/fi";
+import { Link } from "gatsby";
+import Logo from "./Logo";
+
+const links = [
+  { title: "プロジェクト", to: "/projects/" },
+  { title: "記事", to: "/articles/" },
+];
+
+export default function GlobalHeader({ className }: { className?: string }) {
+  return (
+    <header className={className}>
+      <div className="container mx-auto h-16 flex">
+        <Link to="/" className="flex items-center px-4">
+          <Logo className="w-36" variant="default" />
+        </Link>
+        <div aria-hidden className="flex-grow" />
+        <ul className="hidden sm:flex">
+          {links.map((link) => (
+            <li key={link.to}>
+              <Link
+                to={link.to}
+                className="flex items-center h-full px-6 hover:bg-gray-100"
+              >
+                {link.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <Popover>
+          <Popover.Button
+            type="button"
+            className="flex justify-center items-center w-16 h-full hover:bg-gray-100 sm:hidden"
+          >
+            <FiMenu className="w-6 h-6 text-gray-600" />
+          </Popover.Button>
+          <Popover.Overlay />
+          <Transition
+            className="absolute top-18 left-0 w-full bg-white shadow-lg z-50"
+            enter="transition-opacity"
+            enterFrom="opacity-0"
+            enterTo="opacity-1"
+            leave="transition-opacity"
+            leaveFrom="opacity-1"
+            leaveTo="opacity-0"
+          >
+            <Popover.Panel>
+              <ul>
+                {links.map((link) => (
+                  <li key={link.to}>
+                    <Link
+                      to={link.to}
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      {link.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Popover.Panel>
+          </Transition>
+        </Popover>
+      </div>
+    </header>
+  );
+}

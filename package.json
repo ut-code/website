@@ -1,0 +1,58 @@
+{
+  "name": "website2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "website2",
+  "author": "chelproc",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "@mdx-js/react": "^2.3.0",
+    "@tailwindcss/typography": "^0.5.9",
+    "clsx": "^1.2.1",
+    "date-fns": "^2.29.3",
+    "gatsby": "^5.8.1",
+    "gatsby-plugin-image": "^3.8.0",
+    "gatsby-plugin-mdx": "^5.8.0",
+    "gatsby-plugin-sharp": "^5.8.1",
+    "gatsby-plugin-sitemap": "^6.8.0",
+    "gatsby-remark-images": "^7.8.0",
+    "gatsby-source-filesystem": "^5.8.0",
+    "gatsby-transformer-sharp": "^5.8.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^4.3.0",
+    "next": "^13.2.4",
+    "nullthrows": "^1.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-use": "^17.4.0",
+    "schema-dts": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/marked": "^4.0.8",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.31",
+    "@types/react-dom": "^18.0.11",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-typescript-prettier": "^5.0.0",
+    "gatsby-plugin-postcss": "^6.8.0",
+    "husky": "^8.0.3",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.7",
+    "tailwindcss": "^3.3.1",
+    "typescript": "^5.0.3"
+  }
+}
