@@ -1,7 +1,8 @@
 import React from "react";
 import { Popover, Transition } from "@headlessui/react";
-import { FiMenu } from "react-icons/fi";
+import { FiArrowRight, FiMenu } from "react-icons/fi";
 import { Link } from "gatsby";
+import clsx from "clsx";
 import Logo from "./Logo";
 
 const links = [
@@ -11,7 +12,21 @@ const links = [
 
 export default function GlobalHeader({ className }: { className?: string }) {
   return (
-    <header className={className}>
+    <header className={clsx("relative", className)}>
+      <div className="flex gap-4 justify-center items-center px-1 py-3 md:py-1 bg-green-400">
+        <span>
+          新歓
+          <span className="hidden sm:inline">イベントを兼ねて</span>
+          自主ゼミを開講します
+        </span>
+        <Link
+          to="/articles/seminar"
+          className="inline-flex items-center flex-shrink-0 gap-0.5 hover:underline"
+        >
+          詳細はこちら
+          <FiArrowRight />
+        </Link>
+      </div>
       <div className="container mx-auto h-16 flex">
         <Link to="/" className="flex items-center px-4">
           <Logo className="w-36" variant="default" />
@@ -38,7 +53,7 @@ export default function GlobalHeader({ className }: { className?: string }) {
           </Popover.Button>
           <Popover.Overlay />
           <Transition
-            className="absolute top-18 left-0 w-full bg-white shadow-lg z-50"
+            className="absolute top-full left-0 w-full bg-white shadow-lg z-50"
             enter="transition-opacity"
             enterFrom="opacity-0"
             enterTo="opacity-1"
