@@ -47,25 +47,26 @@ export default function ArticleList({
                 additionalProps.cellClassName
               )}
             >
-              {additionalProps.imageData ? (
-                <GatsbyImage
-                  alt="カバー画像"
-                  image={additionalProps.imageData}
-                  className={clsx(
-                    "w-full h-48 object-cover rounded-xl",
-                    additionalProps.imageClassName
-                  )}
-                />
-              ) : (
-                <img
-                  alt="画像なし"
-                  src={noImage}
-                  className={clsx(
-                    "w-full h-48 object-cover rounded-xl",
-                    additionalProps.imageClassName
-                  )}
-                />
-              )}
+              <div
+                className={clsx(
+                  "w-full h-48 object-cover rounded-xl overflow-clip isolate",
+                  additionalProps.imageClassName
+                )}
+              >
+                {additionalProps.imageData ? (
+                  <GatsbyImage
+                    alt="カバー画像"
+                    image={additionalProps.imageData}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <img
+                    alt="画像なし"
+                    src={noImage}
+                    className="w-full h-full object-cover"
+                  />
+                )}
+              </div>
               <div className="mt-4">
                 <time className="block text-gray-500 text-sm">
                   {format(

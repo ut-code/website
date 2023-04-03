@@ -60,7 +60,7 @@ function Section({
       <div style={{ gridArea: "1 / 1" }}>
         <div
           className={clsx(
-            "overflow-clip h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] lg:w-1/2",
+            "overflow-clip isolate h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] lg:w-1/2",
             {
               left: "lg:ml-auto lg:rounded-l-2xl",
               right: "lg:rounded-r-2xl",
