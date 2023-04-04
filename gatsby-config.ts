@@ -5,7 +5,7 @@ const config: GatsbyConfig = {
     title: "ut.code();",
     siteUrl: "https://utcode.net",
   },
-  graphqlTypegen: true,
+  graphqlTypegen: { generateOnBuild: true },
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
