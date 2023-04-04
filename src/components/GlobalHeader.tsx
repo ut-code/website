@@ -20,7 +20,7 @@ export default function GlobalHeader({ className }: { className?: string }) {
           自主ゼミを開講します
         </span>
         <Link
-          to="/articles/seminar"
+          to="/articles/seminar-2023"
           className="inline-flex items-center flex-shrink-0 gap-0.5 hover:underline"
         >
           詳細はこちら
