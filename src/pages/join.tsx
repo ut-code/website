@@ -41,19 +41,37 @@ export default function JoinPage() {
             は、活動の透明性を重視しています。全てのチャンネルはパブリックチャンネルとなっており、現在活動しているプロジェクトの情報は
             Slack のチャンネル一覧からいつでも確認できます。
           </p>
-          <h2>Twitter で連絡する</h2>
+          <h2>Slack ワークスペースに参加する</h2>
+          <p>以下のサイトにワークスペースへのリンクが記載されています。</p>
+          <p>
+            <div className="not-prose">
+              <ActionButton to="https://sites.google.com/g.ecc.u-tokyo.ac.jp/utcode">
+                Slack ワークスペースへのリンク
+              </ActionButton>
+            </div>
+          </p>
+          <ul>
+            <li>
+              サイトを閲覧するためにはECCSクラウドメールでログインしてください。
+            </li>
+            <li>
+              学外の方で入会希望の方は個別に対応いたしますので、以下の連絡手段からご連絡ください。
+            </li>
+          </ul>
+          <h2>コンタクト</h2>
+          <h3>Twitter で連絡する</h3>
           <div className="not-prose">
             <ActionButton to="https://twitter.com/utokyo_code">
               ut.code(); 公式 Twitter
             </ActionButton>
           </div>
-          <h2>LINE で連絡する</h2>
+          <h3>LINE で連絡する</h3>
           <div className="not-prose">
             <ActionButton to="https://line.me/ti/p/%40nlr3843e">
               ut.code(); 公式 LINE
             </ActionButton>
           </div>
-          <h2>メールで連絡する</h2>
+          <h3>メールで連絡する</h3>
           <p>
             メールでの入会希望の方は下に記載のメールアドレスをご利用ください。しばらく待っても表示されない方はほかの方法をご利用ください。
           </p>
