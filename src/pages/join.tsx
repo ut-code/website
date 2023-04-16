@@ -42,7 +42,7 @@ export default function JoinPage() {
             Slack のチャンネル一覧からいつでも確認できます。
           </p>
           <h2>Slack ワークスペースに参加する</h2>
-          <p>以下のサイトにワークスペースへのリンクが記載されています。</p>
+          <p>下のサイトにワークスペースへのリンクが記載されています。</p>
           <p>
             <div className="not-prose">
               <ActionButton to="https://sites.google.com/g.ecc.u-tokyo.ac.jp/utcode">
@@ -55,7 +55,7 @@ export default function JoinPage() {
               サイトを閲覧するためにはECCSクラウドメールでログインしてください。
             </li>
             <li>
-              学外の方で入会希望の方は個別に対応いたしますので、以下の連絡手段からご連絡ください。
+              学外の方で入会希望の方は個別に対応いたしますので、下記の連絡手段からご連絡ください。
             </li>
           </ul>
           <h2>コンタクト</h2>
