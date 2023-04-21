@@ -27,6 +27,14 @@ export default function CommonHead({
         property="og:site_name"
         content="ut.code(); - 東京大学のソフトウェアエンジニアリングコミュニティ"
       />
+      <meta
+        property="og:title"
+        content={
+          title
+            ? `${title} | ut.code();`
+            : "ut.code(); - 東京大学のソフトウェアエンジニアリングコミュニティ"
+        }
+      />
       {image && <meta property="og:image" content={image} />}
       <meta property="og:locale" content="ja_JP" />
       <meta name="twitter:card" content="summary_large_image" />
