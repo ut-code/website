@@ -1,6 +1,7 @@
 import React from "react";
 import type { Thing } from "schema-dts";
 import faviconImage from "../images/favicon.png";
+import config from "../../gatsby-config";
 
 export default function CommonHead({
   title,
@@ -35,7 +36,12 @@ export default function CommonHead({
             : "ut.code(); - 東京大学のソフトウェアエンジニアリングコミュニティ"
         }
       />
-      {image && <meta property="og:image" content={image} />}
+      {config.siteMetadata?.siteUrl && image && (
+        <meta
+          property="og:image"
+          content={`${config.siteMetadata?.siteUrl}${image}`}
+        />
+      )}
       <meta property="og:locale" content="ja_JP" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@utokyo_code" />
