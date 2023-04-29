@@ -19,12 +19,14 @@ function SectionHeader({
   subtitle,
 }: {
   title: string;
-  subtitle: string;
+  subtitle?: string;
 }) {
   return (
     <>
       <h2 className="text-center text-4xl">{title}</h2>
-      <h3 className="mt-2 text-center text-sm text-gray-500">{subtitle}</h3>
+      {subtitle && (
+        <h3 className="mt-2 text-center text-sm text-gray-500">{subtitle}</h3>
+      )}
     </>
   );
 }
@@ -197,6 +199,24 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+      <section>
+        <div className="container mx-auto py-12">
+          <SectionHeader title="ご寄付のお願い" />
+          <div className="prose max-w-none mt-8 text-center">
+            <p>
+              <span className="inline-block">
+                現在、ut.code(); の活動費は寄付によって賄われています。
+              </span>
+              <span className="inline-block">
+                弊団体の継続的な活動のため、ぜひご寄付にご協力ください。
+              </span>
+            </p>
+          </div>
+          <ActionButton to="/donation/" className="mt-8 mx-auto">
+            寄付する
+          </ActionButton>
         </div>
       </section>
       <GlobalFooter />
