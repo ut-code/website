@@ -9,6 +9,13 @@ jobs:
           node-version: "18"
           cache: npm
       - run: npm ci
+      - uses: actions/cache@v3
+        with:
+          key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
+          path: |
+            .cache
+            public
+          restore-keys: ${{ runner.os }}-gatsby-build-
       - run: npm run build
       - run: npm run type-check
       - run: npm run lint
