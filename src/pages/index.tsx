@@ -202,7 +202,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
         </div>
       </section>
       <section>
-        <div className="container mx-auto py-12">
+        <div className="container mx-auto px-8 py-12">
           <SectionHeader title="ご寄付のお願い" />
           <div className="prose max-w-none mt-8 text-center">
             <p>
