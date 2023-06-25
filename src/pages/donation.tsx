@@ -10,7 +10,7 @@ export default function DonationPage() {
     <>
       <GlobalHeader />
       <div className="container mx-auto px-4 pt-16 pb-12">
-        <h1 className="text-4xl">ご寄付のお願い</h1>
+        <h1 className="text-4xl">ご寄付・ご協賛のお願い</h1>
       </div>
       <StaticImage
         alt=""
@@ -26,6 +26,22 @@ export default function DonationPage() {
             現在のところ活動資金は寄付によって賄われていますが、十分とはいえない状況です。
             皆様のご支援をいただけますと幸いです。
           </p>
+          <h2>協賛による支援</h2>
+          <p>
+            {/* eslint-disable prettier/prettier */}
+            企業様からの資金協賛による支援も募集しています。
+            ご協賛いただいた企業様は、ウェブサイトに企業ロゴを掲載するほか、ut.code();の
+            Slack ワークスペースに求人情報、広報を掲載いたします。
+            {/* eslint-enable prettier/prettier */}
+          </p>
+          <p>
+            {/* eslint-disable prettier/prettier */}
+            協賛をご検討の場合は、ut.code(); 公式のメールアドレスまでご連絡ください。
+            {/* eslint-enable prettier/prettier */}
+          </p>
+          <div className="not-prose">
+            <ActionButton to="/join/">ut.code(); の連絡先</ActionButton>
+          </div>
           <h2>銀行口座への振込</h2>
           <p>
             誤操作の防止と、感謝の気持ちをお伝えするため、事前にご一報いただけますと幸いです。
@@ -35,17 +51,22 @@ export default function DonationPage() {
             <li>支店: 本郷 (351)</li>
             <li>口座番号: 0339615</li>
           </ul>
+          <div className="not-prose">
+            <ActionButton to="/join/">ut.code(); の連絡先</ActionButton>
+          </div>
           <h2>使用しなくなったノートパソコンの譲渡</h2>
           <p>
             {/* eslint-disable prettier/prettier */}
-            ut.code(); では例年、五月祭・駒場祭で外部のお客様向けにプログラミングを学ぶことのできる企画を行っています。
+            ut.code();
+            では例年、五月祭・駒場祭で外部のお客様向けにプログラミングを学ぶことのできる企画を行っています。
             この企画では、皆様に気軽にお越しいただけるよう、会場内でノートパソコンを貸し出しています。
             各々が持ち寄ったノートパソコンを使用してはいますが、それだけでは台数が足りないため、外部の事業者にレンタルを依頼せざるを得ず、その費用負担が問題となっています。
             {/* eslint-enable prettier/prettier */}
           </p>
           <p>
             {/* eslint-disable prettier/prettier */}
-            そこで、ut.code(); では、使用しなくなったノートパソコンを譲渡していただける方を募集しています。
+            そこで、ut.code();
+            では、使用しなくなったノートパソコンを譲渡していただける方を募集しています。
             保存されているデータは幣団体で削除する処理を行いますが、情報漏洩については責任を負うことができませんので、送付前にデータの削除をお願いいたします。
             {/* eslint-enable prettier/prettier */}
           </p>
@@ -60,5 +81,5 @@ export default function DonationPage() {
 }
 
 export function Head() {
-  return <CommonHead title="ご寄付のお願い" />;
+  return <CommonHead title="ご寄付・ご協賛のお願い" />;
 }
