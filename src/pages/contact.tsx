@@ -5,7 +5,7 @@ import GlobalHeader from "../components/GlobalHeader";
 import CommonHead from "../components/CommonHead";
 import ActionButton from "../components/ActionButton";
 
-export default function JoinPage() {
+export default function ContactPage() {
   // スパム対策
   const [emailAddress, setEmailAddress] = useState<string | null>(null);
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function JoinPage() {
       />
       <main className="container mx-auto px-4 py-16">
         <div className="prose max-w-none">
-          <h2>コンタクト</h2>
+          <p>ut.code(); へのお問い合わせは、以下の連絡先をご利用ください。</p>
           <h3>Twitter で連絡する</h3>
           <div className="not-prose">
             <ActionButton to="https://twitter.com/utokyo_code">
