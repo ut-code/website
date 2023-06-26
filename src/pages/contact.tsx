@@ -31,19 +31,19 @@ export default function ContactPage() {
       <main className="container mx-auto px-4 py-16">
         <div className="prose max-w-none">
           <p>ut.code(); へのお問い合わせは、以下の連絡先をご利用ください。</p>
-          <h3>Twitter で連絡する</h3>
+          <h2>Twitter で連絡する</h2>
           <div className="not-prose">
             <ActionButton to="https://twitter.com/utokyo_code">
               ut.code(); 公式 Twitter
             </ActionButton>
           </div>
-          <h3>LINE で連絡する</h3>
+          <h2>LINE で連絡する</h2>
           <div className="not-prose">
             <ActionButton to="https://line.me/ti/p/%40nlr3843e">
               ut.code(); 公式 LINE
             </ActionButton>
           </div>
-          <h3>メールで連絡する</h3>
+          <h2>メールで連絡する</h2>
           <p>
             {emailAddress ? (
               <a href={`mailto:${emailAddress}`}>{emailAddress}</a>

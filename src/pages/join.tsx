@@ -49,14 +49,6 @@ export default function JoinPage() {
               <ActionButton to="/contact/">ut.code(); の連絡先</ActionButton>
             </div>
           </p>
-          <ul>
-            <li>
-              サイトを閲覧するためにはECCSクラウドメールでログインしてください。
-            </li>
-            <li>
-              学外の方で入会希望の方は個別に対応いたしますので、下記の連絡手段からご連絡ください。
-            </li>
-          </ul>
         </div>
       </main>
       <GlobalFooter />

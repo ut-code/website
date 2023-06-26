@@ -29,8 +29,8 @@ export default function DonationPage() {
           <h2>協賛による支援</h2>
           <p>
             {/* eslint-disable prettier/prettier */}
-            企業様からの資金協賛による支援も募集しています。
-            ご協賛いただいた企業様は、ウェブサイトに企業ロゴを掲載するほか、ut.code();の
+            企業様からの資金協賛による支援を募集しています。
+            ご協賛いただいた企業様には、ut.code(); ウェブサイトに企業ロゴを掲載するほか、ut.code();の
             Slack ワークスペースに求人情報、広報を掲載いたします。
             {/* eslint-enable prettier/prettier */}
           </p>
@@ -42,8 +42,9 @@ export default function DonationPage() {
           <div className="not-prose">
             <ActionButton to="/join/">ut.code(); の連絡先</ActionButton>
           </div>
-          <h2>銀行口座への振込</h2>
+          <h2>ご寄付による支援</h2>
           <p>
+            ご寄付いただける方は、以下の口座にお振込みください。
             誤操作の防止と、感謝の気持ちをお伝えするため、事前にご一報いただけますと幸いです。
           </p>
           <ul>
