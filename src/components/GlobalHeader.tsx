@@ -8,6 +8,9 @@ import Logo from "./Logo";
 const links = [
   { title: "プロジェクト", to: "/projects/" },
   { title: "記事", to: "/articles/" },
+  { title: "参加", to: "/join/" },
+  { title: "寄付・協賛", to: "/donation/" },
+  { title: "お問い合わせ", to: "/contact/" },
 ];
 
 export default function GlobalHeader({ className }: { className?: string }) {
@@ -32,7 +35,7 @@ export default function GlobalHeader({ className }: { className?: string }) {
           <Logo className="w-36" variant="default" />
         </Link>
         <div aria-hidden className="flex-grow" />
-        <ul className="hidden sm:flex">
+        <ul className="hidden md:flex">
           {links.map((link) => (
             <li key={link.to}>
               <Link
@@ -47,7 +50,7 @@ export default function GlobalHeader({ className }: { className?: string }) {
         <Popover>
           <Popover.Button
             type="button"
-            className="flex justify-center items-center w-16 h-full hover:bg-gray-100 sm:hidden"
+            className="flex justify-center items-center w-16 h-full hover:bg-gray-100 md:hidden"
           >
             <FiMenu className="w-6 h-6 text-gray-600" />
           </Popover.Button>

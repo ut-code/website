@@ -59,7 +59,7 @@ export default function GlobalFooter({ className }: { className?: string }) {
           <FooterSection
             title="活動"
             links={[
-              { title: "ご寄付のお願い", to: "/donation/" },
+              { title: "ご寄付・ご協賛のお願い", to: "/donation/" },
               { title: "ut.code(); で学習する", to: "/activities/learn/" },
               { title: "ut.code(); で交流する", to: "/activities/share/" },
               { title: "ut.code(); で開発する", to: "/activities/develop/" },
