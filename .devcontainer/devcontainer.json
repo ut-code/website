@@ -1,0 +1,14 @@
+// https://github.com/devcontainers/templates/tree/main/src/javascript-node
+{
+  "name": "Node.js",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+  "forwardPorts": [8000],
+  "updateContentCommand": "npm ci",
+  "postAttachCommand": "npm run develop",
+  "portsAttributes": { "8000": { "onAutoForward": "openPreview" } },
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "apollographql.vscode-apollo"]
+    }
+  }
+}

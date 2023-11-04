@@ -1,28 +1,28 @@
 # ut.code(); 公式ウェブサイト
 
-[Gatsby](https://www.gatsbyjs.com/) SSG
+下のボタンを押すと開発環境が起動します。
+起動までしばらく時間がかかるのでお待ちください。
 
-## 環境構築
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ut-code/website)
 
-### 必須
+## 環境構築 (手動)
 
-- Node.js v18
+- (必須) Node.js v18
+- (推奨) VSCode
+  - [ESLint 拡張機能](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+  - [Apollo 拡張機能](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo)
 
 ```
 npm ci
 ```
-
-### 推奨
-
-- VSCode
-  - [ESLint 拡張機能](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-  - [Apollo 拡張機能](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo)
 
 ## 開発
 
 ```
 npm start
 ```
+
+http://localhost:8000/ で開発用サーバーが起動します。
 
 ## ビルド
 
