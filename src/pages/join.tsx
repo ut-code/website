@@ -35,7 +35,10 @@ export default function JoinPage() {
           <p>
             学外の方や小学生から社会人の方まで、幅広く受け入れを行っておりますので、お気軽にご参加ください。
           </p>
-          <p>学内生でサークル参加希望の方は以下のボタンからお進みください。</p>
+          <p>
+            学内生でサークル参加希望の方は以下のボタンからお進みください。
+            大学が提供する Google Workspace アカウントでのログインが必要です。
+          </p>
           <p>
             <div className="not-prose">
               <ActionButton to="https://sites.google.com/g.ecc.u-tokyo.ac.jp/utcode">
