@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import GlobalFooter from "../components/GlobalFooter";
@@ -21,7 +22,6 @@ export default function CoetecoHackathonPage() {
         <div className="prose max-w-none">
           <h2>コエテコ Hack#1 とは</h2>
           <p>
-            {/* eslint-disable prettier/prettier */}
             本イベントは、「コエテコ byGMO」と「ut.code();」が共催する、高校生・大学生・大学院生を対象としたハッカソンイベントです。
           </p>
           <p>
@@ -56,7 +56,6 @@ export default function CoetecoHackathonPage() {
           <p>
             <div className="not-prose">
               <ActionButton to="https://forms.gle/w6KVjyqAtrPKhW5z6">
-                {/* TODO: リンク先を追加 */}
                 参加申し込みフォーム
               </ActionButton>
             </div>
