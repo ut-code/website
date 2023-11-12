@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import GlobalFooter from "../components/GlobalFooter";
@@ -22,6 +21,7 @@ export default function CoetecoHackathonPage() {
         <div className="prose max-w-none">
           <h2>コエテコ Hack#1 とは</h2>
           <p>
+            {/* eslint-disable-next-line prettier/prettier */}
             本イベントは、「コエテコ byGMO」と「ut.code();」が共催する、高校生・大学生・大学院生を対象としたハッカソンイベントです。
           </p>
           <p>
@@ -34,6 +34,7 @@ export default function CoetecoHackathonPage() {
           <h3>開催日時</h3>
           <p>2023年12月9日 (土)・10日 (日) 15:00 ~ 22:00</p>
           <h3>開催場所</h3>
+          {/* eslint-disable-next-line prettier/prettier */}
           <p>GMOインターネットグループ本社 渋谷セルリアンタワー 11階コミュニケーションスペース「GMO Yours」</p>
           <p>(東京都渋谷区桜丘町 26-1 セルリアンタワー11F)</p>
           <h3>賞金</h3>
