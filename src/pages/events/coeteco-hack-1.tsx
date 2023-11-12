@@ -1,9 +1,9 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import GlobalFooter from "../components/GlobalFooter";
-import GlobalHeader from "../components/GlobalHeader";
-import CommonHead from "../components/CommonHead";
-import ActionButton from "../components/ActionButton";
+import GlobalFooter from "../../components/GlobalFooter";
+import GlobalHeader from "../../components/GlobalHeader";
+import CommonHead from "../../components/CommonHead";
+import ActionButton from "../../components/ActionButton";
 
 export default function CoetecoHackathonPage() {
   return (
@@ -14,7 +14,7 @@ export default function CoetecoHackathonPage() {
       </div>
       <StaticImage
         alt=""
-        src="../images/coeteco-hack-1.png"
+        src="../../images/coeteco-hack-1.png"
         class="w-full h-48"
       />
       <main className="container mx-auto px-4 py-16">
