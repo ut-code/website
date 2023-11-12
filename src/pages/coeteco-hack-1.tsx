@@ -10,11 +10,11 @@ export default function CoetecoHackathonPage() {
     <>
       <GlobalHeader />
       <div className="container mx-auto px-4 pt-16 pb-12">
-        <h1 className="text-4xl">コエテコハッカソン 特設ページ</h1>
+        <h1 className="text-4xl">コエテコHack #1 特設ページ</h1>
       </div>
       <StaticImage
         alt=""
-        src="../images/coeteco-hackathon.png"
+        src="../images/coeteco-hack-1.png"
         class="w-full h-48"
       />
       <main className="container mx-auto px-4 py-16">
@@ -45,5 +45,5 @@ export default function CoetecoHackathonPage() {
 }
 
 export function Head() {
-  return <CommonHead title="コエテコハッカソン 特設ページ" />;
+  return <CommonHead title="コエテコHack #1 特設ページ" />;
 }
