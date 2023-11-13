@@ -1,6 +1,6 @@
 import React from "react";
 import { Popover, Transition } from "@headlessui/react";
-import { FiMenu } from "react-icons/fi";
+import { FiArrowRight, FiMenu } from "react-icons/fi";
 import { Link } from "gatsby";
 import clsx from "clsx";
 import Logo from "./Logo";
@@ -16,6 +16,21 @@ const links = [
 export default function GlobalHeader({ className }: { className?: string }) {
   return (
     <header className={clsx("relative", className)}>
+      <div className="flex gap-4 justify-center items-center px-1 py-3 md:py-1 bg-green-400">
+        <span>
+          「AI×教育」
+          <span className="hidden sm:inline">をテーマとした</span>
+          ハッカソンを開催
+          <span className="hidden sm:inline">します</span>
+        </span>
+        <Link
+          to="/events/coeteco-hack-1/"
+          className="inline-flex items-center flex-shrink-0 gap-0.5 hover:underline"
+        >
+          詳細はこちら
+          <FiArrowRight />
+        </Link>
+      </div>
       <div className="container mx-auto h-16 flex">
         <Link to="/" className="flex items-center px-4">
           <Logo className="w-36" variant="default" />
