@@ -15,7 +15,7 @@ export default function CoetecoHackathonPage() {
       <StaticImage
         alt=""
         src="../../images/coeteco-hack-1.png"
-        class="w-full h-48"
+        class="w-full"
       />
       <main className="container mx-auto px-4 py-16">
         <div className="prose max-w-none">
