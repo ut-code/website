@@ -2,19 +2,17 @@
 title: WebCFace
 slug: webcface
 image: ./image.png
-date: 2023-11-19
-description: プロセス間通信 & GUIを提供するライブラリ (C++/Python/TypeScript)
+date: 2023-11-22
+description: プロセス間通信 & GUIを提供するライブラリ
 tags: [C++, Python, JavaScript, TypeScript, WebSocket, MessagePack, React]
 github: https://github.com/na-trium-144/webcface
 ---
 
-[![release](https://img.shields.io/github/v/release/na-trium-144/webcface)](https://github.com/na-trium-144/webcface/releases)
-
 WebSocketとMessagePackを使った、ROSのような分散型の通信ライブラリです。
-クロスプラットフォームかつ複数の言語間(C++, Python, JavaScript)で通信ができます。
+クロスプラットフォーム(Windows, MacOS, Linux)かつ複数の言語間(C++, Python, JavaScript)で通信ができます。
 
-WebブラウザーでアクセスできるUIが付属しており、ネットワーク上のPCやタブレットなどからアクセスしてWebCFaceで通信されているデータを可視化したり関数を呼び出したりできます。
-また、webuiからのアクセスを想定してテキストやボタンなどの配置を指定すると簡易なUIを作成することができます。
+WebブラウザーでアクセスできるUI(WebUI)が付属しており、ネットワーク上のPCやタブレットなどからアクセスしてWebCFaceで通信されているデータを可視化したり関数を呼び出したりできます。
+また、WebUIからのアクセスを想定してテキストやボタンなどの配置を指定すると簡易なUIを作成することができます。
 
 データ型を任意に定義できるROSとは違って、通信できるデータの種類が以下のように限定されています
 * pub-sub通信
