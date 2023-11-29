@@ -3,6 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import GlobalFooter from "../../components/GlobalFooter";
 import GlobalHeader from "../../components/GlobalHeader";
 import CommonHead from "../../components/CommonHead";
+import image from "../../images/coeteco-hack-1.png";
 
 function AIAndEducationLogo(props: { className?: string }) {
   const { className } = props;
@@ -179,5 +180,11 @@ export default function CoetecoHackOnePage() {
 }
 
 export function Head() {
-  return <CommonHead title="コエテコ Hack #1 特設ページ" />;
+  return (
+    <CommonHead
+      title="コエテコ Hack #1 特設ページ"
+      description="ut.code(); と GMO メディア株式会社が共催して、AI × 教育をテーマにハッカソンを開催します。"
+      image={image}
+    />
+  );
 }
