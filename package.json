@@ -21,6 +21,7 @@
     "@mdx-js/react": "^2.3.0",
     "@tailwindcss/typography": "^0.5.9",
     "clsx": "^1.2.1",
+    "color": "^4.2.3",
     "date-fns": "^2.29.3",
     "gatsby": "^5.8.1",
     "gatsby-plugin-image": "^3.8.0",
@@ -44,6 +45,7 @@
     "schema-dts": "^1.1.2"
   },
   "devDependencies": {
+    "@types/color": "^3.0.6",
     "@types/marked": "^4.0.8",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.31",

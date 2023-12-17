@@ -1,8 +1,7 @@
 import React from "react";
-import { graphql, HeadProps, PageProps } from "gatsby";
+import { graphql, HeadProps, Link, PageProps } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import nullthrows from "nullthrows";
-import { FiUser } from "react-icons/fi";
 import { format } from "date-fns";
 import GlobalHeader from "../components/GlobalHeader";
 import GlobalFooter from "../components/GlobalFooter";
@@ -35,23 +34,25 @@ export default function ArticlePage({
         {data.mdx?.frontmatter?.title}
       </h1>
       {author && (
-        <div className="flex gap-4 items-center max-w-sm mx-auto px-4 mt-4 lg:mt-8">
+        <Link
+          to={`/members/${author.slug}`}
+          className="flex gap-4 items-center max-w-sm mx-auto mt-4 lg:mt-8 px-4 py-2 rounded-lg hover:bg-gray-100"
+        >
           <div className="w-14 h-14 rounded-full overflow-clip bg-gray-200">
-            {author.image?.childImageSharp?.gatsbyImageData ? (
-              <GatsbyImage
-                alt="著者の写真"
-                image={author.image?.childImageSharp?.gatsbyImageData}
-                className="w-full h-full"
-              />
-            ) : (
-              <FiUser className="w-full h-full scale-50 text-gray-500" />
-            )}
+            <GatsbyImage
+              alt="著者の写真"
+              image={nullthrows(
+                author.faceImage?.childImageSharp?.gatsbyImageData,
+                "著者の写真が指定されていません。"
+              )}
+              className="w-full h-full"
+            />
           </div>
           <div className="flex-1">
-            <div className="text-lg">{author.title}</div>
+            <div className="text-lg">{author.nameJa}</div>
             <div className="text-sm text-gray-800">{author.description}</div>
           </div>
-        </div>
+        </Link>
       )}
       {imageData && (
         <div className="mt-6 text-center lg:mt-12 lg:px-8">
@@ -93,6 +94,12 @@ export function Head({ data }: HeadProps<Queries.ArticlePageQuery>) {
         "@type": "Article",
         headline: title,
         datePublished: date.toISOString(),
+        author: data.mdx?.frontmatter?.author?.childMdx?.frontmatter?.nameJa
+          ? {
+              "@type": "Person",
+              name: data.mdx.frontmatter.author.childMdx.frontmatter.nameJa,
+            }
+          : undefined,
       }}
     />
   );
@@ -118,9 +125,10 @@ export const query = graphql`
         author {
           childMdx {
             frontmatter {
-              title
+              nameJa
+              slug
               description
-              image {
+              faceImage {
                 childImageSharp {
                   gatsbyImageData(
                     width: 160

@@ -3,6 +3,7 @@ import type { CreatePagesArgs } from "gatsby";
 
 const projectTemplate = resolve("./src/templates/project.tsx");
 const articleTemplate = resolve("./src/templates/article.tsx");
+const memberTemplate = resolve("./src/templates/member.tsx");
 
 // eslint-disable-next-line import/prefer-default-export
 export async function createPages({ actions, graphql }: CreatePagesArgs) {
@@ -26,6 +27,21 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
       articles: allMdx(
         filter: {
           internal: { contentFilePath: { glob: "**/contents/articles/**" } }
+        }
+      ) {
+        nodes {
+          id
+          frontmatter {
+            slug
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+      members: allMdx(
+        filter: {
+          internal: { contentFilePath: { glob: "**/contents/members/**" } }
         }
       ) {
         nodes {
@@ -63,6 +79,18 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
       path: `/articles/${article.frontmatter.slug}`,
       component: `${articleTemplate}?__contentFilePath=${article.internal.contentFilePath}`,
       context: { id: article.id },
+    });
+  }
+
+  for (const member of data.members.nodes) {
+    if (!member.frontmatter?.slug)
+      throw new Error(
+        `投稿: ${member.internal.contentFilePath} の slug が設定されていません。`
+      );
+    actions.createPage({
+      path: `/members/${member.frontmatter.slug}`,
+      component: `${memberTemplate}?__contentFilePath=${member.internal.contentFilePath}`,
+      context: { id: member.id },
     });
   }
 }

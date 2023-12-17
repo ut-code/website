@@ -8,8 +8,8 @@ import Logo from "./Logo";
 const links = [
   { title: "プロジェクト", to: "/projects/" },
   { title: "記事", to: "/articles/" },
+  { title: "メンバー", to: "/members/" },
   { title: "参加", to: "/join/" },
-  { title: "寄付・協賛", to: "/donation/" },
   { title: "お問い合わせ", to: "/contact/" },
 ];
 

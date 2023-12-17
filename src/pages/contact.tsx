@@ -30,26 +30,34 @@ export default function ContactPage() {
       />
       <main className="container mx-auto px-4 py-16">
         <div className="prose max-w-none">
-          <p>ut.code(); へのお問い合わせは、以下の連絡先をご利用ください。</p>
-          <h2>Twitter で連絡する</h2>
-          <div className="not-prose">
+          <h2>お問い合わせ</h2>
+          <p>ut.code(); へのお問い合わせは、各種 SNS をご利用ください。</p>
+          <p className="not-prose flex gap-4">
             <ActionButton to="https://twitter.com/utokyo_code">
-              ut.code(); 公式 Twitter
+              X (Twitter)
             </ActionButton>
-          </div>
-          <h2>LINE で連絡する</h2>
-          <div className="not-prose">
             <ActionButton to="https://line.me/ti/p/%40nlr3843e">
-              ut.code(); 公式 LINE
+              LINE
             </ActionButton>
-          </div>
-          <h2>メールで連絡する</h2>
+          </p>
+          <p>
+            メールでのお問い合わせをご希望の方は、次のメールアドレスまでご連絡ください。
+          </p>
           <p>
             {emailAddress ? (
               <a href={`mailto:${emailAddress}`}>{emailAddress}</a>
             ) : (
               "読み込み中です..."
             )}
+          </p>
+          <h2>ご寄付・ご協賛のお願い</h2>
+          <p>
+            {/* eslint-disable prettier/prettier */}
+            ut.code(); では、活動を支援していただける方を募集しております。詳細につきましては、次のページをご覧ください。
+            {/* eslint-enable prettier/prettier */}
+          </p>
+          <p className="not-prose">
+            <ActionButton to="/donation/">ご寄付・ご協賛のお願い</ActionButton>
           </p>
         </div>
       </main>
