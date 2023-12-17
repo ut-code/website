@@ -22,7 +22,7 @@ npm ci
 npm start
 ```
 
-http://localhost:8000/ で開発用サーバーが起動します。
+<http://localhost:8000/> で開発用サーバーが起動します。
 
 ## ビルド
 
