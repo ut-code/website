@@ -7,13 +7,6 @@ module.exports = {
     // TypeScript と相性が悪い
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
-    // 改行コードの無視: solves "Delete `cr`" error;
-    "prettier/prettier": [
-      "error",
-      {
-        endOfLine: "auto",
-      },
-    ],
   },
   ignorePatterns: ["/public/**"],
 };
