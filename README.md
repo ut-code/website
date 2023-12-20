@@ -12,21 +12,21 @@
   - [ESLint 拡張機能](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   - [Apollo 拡張機能](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo)
 
-```
+```shell
 npm ci
 ```
 
 ## 開発
 
-```
+```shell
 npm start
 ```
 
-http://localhost:8000/ で開発用サーバーが起動します。
+<http://localhost:8000/> で開発用サーバーが起動します。
 
 ## ビルド
 
-```
+```shell
 npm run build
 ```
 
@@ -50,6 +50,6 @@ npm run build
 
 ## プルリクエストを出す前に
 
-```
+```shell
 npm run lint && npm run type-check
 ```
