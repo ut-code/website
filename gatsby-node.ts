@@ -1,11 +1,10 @@
 import { resolve } from "node:path";
-import type { CreatePagesArgs } from "gatsby";
+import type { CreatePagesArgs, CreateSchemaCustomizationArgs } from "gatsby";
 
 const projectTemplate = resolve("./src/templates/project.tsx");
 const articleTemplate = resolve("./src/templates/article.tsx");
 const memberTemplate = resolve("./src/templates/member.tsx");
 
-// eslint-disable-next-line import/prefer-default-export
 export async function createPages({ actions, graphql }: CreatePagesArgs) {
   const { data } = await graphql<Queries.CreatePagesQuery>(`
     query CreatePages {
@@ -93,4 +92,18 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
       context: { id: member.id },
     });
   }
+}
+
+export function createSchemaCustomization({
+  actions,
+}: CreateSchemaCustomizationArgs) {
+  actions.createTypes(`
+    type Mdx implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter {
+      author: Mdx @link(by: "frontmatter.slug")
+      posts: [Mdx] @link(by: "frontmatter.author", from: "frontmatter.slug")
+    }
+  `);
 }

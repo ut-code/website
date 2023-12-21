@@ -197,7 +197,7 @@ export const query = graphql`
     allMdx(
       filter: {
         internal: { contentFilePath: { glob: "**/contents/articles/**" } }
-        frontmatter: { author: { childMdx: { id: { eq: $id } } } }
+        frontmatter: { author: { id: { eq: $id } } }
       }
       sort: { frontmatter: { date: DESC } }
     ) {

@@ -12,7 +12,7 @@ export default function ArticlePage({
   data,
   children,
 }: PageProps<Queries.ArticlePageQuery>) {
-  const author = data.mdx?.frontmatter?.author?.childMdx?.frontmatter;
+  const author = data.mdx?.frontmatter?.author?.frontmatter;
   const imageData =
     data.mdx?.frontmatter?.image?.childImageSharp?.gatsbyImageData;
 
@@ -94,10 +94,10 @@ export function Head({ data }: HeadProps<Queries.ArticlePageQuery>) {
         "@type": "Article",
         headline: title,
         datePublished: date.toISOString(),
-        author: data.mdx?.frontmatter?.author?.childMdx?.frontmatter?.nameJa
+        author: data.mdx?.frontmatter?.author?.frontmatter?.nameJa
           ? {
               "@type": "Person",
-              name: data.mdx.frontmatter.author.childMdx.frontmatter.nameJa,
+              name: data.mdx.frontmatter.author.frontmatter.nameJa,
             }
           : undefined,
       }}
@@ -123,19 +123,17 @@ export const query = graphql`
           }
         }
         author {
-          childMdx {
-            frontmatter {
-              nameJa
-              slug
-              description
-              faceImage {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 160
-                    height: 160
-                    transformOptions: { cropFocus: ATTENTION }
-                  )
-                }
+          frontmatter {
+            nameJa
+            slug
+            description
+            faceImage {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 160
+                  height: 160
+                  transformOptions: { cropFocus: ATTENTION }
+                )
               }
             }
           }
