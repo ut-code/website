@@ -7,21 +7,24 @@ import nullthrows from "nullthrows";
 import noImage from "../images/no-image.svg";
 
 export default function ArticleList({
+  variant = "normal",
   articles,
   className,
 }: {
+  variant?: "normal" | "compact";
   articles: ReadonlyArray<Queries.ArticleListArticleFragment>;
   className?: string;
 }) {
   return (
     <ul
       className={clsx(
-        "grid grid-flow-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9",
+        "grid grid-flow-dense md:grid-cols-2 gap-9",
+        variant === "normal" && "lg:grid-cols-3 xl:grid-cols-4",
         className
       )}
     >
       {articles.map((article, i) => {
-        const isFeatured = i % 11 === 0; // 11 記事ごとに大きく表示する
+        const isFeatured = variant === "normal" && i % 11 === 0; // 11 記事ごとに大きく表示する
         const additionalProps = isFeatured
           ? {
               imageData:

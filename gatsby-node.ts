@@ -1,10 +1,10 @@
 import { resolve } from "node:path";
-import type { CreatePagesArgs } from "gatsby";
+import type { CreatePagesArgs, CreateSchemaCustomizationArgs } from "gatsby";
 
 const projectTemplate = resolve("./src/templates/project.tsx");
 const articleTemplate = resolve("./src/templates/article.tsx");
+const memberTemplate = resolve("./src/templates/member.tsx");
 
-// eslint-disable-next-line import/prefer-default-export
 export async function createPages({ actions, graphql }: CreatePagesArgs) {
   const { data } = await graphql<Queries.CreatePagesQuery>(`
     query CreatePages {
@@ -26,6 +26,21 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
       articles: allMdx(
         filter: {
           internal: { contentFilePath: { glob: "**/contents/articles/**" } }
+        }
+      ) {
+        nodes {
+          id
+          frontmatter {
+            slug
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+      members: allMdx(
+        filter: {
+          internal: { contentFilePath: { glob: "**/contents/members/**" } }
         }
       ) {
         nodes {
@@ -65,4 +80,30 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
       context: { id: article.id },
     });
   }
+
+  for (const member of data.members.nodes) {
+    if (!member.frontmatter?.slug)
+      throw new Error(
+        `投稿: ${member.internal.contentFilePath} の slug が設定されていません。`
+      );
+    actions.createPage({
+      path: `/members/${member.frontmatter.slug}`,
+      component: `${memberTemplate}?__contentFilePath=${member.internal.contentFilePath}`,
+      context: { id: member.id },
+    });
+  }
+}
+
+export function createSchemaCustomization({
+  actions,
+}: CreateSchemaCustomizationArgs) {
+  actions.createTypes(`
+    type Mdx implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter {
+      author: Mdx @link(by: "frontmatter.slug")
+      posts: [Mdx] @link(by: "frontmatter.author", from: "frontmatter.slug")
+    }
+  `);
 }
