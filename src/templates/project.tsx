@@ -1,12 +1,13 @@
 import React from "react";
 import { graphql, HeadProps, PageProps } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { FiGithub, FiGlobe, FiLayers } from "react-icons/fi";
+import { FiGithub, FiLayers } from "react-icons/fi";
 import nullthrows from "nullthrows";
 import GlobalHeader from "../components/GlobalHeader";
 import GlobalFooter from "../components/GlobalFooter";
 import CommonHead from "../components/CommonHead";
 import JoinUsCTA from "../components/JoinUsCTA";
+import ProjectLink from "../components/ProjectLink";
 
 export default function ProjectPage({
   data,
@@ -46,16 +47,6 @@ export default function ProjectPage({
               </ul>
             )}
             <div className="flex gap-4 mt-6 text-4xl">
-              {data.mdx?.frontmatter?.website && (
-                <a
-                  href={data.mdx.frontmatter.website}
-                  target="_blank"
-                  className="-m-1 p-1 rounded-xl hover:bg-gray-100"
-                  rel="noreferrer"
-                >
-                  <FiGlobe />
-                </a>
-              )}
               {data.mdx?.frontmatter?.github && (
                 <a
                   href={data.mdx.frontmatter.github}
@@ -67,6 +58,11 @@ export default function ProjectPage({
                 </a>
               )}
             </div>
+            {data.mdx?.frontmatter?.website && (
+              <ProjectLink href={data.mdx.frontmatter.website} className="ml-0">
+                {data.mdx.frontmatter.title} にアクセスする
+              </ProjectLink>
+            )}
           </div>
         </div>
         <div className="container mt-6 mx-auto px-4 lg:max-w-screen-lg">
