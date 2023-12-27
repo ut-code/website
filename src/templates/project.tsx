@@ -1,13 +1,13 @@
 import React from "react";
 import { graphql, HeadProps, PageProps } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { FiGithub, FiLayers } from "react-icons/fi";
+import { FiGithub, FiLayers, FiGlobe } from "react-icons/fi";
 import nullthrows from "nullthrows";
 import GlobalHeader from "../components/GlobalHeader";
 import GlobalFooter from "../components/GlobalFooter";
 import CommonHead from "../components/CommonHead";
 import JoinUsCTA from "../components/JoinUsCTA";
-import ProjectLink from "../components/ProjectLink";
+import ActionButton from "../components/ActionButton";
 
 export default function ProjectPage({
   data,
@@ -59,9 +59,18 @@ export default function ProjectPage({
               )}
             </div>
             {data.mdx?.frontmatter?.website && (
-              <ProjectLink href={data.mdx.frontmatter.website} className="ml-0">
-                {data.mdx.frontmatter.title} にアクセスする
-              </ProjectLink>
+              <ActionButton
+                to={data.mdx.frontmatter.website}
+                className="mt-6 mb-8 flex lg:mt-8"
+              >
+                <FiGlobe
+                  size="24px"
+                  style={{ display: "inline-block", marginRight: "8px" }}
+                />
+                <span className=".align-middle">
+                  {data.mdx.frontmatter.title} へ
+                </span>
+              </ActionButton>
             )}
           </div>
         </div>
