@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, HeadProps, PageProps } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { FiGithub, FiLayers, FiGlobe } from "react-icons/fi";
+import { FiGithub, FiGlobe, FiLayers } from "react-icons/fi";
 import nullthrows from "nullthrows";
 import GlobalHeader from "../components/GlobalHeader";
 import GlobalFooter from "../components/GlobalFooter";
@@ -61,15 +61,10 @@ export default function ProjectPage({
             {data.mdx?.frontmatter?.website && (
               <ActionButton
                 to={data.mdx.frontmatter.website}
-                className="mt-6 mb-8 flex lg:mt-8"
+                className="mt-6 mb-8"
               >
-                <FiGlobe
-                  size="24px"
-                  style={{ display: "inline-block", marginRight: "8px" }}
-                />
-                <span className=".align-middle">
-                  {data.mdx.frontmatter.title} へ
-                </span>
+                <FiGlobe size="24px" className="inline-block w-6 h-6 mr-2" />
+                <span>{data.mdx.frontmatter.title} へ</span>
               </ActionButton>
             )}
           </div>
