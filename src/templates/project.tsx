@@ -63,7 +63,7 @@ export default function ProjectPage({
                 to={data.mdx.frontmatter.website}
                 className="mt-6 mb-8"
               >
-                <FiGlobe size="24px" className="inline-block w-6 h-6 mr-2" />
+                <FiGlobe className="inline-block w-6 h-6 mr-2" />
                 <span>{data.mdx.frontmatter.title} へ</span>
               </ActionButton>
             )}
