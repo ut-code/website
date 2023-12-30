@@ -47,7 +47,7 @@ export default function ActivityLearnPage() {
           />
         )}
         linkLabel="大忘年会を開催しました"
-        linkTo="/"
+        linkTo="/articles/kick-off-party-2023-report/"
         edge="right"
       >
         {/* eslint-disable prettier/prettier */}

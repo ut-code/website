@@ -239,8 +239,8 @@ export const query = graphql`
       filter: {
         internal: { contentFilePath: { glob: "**/contents/projects/**" } }
       }
-      sort: { frontmatter: { date: DESC } }
-      limit: 4
+      sort: [{ frontmatter: { order: ASC } }, { frontmatter: { date: DESC } }]
+      limit: 6
     ) {
       nodes {
         ...ProjectListProject

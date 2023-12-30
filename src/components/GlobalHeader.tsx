@@ -8,8 +8,8 @@ import Logo from "./Logo";
 const links = [
   { title: "プロジェクト", to: "/projects/" },
   { title: "記事", to: "/articles/" },
+  { title: "メンバー", to: "/members/" },
   { title: "参加", to: "/join/" },
-  { title: "寄付・協賛", to: "/donation/" },
   { title: "お問い合わせ", to: "/contact/" },
 ];
 
@@ -18,13 +18,12 @@ export default function GlobalHeader({ className }: { className?: string }) {
     <header className={clsx("relative", className)}>
       <div className="flex gap-4 justify-center items-center px-1 py-3 md:py-1 bg-green-400">
         <span>
-          「AI×教育」
-          <span className="hidden sm:inline">をテーマとした</span>
-          ハッカソンを開催
-          <span className="hidden sm:inline">します</span>
+          大忘年会
+          <span className="hidden sm:inline">（新プロジェクト検討会議）</span>
+          を開催します
         </span>
         <Link
-          to="/events/coeteco-hack-1/"
+          to="/articles/kick-off-party-2023/"
           className="inline-flex items-center flex-shrink-0 gap-0.5 hover:underline"
         >
           詳細はこちら

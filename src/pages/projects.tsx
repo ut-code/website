@@ -35,7 +35,7 @@ export const query = graphql`
       filter: {
         internal: { contentFilePath: { glob: "**/contents/projects/**" } }
       }
-      sort: { frontmatter: { date: DESC } }
+      sort: [{ frontmatter: { order: ASC } }, { frontmatter: { date: DESC } }]
     ) {
       nodes {
         ...ProjectListProject
