@@ -9,7 +9,7 @@ type date = {
 };
 function checkExpiration(expires: date) {
   const today = new Date();
-  if (expires.year && today.getFullYear() < expires.year) {
+  if (expires.year && today.getFullYear() > expires.year) {
     return false;
   }
   if (today.getMonth() > expires.month) {
