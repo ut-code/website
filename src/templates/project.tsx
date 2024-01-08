@@ -7,6 +7,7 @@ import GlobalHeader from "../components/GlobalHeader";
 import GlobalFooter from "../components/GlobalFooter";
 import CommonHead from "../components/CommonHead";
 import JoinUsCTA from "../components/JoinUsCTA";
+import ActionButton from "../components/ActionButton";
 
 export default function ProjectPage({
   data,
@@ -46,16 +47,6 @@ export default function ProjectPage({
               </ul>
             )}
             <div className="flex gap-4 mt-6 text-4xl">
-              {data.mdx?.frontmatter?.website && (
-                <a
-                  href={data.mdx.frontmatter.website}
-                  target="_blank"
-                  className="-m-1 p-1 rounded-xl hover:bg-gray-100"
-                  rel="noreferrer"
-                >
-                  <FiGlobe />
-                </a>
-              )}
               {data.mdx?.frontmatter?.github && (
                 <a
                   href={data.mdx.frontmatter.github}
@@ -67,6 +58,15 @@ export default function ProjectPage({
                 </a>
               )}
             </div>
+            {data.mdx?.frontmatter?.website && (
+              <ActionButton
+                to={data.mdx.frontmatter.website}
+                className="mt-6 mb-8"
+              >
+                <FiGlobe className="inline-block w-6 h-6 mr-2" />
+                <span>{data.mdx.frontmatter.title} へ</span>
+              </ActionButton>
+            )}
           </div>
         </div>
         <div className="container mt-6 mx-auto px-4 lg:max-w-screen-lg">
