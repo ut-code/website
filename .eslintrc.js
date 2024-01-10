@@ -8,5 +8,19 @@ module.exports = {
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
   },
+  settings: {
+    "import/resolver": {
+      alias: {
+        map: [
+          ["@src", "./src"],
+          ["@components", "./src/components"],
+          ["@images", "./src/images"],
+          ["@pages", "./src/pages"],
+          ["@templates", "./src/templates"],
+        ],
+        extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
+      },
+    },
+  },
   ignorePatterns: ["/public/**"],
 };
