@@ -1,9 +1,9 @@
 import React, { ReactNode } from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import GlobalFooter from "../../components/GlobalFooter";
-import GlobalHeader from "../../components/GlobalHeader";
-import CommonHead from "../../components/CommonHead";
-import image from "../../images/coeteco-hack-1.png";
+import GlobalFooter from "@components/GlobalFooter";
+import GlobalHeader from "@components/GlobalHeader";
+import CommonHead from "@components/CommonHead";
+import image from "@images/coeteco-hack-1.png";
 
 function AIAndEducationLogo(props: { className?: string }) {
   const { className } = props;
@@ -163,7 +163,7 @@ export default function CoetecoHackOnePage() {
 
           <StaticImage
             alt=""
-            src="../../images/coeteco-hack-1.png"
+            src="@images/coeteco-hack-1.png"
             class="w-full rounded-3xl"
           />
 

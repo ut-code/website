@@ -7,12 +7,12 @@ import {
   FiMessageSquare,
 } from "react-icons/fi";
 import { StaticImage } from "gatsby-plugin-image";
-import GlobalHeader from "../components/GlobalHeader";
-import ActionButton from "../components/ActionButton";
-import GlobalFooter from "../components/GlobalFooter";
-import ProjectList from "../components/ProjectList";
-import ArticleList from "../components/ArticleList";
-import CommonHead from "../components/CommonHead";
+import GlobalHeader from "@components/GlobalHeader";
+import ActionButton from "@components/ActionButton";
+import GlobalFooter from "@components/GlobalFooter";
+import ProjectList from "@components/ProjectList";
+import ArticleList from "@components/ArticleList";
+import CommonHead from "@components/CommonHead";
 
 function SectionHeader({
   title,
@@ -43,7 +43,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
           <StaticImage
             alt="活動の様子"
             className="w-full h-full object-cover"
-            src="../images/hero.jpg"
+            src="@images/hero.jpg"
           />
         </div>
         <div
@@ -161,7 +161,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
           <div className="hidden lg:block self-stretch flex-shrink">
             <StaticImage
               alt="背景"
-              src="../images/lab-cafe.jpg"
+              src="@images/lab-cafe.jpg"
               width={600}
               className="w-full h-full object-cover rounded-3xl overflow-clip"
             />

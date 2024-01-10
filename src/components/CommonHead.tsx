@@ -1,7 +1,7 @@
 import React from "react";
 import type { Thing } from "schema-dts";
-import faviconImage from "../images/favicon.png";
-import config from "../../gatsby-config";
+import faviconImage from "@images/favicon.png";
+import config from "@site/gatsby-config";
 
 export default function CommonHead({
   title,

@@ -3,10 +3,10 @@ import { graphql, HeadProps, Link, PageProps } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import nullthrows from "nullthrows";
 import { format } from "date-fns";
-import GlobalHeader from "../components/GlobalHeader";
-import GlobalFooter from "../components/GlobalFooter";
-import CommonHead from "../components/CommonHead";
-import JoinUsCTA from "../components/JoinUsCTA";
+import GlobalHeader from "@components/GlobalHeader";
+import GlobalFooter from "@components/GlobalFooter";
+import CommonHead from "@components/CommonHead";
+import JoinUsCTA from "@components/JoinUsCTA";
 
 export default function ArticlePage({
   data,

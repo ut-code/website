@@ -1,7 +1,7 @@
 import * as React from "react";
-import GlobalHeader from "../components/GlobalHeader";
-import GlobalFooter from "../components/GlobalFooter";
-import CommonHead from "../components/CommonHead";
+import GlobalHeader from "@components/GlobalHeader";
+import GlobalFooter from "@components/GlobalFooter";
+import CommonHead from "@components/CommonHead";
 
 export default function NotFoundPage() {
   return (

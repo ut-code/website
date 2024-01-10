@@ -1,9 +1,9 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import GlobalFooter from "../components/GlobalFooter";
-import GlobalHeader from "../components/GlobalHeader";
-import CommonHead from "../components/CommonHead";
-import ActionButton from "../components/ActionButton";
+import GlobalFooter from "@components/GlobalFooter";
+import GlobalHeader from "@components/GlobalHeader";
+import CommonHead from "@components/CommonHead";
+import ActionButton from "@components/ActionButton";
 
 export default function DonationPage() {
   return (
@@ -14,7 +14,7 @@ export default function DonationPage() {
       </div>
       <StaticImage
         alt=""
-        src="../images/donation-header.jpg"
+        src="@images/donation-header.jpg"
         class="w-full h-48"
         imgClassName="object-bottom"
       />

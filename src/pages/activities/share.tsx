@@ -1,8 +1,8 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { FiMessageSquare } from "react-icons/fi";
-import ActivityPageTemplate from "../../components/ActivityPageTemplate";
-import CommonHead from "../../components/CommonHead";
+import ActivityPageTemplate from "@components/ActivityPageTemplate";
+import CommonHead from "@components/CommonHead";
 
 export default function ActivityLearnPage() {
   return (
@@ -10,7 +10,7 @@ export default function ActivityLearnPage() {
       <StaticImage
         alt="新歓体験会の様子"
         className={ActivityPageTemplate.coverImageClassName}
-        src="../../images/activity-share.jpg"
+        src="@images/activity-share.jpg"
       />
       <ActivityPageTemplate.Title Icon={FiMessageSquare}>
         交流する
@@ -26,7 +26,7 @@ export default function ActivityLearnPage() {
           <StaticImage
             alt="土曜作業会の様子"
             className={className}
-            src="../../images/activity-share-weekly-meetup.jpg"
+            src="@images/activity-share-weekly-meetup.jpg"
           />
         )}
         linkLabel="2022 年度冬の活動報告"
@@ -44,7 +44,7 @@ export default function ActivityLearnPage() {
           <StaticImage
             alt="2022 年度駒場祭グランプリ受賞式の様子"
             className={className}
-            src="../../images/activity-share-festival.jpg"
+            src="@images/activity-share-festival.jpg"
           />
         )}
         linkLabel="第 73 回駒場祭報告"
@@ -62,7 +62,7 @@ export default function ActivityLearnPage() {
           <StaticImage
             alt="2022 年度春合宿の様子"
             className={className}
-            src="../../images/activity-share-camp.jpg"
+            src="@images/activity-share-camp.jpg"
           />
         )}
         linkLabel="2022 年度冬の活動報告"

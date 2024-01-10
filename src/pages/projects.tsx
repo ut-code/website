@@ -1,9 +1,9 @@
 import React from "react";
 import { PageProps, graphql } from "gatsby";
-import GlobalFooter from "../components/GlobalFooter";
-import GlobalHeader from "../components/GlobalHeader";
-import ProjectList from "../components/ProjectList";
-import CommonHead from "../components/CommonHead";
+import GlobalFooter from "@components/GlobalFooter";
+import GlobalHeader from "@components/GlobalHeader";
+import ProjectList from "@components/ProjectList";
+import CommonHead from "@components/CommonHead";
 
 export default function ProjectsPage({
   data,

@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { format } from "date-fns";
 import nullthrows from "nullthrows";
-import noImage from "../images/no-image.svg";
+import noImage from "@images/no-image.svg";
 
 export default function ArticleList({
   variant = "normal",

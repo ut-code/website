@@ -3,11 +3,11 @@ import { graphql, HeadProps, PageProps } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { FiGithub, FiGlobe, FiLayers } from "react-icons/fi";
 import nullthrows from "nullthrows";
-import GlobalHeader from "../components/GlobalHeader";
-import GlobalFooter from "../components/GlobalFooter";
-import CommonHead from "../components/CommonHead";
-import JoinUsCTA from "../components/JoinUsCTA";
-import ActionButton from "../components/ActionButton";
+import GlobalHeader from "@components/GlobalHeader";
+import GlobalFooter from "@components/GlobalFooter";
+import CommonHead from "@components/CommonHead";
+import JoinUsCTA from "@components/JoinUsCTA";
+import ActionButton from "@components/ActionButton";
 
 export default function ProjectPage({
   data,

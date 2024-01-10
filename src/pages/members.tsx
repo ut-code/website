@@ -2,10 +2,10 @@ import React from "react";
 import { Link, PageProps, graphql } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import nullthrows from "nullthrows";
-import GlobalFooter from "../components/GlobalFooter";
-import GlobalHeader from "../components/GlobalHeader";
-import CommonHead from "../components/CommonHead";
-import JoinUsCTA from "../components/JoinUsCTA";
+import GlobalFooter from "@components/GlobalFooter";
+import GlobalHeader from "@components/GlobalHeader";
+import CommonHead from "@components/CommonHead";
+import JoinUsCTA from "@components/JoinUsCTA";
 
 export default function ArticlesPage({
   data,
@@ -15,7 +15,7 @@ export default function ArticlesPage({
       <GlobalHeader />
       <StaticImage
         alt=""
-        src="../images/members-header.jpg"
+        src="@images/members-header.jpg"
         class="w-full h-[500px]"
         objectPosition="center 20%"
       />

@@ -5,11 +5,11 @@ import nullthrows from "nullthrows";
 import Color from "color";
 import clsx from "clsx";
 import { FiTwitter, FiGithub, FiGlobe } from "react-icons/fi";
-import GlobalHeader from "../components/GlobalHeader";
-import GlobalFooter from "../components/GlobalFooter";
-import CommonHead from "../components/CommonHead";
-import JoinUsCTA from "../components/JoinUsCTA";
-import ArticleList from "../components/ArticleList";
+import GlobalHeader from "@components/GlobalHeader";
+import GlobalFooter from "@components/GlobalFooter";
+import CommonHead from "@components/CommonHead";
+import JoinUsCTA from "@components/JoinUsCTA";
+import ArticleList from "@components/ArticleList";
 
 export default function MemberPage({
   data,

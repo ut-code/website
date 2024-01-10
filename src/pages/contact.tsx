@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import GlobalFooter from "../components/GlobalFooter";
-import GlobalHeader from "../components/GlobalHeader";
-import CommonHead from "../components/CommonHead";
-import ActionButton from "../components/ActionButton";
+import GlobalFooter from "@components/GlobalFooter";
+import GlobalHeader from "@components/GlobalHeader";
+import CommonHead from "@components/CommonHead";
+import ActionButton from "@components/ActionButton";
 
 export default function ContactPage() {
   // スパム対策
@@ -25,7 +25,7 @@ export default function ContactPage() {
       </div>
       <StaticImage
         alt=""
-        src="../images/contact-header.jpg"
+        src="@images/contact-header.jpg"
         class="w-full h-48"
       />
       <main className="container mx-auto px-4 py-16">
