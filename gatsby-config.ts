@@ -34,6 +34,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
+          "@site": path.resolve(__dirname),
           "@src": path.resolve(__dirname, "src"),
           "@components": path.resolve(__dirname, "src/components"),
           "@images": path.resolve(__dirname, "src/images"),
