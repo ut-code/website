@@ -14,7 +14,7 @@ export default function DonationPage() {
       </div>
       <StaticImage
         alt=""
-        src="@images/donation-header.jpg"
+        src="../images/donation-header.jpg"
         class="w-full h-48"
         imgClassName="object-bottom"
       />

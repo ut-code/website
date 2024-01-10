@@ -12,7 +12,7 @@ export default function JoinPage() {
       <div className="container mx-auto px-4 pt-16 pb-12">
         <h1 className="text-4xl">ut.code(); に参加する</h1>
       </div>
-      <StaticImage alt="" src="@images/join-header.jpg" class="w-full h-48" />
+      <StaticImage alt="" src="../images/join-header.jpg" class="w-full h-48" />
       <main className="container mx-auto px-4 py-16">
         <div className="prose max-w-none">
           <p>ut.code(); にご興味をお持ちいただきありがとうございます。</p>

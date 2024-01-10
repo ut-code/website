@@ -15,7 +15,7 @@ export default function ArticlesPage({
       <GlobalHeader />
       <StaticImage
         alt=""
-        src="@images/members-header.jpg"
+        src="../images/members-header.jpg"
         class="w-full h-[500px]"
         objectPosition="center 20%"
       />

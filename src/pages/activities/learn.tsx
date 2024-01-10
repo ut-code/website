@@ -10,7 +10,7 @@ export default function ActivityLearnPage() {
       <StaticImage
         alt="新歓体験会の様子"
         className={ActivityPageTemplate.coverImageClassName}
-        src="@images/activity-learn.jpg"
+        src="../../images/activity-learn.jpg"
       />
       <ActivityPageTemplate.Title Icon={FiBookOpen}>
         学習する
@@ -26,7 +26,7 @@ export default function ActivityLearnPage() {
           <StaticImage
             alt="ut.code(); Learn のスクリーンショット"
             className={className}
-            src="@images/activity-learn-utcode-learn.jpg"
+            src="../../images/activity-learn-utcode-learn.jpg"
           />
         )}
         linkLabel="詳しく見る"
@@ -44,7 +44,7 @@ export default function ActivityLearnPage() {
           <StaticImage
             alt=""
             className={className}
-            src="@images/activity-learn-newcomers.jpg"
+            src="../../images/activity-learn-newcomers.jpg"
           />
         )}
         linkLabel="2023 年度自主ゼミ開講のお知らせ"
@@ -62,7 +62,7 @@ export default function ActivityLearnPage() {
           <StaticImage
             alt=""
             className={className}
-            src="@images/activity-learn-festival.png"
+            src="../../images/activity-learn-festival.png"
           />
         )}
         linkLabel="第 95 回五月祭参加報告"

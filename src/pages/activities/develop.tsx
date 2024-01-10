@@ -10,7 +10,7 @@ export default function ActivityLearnPage() {
       <StaticImage
         alt="開発の様子"
         className={ActivityPageTemplate.coverImageClassName}
-        src="@images/activity-develop.jpg"
+        src="../../images/activity-develop.jpg"
       />
       <ActivityPageTemplate.Title Icon={FiBox}>
         開発する
@@ -26,7 +26,7 @@ export default function ActivityLearnPage() {
           <StaticImage
             alt="共同作業の様子"
             className={className}
-            src="@images/activity-develop-project.jpg"
+            src="../../images/activity-develop-project.jpg"
           />
         )}
         linkLabel="すべてのプロジェクト"
@@ -43,7 +43,7 @@ export default function ActivityLearnPage() {
           <StaticImage
             alt="2022 年度大忘年会の様子"
             className={className}
-            src="@images/activity-develop-brainstorming.jpg"
+            src="../../images/activity-develop-brainstorming.jpg"
           />
         )}
         linkLabel="大忘年会を開催しました"
@@ -60,7 +60,7 @@ export default function ActivityLearnPage() {
           <StaticImage
             alt="定例ミーティングのイメージ"
             className={className}
-            src="@images/activity-develop-meeting.jpg"
+            src="../../images/activity-develop-meeting.jpg"
           />
         )}
         linkLabel="すべてのプロジェクト"

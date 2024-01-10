@@ -163,7 +163,7 @@ export default function CoetecoHackOnePage() {
 
           <StaticImage
             alt=""
-            src="@images/coeteco-hack-1.png"
+            src="../../images/coeteco-hack-1.png"
             class="w-full rounded-3xl"
           />
 

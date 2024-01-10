@@ -25,7 +25,7 @@ export default function ContactPage() {
       </div>
       <StaticImage
         alt=""
-        src="@images/contact-header.jpg"
+        src="../images/contact-header.jpg"
         class="w-full h-48"
       />
       <main className="container mx-auto px-4 py-16">
