@@ -40,7 +40,7 @@ export default function DonationPage() {
             {/* eslint-enable prettier/prettier */}
           </p>
           <div className="not-prose">
-            <ActionButton to="/join/">ut.code(); の連絡先</ActionButton>
+            <ActionButton to="/contact/">ut.code(); の連絡先</ActionButton>
           </div>
           <h2>ご寄付による支援</h2>
           <p>
@@ -53,7 +53,7 @@ export default function DonationPage() {
             <li>口座番号: 0339615</li>
           </ul>
           <div className="not-prose">
-            <ActionButton to="/join/">ut.code(); の連絡先</ActionButton>
+            <ActionButton to="/contact/">ut.code(); の連絡先</ActionButton>
           </div>
           <h2>使用しなくなったノートパソコンの譲渡</h2>
           <p>
@@ -72,7 +72,7 @@ export default function DonationPage() {
             {/* eslint-enable prettier/prettier */}
           </p>
           <div className="not-prose">
-            <ActionButton to="/join/">ut.code(); の連絡先</ActionButton>
+            <ActionButton to="/contact/">ut.code(); の連絡先</ActionButton>
           </div>
         </div>
       </main>
