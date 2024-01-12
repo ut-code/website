@@ -17,7 +17,7 @@ export default function ActivityLearnPage() {
       </ActivityPageTemplate.Title>
       <ActivityPageTemplate.Summary>
         {/* eslint-disable prettier/prettier */}
-        <p>ut.code(); では、社会をより良い方向へ導くことを目指し、様々なプロダクトを開発しています。ut.code(); 開発するプロダクトを「プロジェクト」と呼び、通常の活動はプロジェクトが基本単位となっています。プロジェクトのアイデア出しから実際の開発、チームメンバーとのコミュニケーション方法など、様々なノウハウが蓄積されています。</p>
+        <p>ut.code(); では、社会をより良い方向へ導くことを目指し、様々なプロダクトを開発しています。ut.code(); は開発するプロダクトを「プロジェクト」と呼び、通常の活動はプロジェクトが基本単位となっています。プロジェクトのアイデア出しから実際の開発、チームメンバーとのコミュニケーション方法など、様々なノウハウが蓄積されています。</p>
         {/* eslint-enable prettier/prettier */}
       </ActivityPageTemplate.Summary>
       <ActivityPageTemplate.Section
