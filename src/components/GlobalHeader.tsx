@@ -20,7 +20,7 @@ export default function GlobalHeader({ className }: { className?: string }) {
       <EventBanner
         link=""
         shortExplanation="大忘年会を開催します"
-        expires={{ year: 2023, month: 12, day: 22 }}
+        active={false}
       >
         大忘年会（新プロジェクト検討会議）を開催します
       </EventBanner>
