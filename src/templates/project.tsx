@@ -46,12 +46,12 @@ export default function ProjectPage({
                 ))}
               </ul>
             )}
-            <div className="flex gap-4 mt-6 text-4xl">
+            <div className="flex gap-4 text-4xl">
               {data.mdx?.frontmatter?.github && (
                 <a
                   href={data.mdx.frontmatter.github}
                   target="_blank"
-                  className="-m-1 p-1 rounded-xl hover:bg-gray-100"
+                  className="-m-1 p-1 rounded-xl mt-6 hover:bg-gray-100"
                   rel="noreferrer"
                 >
                   <FiGithub />
