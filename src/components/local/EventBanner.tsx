@@ -5,15 +5,17 @@ import { FiArrowRight } from "react-icons/fi";
 export default function EventBanner({
   shortExplanation,
   link,
+  linkText,
   children,
-  active,
+  enabled,
 }: {
   shortExplanation?: string;
   link?: string;
+  linkText?: string;
   children: ReactNode;
-  active: boolean;
+  enabled: boolean;
 }) {
-  if (active) {
+  if (enabled) {
     return (
       <div className="flex gap-4 justify-center items-center px-1 py-3 md:py-1 bg-green-400">
         <span className="hidden sm:inline">{children}</span>
@@ -23,7 +25,7 @@ export default function EventBanner({
             to={link}
             className="inline-flex items-center flex-shrink-0 gap-0.5 hover:underline"
           >
-            詳細はこちら
+            {linkText || "詳細はこちら"}
             <FiArrowRight />
           </Link>
         )}
@@ -31,6 +33,6 @@ export default function EventBanner({
     );
   }
 
-  // inactive
+  // disabled
   return null;
 }

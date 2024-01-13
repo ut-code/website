@@ -20,7 +20,7 @@ export default function GlobalHeader({ className }: { className?: string }) {
       <EventBanner
         link=""
         shortExplanation="大忘年会を開催します"
-        active={false}
+        enabled={false}
       >
         大忘年会（新プロジェクト検討会議）を開催します
       </EventBanner>
