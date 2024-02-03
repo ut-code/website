@@ -55,6 +55,7 @@ export default function MemberPage({
                     target="_blank"
                     className={socialButtonClassName}
                     rel="noreferrer"
+                    aria-label="GitHubを見る"
                   >
                     <FiGithub />
                   </a>
@@ -65,6 +66,7 @@ export default function MemberPage({
                     target="_blank"
                     className={socialButtonClassName}
                     rel="noreferrer"
+                    aria-label="Twitterを見る"
                   >
                     <FiTwitter />
                   </a>
@@ -75,6 +77,7 @@ export default function MemberPage({
                     target="_blank"
                     className={socialButtonClassName}
                     rel="noreferrer"
+                    aria-label="ウェブサイトを見る"
                   >
                     <FiGlobe />
                   </a>
