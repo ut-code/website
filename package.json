@@ -33,31 +33,25 @@
     "gatsby-remark-prismjs": "^7.13.1",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
-    "gray-matter": "^4.0.3",
-    "marked": "^11.2.0",
-    "next": "^14.1.0",
     "nullthrows": "^1.1.1",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
-    "react-use": "^17.5.0",
     "schema-dts": "^1.1.2"
   },
   "devDependencies": {
     "@types/color": "^3.0.6",
-    "@types/marked": "^5.0.2",
     "@types/node": "^20.11.16",
-    "@types/react": "^18.2.51",
+    "@types/react": "^18.2.52",
     "@types/react-dom": "^18.2.18",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-typescript-prettier": "^5.0.0",
     "gatsby-plugin-postcss": "^6.13.1",
-    "husky": "^9.0.10",
     "postcss": "^8.4.33",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3"
+    "typescript": "5.1.6"
   }
 }

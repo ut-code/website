@@ -53,6 +53,7 @@ export default function ProjectPage({
                   target="_blank"
                   className="-m-1 p-1 rounded-xl hover:bg-gray-100"
                   rel="noreferrer"
+                  aria-label="GitHubを見る"
                 >
                   <FiGithub />
                 </a>
