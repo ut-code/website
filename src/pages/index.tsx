@@ -203,6 +203,20 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
       </section>
       <section>
         <div className="container mx-auto px-8 py-12">
+          <SectionHeader title="協賛企業様" />
+          <div className="mt-8 grid grid-cols-1 gap-8">
+            <div className="flex items-center justify-center">
+              <StaticImage
+                alt="GMOメディア株式会社"
+                src="../images/logo-gmo-media.png"
+                width={400}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-gray-100">
+        <div className="container mx-auto px-8 py-12">
           <SectionHeader title="ご寄付のお願い" />
           <div className="prose max-w-none mt-8 text-center">
             <p>
