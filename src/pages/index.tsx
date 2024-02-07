@@ -204,14 +204,15 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
       <section>
         <div className="container mx-auto px-8 py-12">
           <SectionHeader title="協賛企業様" />
-          <div className="mt-8 grid grid-cols-1 gap-8">
-            <div className="flex items-center justify-center">
-              <StaticImage
-                alt="GMOメディア株式会社"
-                src="../images/logo-gmo-media.png"
-                width={400}
-              />
-            </div>
+          <div
+            className="grid items-center justify-center mt-8 gap-4"
+            style={{ gridTemplateColumns: "repeat(1, 400px)" }}
+          >
+            <StaticImage
+              alt="GMOメディア株式会社"
+              src="../images/logo-gmo-media.png"
+              placeholder="blurred"
+            />
           </div>
         </div>
       </section>
