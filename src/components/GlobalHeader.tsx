@@ -1,6 +1,6 @@
 import React from "react";
 import { Popover, Transition } from "@headlessui/react";
-import { FiMenu } from "react-icons/fi";
+import { FiArrowRight, FiMenu } from "react-icons/fi";
 import { Link } from "gatsby";
 import clsx from "clsx";
 import Logo from "./Logo";
@@ -16,20 +16,16 @@ const links = [
 export default function GlobalHeader({ className }: { className?: string }) {
   return (
     <header className={clsx("relative", className)}>
-      {/* <div className="flex gap-4 justify-center items-center px-1 py-3 md:py-1 bg-green-400">
-        <span>
-          大忘年会
-          <span className="hidden sm:inline">（新プロジェクト検討会議）</span>
-          を開催します
-        </span>
+      <div className="flex gap-4 justify-center items-center px-1 py-3 md:py-1 bg-green-400">
+        <span>新歓を開催します</span>
         <Link
-          to="/articles/kick-off-party-2023/"
+          to="/articles/2024-welcome-events/"
           className="inline-flex items-center flex-shrink-0 gap-0.5 hover:underline"
         >
           詳細はこちら
           <FiArrowRight />
         </Link>
-      </div> */}
+      </div>
       <div className="container mx-auto h-16 flex">
         <Link to="/" className="flex items-center px-4">
           <Logo className="w-36" variant="default" />
