@@ -60,13 +60,13 @@ export default function ActivityLearnPage() {
         title="合宿"
         renderImage={(className) => (
           <StaticImage
-            alt="2022 年度春合宿の様子"
+            alt="2023 年度夏合宿の様子"
             className={className}
             src="../../images/activity-share-camp.jpg"
           />
         )}
-        linkLabel="2022 年度冬の活動報告"
-        linkTo="/articles/2022-winter-report/"
+        linkLabel="2023 年度夏合宿"
+        linkTo="/articles/2023-summer-camp/"
         edge="right"
       >
         {/* eslint-disable prettier/prettier */}

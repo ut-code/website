@@ -39,16 +39,16 @@ export default function ActivityLearnPage() {
         {/* eslint-enable prettier/prettier */}
       </ActivityPageTemplate.Section>
       <ActivityPageTemplate.Section
-        title="自主ゼミ「モダン Web システム開発入門」"
+        title="全ゼミ / 自主ゼミ「モダン Web システム開発入門」"
         renderImage={(className) => (
           <StaticImage
             alt=""
             className={className}
-            src="../../images/activity-learn-newcomers.jpg"
+            src="../../images/activity-learn-specialized-seminar.jpg"
           />
         )}
-        linkLabel="2023 年度自主ゼミ開講のお知らせ"
-        linkTo="/articles/seminar/"
+        linkLabel="2024 年度 S セメスター全ゼミ開講のお知らせ"
+        linkTo="/articles/2024-s-specialized-seminar-announcement/"
         edge="right"
       >
         {/* eslint-disable prettier/prettier */}
@@ -65,8 +65,8 @@ export default function ActivityLearnPage() {
             src="../../images/activity-learn-festival.png"
           />
         )}
-        linkLabel="第 95 回五月祭参加報告"
-        linkTo="/articles/may-fes-95-report/"
+        linkLabel="第 74 回駒場祭参加報告"
+        linkTo="/articles/komaba-festival-74-day3/"
         edge="left"
       >
         {/* eslint-disable prettier/prettier */}
