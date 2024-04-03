@@ -47,7 +47,7 @@ export default function ActivityLearnPage() {
             src="../../images/activity-learn-specialized-seminar.jpg"
           />
         )}
-        linkLabel="2024 年度 S セメスター全ゼミ開講のお知らせ"
+        linkLabel="全ゼミ開講のお知らせ"
         linkTo="/articles/2024-s-specialized-seminar-announcement/"
         edge="right"
       >
