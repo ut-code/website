@@ -65,7 +65,7 @@ export default function ProjectPage({
             {data.mdx?.frontmatter?.website && (
               <ActionButton
                 to={data.mdx.frontmatter.website}
-                className="mt-6 mb-6"
+                className="my-6"
               >
                 <FiGlobe className="inline-block w-6 h-6 mr-2" />
                 <span>{data.mdx.frontmatter.title} へ</span>
