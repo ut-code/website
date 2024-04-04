@@ -74,6 +74,10 @@ export default function DonationPage() {
           <div className="not-prose">
             <ActionButton to="/contact/">ut.code(); の連絡先</ActionButton>
           </div>
+          <h2>ご支援いただいた皆様</h2>
+          <ul>
+            <li>2024/3/11 コウノマサノリ様</li>
+          </ul>
         </div>
       </main>
       <GlobalFooter />
