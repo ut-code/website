@@ -46,6 +46,7 @@ export default function ProjectPage({
                 ))}
               </ul>
             )}
+	    {/* 表示する icon が無いときは、親要素の高さの分間隔が広くなりすぎるので、親要素ごと表示しないようにする。 */}
             {data.mdx?.frontmatter?.github && (
               <div className="flex gap-4 mt-6 text-4xl">
                 {data.mdx?.frontmatter?.github && (
