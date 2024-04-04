@@ -46,7 +46,7 @@ export default function ProjectPage({
                 ))}
               </ul>
             )}
-	    {/* 表示する icon が無いときは、親要素の高さの分間隔が広くなりすぎるので、親要素ごと表示しないようにする。 */}
+            {/* 表示する icon が無いときは、親要素の高さの分間隔が広くなりすぎるので、親要素ごと表示しないようにする。 */}
             {data.mdx?.frontmatter?.github && (
               <div className="flex gap-4 mt-6 text-4xl">
                 {data.mdx?.frontmatter?.github && (
@@ -63,10 +63,7 @@ export default function ProjectPage({
               </div>
             )}
             {data.mdx?.frontmatter?.website && (
-              <ActionButton
-                to={data.mdx.frontmatter.website}
-                className="my-6"
-              >
+              <ActionButton to={data.mdx.frontmatter.website} className="my-6">
                 <FiGlobe className="inline-block w-6 h-6 mr-2" />
                 <span>{data.mdx.frontmatter.title} へ</span>
               </ActionButton>
