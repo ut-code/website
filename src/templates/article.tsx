@@ -91,13 +91,16 @@ export function Head({ data }: HeadProps<Queries.ArticlePageQuery>) {
         data.mdx?.frontmatter?.image?.childImageSharp?.resize?.src ?? undefined
       }
       linkedData={{
+        "@context": "https://schema.org",
         "@type": "Article",
         headline: title,
+        image: data.mdx?.frontmatter?.image?.publicURL ?? undefined,
         datePublished: date.toISOString(),
         author: data.mdx?.frontmatter?.author?.frontmatter?.nameJa
           ? {
               "@type": "Person",
               name: data.mdx.frontmatter.author.frontmatter.nameJa,
+              url: `/members/${data.mdx.frontmatter.author.frontmatter.slug}`,
             }
           : undefined,
       }}
@@ -112,6 +115,7 @@ export const query = graphql`
         title
         date
         image {
+          publicURL
           childImageSharp {
             gatsbyImageData(
               width: 1920

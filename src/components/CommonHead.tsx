@@ -1,5 +1,5 @@
 import React from "react";
-import type { Thing } from "schema-dts";
+import type { WithContext, Thing } from "schema-dts";
 import faviconImage from "../images/favicon.png";
 import config from "../../gatsby-config";
 
@@ -12,7 +12,7 @@ export default function CommonHead({
   title: string | null;
   description?: string;
   image?: string;
-  linkedData?: Thing;
+  linkedData?: WithContext<Thing>;
 }) {
   return (
     <>

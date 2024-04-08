@@ -13,6 +13,7 @@ import GlobalFooter from "../components/GlobalFooter";
 import ProjectList from "../components/ProjectList";
 import ArticleList from "../components/ArticleList";
 import CommonHead from "../components/CommonHead";
+import favicon from "../images/favicon.png";
 
 function SectionHeader({
   title,
@@ -242,6 +243,24 @@ export function Head() {
     <CommonHead
       title={null}
       description="ut.code(); は 2019 年設立の東京大学のソフトウェアエンジニアリングコミュニティです。"
+      linkedData={{
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "ut.code();",
+        description:
+          "東京大学のソフトウェアエンジニアリングコミュニティ・プログラミングサークル",
+        logo: favicon,
+        url: "https://utcode.net/",
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "JP",
+          postalCode: "153-8902",
+          addressRegion: "東京都",
+          addressLocality: "目黒区",
+          streetAddress: "3-8-1 学生会館 313B",
+        },
+        foundingDate: "2019-03-22",
+      }}
     />
   );
 }
