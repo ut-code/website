@@ -257,7 +257,7 @@ export function Head() {
           postalCode: "153-8902",
           addressRegion: "東京都",
           addressLocality: "目黒区",
-          streetAddress: "3-8-1 学生会館 313B",
+          streetAddress: "駒場3-8-1 学生会館 313B",
         },
         foundingDate: "2019-03-22",
       }}
