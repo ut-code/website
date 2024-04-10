@@ -65,7 +65,7 @@ export default function ActivityLearnPage() {
             src="../../images/activity-learn-festival.png"
           />
         )}
-        linkLabel="第 74 回駒場祭参加報告"
+        linkLabel="駒場祭参加報告"
         linkTo="/articles/komaba-festival-74-day3/"
         edge="left"
       >
