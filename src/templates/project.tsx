@@ -98,7 +98,17 @@ export function Head({ data }: HeadProps<Queries.ProjectPageQuery>) {
       image={
         data.mdx?.frontmatter?.image?.childImageSharp?.resize?.src ?? undefined
       }
-      linkedData={{ "@type": "Product", name: title }}
+      linkedData={{
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: title,
+        offers: {
+          "@type": "Offer",
+          price: "0",
+        },
+        image: data.mdx?.frontmatter?.image?.publicURL ?? undefined,
+        aggregateRating: { "@type": "AggregateRating", reviewCount: 0 },
+      }}
     />
   );
 }
@@ -113,6 +123,7 @@ export const query = graphql`
         github
         website
         image {
+          publicURL
           childImageSharp {
             gatsbyImageData(
               width: 1200

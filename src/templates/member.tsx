@@ -151,12 +151,14 @@ export function Head({ data }: HeadProps<Queries.MemberPageQuery>) {
         undefined
       }
       linkedData={{
-        "@type": "Person",
-        name: nameJa,
-        alternateName: nameEn,
-        image:
-          data.mdx?.frontmatter?.upperBodyImage?.childImageSharp?.resize?.src ??
-          undefined,
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        mainEntity: {
+          "@type": "Person",
+          name: nameJa,
+          alternateName: nameEn,
+          image: data.mdx?.frontmatter?.upperBodyImage?.publicURL ?? undefined,
+        },
       }}
     />
   );
@@ -183,6 +185,7 @@ export const query = graphql`
           }
         }
         upperBodyImage {
+          publicURL
           childImageSharp {
             gatsbyImageData(
               width: 600
