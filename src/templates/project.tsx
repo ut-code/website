@@ -46,24 +46,24 @@ export default function ProjectPage({
                 ))}
               </ul>
             )}
-            <div className="flex gap-4 mt-6 text-4xl">
-              {data.mdx?.frontmatter?.github && (
-                <a
-                  href={data.mdx.frontmatter.github}
-                  target="_blank"
-                  className="-m-1 p-1 rounded-xl hover:bg-gray-100"
-                  rel="noreferrer"
-                  aria-label="GitHubを見る"
-                >
-                  <FiGithub />
-                </a>
-              )}
-            </div>
+            {/* 表示する icon が無いときは、親要素の高さの分間隔が広くなりすぎるので、親要素ごと表示しないようにする。 */}
+            {data.mdx?.frontmatter?.github && (
+              <div className="flex gap-4 mt-6 text-4xl">
+                {data.mdx?.frontmatter?.github && (
+                  <a
+                    href={data.mdx.frontmatter.github}
+                    target="_blank"
+                    className="-m-1 p-1 rounded-xl hover:bg-gray-100"
+                    rel="noreferrer"
+                    aria-label="GitHubを見る"
+                  >
+                    <FiGithub />
+                  </a>
+                )}
+              </div>
+            )}
             {data.mdx?.frontmatter?.website && (
-              <ActionButton
-                to={data.mdx.frontmatter.website}
-                className="mt-6 mb-8"
-              >
+              <ActionButton to={data.mdx.frontmatter.website} className="my-6">
                 <FiGlobe className="inline-block w-6 h-6 mr-2" />
                 <span>{data.mdx.frontmatter.title} へ</span>
               </ActionButton>
