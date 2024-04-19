@@ -46,7 +46,7 @@ export default function ActivityLearnPage() {
             src="../../images/activity-develop-brainstorming.jpg"
           />
         )}
-        linkLabel="大忘年会を開催しました"
+        linkLabel="大忘年会開催の報告"
         linkTo="/articles/kick-off-party-2023-report/"
         edge="right"
       >

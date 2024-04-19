@@ -29,7 +29,7 @@ export default function ActivityLearnPage() {
             src="../../images/activity-share-weekly-meetup.jpg"
           />
         )}
-        linkLabel="2022 年度冬の活動報告"
+        linkLabel="冬の活動報告"
         linkTo="/articles/2022-winter-report/"
         edge="right"
       >
@@ -47,7 +47,7 @@ export default function ActivityLearnPage() {
             src="../../images/activity-share-festival.jpg"
           />
         )}
-        linkLabel="第 73 回駒場祭報告"
+        linkLabel="駒場祭参加報告"
         linkTo="/articles/komaba-grand-prix/"
         edge="left"
       >
@@ -60,13 +60,13 @@ export default function ActivityLearnPage() {
         title="合宿"
         renderImage={(className) => (
           <StaticImage
-            alt="2022 年度春合宿の様子"
+            alt="2023 年度夏合宿の様子"
             className={className}
             src="../../images/activity-share-camp.jpg"
           />
         )}
-        linkLabel="2022 年度冬の活動報告"
-        linkTo="/articles/2022-winter-report/"
+        linkLabel="夏合宿開催の報告"
+        linkTo="/articles/2023-summer-camp/"
         edge="right"
       >
         {/* eslint-disable prettier/prettier */}
