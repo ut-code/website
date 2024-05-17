@@ -124,7 +124,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
         <iframe
           title="ut.code(); 紹介動画"
           className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[600px]"
-          src="https://www.youtube-nocookie.com/embed/R9bC7bue_4Y?rel=0"
+          src="https://www.youtube-nocookie.com/embed/aUoa1AyfbMA?rel=0"
           allow="picture-in-picture; web-share"
           allowFullScreen
         />
