@@ -17,12 +17,12 @@ export default function GlobalHeader({ className }: { className?: string }) {
   return (
     <header className={clsx("relative", className)}>
       <div className="flex gap-4 justify-center items-center px-1 py-3 md:py-1 bg-green-400">
-        <span>五月祭に参加します</span>
+        <span>ハッカソンを開催します</span>
         <Link
-          to="https://mf97.utcode.net/"
+          to="/articles/2024-june-hackathon/"
           className="inline-flex items-center flex-shrink-0 gap-0.5 hover:underline"
         >
-          特設ウェブサイトへ
+          詳細はこちら
           <FiArrowRight />
         </Link>
       </div>
