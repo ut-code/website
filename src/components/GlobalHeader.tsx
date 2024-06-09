@@ -16,6 +16,7 @@ const links = [
 export default function GlobalHeader({ className }: { className?: string }) {
   return (
     <header className={clsx("relative", className)}>
+      {/*
       <div className="flex gap-4 justify-center items-center px-1 py-3 md:py-1 bg-green-400">
         <span>ハッカソンを開催します</span>
         <Link
@@ -26,6 +27,7 @@ export default function GlobalHeader({ className }: { className?: string }) {
           <FiArrowRight />
         </Link>
       </div>
+      */}
       <div className="container mx-auto h-16 flex">
         <Link to="/" className="flex items-center px-4">
           <Logo className="w-36" variant="default" />
