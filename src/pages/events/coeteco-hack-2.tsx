@@ -187,8 +187,8 @@ export default function CoetecoHackOnePage() {
 export function Head() {
   return (
     <CommonHead
-      title="コエテコ Hack #1 特設ページ"
-      description="ut.code(); と GMO メディア株式会社が共催して、AI × 教育をテーマにハッカソンを開催します。"
+      title="コエテコ Hack #2 特設ページ"
+      description="ut.code(); と GMO メディア株式会社が共催して、AI × 日常をテーマにハッカソンを開催します。"
       image={image}
     />
   );
