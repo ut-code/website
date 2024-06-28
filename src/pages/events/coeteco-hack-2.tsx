@@ -5,7 +5,7 @@ import GlobalHeader from "../../components/GlobalHeader";
 import CommonHead from "../../components/CommonHead";
 import image from "../../images/coeteco-hack-1.png";
 
-function AIAndEducationLogo(props: { className?: string }) {
+function AIAndDailylifeLogo(props: { className?: string }) {
   const { className } = props;
 
   return (
@@ -35,10 +35,15 @@ function AIAndEducationLogo(props: { className?: string }) {
   );
 }
 
+
+
+
+
+
 function EventBannerSection() {
   return (
     <div className="flex flex-col md:flex-row md:justify-between items-center space-y-12 md:space-y-0 px-5">
-      <AIAndEducationLogo className="w-full h-full md:w-72" />
+      <AIAndDailylifeLogo className="w-full h-full md:w-72" />
 
       <div className="w-full max-w-xs text-2xl md:text-xl">
         <div className="text-left">参加者でチームを組み</div>
