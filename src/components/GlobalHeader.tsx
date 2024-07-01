@@ -24,7 +24,7 @@ export default function GlobalHeader({ className }: { className?: string }) {
           <span className="hidden sm:inline">します</span>
         </span>
         <Link
-          to="/articles/coeteco-hack-2/"
+          to="/articles/coeteco-hack-2-announcement/"
           className="inline-flex items-center flex-shrink-0 gap-0.5 hover:underline"
         >
           詳細はこちら
