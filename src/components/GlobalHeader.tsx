@@ -18,7 +18,7 @@ export default function GlobalHeader({ className }: { className?: string }) {
     <header className={clsx("relative", className)}>
       <div className="flex gap-4 justify-center items-center px-1 py-3 md:py-1 bg-green-400">
         <span>
-          「AI×日常」
+          「AI で日常を便利に」
           <span className="hidden sm:inline">をテーマとした</span>
           ハッカソンを開催
           <span className="hidden sm:inline">します</span>
