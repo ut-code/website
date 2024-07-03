@@ -33,7 +33,9 @@ export default function GlobalHeader({ className }: { className?: string }) {
       </div> */}
       <div className="flex gap-4 justify-center items-center px-1 py-3 md:py-1 bg-green-400">
         <span>
-          <span className="block sm:hidden">「AI × 日常」がテーマのハッカソン</span>
+          <span className="block sm:hidden">
+            「AI × 日常」がテーマのハッカソン
+          </span>
           <span className="hidden sm:block">
             「AI で日常を便利に」をテーマとしたハッカソンを開催します
           </span>
@@ -43,9 +45,7 @@ export default function GlobalHeader({ className }: { className?: string }) {
           className="inline-flex items-center flex-shrink-0 gap-0.5 hover:underline"
         >
           <span className="block sm:hidden">詳細</span>
-          <span className="hidden sm:block">
-            詳細はこちら
-          </span>
+          <span className="hidden sm:block">詳細はこちら</span>
           <FiArrowRight />
         </Link>
       </div>
