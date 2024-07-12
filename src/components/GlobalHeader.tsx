@@ -1,6 +1,6 @@
 import React from "react";
 import { Popover, Transition } from "@headlessui/react";
-import { FiArrowRight, FiMenu } from "react-icons/fi";
+import { FiMenu } from "react-icons/fi";
 import { Link } from "gatsby";
 import clsx from "clsx";
 import Logo from "./Logo";
