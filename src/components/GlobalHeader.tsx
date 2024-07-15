@@ -21,9 +21,7 @@ export default function GlobalHeader({ className }: { className?: string }) {
           <span className="hidden sm:inline">
             「AI で日常を便利に」をテーマとしたハッカソンを開催します
           </span>
-          <span className="inline sm:hidden">
-            ハッカソンを開催します
-          </span>
+          <span className="inline sm:hidden">ハッカソンを開催します</span>
         </span>
         <Link
           to="/articles/coeteco-hack-2-announcement/"
