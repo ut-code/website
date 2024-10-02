@@ -1,6 +1,7 @@
 import React from "react";
 import { Popover, Transition } from "@headlessui/react";
-import { FiArrowRight, FiMenu } from "react-icons/fi";
+// import { FiArrowRight, FiMenu } from "react-icons/fi";
+import { FiMenu } from "react-icons/fi";
 import { Link } from "gatsby";
 import clsx from "clsx";
 import Logo from "./Logo";
@@ -16,7 +17,7 @@ const links = [
 export default function GlobalHeader({ className }: { className?: string }) {
   return (
     <header className={clsx("relative", className)}>
-      <div className="flex gap-4 justify-center items-center px-1 py-3 md:py-1 bg-green-400">
+      {/* <div className="flex gap-4 justify-center items-center px-1 py-3 md:py-1 bg-green-400">
         <span>
           <span className="hidden sm:inline">
             「AI で日常を便利に」をテーマとした
@@ -30,7 +31,7 @@ export default function GlobalHeader({ className }: { className?: string }) {
           詳細はこちら
           <FiArrowRight />
         </Link>
-      </div>
+      </div> */}
       <div className="container mx-auto h-16 flex">
         <Link to="/" className="flex items-center px-4">
           <Logo className="w-36" variant="default" />
