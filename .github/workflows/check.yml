@@ -1,7 +1,8 @@
+name: Check
 on: pull_request
 jobs:
-  build:
-    name: Build
+  build-type-check:
+    name: Build and Type Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,17 +19,6 @@ jobs:
             public
           restore-keys: ${{ runner.os }}-gatsby-build-
       - run: npm run build
-
-  type-check:
-    name: Type Check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-          cache: npm
-      - run: npm ci
       - run: npm run type-check
 
   lint:
