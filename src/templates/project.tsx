@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, HeadProps, PageProps } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { FiGithub, FiGlobe, FiLayers } from "react-icons/fi";
+import { FiGithub, FiGlobe, FiLayers, FiYoutube } from "react-icons/fi";
 import nullthrows from "nullthrows";
 import GlobalHeader from "../components/GlobalHeader";
 import GlobalFooter from "../components/GlobalFooter";
@@ -47,7 +47,8 @@ export default function ProjectPage({
               </ul>
             )}
             {/* 表示する icon が無いときは、親要素の高さの分間隔が広くなりすぎるので、親要素ごと表示しないようにする。 */}
-            {data.mdx?.frontmatter?.github && (
+            {(data.mdx?.frontmatter?.github ||
+              data.mdx?.frontmatter?.youtube) && (
               <div className="flex gap-4 mt-6 text-4xl">
                 {data.mdx?.frontmatter?.github && (
                   <a
@@ -58,6 +59,17 @@ export default function ProjectPage({
                     aria-label="GitHubを見る"
                   >
                     <FiGithub />
+                  </a>
+                )}
+                {data.mdx?.frontmatter?.youtube && (
+                  <a
+                    href={data.mdx.frontmatter.youtube}
+                    target="_blank"
+                    className="-m-1 p-1 rounded-xl hover:bg-gray-100"
+                    rel="noreferrer"
+                    aria-label="YouTubeを見る"
+                  >
+                    <FiYoutube />
                   </a>
                 )}
               </div>
@@ -121,6 +133,7 @@ export const query = graphql`
         description
         tags
         github
+        youtube
         website
         image {
           publicURL
