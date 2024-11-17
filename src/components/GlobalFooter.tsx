@@ -71,7 +71,7 @@ export default function GlobalFooter({ className }: { className?: string }) {
               { title: "ut.code(); Learn", to: "https://learn.utcode.net/" },
               {
                 title: "はじめてのプログラミング教室",
-                to: "https://festival.utcode.net/",
+                to: "https://first-programming.utcode.net/",
               },
               { title: "GitHub", to: "https://github.com/ut-code" },
               { title: "Twitter", to: "https://twitter.com/utokyo_code" },
