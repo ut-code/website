@@ -53,7 +53,8 @@ export default function ContactPage() {
           <h2>ご寄付・ご協賛のお願い</h2>
           <p>
             {/* eslint-disable prettier/prettier */}
-            ut.code(); では、活動を支援していただける方を募集しております。詳細につきましては、次のページをご覧ください。
+            ut.code();
+            では、活動を支援していただける方を募集しております。詳細につきましては、次のページをご覧ください。
             {/* eslint-enable prettier/prettier */}
           </p>
           <p className="not-prose">

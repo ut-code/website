@@ -39,7 +39,7 @@ export default function ArticlesPage({
                   image={nullthrows(
                     member.frontmatter?.upperBodyImage?.childImageSharp
                       ?.gatsbyImageData,
-                    "写真が設定されていません"
+                    "写真が設定されていません",
                   )}
                   className="w-full max-h-[400px]"
                   objectPosition="center 30%"

@@ -30,13 +30,15 @@ export default function DonationPage() {
           <p>
             {/* eslint-disable prettier/prettier */}
             企業様からの資金協賛による支援を募集しています。
-            ご協賛いただいた企業様には、ut.code(); ウェブサイトに企業ロゴを掲載するほか、ut.code();の
-            Slack ワークスペースに求人情報、広報を掲載いたします。
+            ご協賛いただいた企業様には、ut.code();
+            ウェブサイトに企業ロゴを掲載するほか、ut.code();の Slack
+            ワークスペースに求人情報、広報を掲載いたします。
             {/* eslint-enable prettier/prettier */}
           </p>
           <p>
             {/* eslint-disable prettier/prettier */}
-            協賛をご検討の場合は、ut.code(); 公式のメールアドレスまでご連絡ください。
+            協賛をご検討の場合は、ut.code();
+            公式のメールアドレスまでご連絡ください。
             {/* eslint-enable prettier/prettier */}
           </p>
           <div className="not-prose">

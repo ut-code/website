@@ -23,7 +23,7 @@ export default function ProjectList({
               alt="プロジェクトのイメージ画像"
               image={nullthrows(
                 project.frontmatter?.image?.childImageSharp?.gatsbyImageData,
-                "画像が指定されていません"
+                "画像が指定されていません",
               )}
               className="w-full h-48 object-cover"
             />
