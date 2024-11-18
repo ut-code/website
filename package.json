@@ -4,16 +4,14 @@
   "private": true,
   "description": "website2",
   "author": "chelproc",
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "eslint .",
+    "check": "biome check .",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
@@ -41,17 +39,17 @@
     "schema-dts": "^1.1.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@types/color": "^3.0.6",
     "@types/node": "^20.11.16",
     "@types/react": "^18.2.52",
     "@types/react-dom": "^18.2.18",
     "autoprefixer": "^10.4.17",
-    "eslint": "^8.56.0",
-    "eslint-config-airbnb-typescript-prettier": "^5.0.0",
     "gatsby-plugin-postcss": "^6.13.1",
     "postcss": "^8.4.33",
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.1",
     "typescript": "5.1.6"
-  }
+  },
+  "trustedDependencies": ["@biomejs/biome"]
 }

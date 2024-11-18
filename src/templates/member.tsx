@@ -1,15 +1,15 @@
-import React from "react";
-import { graphql, HeadProps, PageProps } from "gatsby";
+import clsx from "clsx";
+import Color from "color";
+import { type HeadProps, type PageProps, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import nullthrows from "nullthrows";
-import Color from "color";
-import clsx from "clsx";
-import { FiTwitter, FiGithub, FiGlobe } from "react-icons/fi";
-import GlobalHeader from "../components/GlobalHeader";
-import GlobalFooter from "../components/GlobalFooter";
-import CommonHead from "../components/CommonHead";
-import JoinUsCTA from "../components/JoinUsCTA";
+import React from "react";
+import { FiGithub, FiGlobe, FiTwitter } from "react-icons/fi";
 import ArticleList from "../components/ArticleList";
+import CommonHead from "../components/CommonHead";
+import GlobalFooter from "../components/GlobalFooter";
+import GlobalHeader from "../components/GlobalHeader";
+import JoinUsCTA from "../components/JoinUsCTA";
 
 export default function MemberPage({
   data,

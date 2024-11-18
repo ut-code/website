@@ -1,13 +1,13 @@
-import React from "react";
-import { graphql, HeadProps, PageProps } from "gatsby";
+import { type HeadProps, type PageProps, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { FiGithub, FiGlobe, FiLayers, FiYoutube } from "react-icons/fi";
 import nullthrows from "nullthrows";
-import GlobalHeader from "../components/GlobalHeader";
-import GlobalFooter from "../components/GlobalFooter";
-import CommonHead from "../components/CommonHead";
-import JoinUsCTA from "../components/JoinUsCTA";
+import React from "react";
+import { FiGithub, FiGlobe, FiLayers, FiYoutube } from "react-icons/fi";
 import ActionButton from "../components/ActionButton";
+import CommonHead from "../components/CommonHead";
+import GlobalFooter from "../components/GlobalFooter";
+import GlobalHeader from "../components/GlobalHeader";
+import JoinUsCTA from "../components/JoinUsCTA";
 
 export default function ProjectPage({
   data,

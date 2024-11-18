@@ -1,6 +1,6 @@
 import clsx from "clsx";
-import React from "react";
 import { Link } from "gatsby";
+import React from "react";
 import ActionButton from "./ActionButton";
 import Logo from "./Logo";
 

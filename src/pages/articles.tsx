@@ -1,9 +1,9 @@
+import { type PageProps, graphql } from "gatsby";
 import React from "react";
-import { PageProps, graphql } from "gatsby";
-import GlobalFooter from "../components/GlobalFooter";
-import GlobalHeader from "../components/GlobalHeader";
 import ArticleList from "../components/ArticleList";
 import CommonHead from "../components/CommonHead";
+import GlobalFooter from "../components/GlobalFooter";
+import GlobalHeader from "../components/GlobalHeader";
 
 export default function ArticlesPage({
   data,

@@ -1,10 +1,10 @@
-import React from "react";
-import { Link, PageProps, graphql } from "gatsby";
+import { Link, type PageProps, graphql } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import nullthrows from "nullthrows";
+import React from "react";
+import CommonHead from "../components/CommonHead";
 import GlobalFooter from "../components/GlobalFooter";
 import GlobalHeader from "../components/GlobalHeader";
-import CommonHead from "../components/CommonHead";
 import JoinUsCTA from "../components/JoinUsCTA";
 
 export default function ArticlesPage({

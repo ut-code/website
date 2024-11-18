@@ -8,6 +8,7 @@ export default function Logo(props: {
 
   return (
     <svg
+      role="img"
       aria-label="ut.code();"
       className={className}
       viewBox="0 0 3957 827"

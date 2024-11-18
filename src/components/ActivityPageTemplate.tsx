@@ -1,6 +1,6 @@
 import clsx from "clsx";
-import React, { ReactNode } from "react";
-import { IconType } from "react-icons";
+import React, { type ReactNode } from "react";
+import type { IconType } from "react-icons";
 import ActionButton from "./ActionButton";
 import GlobalFooter from "./GlobalFooter";
 import GlobalHeader from "./GlobalHeader";

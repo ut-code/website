@@ -1,11 +1,11 @@
-import React from "react";
-import { graphql, HeadProps, Link, PageProps } from "gatsby";
+import { format } from "date-fns";
+import { type HeadProps, Link, type PageProps, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import nullthrows from "nullthrows";
-import { format } from "date-fns";
-import GlobalHeader from "../components/GlobalHeader";
-import GlobalFooter from "../components/GlobalFooter";
+import React from "react";
 import CommonHead from "../components/CommonHead";
+import GlobalFooter from "../components/GlobalFooter";
+import GlobalHeader from "../components/GlobalHeader";
 import JoinUsCTA from "../components/JoinUsCTA";
 
 export default function ArticlePage({

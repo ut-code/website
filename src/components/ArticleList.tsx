@@ -1,9 +1,9 @@
-import React from "react";
 import clsx from "clsx";
+import { format } from "date-fns";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { format } from "date-fns";
 import nullthrows from "nullthrows";
+import React from "react";
 import noImage from "../images/no-image.svg";
 
 export default function ArticleList({
