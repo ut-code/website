@@ -186,8 +186,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
               { title: "団体名", content: "ut.code();" },
               { title: "構成人数", content: "20 名程度 (アクティブ)" },
               { title: "部室", content: "駒場キャンパス学生会館 313B 教室" },
-              { title: "Twitter", content: "@utokyo_code" },
-              { title: "LINE", content: "@nlr3843e" },
+              { title: "X (旧 Twitter)", content: "@utokyo_code" },
               { title: "活動場所", content: "部室, KOMAD, その他施設" },
               { title: "所属", content: "東京大学工学部丁友会 (2022 年度)" },
             ].map(({ title, content }) => (
