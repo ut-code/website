@@ -22,13 +22,9 @@ jobs:
       - run: npm run type-check
 
   style:
-    name: Lint
+    name: Biome
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      # because npm install is slow
-      - uses: oven-sh/setup-bun@v2
-      - run: bun install --frozen-lockfile
-      - run: bun run lint
-        # skipping content because prettier can't format MDX
-      - run: bunx prettier src --check 
+      - uses: biomejs/setup-biome@v2
+      - run: biome check .
