@@ -21,14 +21,14 @@ jobs:
       - run: npm run build
       - run: npm run type-check
 
-  lint:
+  style:
     name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-          cache: npm
-      - run: npm ci
-      - run: npm run lint
+      # because npm install is slow
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run lint
+        # skipping content because prettier can't format MDX
+      - run: bunx prettier src --check 
