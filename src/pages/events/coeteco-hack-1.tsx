@@ -1,8 +1,8 @@
-import React, { ReactNode } from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import React, { type ReactNode } from "react";
+import CommonHead from "../../components/CommonHead";
 import GlobalFooter from "../../components/GlobalFooter";
 import GlobalHeader from "../../components/GlobalHeader";
-import CommonHead from "../../components/CommonHead";
 import image from "../../images/coeteco-hack-1.png";
 
 function AIAndEducationLogo(props: { className?: string }) {

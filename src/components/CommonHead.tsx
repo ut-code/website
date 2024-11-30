@@ -1,7 +1,7 @@
 import React from "react";
-import type { WithContext, Thing } from "schema-dts";
-import faviconImage from "../images/favicon.png";
+import type { Thing, WithContext } from "schema-dts";
 import config from "../../gatsby-config";
+import faviconImage from "../images/favicon.png";
 
 export default function CommonHead({
   title,

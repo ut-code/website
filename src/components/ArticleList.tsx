@@ -1,9 +1,9 @@
-import React from "react";
 import clsx from "clsx";
+import { format } from "date-fns";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { format } from "date-fns";
 import nullthrows from "nullthrows";
+import React from "react";
 import noImage from "../images/no-image.svg";
 
 export default function ArticleList({
@@ -20,7 +20,7 @@ export default function ArticleList({
       className={clsx(
         "grid grid-flow-dense md:grid-cols-2 gap-9",
         variant === "normal" && "lg:grid-cols-3 xl:grid-cols-4",
-        className
+        className,
       )}
     >
       {articles.map((article, i) => {
@@ -47,13 +47,13 @@ export default function ArticleList({
               to={`/articles/${article.frontmatter?.slug}/`}
               className={clsx(
                 "block hover:opacity-80",
-                additionalProps.cellClassName
+                additionalProps.cellClassName,
               )}
             >
               <div
                 className={clsx(
                   "w-full h-48 object-cover rounded-xl overflow-clip isolate",
-                  additionalProps.imageClassName
+                  additionalProps.imageClassName,
                 )}
               >
                 {additionalProps.imageData ? (
@@ -74,9 +74,9 @@ export default function ArticleList({
                 <time className="block text-gray-500 text-sm">
                   {format(
                     new Date(
-                      nullthrows(article.frontmatter?.date, "日付が未設定")
+                      nullthrows(article.frontmatter?.date, "日付が未設定"),
                     ),
-                    "yyyy/MM/dd HH:mm"
+                    "yyyy/MM/dd HH:mm",
                   )}
                 </time>
                 <h3 className="text-lg font-bold">

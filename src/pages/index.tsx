@@ -1,18 +1,18 @@
+import { Link, type PageProps, graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
-import { graphql, Link, PageProps } from "gatsby";
 import {
   FiArrowRight,
   FiBookOpen,
   FiBox,
   FiMessageSquare,
 } from "react-icons/fi";
-import { StaticImage } from "gatsby-plugin-image";
-import GlobalHeader from "../components/GlobalHeader";
 import ActionButton from "../components/ActionButton";
-import GlobalFooter from "../components/GlobalFooter";
-import ProjectList from "../components/ProjectList";
 import ArticleList from "../components/ArticleList";
 import CommonHead from "../components/CommonHead";
+import GlobalFooter from "../components/GlobalFooter";
+import GlobalHeader from "../components/GlobalHeader";
+import ProjectList from "../components/ProjectList";
 import favicon from "../images/favicon.png";
 
 function SectionHeader({

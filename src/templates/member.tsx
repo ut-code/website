@@ -1,15 +1,15 @@
-import React from "react";
-import { graphql, HeadProps, PageProps } from "gatsby";
+import clsx from "clsx";
+import Color from "color";
+import { type HeadProps, type PageProps, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import nullthrows from "nullthrows";
-import Color from "color";
-import clsx from "clsx";
-import { FiTwitter, FiGithub, FiGlobe } from "react-icons/fi";
-import GlobalHeader from "../components/GlobalHeader";
-import GlobalFooter from "../components/GlobalFooter";
-import CommonHead from "../components/CommonHead";
-import JoinUsCTA from "../components/JoinUsCTA";
+import React from "react";
+import { FiGithub, FiGlobe, FiTwitter } from "react-icons/fi";
 import ArticleList from "../components/ArticleList";
+import CommonHead from "../components/CommonHead";
+import GlobalFooter from "../components/GlobalFooter";
+import GlobalHeader from "../components/GlobalHeader";
+import JoinUsCTA from "../components/JoinUsCTA";
 
 export default function MemberPage({
   data,
@@ -18,7 +18,7 @@ export default function MemberPage({
   const dominantColor = new Color(
     data.mdx?.frontmatter?.upperBodyImage?.childImageSharp?.gatsbyImageData
       .backgroundColor ?? "white",
-    "hex"
+    "hex",
   );
   const isDark = dominantColor.isDark();
   const backgroundColorHex = isDark
@@ -27,7 +27,7 @@ export default function MemberPage({
 
   const socialButtonClassName = clsx(
     "-m-1 p-1 rounded-xl",
-    isDark ? "hover:brightness-90" : "hover:brightness-110"
+    isDark ? "hover:brightness-90" : "hover:brightness-110",
   );
 
   return (
@@ -94,7 +94,7 @@ export default function MemberPage({
                 image={nullthrows(
                   data.mdx?.frontmatter?.faceImage?.childImageSharp
                     ?.gatsbyImageData,
-                  "メンバーの顔写真が指定されていません。"
+                  "メンバーの顔写真が指定されていません。",
                 )}
                 className="w-full h-full"
               />
@@ -106,7 +106,7 @@ export default function MemberPage({
                 image={nullthrows(
                   data.mdx?.frontmatter?.upperBodyImage?.childImageSharp
                     ?.gatsbyImageData,
-                  "画像が指定されていません。"
+                  "画像が指定されていません。",
                 )}
               />
             </div>
@@ -136,11 +136,11 @@ export default function MemberPage({
 export function Head({ data }: HeadProps<Queries.MemberPageQuery>) {
   const nameJa = nullthrows(
     data.mdx?.frontmatter?.nameJa,
-    "名前が指定されていません"
+    "名前が指定されていません",
   );
   const nameEn = nullthrows(
     data.mdx?.frontmatter?.nameEn,
-    "英語名が指定されていません"
+    "英語名が指定されていません",
   );
   return (
     <CommonHead

@@ -60,7 +60,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
   for (const project of data.projects.nodes) {
     if (!project.frontmatter?.slug)
       throw new Error(
-        `プロジェクト: ${project.internal.contentFilePath} の slug が設定されていません。`
+        `プロジェクト: ${project.internal.contentFilePath} の slug が設定されていません。`,
       );
     actions.createPage({
       path: `/projects/${project.frontmatter.slug}`,
@@ -72,7 +72,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
   for (const article of data.articles.nodes) {
     if (!article.frontmatter?.slug)
       throw new Error(
-        `投稿: ${article.internal.contentFilePath} の slug が設定されていません。`
+        `投稿: ${article.internal.contentFilePath} の slug が設定されていません。`,
       );
     actions.createPage({
       path: `/articles/${article.frontmatter.slug}`,
@@ -84,7 +84,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
   for (const member of data.members.nodes) {
     if (!member.frontmatter?.slug)
       throw new Error(
-        `投稿: ${member.internal.contentFilePath} の slug が設定されていません。`
+        `投稿: ${member.internal.contentFilePath} の slug が設定されていません。`,
       );
     actions.createPage({
       path: `/members/${member.frontmatter.slug}`,

@@ -1,11 +1,11 @@
-import React from "react";
-import { graphql, HeadProps, Link, PageProps } from "gatsby";
+import { format } from "date-fns";
+import { type HeadProps, Link, type PageProps, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import nullthrows from "nullthrows";
-import { format } from "date-fns";
-import GlobalHeader from "../components/GlobalHeader";
-import GlobalFooter from "../components/GlobalFooter";
+import React from "react";
 import CommonHead from "../components/CommonHead";
+import GlobalFooter from "../components/GlobalFooter";
+import GlobalHeader from "../components/GlobalHeader";
 import JoinUsCTA from "../components/JoinUsCTA";
 
 export default function ArticlePage({
@@ -24,10 +24,10 @@ export default function ArticlePage({
           new Date(
             nullthrows(
               data.mdx?.frontmatter?.date,
-              "日付が指定されていません。"
-            )
+              "日付が指定されていません。",
+            ),
           ),
-          "yyyy-MM-dd HH:mm"
+          "yyyy-MM-dd HH:mm",
         )}
       </time>
       <h1 className="max-w-screen-md mx-auto mt-2 px-4 text-3xl md:text-4xl text-center">
@@ -43,7 +43,7 @@ export default function ArticlePage({
               alt="著者の写真"
               image={nullthrows(
                 author.faceImage?.childImageSharp?.gatsbyImageData,
-                "著者の写真が指定されていません。"
+                "著者の写真が指定されていません。",
               )}
               className="w-full h-full"
             />
@@ -78,10 +78,10 @@ export default function ArticlePage({
 export function Head({ data }: HeadProps<Queries.ArticlePageQuery>) {
   const title = nullthrows(
     data.mdx?.frontmatter?.title,
-    "タイトルが指定されていません"
+    "タイトルが指定されていません",
   );
   const date = new Date(
-    nullthrows(data.mdx?.frontmatter?.date, "日付が指定されていません")
+    nullthrows(data.mdx?.frontmatter?.date, "日付が指定されていません"),
   );
   return (
     <CommonHead

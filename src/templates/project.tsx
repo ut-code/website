@@ -1,13 +1,13 @@
-import React from "react";
-import { graphql, HeadProps, PageProps } from "gatsby";
+import { type HeadProps, type PageProps, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { FiGithub, FiGlobe, FiLayers, FiYoutube } from "react-icons/fi";
 import nullthrows from "nullthrows";
-import GlobalHeader from "../components/GlobalHeader";
-import GlobalFooter from "../components/GlobalFooter";
-import CommonHead from "../components/CommonHead";
-import JoinUsCTA from "../components/JoinUsCTA";
+import React from "react";
+import { FiGithub, FiGlobe, FiLayers, FiYoutube } from "react-icons/fi";
 import ActionButton from "../components/ActionButton";
+import CommonHead from "../components/CommonHead";
+import GlobalFooter from "../components/GlobalFooter";
+import GlobalHeader from "../components/GlobalHeader";
+import JoinUsCTA from "../components/JoinUsCTA";
 
 export default function ProjectPage({
   data,
@@ -23,7 +23,7 @@ export default function ProjectPage({
             alt="プロジェクト画像"
             image={nullthrows(
               data.mdx?.frontmatter?.image?.childImageSharp?.gatsbyImageData,
-              "画像が指定されていません。"
+              "画像が指定されていません。",
             )}
           />
           <div className="container px-4 mt-8 mx-auto lg:flex-1 lg:mx-0">
@@ -101,7 +101,7 @@ export default function ProjectPage({
 export function Head({ data }: HeadProps<Queries.ProjectPageQuery>) {
   const title = nullthrows(
     data.mdx?.frontmatter?.title,
-    "タイトルが指定されていません"
+    "タイトルが指定されていません",
   );
   return (
     <CommonHead
