@@ -32,18 +32,14 @@ export default function DonationPage() {
           {acceptingSponsorship ? (
             <>
               <p>
-                {/* eslint-disable prettier/prettier */}
-								企業様からの資金協賛による支援を募集しています。
-								ご協賛いただいた企業様には、ut.code();
-								ウェブサイトに企業ロゴを掲載するほか、ut.code(); の Slack
-								ワークスペースに求人情報、広報を掲載いたします。
-								{/* eslint-enable prettier/prettier */}
+                企業様からの資金協賛による支援を募集しています。
+                ご協賛いただいた企業様には、ut.code();
+                ウェブサイトに企業ロゴを掲載するほか、ut.code(); の Slack
+                ワークスペースに求人情報、広報を掲載いたします。
               </p>
               <p>
-                {/* eslint-disable prettier/prettier */}
-								協賛をご検討の場合は、ut.code();
-								公式のメールアドレスまでご連絡ください。
-								{/* eslint-enable prettier/prettier */}
+                協賛をご検討の場合は、ut.code();
+                公式のメールアドレスまでご連絡ください。
               </p>
               <div className="not-prose">
                 <ActionButton to="/contact/">ut.code(); の連絡先</ActionButton>
