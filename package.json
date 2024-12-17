@@ -14,7 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint .",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "prepare": "lefthook install"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
@@ -49,6 +50,7 @@
     "eslint": "^8.56.0",
     "eslint-config-airbnb-typescript-prettier": "^5.0.0",
     "gatsby-plugin-postcss": "^6.13.1",
+    "lefthook": "^1.9.2",
     "postcss": "^8.4.33",
     "prettier": "^2.8.8",
     "tailwindcss": "^3.4.1",
