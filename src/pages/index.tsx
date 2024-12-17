@@ -196,9 +196,8 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
                 content: "オンライン, 部室, KOMAD, その他施設",
               },
               { title: "所属", content: "東京大学工学部丁友会 (2022 年度)" },
-            ].map(({ title, content, link }, idx) => (
+            ].map(({ title, content, link }) => (
               <li
-                key={idx.toString()}
                 className="flex gap-4 border-b border-gray-400 px-6 py-3"
               >
                 <div className="w-24">{title}</div>
