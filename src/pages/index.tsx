@@ -186,19 +186,31 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
               { title: "団体名", content: "ut.code();" },
               { title: "構成人数", content: "20 名程度 (アクティブ)" },
               { title: "部室", content: "駒場キャンパス学生会館 313B 教室" },
-              { title: "X (旧 Twitter)", content: "@utokyo_code" },
+              {
+                title: "𝕏",
+                content: "@utokyo_code",
+                link: "https://x.com/utokyo_code",
+              },
               {
                 title: "活動場所",
                 content: "オンライン, 部室, KOMAD, その他施設",
               },
               { title: "所属", content: "東京大学工学部丁友会 (2022 年度)" },
-            ].map(({ title, content }) => (
-              <li
-                key={title}
-                className="flex gap-4 border-b border-gray-400 px-6 py-3"
-              >
+            ].map(({ title, content, link }) => (
+              <li className="flex gap-4 border-b border-gray-400 px-6 py-3">
                 <div className="w-24">{title}</div>
-                <div className="flex-1">{content}</div>
+                {link ? (
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 text-blue-500 underline"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div className="flex-1">{content}</div>
+                )}
               </li>
             ))}
           </ul>
