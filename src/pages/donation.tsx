@@ -28,20 +28,8 @@ export default function DonationPage() {
           </p>
           <h2>協賛による支援</h2>
           <p>
-            {/* eslint-disable prettier/prettier */}
-            企業様からの資金協賛による支援を募集しています。
-            ご協賛いただいた企業様には、ut.code(); ウェブサイトに企業ロゴを掲載するほか、ut.code();の
-            Slack ワークスペースに求人情報、広報を掲載いたします。
-            {/* eslint-enable prettier/prettier */}
+            ut.code();は、ウェブサイトにご協賛いただいた企業様のロゴを掲載しております。
           </p>
-          <p>
-            {/* eslint-disable prettier/prettier */}
-            協賛をご検討の場合は、ut.code(); 公式のメールアドレスまでご連絡ください。
-            {/* eslint-enable prettier/prettier */}
-          </p>
-          <div className="not-prose">
-            <ActionButton to="/contact/">ut.code(); の連絡先</ActionButton>
-          </div>
           <h2>ご寄付による支援</h2>
           <p>
             ご寄付いただける方は、以下の口座にお振込みください。
@@ -57,19 +45,15 @@ export default function DonationPage() {
           </div>
           <h2>使用しなくなったノートパソコンの譲渡</h2>
           <p>
-            {/* eslint-disable prettier/prettier */}
             ut.code();
             では例年、五月祭・駒場祭で外部のお客様向けにプログラミングを学ぶことのできる企画を行っています。
             この企画では、皆様に気軽にお越しいただけるよう、会場内でノートパソコンを貸し出しています。
             各々が持ち寄ったノートパソコンを使用してはいますが、それだけでは台数が足りないため、外部の事業者にレンタルを依頼せざるを得ず、その費用負担が問題となっています。
-            {/* eslint-enable prettier/prettier */}
           </p>
           <p>
-            {/* eslint-disable prettier/prettier */}
             そこで、ut.code();
             では、使用しなくなったノートパソコンを譲渡していただける方を募集しています。
             保存されているデータは幣団体で削除する処理を行いますが、情報漏洩については責任を負うことができませんので、送付前にデータの削除をお願いいたします。
-            {/* eslint-enable prettier/prettier */}
           </p>
           <div className="not-prose">
             <ActionButton to="/contact/">ut.code(); の連絡先</ActionButton>
