@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 import { Link } from "gatsby";
+import { FaXTwitter } from "react-icons/fa6";
 import ActionButton from "./ActionButton";
 import Logo from "./Logo";
 
@@ -9,7 +10,7 @@ function FooterSection({
   links,
 }: {
   title: string;
-  links: { title: string; to: string }[];
+  links: { title: string | JSX.Element; to: string }[];
 }) {
   return (
     <div>
@@ -74,7 +75,7 @@ export default function GlobalFooter({ className }: { className?: string }) {
                 to: "https://first-programming.utcode.net/",
               },
               { title: "GitHub", to: "https://github.com/ut-code" },
-              { title: "𝕏", to: "https://twitter.com/utokyo_code" },
+              { title: <FaXTwitter />, to: "https://twitter.com/utokyo_code" },
             ]}
           />
         </div>

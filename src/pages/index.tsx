@@ -6,6 +6,7 @@ import {
   FiBox,
   FiMessageSquare,
 } from "react-icons/fi";
+import { FaXTwitter } from "react-icons/fa6";
 import { StaticImage } from "gatsby-plugin-image";
 import GlobalHeader from "../components/GlobalHeader";
 import ActionButton from "../components/ActionButton";
@@ -188,7 +189,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
               { title: "構成人数", content: "20 名程度 (アクティブ)" },
               { title: "部室", content: "駒場キャンパス学生会館 313B 教室" },
               {
-                title: "𝕏",
+                title: <FaXTwitter />,
                 content: "@utokyo_code",
                 link: "https://x.com/utokyo_code",
               },
