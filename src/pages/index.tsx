@@ -61,7 +61,8 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
               <div className="prose mt-3">
                 <p>
                   ut.code(); は、2019
-                  年設立の東京大学のソフトウェアエンジニアリングコミュニティです。
+                  年発足の東京大学のソフトウェアエンジニアリングコミュニティ・プログラミングサークルです。
+                  プログラミングの学習から、実社会で役立つソフトウェア製作まで、幅広い活動を行っています。
                 </p>
               </div>
               <ActionButton to="/join/" className="mt-4">
