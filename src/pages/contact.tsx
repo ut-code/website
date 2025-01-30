@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import { FaXTwitter } from "react-icons/fa6";
 import GlobalFooter from "../components/GlobalFooter";
 import GlobalHeader from "../components/GlobalHeader";
 import CommonHead from "../components/CommonHead";
@@ -35,7 +34,7 @@ export default function ContactPage() {
           <p>ut.code(); へのお問い合わせは、各種 SNS をご利用ください。</p>
           <p className="not-prose flex gap-4">
             <ActionButton to="https://twitter.com/utokyo_code">
-              <FaXTwitter /> (旧 Twitter)
+              X (旧 Twitter)
             </ActionButton>
             <ActionButton to="https://line.me/ti/p/%40nlr3843e">
               LINE
