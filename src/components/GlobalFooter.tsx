@@ -9,7 +9,7 @@ function FooterSection({
   links,
 }: {
   title: string;
-  links: { title: string | JSX.Element; to: string }[];
+  links: { title: string; to: string }[];
 }) {
   return (
     <div>
