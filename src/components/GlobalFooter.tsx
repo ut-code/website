@@ -74,7 +74,7 @@ export default function GlobalFooter({ className }: { className?: string }) {
                 to: "https://first-programming.utcode.net/",
               },
               { title: "GitHub", to: "https://github.com/ut-code" },
-              { title: "𝕏", to: "https://twitter.com/utokyo_code" },
+              { title: "X", to: "https://twitter.com/utokyo_code" },
             ]}
           />
         </div>
