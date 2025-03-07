@@ -5,6 +5,7 @@ import nullthrows from "nullthrows";
 import Color from "color";
 import clsx from "clsx";
 import { FiGithub, FiGlobe } from "react-icons/fi";
+import { FaXTwitter } from "react-icons/fa6";
 import GlobalHeader from "../components/GlobalHeader";
 import GlobalFooter from "../components/GlobalFooter";
 import CommonHead from "../components/CommonHead";
@@ -66,9 +67,9 @@ export default function MemberPage({
                     target="_blank"
                     className={socialButtonClassName}
                     rel="noreferrer"
-                    aria-label="𝕏 (旧 Twitter) を見る"
+                    aria-label="X (旧 Twitter) を見る"
                   >
-                    𝕏
+                    <FaXTwitter />
                   </a>
                 )}
                 {data.mdx?.frontmatter?.website && (
