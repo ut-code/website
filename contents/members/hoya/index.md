@@ -1,5 +1,5 @@
 ---
-nameJa:  大矢 宏輝
+nameJa: 大矢 宏輝
 nameEn: Hiroki Oya
 slug: hoya
 date: 2024-08-04

@@ -1,0 +1,36 @@
+---
+// interface Props {
+//   title: string;
+//   image: string; // URL of image
+//   url: string;
+// }
+// const { title, url, image } = Astro.props;
+import "../global.css";
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>ut.code();</title>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="ut.code(); は 2019 年設立の東京大学のソフトウェアエンジニアリングコミュニティです。"
+    />
+    <meta
+      property="og:site_name"
+      content="ut.code(); - 東京大学のソフトウェアエンジニアリングコミュニティ"
+    />
+    <!-- <meta property="og:title" content={title} /> -->
+    <!-- <meta property="og:image" content={image} /> -->
+    <!-- <meta property="og:url" content={url} /> -->
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@utokyo_code" />
+    <meta
+      name="keywords"
+      content="ソフトウェア,エンジニアリング,ソフトウェアエンジニアリング,プログラミング,東京大学,サークル"
+    />
+  </head>
+  <body> <slot /> </body>
+</html>
