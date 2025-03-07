@@ -19,7 +19,7 @@ export default function MemberPage({
   const dominantColor = new Color(
     data.mdx?.frontmatter?.upperBodyImage?.childImageSharp?.gatsbyImageData
       .backgroundColor ?? "white",
-    "hex"
+    "hex",
   );
   const isDark = dominantColor.isDark();
   const backgroundColorHex = isDark
@@ -28,7 +28,7 @@ export default function MemberPage({
 
   const socialButtonClassName = clsx(
     "-m-1 p-1 rounded-xl",
-    isDark ? "hover:brightness-90" : "hover:brightness-110"
+    isDark ? "hover:brightness-90" : "hover:brightness-110",
   );
 
   return (
@@ -95,7 +95,7 @@ export default function MemberPage({
                 image={nullthrows(
                   data.mdx?.frontmatter?.faceImage?.childImageSharp
                     ?.gatsbyImageData,
-                  "メンバーの顔写真が指定されていません。"
+                  "メンバーの顔写真が指定されていません。",
                 )}
                 className="w-full h-full"
               />
@@ -107,7 +107,7 @@ export default function MemberPage({
                 image={nullthrows(
                   data.mdx?.frontmatter?.upperBodyImage?.childImageSharp
                     ?.gatsbyImageData,
-                  "画像が指定されていません。"
+                  "画像が指定されていません。",
                 )}
               />
             </div>
@@ -137,11 +137,11 @@ export default function MemberPage({
 export function Head({ data }: HeadProps<Queries.MemberPageQuery>) {
   const nameJa = nullthrows(
     data.mdx?.frontmatter?.nameJa,
-    "名前が指定されていません"
+    "名前が指定されていません",
   );
   const nameEn = nullthrows(
     data.mdx?.frontmatter?.nameEn,
-    "英語名が指定されていません"
+    "英語名が指定されていません",
   );
   return (
     <CommonHead

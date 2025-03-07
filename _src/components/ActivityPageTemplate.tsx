@@ -64,7 +64,7 @@ function Section({
             {
               left: "lg:ml-auto lg:rounded-l-2xl",
               right: "lg:rounded-r-2xl",
-            }[edge]
+            }[edge],
           )}
         >
           {renderImage("w-full h-full")}

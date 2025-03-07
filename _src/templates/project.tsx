@@ -23,7 +23,7 @@ export default function ProjectPage({
             alt="プロジェクト画像"
             image={nullthrows(
               data.mdx?.frontmatter?.image?.childImageSharp?.gatsbyImageData,
-              "画像が指定されていません。"
+              "画像が指定されていません。",
             )}
           />
           <div className="container px-4 mt-8 mx-auto lg:flex-1 lg:mx-0">
@@ -101,7 +101,7 @@ export default function ProjectPage({
 export function Head({ data }: HeadProps<Queries.ProjectPageQuery>) {
   const title = nullthrows(
     data.mdx?.frontmatter?.title,
-    "タイトルが指定されていません"
+    "タイトルが指定されていません",
   );
   return (
     <CommonHead

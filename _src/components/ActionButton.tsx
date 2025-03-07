@@ -21,7 +21,7 @@ export default function ActionButton({
       className={clsx(
         "flex items-center w-max px-6 py-3 gap-4 rounded-full bg-white text-black font-bold hover:brightness-95",
         variant === "light" && "border border-black",
-        className
+        className,
       )}
     >
       <div>{children}</div>

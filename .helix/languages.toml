@@ -1,0 +1,3 @@
+[[language]]
+name = "jsonc"
+file-types = ["jsonc", { glob = "package.json" }]

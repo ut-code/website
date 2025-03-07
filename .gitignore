@@ -1,9 +1,9 @@
 /node_modules/
 
 # artifact
-/.cache/
-/public
+/.astro/
 src/gatsby-types.d.ts
+dist
 
 # editor
 .DS_Store
