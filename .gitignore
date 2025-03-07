@@ -1,8 +1,8 @@
-node_modules/
+/node_modules/
 
 # artifact
-.cache/
-public
+/.cache/
+/public
 src/gatsby-types.d.ts
 
 # editor
@@ -11,6 +11,4 @@ src/gatsby-types.d.ts
 !.vscode/extensions.json
 
 # env
-.envrc
 .direnv
-shell.nix

@@ -1,12 +1,10 @@
 {
-  "name": "website2",
-  "version": "1.0.0",
+  "name": "website",
+  "version": "3.0.0",
   "private": true,
-  "description": "website2",
+  "description": "website of ut.code();, version 3",
   "author": "chelproc",
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
