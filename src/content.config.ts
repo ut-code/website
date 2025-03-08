@@ -3,16 +3,24 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 
-import { ArticleSchema, MemberSchema } from "./schema.ts";
+import {
+  CreateArticleSchema,
+  CreateProjectSchema,
+  MemberSchema,
+} from "./schema.ts";
 
 const articles = defineCollection({
   loader: glob({ base: "./contents/articles", pattern: "*/index.mdx" }),
-  schema: ArticleSchema,
+  schema: CreateArticleSchema,
 });
 
 const members = defineCollection({
   loader: glob({ base: "./contents/members", pattern: "*/index.{md,mdx}" }),
   schema: MemberSchema,
 });
+const projects = defineCollection({
+  loader: glob({ base: "./contents/projects", pattern: "*/index.{md,mdx}" }),
+  schema: CreateProjectSchema,
+});
 
-export const collections = { articles, members };
+export const collections = { articles, members, projects };

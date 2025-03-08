@@ -1,7 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
 
-console.log("members collection:", await getCollection("members"));
 export async function getStaticPaths() {
   const members = await getCollection("members");
   return members.map((member) => ({
@@ -12,10 +11,10 @@ export async function getStaticPaths() {
 
 const { member } = Astro.props;
 const { Content } = await render(member);
-import Meta from "../../layout/meta.astro";
+import GlobalLayout from "../../layouts/GlobalLayout.astro";
 ---
 
-<Meta>
+<GlobalLayout>
   Member!
   <Content />
-</Meta>
+</GlobalLayout>

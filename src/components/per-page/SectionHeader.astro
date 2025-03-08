@@ -1,0 +1,11 @@
+---
+// used in index.astro
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+const { title, subtitle } = Astro.props;
+---
+
+<h2 class="text-center text-4xl">{title}</h2>
+{subtitle && <h3 class="mt-2 text-center text-sm text-gray-500">{subtitle}</h3>}

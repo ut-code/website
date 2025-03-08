@@ -1,1 +1,7 @@
-{ "recommendations": ["dbaeumer.vscode-eslint", "apollographql.vscode-apollo"] }
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "apollographql.vscode-apollo",
+        "astro-build.astro-vscode"
+    ]
+}

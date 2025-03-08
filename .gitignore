@@ -2,6 +2,7 @@
 
 # artifact
 /.astro/
+/dist
 src/gatsby-types.d.ts
 dist
 

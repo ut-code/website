@@ -1,16 +1,33 @@
+import type { ImageFunction } from "astro:content";
 import { z } from "astro:schema";
 
-export type Article = z.infer<typeof ArticleSchema>;
+export type Article = z.infer<ReturnType<typeof CreateArticleSchema>>;
 export type Member = z.infer<typeof MemberSchema>;
+export type Project = z.infer<ReturnType<typeof CreateProjectSchema>>;
 
-export const ArticleSchema = z.object({
-  // excerpt: z.string().nullable(),
-  // longExcerpt: z.string().nullable(),
-  date: z.date().nullable(),
-  slug: z.string().nullable(),
-  title: z.string().nullable(),
-  image: z.string().optional(),
-});
+export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
+  z.object({
+    // excerpt: z.string().nullable(),
+    // longExcerpt: z.string().nullable(),
+    date: z.date(),
+    slug: z.string().nullable(),
+    title: z.string().nullable(),
+    image: image(),
+  });
+
+export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
+  z.object({
+    title: z.string(),
+    slug: z.string(),
+    order: z.number().optional(),
+    date: z.date(),
+    image: image(),
+    description: z.string(),
+    tags: z.array(z.string()),
+    github: z.string().url().optional(),
+    youtube: z.string().url().optional(),
+    website: z.string().url().optional(),
+  });
 
 export const MemberSchema = z.object({
   nameJa: z.string(),

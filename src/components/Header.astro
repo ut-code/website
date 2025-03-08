@@ -1,0 +1,96 @@
+---
+import { Icon } from "astro-icon/components";
+import Logo from "./Logo.astro";
+
+const links = [
+  { title: "プロジェクト", to: "/projects/" },
+  { title: "記事", to: "/articles/" },
+  { title: "メンバー", to: "/members/" },
+  { title: "参加", to: "/join/" },
+  { title: "お問い合わせ", to: "/contact/" },
+];
+---
+
+<header class="sticky">
+  {
+    /* <div class="flex gap-4 justify-center items-center px-1 py-3 md:py-1 bg-green-400">
+        <span>
+          <span class="hidden sm:inline">
+            「AI で日常を便利に」をテーマとした
+          </span>
+          ハッカソンを開催します
+        </span>
+        <a
+          to="/articles/coeteco-hack-2-announcement/"
+          class="inline-flex items-center flex-shrink-0 gap-0.5 hover:underline"
+        >
+          詳細はこちら
+          <FiArrowRight />
+        </a>
+      </div> */
+  }
+  <div class="h-16 flex">
+    <a href="/" class="flex items-center px-4">
+      <Logo class="w-36" variant="default" />
+    </a>
+    <div aria-hidden class="flex-grow"></div>
+    <ul class="hidden md:flex">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.to}
+              class="flex items-center h-full px-6 hover:bg-gray-100"
+            >
+              {link.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <button
+      type="button"
+      class="flex justify-center items-center w-16 h-full hover:bg-gray-100 md:hidden"
+      popovertarget="navigation_panel"
+      popovertargetaction="toggle"
+    >
+      <Icon name="feather:menu" class="w-6 h-6 text-gray-600" />
+    </button>
+  </div>
+</header>
+<div
+  id="navigation_panel"
+  popover
+  class="w-full
+    absolute
+    top-16
+    transition-opacity
+    duration-300"
+>
+  <ul class="">
+    {
+      links.map((link) => (
+        <li>
+          <a href={link.to} class="block px-4 py-2 hover:bg-gray-100">
+            {link.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+<style>
+  /* https://stackoverflow.com/questions/77042256/css-transition-animation-not-working-for-popover-attribute */
+  /* TODO: not working now */
+  [popover] {
+    &:popover-open {
+      @starting-style {
+        opacity: 0;
+      }
+      opacity: 1;
+    }
+    transition:
+      opacity 0.3s,
+      display 0.3s allow-discrete;
+  }
+</style>

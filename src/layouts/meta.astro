@@ -13,7 +13,7 @@ interface Props {
 const { title, description, keywords = [], image, url } = Astro.props;
 ---
 
-<html lang="ja">
+<html lang="ja" class="min-h-full">
   <head>
     <title>{title ? title + " | ut.code();" : "ut.code();"}</title>
     <meta charset="utf-8" />
@@ -44,5 +44,5 @@ const { title, description, keywords = [], image, url } = Astro.props;
     <!-- )} -->
   </head>
 
-  <body> <slot /> </body>
+  <body class="min-h-full"> <slot /> </body>
 </html>

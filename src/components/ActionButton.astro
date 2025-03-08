@@ -1,5 +1,5 @@
 ---
-import { FiArrowRight } from "react-icons/fi";
+import { Icon } from "astro-icon/components";
 
 interface Props {
   to: string;
@@ -20,6 +20,6 @@ const { to, variant, class: className } = Astro.props;
 >
   <slot />
   <div>
-    <FiArrowRight className="w-8 h-8" />
+    <Icon name="feather:arrow-right" class="w-8 h-8" />
   </div>
 </a>

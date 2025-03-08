@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 import { IconType } from "react-icons";
 import ActionButton from "./ActionButton";
 import GlobalFooter from "./GlobalFooter";
-import GlobalHeader from "./GlobalHeader";
+import GlobalHeader from "./Header.astro";
 import JoinUsCTA from "./JoinUsCTA.astro";
 
 function Layout({ type, children }: { type: string; children: ReactNode }) {

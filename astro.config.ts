@@ -3,12 +3,24 @@ import { defineConfig } from "astro/config";
 import tailwind from "@tailwindcss/vite";
 
 import mdx from "@astrojs/mdx";
+import icon from "astro-icon";
+// import { visualizer } from "rollup-plugin-visualizer";
 
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwind()],
+    plugins: [
+      tailwind(),
+      // visualizer({ emitFile: true, filename: "stats.html" }),
+    ],
   },
 
-  integrations: [mdx()],
+  integrations: [
+    icon({
+      include: {
+        feather: ["*"],
+      },
+    }),
+    mdx(),
+  ],
 });

@@ -5,5 +5,6 @@ pkgs.mkShell {
     pkgs.biome
     # why gatsby
     pkgs.python312
+    pkgs.nodejs-slim # required by astro to find sharp
   ];
 }

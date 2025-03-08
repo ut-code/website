@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import type { Project } from "../schema";
+
+interface Props {
+  projects: Project[];
+  class?: string;
+}
+const props = Astro.props;
+const { projects } = props;
+// export const query = graphql`
+//   fragment ProjectListProject on Mdx {
+//     id
+//     frontmatter {
+//       date
+//       slug
+//       title
+//       image {
+//         childImageSharp {
+//           gatsbyImageData(
+//             width: 800
+//             height: 600
+//             transformOptions: { fit: INSIDE }
+//           )
+//         }
+//       }
+//       description
+//     }
+//   }
+// `;
+---
+
+<ul class:list={["grid md:grid-cols-2 xl:grid-cols-3 gap-9", props.class]}>
+  {
+    projects.map((project) => (
+      <li class="contents">
+        <a
+          class="hover:brightness-95 rounded-xl overflow-clip border border-gray-200 bg-white"
+          href={`/projects/${project.slug}/`}
+        >
+          <Image
+            width="100"
+            height={48 * 4}
+            alt="プロジェクトのイメージ画像"
+            src={project.image}
+            class="object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-xl font-bold">{project.title}</h3>
+            <p class="mt-2 prose">
+              {project.description.length < 120
+                ? project.description
+                : project.description.slice(0, 120)}
+            </p>
+          </div>
+        </a>
+      </li>
+    ))
+  }
+</ul>
