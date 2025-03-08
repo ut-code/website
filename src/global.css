@@ -1,1 +1,7 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* do we need this? */
+:root {
+  --color-primary-main: #00d372;
+}
