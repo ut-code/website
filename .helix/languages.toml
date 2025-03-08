@@ -1,6 +1,10 @@
+[language-servers]
+astro-ls = { command = "astro-ls", args = ["--stdio"] }
+
 [[language]]
 name = "astro"
 formatter = { command = "bun", args = ["prettier", "--parser", "astro"] }
+language-servers = ["astro-ls"]
 [[language]]
 name = "typescript"
 formatter = { command = "bun", args = ["prettier", "--parser", "typescript"] }

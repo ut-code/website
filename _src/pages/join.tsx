@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import GlobalFooter from "../components/GlobalFooter";
@@ -103,3 +104,5 @@ export default function JoinPage() {
 export function Head() {
   return <CommonHead title="ut.code(); に参加する" />;
 }
+=======
+>>>>>>> 9135235 (complete /members)

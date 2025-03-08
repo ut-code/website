@@ -2,7 +2,7 @@ import type { ImageFunction } from "astro:content";
 import { z } from "astro:schema";
 
 export type Article = z.infer<ReturnType<typeof CreateArticleSchema>>;
-export type Member = z.infer<typeof MemberSchema>;
+export type Member = z.infer<ReturnType<typeof CreateMemberSchema>>;
 export type Project = z.infer<ReturnType<typeof CreateProjectSchema>>;
 
 export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
@@ -29,13 +29,16 @@ export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
     website: z.string().url().optional(),
   });
 
-export const MemberSchema = z.object({
-  nameJa: z.string(),
-  nameEn: z.string(),
-  date: z.coerce.date(),
-  description: z.string(),
-  github: z.string().optional(),
-});
+export const CreateMemberSchema = ({ image }: { image: ImageFunction }) =>
+  z.object({
+    nameJa: z.string(),
+    nameEn: z.string(),
+    date: z.coerce.date(),
+    description: z.string(),
+    github: z.string().optional(),
+    faceImage: image(),
+    upperBodyImage: image(),
+  });
 
 export enum Focus {
   none = 0,

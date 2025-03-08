@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 
 interface Props {
   variant?: "normal" | "compact";
-  articles: (Article & { body: string })[];
+  articles: { data: Article; body?: string }[];
   class?: string;
 }
 const props = Astro.props;
@@ -53,17 +53,17 @@ const { variant = "normal", articles } = props;
         ? {
             cellClassName: "md:col-span-2 md:row-span-2",
             imageClassName: "h-[350px] md:h-[450px]",
-            excerpt: article.body.slice(0, 120),
+            excerpt: article.body?.slice(0, 120),
           }
         : {
             cellClassName: "",
             imageClassName: "h-[200px]",
-            excerpt: article.body.slice(0, 120),
+            excerpt: article.body?.slice(0, 120),
           };
       return (
         <li class="contents">
           <a
-            href={`/articles/${article.slug}`}
+            href={`/articles/${article.data.slug}`}
             class:list={[
               "block hover:opacity-80",
               additionalProps.cellClassName,
@@ -75,27 +75,19 @@ const { variant = "normal", articles } = props;
                 additionalProps.imageClassName,
               ]}
             >
-              {article.image ? (
-                <Image
-                  alt="カバー画像"
-                  height={48 * 4 * 4}
-                  width={48 * 4 * 4}
-                  src={article.image}
-                  class="w-full h-full object-cover"
-                />
-              ) : (
-                <img
-                  alt="画像なし"
-                  src={noImage.src}
-                  class="w-full h-full object-cover"
-                />
-              )}
+              <Image
+                alt="カバー画像"
+                height={48 * 4 * 4}
+                width={48 * 4 * 4}
+                src={article.data.image}
+                class="w-full h-full object-cover"
+              />
             </div>
             <div class="mt-4">
               <time class="block text-gray-500 text-sm">
-                {format(article.date, "yyyy/MM/dd HH:mm")}
+                {format(article.data.date, "yyyy/MM/dd HH:mm")}
               </time>
-              <h3 class="text-lg font-bold">{article.title}</h3>
+              <h3 class="text-lg font-bold">{article.data.title}</h3>
               <p class="prose max-w-none mt-2">{additionalProps.excerpt}</p>
             </div>
           </a>
@@ -104,5 +96,3 @@ const { variant = "normal", articles } = props;
     })
   }
 </ul>
-); }
-

@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import Logo from "./Logo.astro";
 import { Focus } from "../schema.ts";
+import { ClientRouter } from "astro:transitions";
 
 const links = [
   { title: "プロジェクト", to: "/projects", focus: Focus.projects },
@@ -17,6 +18,7 @@ interface Props {
 const { focus } = Astro.props;
 ---
 
+<ClientRouter />
 <header class="sticky">
   {
     /* <div class="flex gap-4 justify-center items-center px-1 py-3 md:py-1 bg-green-400">
@@ -47,8 +49,8 @@ const { focus } = Astro.props;
             <a
               href={link.to}
               class:list={[
-                "flex items-center h-full px-6 hover:bg-gray-100 navigation-bar",
-                focus === link.focus && "bg-amber-50",
+                "flex items-center h-full px-6 navigation-bar",
+                focus === link.focus && "text-amber-500",
               ]}
             >
               {link.title}

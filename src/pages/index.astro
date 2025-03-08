@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import nullthrows from "nullthrows";
 import { Focus } from "../schema.ts";
 
 import ActionButton from "../components/ActionButton.astro";
@@ -169,14 +168,7 @@ const articles = (await getCollection("articles"))
   <section>
     <div class="container mx-auto px-4 py-12">
       <SectionHeader title="News" subtitle="最新情報" />
-      <ArticleList
-        variant="compact"
-        class="mt-10"
-        articles={articles.map((article) => ({
-          ...article.data,
-          body: nullthrows(article.body),
-        }))}
-      />
+      <ArticleList variant="compact" class="mt-10" {articles} />
       <ActionButton to="/articles" class="mt-8 ml-auto">
         すべての記事
       </ActionButton>

@@ -1,54 +1,27 @@
 ---
-import GlobalLayout from "../../layouts/GlobalLayout.astro";
-import JoinUsCTA from "../../components/JoinUsCTA.astro";
-import ActionButton from "../../components/ActionButton.astro";
-import { getCollection, render } from "astro:content";
-import { Focus, type Project } from "../../schema";
+import type { GetStaticPaths } from "astro";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
-export async function getStaticPaths() {
+import { Focus, type Project } from "../../schema";
+import GlobalLayout from "../../layouts/GlobalLayout.astro";
+import JoinUsCTA from "../../components/JoinUsCTA.astro";
+import ActionButton from "../../components/ActionButton.astro";
+import { getCollection } from "astro:content";
+import { render } from "astro:content";
+
+export const getStaticPaths = (async () => {
   const projects = await getCollection("projects");
   return projects.map((project) => ({
     params: { project: project.id },
     props: { project },
   }));
-}
-
+}) satisfies GetStaticPaths;
 const { project } = Astro.props;
-const content = await render(project);
-
-`
-  query ProjectPage($id: String!) {
-    mdx(id: { eq: $id }) {
-      frontmatter {
-        title
-        description
-        tags
-        github
-        youtube
-        website
-        image {
-          publicURL
-          childImageSharp {
-            gatsbyImageData(
-              width: 1200
-              height: 800
-              transformOptions: { fit: INSIDE, cropFocus: CENTER }
-            )
-            resize(width: 1920, height: 1080, fit: INSIDE) {
-              src
-            }
-          }
-        }
-      }
-      excerpt(pruneLength: 100)
-    }
-  }
-`;
+const { Content } = await render(project);
 ---
 
-<!--- TODO: truncate project.data.body -->
+<!--- TODO: truncate project.body -->
 <GlobalLayout
   title={project.data.title}
   description={project.data.description}
@@ -129,11 +102,11 @@ const content = await render(project);
       <div class="prose max-w-none p-4 rounded-lg bg-gray-100">
         {project.data.description}
       </div>
-      <div class="mt-8 prose max-w-none"><content.Content /></div>
+      <div class="mt-8 prose max-w-none"><Content /></div>
+      <JoinUsCTA
+        class="mt-8"
+        title={`ut.code(); で${project.data.title}を開発しませんか？`}
+      />
     </div>
   </main>
-  <JoinUsCTA
-    class="mt-8"
-    title={`ut.code(); で${project.data.title}を開発しませんか？`}
-  />
 </GlobalLayout>
