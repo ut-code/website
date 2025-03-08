@@ -63,7 +63,7 @@ export default function JoinPage() {
               </ul>
             </li>
             <li>
-              4/12 (土) 新歓講習会
+              4/12 (土) 新歓講習会 (予定)
               <ul>
                 <li>
                   授業形式で HTML・CSS・JavaScript の基礎を学び、簡単な Web
@@ -72,7 +72,7 @@ export default function JoinPage() {
               </ul>
             </li>
             <li>4/15 (火) エンジニア系サークル合同新歓 (4/9 と同じ内容です)</li>
-            <li>4/20 (日) 新歓講習会 (4/12 と同じ内容です)</li>
+            <li>4/20 (日) 新歓講習会 (予定) (4/12 と同じ内容です)</li>
           </ul>
           <p>興味がある方は、ぜひ気軽に参加してみてください！</p>
           <h2>💬 コミュニティについて</h2>
