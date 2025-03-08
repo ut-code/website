@@ -15,8 +15,19 @@ import Hero from "../images/hero.jpg";
 import LabCafe from "../images/lab-cafe.jpg";
 import LogoGMOMedia from "../images/logo-gmo-media.png";
 
-const projects = (await getCollection("projects")).slice(0, 6);
-const articles = (await getCollection("articles")).slice(0, 6);
+const projects = (await getCollection("projects"))
+  .sort((a, b) => {
+    const a_order = a.data.order ?? Number.POSITIVE_INFINITY,
+      b_order = b.data.order ?? Number.POSITIVE_INFINITY;
+    if (a_order !== b_order) {
+      return a_order - b_order;
+    }
+    return b.data.date.getTime() - a.data.date.getTime();
+  })
+  .slice(0, 6);
+const articles = (await getCollection("articles"))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 6);
 ---
 
 <GlobalLayout title={null} description={null} focus={Focus.none}>
