@@ -1,0 +1,25 @@
+---
+import { FiArrowRight } from "react-icons/fi";
+
+interface Props {
+  to: string;
+  variant?: "light" | "dark";
+  class?: string;
+}
+const { to, variant, class: className } = Astro.props;
+---
+
+<a
+  href={to}
+  {...!to.startsWith("/") ? { target: "_blank", rel: "noreferrer" } : {}}
+  class:list={[
+    "flex items-center w-max px-6 py-3 gap-4 rounded-full bg-white text-black font-bold hover:brightness-95",
+    variant === "light" && "border border-black",
+    className,
+  ]}
+>
+  <slot />
+  <div>
+    <FiArrowRight className="w-8 h-8" />
+  </div>
+</a>

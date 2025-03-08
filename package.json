@@ -6,13 +6,14 @@
   "author": "aster-void",
   "keywords": ["astro", "ut.code();"],
   "scripts": {
+    "prepare": "lefthook install && bun sync",
+    "sync": "astro sync",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "type-check": "tsc --noEmit",
-    "prepare": "lefthook install"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.1.0",

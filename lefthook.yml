@@ -1,7 +1,9 @@
 pre-commit:
   parallel: true
   commands:
-    eslint:
+    prettier:
       glob: "*.{js,ts,jsx,tsx,html,svelte,css,md,mdx,astro}"
       run: bun prettier --write {staged_files}
       stage_fixed: true
+    sync:
+      run: bun sync

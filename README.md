@@ -1,11 +1,15 @@
 # ut.code(); 公式ウェブサイト
 
+## 環境構築
+
+### devcontainer
+
 下のボタンを押すと開発環境が起動します。
 起動までしばらく時間がかかるのでお待ちください。
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ut-code/website)
 
-## 環境構築 (手動)
+### 手動
 
 - (必須) Bun >= v1.1.39
 - 任意のエディタ https://docs.astro.build/en/editor-setup/
@@ -13,6 +17,10 @@
 ```shell
 bun install --frozen-lockfile
 ```
+
+## TODO
+
+<https://astro.build/integrations/2/?search=&categories%5B%5D=performance%2Bseo&categories%5B%5D=accessibility>
 
 ## 開発
 

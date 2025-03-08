@@ -4,7 +4,7 @@ import { IconType } from "react-icons";
 import ActionButton from "./ActionButton";
 import GlobalFooter from "./GlobalFooter";
 import GlobalHeader from "./GlobalHeader";
-import JoinUsCTA from "./JoinUsCTA";
+import JoinUsCTA from "./JoinUsCTA.astro";
 
 function Layout({ type, children }: { type: string; children: ReactNode }) {
   return (

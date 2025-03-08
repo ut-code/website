@@ -1,10 +1,6 @@
 [[language]]
 name = "astro"
-formatter = { command = "prettier", args = ["--parser", "astro"] }
+formatter = { command = "bun", args = ["prettier", "--parser", "astro"] }
 [[language]]
 name = "typescript"
 formatter = { command = "bun", args = ["prettier", "--parser", "typescript"] }
-
-[[language]]
-name = "jsonc"
-file-types = ["jsonc", { glob = "package.json" }]

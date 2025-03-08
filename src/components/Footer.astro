@@ -1,0 +1,52 @@
+---
+import ActionButton from "./ActionButton.astro";
+import Logo from "./Logo.astro";
+import FooterSection from "./Footer/FooterSection.astro";
+
+interface Props {
+  class?: string;
+}
+const props = Astro.props;
+---
+
+<footer class:list={["bg-black text-gray-200", props.class]}>
+  <div class="container mx-auto px-8 py-12">
+    <div
+      class="grid md:grid-rows-2 md:grid-cols-2 lg:grid-rows-1 lg:grid-cols-3 gap-x-16 gap-y-8"
+    >
+      <div style={{ gridRow: "1 / -1" }}>
+        <Logo class="w-36" variant="light" />
+        <p class="mt-4 text-sm">
+          東京大学のソフトウェアエンジニアリングコミュニティ
+        </p>
+        <ActionButton to="/join/" variant="dark" class="mx-auto mt-6 md:mx-0">
+          参加する
+        </ActionButton>
+      </div>
+      <FooterSection
+        title="活動"
+        links={[
+          { title: "ご寄付・ご協賛のお願い", to: "/donation/" },
+          { title: "ut.code(); で学習する", to: "/activities/learn/" },
+          { title: "ut.code(); で交流する", to: "/activities/share/" },
+          { title: "ut.code(); で開発する", to: "/activities/develop/" },
+        ]}
+      />
+      <FooterSection
+        title="リンク"
+        links={[
+          { title: "ut.code(); Learn", to: "https://learn.utcode.net/" },
+          {
+            title: "はじめてのプログラミング教室",
+            to: "https://first-programming.utcode.net/",
+          },
+          { title: "GitHub", to: "https://github.com/ut-code" },
+          { title: "X", to: "https://twitter.com/utokyo_code" },
+        ]}
+      />
+    </div>
+    <p class="mt-12 text-center text-sm text-gray-400">
+      &copy; {new Date().getFullYear()} ut.code();
+    </p>
+  </div>
+</footer>

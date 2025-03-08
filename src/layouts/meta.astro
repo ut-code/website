@@ -1,36 +1,48 @@
 ---
-// interface Props {
-//   title: string;
-//   image: string; // URL of image
-//   url: string;
-// }
-// const { title, url, image } = Astro.props;
+// import type { WithContext, Thing } from "schema-dts";
 import "../global.css";
+
+interface Props {
+  title: string | null;
+  description?: string;
+  keywords?: string[];
+  image?: string; // URL of image
+  // linkedData?: WithContext<Thing>;
+  url: string; // absolute path starting with /
+}
+const { title, description, keywords = [], image, url } = Astro.props;
 ---
 
-<!doctype html>
 <html lang="ja">
   <head>
-    <title>ut.code();</title>
+    <title>{title ? title + " | ut.code();" : "ut.code();"}</title>
     <meta charset="utf-8" />
     <meta
       name="description"
-      content="ut.code(); は 2019 年設立の東京大学のソフトウェアエンジニアリングコミュニティです。"
+      content={description ||
+        "東京大学のソフトウェアエンジニアリングコミュニティ"}
     />
-    <meta
-      property="og:site_name"
-      content="ut.code(); - 東京大学のソフトウェアエンジニアリングコミュニティ"
-    />
-    <!-- <meta property="og:title" content={title} /> -->
-    <!-- <meta property="og:image" content={image} /> -->
-    <!-- <meta property="og:url" content={url} /> -->
+    <link rel="icon" />
+    <meta property="og:site_name" content="ut.code();" />
+    <meta property="og:title" content={title} />
+    <!-- TODO: make the origin flexible -->
+    <meta property="og:image" content={"https://utcode.net" + image} />
+    <meta property="og:url" content={"https://utcode.net" + url} />
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@utokyo_code" />
     <meta
       name="keywords"
-      content="ソフトウェア,エンジニアリング,ソフトウェアエンジニアリング,プログラミング,東京大学,サークル"
+      content={[
+        ...keywords,
+        "ソフトウェアエンジニアリング,プログラミング,東京大学,サークル",
+      ].join(",")}
     />
+    <!-- 何だこれ -->
+    <!-- {linkedData && ( -->
+    <!-- <script type="application/ld+json">{JSON.stringify(linkedData)}</script> -->
+    <!-- )} -->
   </head>
+
   <body> <slot /> </body>
 </html>
