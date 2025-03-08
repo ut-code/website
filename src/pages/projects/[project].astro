@@ -1,0 +1,139 @@
+---
+import GlobalLayout from "../../layouts/GlobalLayout.astro";
+import JoinUsCTA from "../../components/JoinUsCTA.astro";
+import ActionButton from "../../components/ActionButton.astro";
+import { getCollection, render } from "astro:content";
+import { Focus, type Project } from "../../schema";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { project: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const content = await render(project);
+
+`
+  query ProjectPage($id: String!) {
+    mdx(id: { eq: $id }) {
+      frontmatter {
+        title
+        description
+        tags
+        github
+        youtube
+        website
+        image {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(
+              width: 1200
+              height: 800
+              transformOptions: { fit: INSIDE, cropFocus: CENTER }
+            )
+            resize(width: 1920, height: 1080, fit: INSIDE) {
+              src
+            }
+          }
+        }
+      }
+      excerpt(pruneLength: 100)
+    }
+  }
+`;
+---
+
+<!--- TODO: truncate project.data.body -->
+<GlobalLayout
+  title={project.data.title}
+  description={project.data.description}
+  focus={Focus.projects}
+>
+  <main>
+    <div
+      class="lg:flex lg:flex-row-reverse lg:items-center lg:gap-4 lg:max-w-screen-lg lg:mx-auto lg:py-12 lg:px-4"
+    >
+      <Image
+        class="w-full h-64 md:h-96 lg:w-[600px] lg:h-[400px] lg:rounded-2xl"
+        alt="プロジェクト画像"
+        src={project.data.image}
+      />
+      <div class="container px-4 mt-8 mx-auto lg:flex-1 lg:mx-0">
+        <p class="flex items-center gap-1 text-gray-600">
+          <Icon name="feather:layers" />
+          <span>Project</span>
+        </p>
+        <h1 class="mt-2 text-3xl lg:text-5xl">
+          {project.data.title}
+        </h1>
+        {
+          project.data.tags && (
+            <ul class="flex flex-wrap gap-2 mt-4 lg:mt-6">
+              {project.data.tags.map((tag: string) => (
+                <li class="px-3 border border-current rounded-full text-sm leading-relaxed lg:text-base">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          )
+        }
+        {
+          /* 表示する icon が無いときは、親要素の高さの分間隔が広くなりすぎるので、親要素ごと表示しないようにする。 */
+        }
+        {
+          (project.data.github || project.data.youtube) && (
+            <>
+              <div class="flex gap-4 mt-6 text-4xl">
+                {project.data.github && (
+                  <a
+                    href={project.data.github}
+                    target="_blank"
+                    class="-m-1 p-1 rounded-xl hover:bg-gray-100"
+                    rel="noreferrer"
+                    aria-label="GitHubを見る"
+                  >
+                    <Icon name="feather:github" />
+                  </a>
+                )}
+              </div>
+              {project.data.youtube && (
+                <a
+                  href={project.data.youtube}
+                  target="_blank"
+                  class="-m-1 p-1 rounded-xl hover:bg-gray-100"
+                  rel="noreferrer"
+                  aria-label="YouTubeを見る"
+                >
+                  <Icon name="feather:youtube" />
+                </a>
+              )}
+            </>
+          )
+        }
+        {
+          project.data.website && (
+            <ActionButton to={project.data.website} class="my-6">
+              <Icon name="feather:globe" class="inline-block w-6 h-6 mr-2" />
+              <span>{project.data.title} へ</span>
+            </ActionButton>
+          )
+        }
+      </div>
+    </div>
+    <div class="container mt-6 mx-auto px-4 lg:max-w-screen-lg">
+      <div class="prose max-w-none p-4 rounded-lg bg-gray-100">
+        {project.data.description}
+      </div>
+      <div class="mt-8 prose max-w-none"><content.Content /></div>
+    </div>
+  </main>
+  <JoinUsCTA
+    class="mt-8"
+    title={`ut.code(); で${project.data.title}を開発しませんか？`}
+  />
+</GlobalLayout>

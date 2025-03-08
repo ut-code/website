@@ -1,0 +1,36 @@
+---
+import GlobalLayout from "../layouts/GlobalLayout.astro";
+import ProjectList from "../components/ProjectList.astro";
+import { getCollection } from "astro:content";
+import { Focus } from "../schema";
+
+`
+  query ProjectsPage {
+    allMdx(
+      filter: {
+        internal: { contentFilePath: { glob: "**/contents/projects/**" } }
+      }
+      sort: [{ frontmatter: { order: ASC } }, { frontmatter: { date: DESC } }]
+    ) {
+      nodes {
+        ...ProjectListProject
+      }
+    }
+  }
+`;
+
+interface Props {}
+
+const projects = await getCollection("projects");
+---
+
+<GlobalLayout
+  title="すべてのプロジェクト"
+  description="ut.code(); で開発を行っているプロジェクト一覧です。"
+  focus={Focus.projects}
+>
+  <main class="container mx-auto px-4 py-24">
+    <h1 class="text-4xl text-center">プロジェクト</h1>
+    <ProjectList class="mt-16" {projects} />
+  </main>
+</GlobalLayout>

@@ -23,4 +23,9 @@ export default defineConfig({
     }),
     mdx(),
   ],
+
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: "hover",
+  },
 });

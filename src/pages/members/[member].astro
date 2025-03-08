@@ -1,4 +1,6 @@
 ---
+import GlobalLayout from "../../layouts/GlobalLayout.astro";
+import { Focus } from "../../schema";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -11,10 +13,13 @@ export async function getStaticPaths() {
 
 const { member } = Astro.props;
 const { Content } = await render(member);
-import GlobalLayout from "../../layouts/GlobalLayout.astro";
 ---
 
-<GlobalLayout>
+<GlobalLayout
+  title={member.data.nameJa}
+  description="ut.code(); のメンバーです。"
+  focus={Focus.members}
+>
   Member!
   <Content />
 </GlobalLayout>

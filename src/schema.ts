@@ -36,3 +36,12 @@ export const MemberSchema = z.object({
   description: z.string(),
   github: z.string().optional(),
 });
+
+export enum Focus {
+  none = 0,
+  projects = 1,
+  articles = 2,
+  members = 3,
+  join = 4,
+  contact = 5,
+}

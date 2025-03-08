@@ -2,10 +2,18 @@
 import Meta from "./meta.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import type { Focus } from "../schema";
+
+interface Props {
+  title: string | null;
+  description: string | null;
+  focus: Focus;
+}
+const { title, description, focus } = Astro.props;
 ---
 
-<Meta title="ut.code();" url="http://localhost:4321">
-  <Header />
+<Meta {title} {description} url="http://localhost:4321">
+  <Header {focus} />
   <slot />
   <Footer />
 </Meta>

@@ -1,14 +1,20 @@
 ---
 import { Icon } from "astro-icon/components";
 import Logo from "./Logo.astro";
+import { Focus } from "../schema.ts";
 
 const links = [
-  { title: "プロジェクト", to: "/projects/" },
-  { title: "記事", to: "/articles/" },
-  { title: "メンバー", to: "/members/" },
-  { title: "参加", to: "/join/" },
-  { title: "お問い合わせ", to: "/contact/" },
+  { title: "プロジェクト", to: "/projects", focus: Focus.projects },
+  { title: "記事", to: "/articles", focus: Focus.articles },
+  { title: "メンバー", to: "/members", focus: Focus.members },
+  { title: "参加", to: "/join", focus: Focus.join },
+  { title: "お問い合わせ", to: "/contact", focus: Focus.contact },
 ];
+
+interface Props {
+  focus: Focus;
+}
+const { focus } = Astro.props;
 ---
 
 <header class="sticky">
@@ -40,7 +46,10 @@ const links = [
           <li>
             <a
               href={link.to}
-              class="flex items-center h-full px-6 hover:bg-gray-100"
+              class:list={[
+                "flex items-center h-full px-6 hover:bg-gray-100 navigation-bar",
+                focus === link.focus && "bg-amber-50",
+              ]}
             >
               {link.title}
             </a>
@@ -57,28 +66,32 @@ const links = [
       <Icon name="feather:menu" class="w-6 h-6 text-gray-600" />
     </button>
   </div>
-</header>
-<div
-  id="navigation_panel"
-  popover
-  class="w-full
+  <div
+    id="navigation_panel"
+    popover
+    class="w-full
     absolute
     top-16
     transition-opacity
     duration-300"
->
-  <ul class="">
-    {
-      links.map((link) => (
-        <li>
-          <a href={link.to} class="block px-4 py-2 hover:bg-gray-100">
-            {link.title}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-</div>
+  >
+    <ul class="">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.to}
+              class="block px-4 py-2 hover:bg-gray-100 transition-all duration-300"
+            >
+              {link.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</header>
+
 <style>
   /* https://stackoverflow.com/questions/77042256/css-transition-animation-not-working-for-popover-attribute */
   /* TODO: not working now */
@@ -92,5 +105,15 @@ const links = [
     transition:
       opacity 0.3s,
       display 0.3s allow-discrete;
+  }
+
+  .navigation-bar {
+    background: linear-gradient(currentColor 0 0) bottom left/
+      var(--underline-width, 0%) 0.1em no-repeat;
+    text-decoration: none;
+    transition: background-size 0.5s;
+  }
+  .navigation-bar:hover {
+    --underline-width: 100%;
   }
 </style>

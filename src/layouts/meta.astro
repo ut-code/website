@@ -1,16 +1,24 @@
 ---
 // import type { WithContext, Thing } from "schema-dts";
+import { getImage } from "astro:assets";
 import "../global.css";
+import Favicon from "../images/favicon.png";
 
 interface Props {
   title: string | null;
-  description?: string;
+  description: string | null;
   keywords?: string[];
   image?: string; // URL of image
   // linkedData?: WithContext<Thing>;
   url: string; // absolute path starting with /
 }
 const { title, description, keywords = [], image, url } = Astro.props;
+
+const favicon = await getImage({
+  src: Favicon,
+  height: 128,
+  width: 128,
+});
 ---
 
 <html lang="ja" class="min-h-full">
@@ -19,10 +27,10 @@ const { title, description, keywords = [], image, url } = Astro.props;
     <meta charset="utf-8" />
     <meta
       name="description"
-      content={description ||
+      content={description ??
         "東京大学のソフトウェアエンジニアリングコミュニティ"}
     />
-    <link rel="icon" />
+    <link rel="icon" href={favicon.src} />
     <meta property="og:site_name" content="ut.code();" />
     <meta property="og:title" content={title} />
     <!-- TODO: make the origin flexible -->
