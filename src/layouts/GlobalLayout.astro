@@ -8,12 +8,13 @@ interface Props {
   title: string | null;
   description: string | null;
   focus: Focus;
+  class?: string;
 }
 const { title, description, focus } = Astro.props;
 ---
 
 <Meta {title} {description} url="http://localhost:4321">
   <Header {focus} />
-  <slot />
+  <body class="min-h-full"> <slot /> </body>
   <Footer />
 </Meta>

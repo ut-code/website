@@ -50,7 +50,7 @@ const { focus } = Astro.props;
               href={link.to}
               class:list={[
                 "flex items-center h-full px-6 navigation-bar",
-                focus === link.focus && "text-amber-500",
+                focus === link.focus && "current",
               ]}
             >
               {link.title}
@@ -98,15 +98,17 @@ const { focus } = Astro.props;
   /* https://stackoverflow.com/questions/77042256/css-transition-animation-not-working-for-popover-attribute */
   /* TODO: not working now */
   [popover] {
+    opacity: 0;
     &:popover-open {
+      opacity: 1;
       @starting-style {
         opacity: 0;
       }
-      opacity: 1;
     }
     transition:
       opacity 0.3s,
-      display 0.3s allow-discrete;
+      display 0.3s;
+    transition-behavior: allow-discrete;
   }
 
   .navigation-bar {
@@ -115,7 +117,14 @@ const { focus } = Astro.props;
     text-decoration: none;
     transition: background-size 0.5s;
   }
+  .navigation-bar.current {
+    background: linear-gradient(lawngreen 0 0) bottom left/
+      var(--underline-width, 0%) 0.1em no-repeat;
+  }
   .navigation-bar:hover {
     --underline-width: 100%;
+    @starting-style {
+      --underline-width: 0%;
+    }
   }
 </style>

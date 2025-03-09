@@ -4,22 +4,33 @@ import { Icon } from "astro-icon/components";
 interface Props {
   to: string;
   variant?: "light" | "dark";
+  "no-motion"?: boolean;
   class?: string;
 }
-const { to, variant, class: className } = Astro.props;
+const props = Astro.props;
+const { to, variant = "dark" } = props;
 ---
 
 <a
   href={to}
   {...!to.startsWith("/") ? { target: "_blank", rel: "noreferrer" } : {}}
   class:list={[
-    "flex items-center w-max px-6 py-3 gap-4 rounded-full bg-white text-black font-bold hover:brightness-95",
-    variant === "light" && "border border-black",
-    className,
+    "not-prose flex items-center w-max px-6 py-3 gap-4 rounded-full bg-white text-black font-bold hover:brightness-95",
+    variant === "dark" && "border border-black",
+    !props["no-motion"] && "motion",
+    Astro.props.class,
   ]}
 >
   <slot />
-  <div>
-    <Icon name="feather:arrow-right" class="w-8 h-8" />
-  </div>
+  <Icon id="icon" name="feather:arrow-right" class="w-8 h-8 relative" />
 </a>
+<style>
+  /* TODO: @media not(prefers-reduced-motion) */
+  #icon {
+    left: -2px;
+    transition: left 0.15s ease-out;
+  }
+  a:hover.motion #icon {
+    left: 6px;
+  }
+</style>
