@@ -2,29 +2,12 @@
 import GlobalLayout from "../layouts/GlobalLayout.astro";
 import ArticleList from "../components/ArticleList.astro";
 import { Focus } from "../schema";
-import { getCollection } from "astro:content";
-
-`
-  query ArticlesPage {
-    allMdx(
-      filter: {
-        internal: { contentFilePath: { glob: "**/contents/articles/**" } }
-      }
-      sort: { frontmatter: { date: DESC } }
-    ) {
-      nodes {
-        ...ArticleListArticle
-      }
-    }
-  }
-`;
 ---
 
 <GlobalLayout
   title="すべての記事"
   description="ut.code(); からの最新情報"
   focus={Focus.articles}
-  url="/articles"
 >
   <main class="container mx-auto px-4 py-24">
     <h1 class="text-center text-4xl">すべての記事</h1>

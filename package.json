@@ -12,6 +12,7 @@
     "prepare": "lefthook install && bun sync",
     "sync": "astro sync",
     "dev": "astro dev",
+    "check": "astro check",
     "build": "astro build",
     "preview": "astro preview",
     "lint": "eslint .",

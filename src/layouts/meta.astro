@@ -9,9 +9,9 @@ interface Props {
   keywords?: string[];
   image?: string; // URL of image
   // linkedData?: WithContext<Thing>;
-  url: string; // absolute path starting with /
 }
-const { title, description, keywords = [], image, url } = Astro.props;
+const { title, description, keywords = [], image } = Astro.props;
+const url = Astro.url.href;
 
 const favicon = await getImage({
   src: Favicon,

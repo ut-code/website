@@ -10,13 +10,12 @@ interface Props {
   description: string | null;
   focus: Focus;
   class?: string;
-  url: `/${string}`; // absolute value of URL. example: /articles
 }
-const { title, description, url, focus } = Astro.props;
+const { title, description, focus } = Astro.props;
 ---
 
 <html lang="ja">
-  <Meta {title} {description} url={url} />
+  <Meta {title} {description} />
   <body class="min-h-full w-full">
     <Header {focus} />
     <slot />
