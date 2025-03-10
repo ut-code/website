@@ -14,7 +14,7 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
     title: z.string().nullable(),
     image: image(),
     categories: z.array(z.string()).optional(),
-    author: reference("members"),
+    author: reference("members").optional(),
   });
 
 export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>

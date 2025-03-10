@@ -15,7 +15,6 @@ import JoinUsCTA from "../../components/JoinUsCTA.astro";
 import { Focus } from "../../schema";
 
 const { article } = Astro.props;
-console.log(article);
 const { Content } = await render(article);
 const author =
   article.data.author && (await getEntry("members", article.data.author?.id));
@@ -26,8 +25,6 @@ if (article.data.author && !author)
       ", searched for author " +
       article.data.author.id,
   );
-
-console.log("author:", article.data.author, author);
 ---
 
 <GlobalLayout
