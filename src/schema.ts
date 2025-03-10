@@ -1,4 +1,4 @@
-import type { ImageFunction } from "astro:content";
+import { reference, type ImageFunction } from "astro:content";
 import { z } from "astro:schema";
 
 export type Article = z.infer<ReturnType<typeof CreateArticleSchema>>;
@@ -13,6 +13,8 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
     slug: z.string().nullable(),
     title: z.string().nullable(),
     image: image(),
+    categories: z.array(z.string()).optional(),
+    author: reference("members"),
   });
 
 export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
@@ -36,10 +38,14 @@ export const CreateMemberSchema = ({ image }: { image: ImageFunction }) =>
     date: z.coerce.date(),
     description: z.string(),
     github: z.string().optional(),
+    twitter: z.string().optional(),
+    website: z.string().url().optional(),
+    "theme-light": z.string().optional(),
     faceImage: image(),
     upperBodyImage: image(),
   });
 
+// ヘッダーのスタイリングに使われています
 export enum Focus {
   none = 0,
   projects = 1,

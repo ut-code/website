@@ -1,4 +1,5 @@
 ---
+import "../global.css";
 import Meta from "./meta.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -9,12 +10,16 @@ interface Props {
   description: string | null;
   focus: Focus;
   class?: string;
+  url: `/${string}`; // absolute value of URL. example: /articles
 }
-const { title, description, focus } = Astro.props;
+const { title, description, url, focus } = Astro.props;
 ---
 
-<Meta {title} {description} url="http://localhost:4321">
-  <Header {focus} />
-  <body class="min-h-full"> <slot /> </body>
-  <Footer />
-</Meta>
+<html lang="ja">
+  <Meta {title} {description} url={url} />
+  <body class="min-h-full w-full">
+    <Header {focus} />
+    <slot />
+    <Footer />
+  </body>
+</html>

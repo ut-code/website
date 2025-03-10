@@ -1,5 +1,7 @@
 ---
-import { getCollection } from "astro:content";
+import { format } from "date-fns";
+import { getCollection, getEntry, render } from "astro:content";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
@@ -8,4 +10,76 @@ export async function getStaticPaths() {
     props: { article },
   }));
 }
+import GlobalLayout from "../../layouts/GlobalLayout.astro";
+import JoinUsCTA from "../../components/JoinUsCTA.astro";
+import { Focus } from "../../schema";
+
+const { article } = Astro.props;
+console.log(article);
+const { Content } = await render(article);
+const author =
+  article.data.author && (await getEntry("members", article.data.author?.id));
+if (article.data.author && !author)
+  throw new Error(
+    "Author not found for article " +
+      article.id +
+      ", searched for author " +
+      article.data.author.id,
+  );
+
+console.log("author:", article.data.author, author);
 ---
+
+<GlobalLayout
+  title={article.data.title}
+  description="ut.code(); のウェブサイトに書かれた記事のひとつです。"
+  focus={Focus.articles}
+  url={`/articles/${article.id}`}
+>
+  {
+    article.data.image && (
+      <div class="mt-6 text-center lg:mt-12 lg:px-8">
+        <Image
+          loading="eager"
+          class="mr-auto ml-auto max-h-200 w-full max-w-screen-lg object-contain lg:isolate lg:overflow-clip lg:rounded-2xl"
+          alt="イメージ画像"
+          src={article.data.image}
+        />
+      </div>
+    )
+  }
+  <time class="mt-12 block text-center text-gray-500 lg:mt-24">
+    {format(article.data.date, "yyyy-MM-dd HH:mm")}
+  </time>
+  {
+    author && (
+      <a
+        href={`/members/${author.id}`}
+        class="mx-auto mt-4 flex max-w-sm items-center gap-4 rounded-lg px-4 py-2 hover:bg-gray-100 lg:mt-8"
+      >
+        <div class="h-14 w-14 overflow-clip rounded-full bg-gray-200">
+          <Image
+            alt="著者の写真"
+            src={author.data.faceImage}
+            class="h-full w-full"
+          />
+        </div>
+        <div class="flex-1">
+          <div class="text-lg">{author.data.nameJa}</div>
+          <div class="text-sm text-gray-800">{author.data.description}</div>
+        </div>
+      </a>
+    )
+  }
+  <main class="prose mx-auto mt-6 mb-80 lg:mt-12">
+    <h1 class="not-prose text-4xl">
+      {article.data.title}
+    </h1>
+    <Content />
+  </main>
+  <JoinUsCTA class="mt-24">
+    ut.code(); に参加する準備はできましたか？
+  </JoinUsCTA>
+</GlobalLayout>
+
+); }

@@ -3,11 +3,11 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 interface Props {
-  variant: "short" | "index";
+  variant: "compact" | "full";
   class?: string;
 }
 const props = Astro.props;
-const { variant } = props;
+const { variant = "full" } = props;
 
 const projects = (await getCollection("projects")).sort((a, b) => {
   const a_order = a.data.order ?? Number.POSITIVE_INFINITY,
@@ -17,25 +17,26 @@ const projects = (await getCollection("projects")).sort((a, b) => {
   }
   return b.data.date.getTime() - a.data.date.getTime();
 });
-if (variant === "short") {
+if (variant === "compact") {
   projects.splice(6);
 }
 ---
 
 <ul class:list={["grid gap-9 md:grid-cols-2 xl:grid-cols-3", props.class]}>
   {
-    projects.map((project) => (
+    projects.map((project, i) => (
       <li
         class:list={[
           "contents",
-          variant === "short" ? "variant-short" : "variant-index",
+          variant === "compact" ? "variant-short" : "variant-index",
         ]}
       >
         <a
-          class="relative top-0 overflow-clip rounded-xl border border-gray-200 bg-white hover:brightness-95 active:top-0.75"
+          class="relative top-0 overflow-clip rounded-xl border border-gray-200 bg-white hover:brightness-95 active:top-0.25"
           href={`/projects/${project.data.slug}`}
         >
           <Image
+            loading={i < 6 ? "eager" : "lazy"}
             width="800"
             height="600"
             alt="プロジェクトのイメージ画像"

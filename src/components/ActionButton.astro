@@ -15,7 +15,7 @@ const { to, variant = "dark" } = props;
   href={to}
   {...!to.startsWith("/") ? { target: "_blank", rel: "noreferrer" } : {}}
   class:list={[
-    "not-prose relative flex w-max items-center gap-4 rounded-full bg-white px-6 py-3 font-bold text-black hover:brightness-95 active:top-0.75",
+    "not-prose relative flex w-max items-center gap-4 rounded-full bg-white px-6 py-3 font-bold text-black hover:brightness-95 active:top-0.25",
     variant === "dark" && "border border-black",
     !props["no-motion"] && "motion",
     Astro.props.class,

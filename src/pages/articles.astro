@@ -18,19 +18,16 @@ import { getCollection } from "astro:content";
     }
   }
 `;
-
-const articles = (await getCollection("articles")).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
-);
 ---
 
 <GlobalLayout
   title="すべての記事"
   description="ut.code(); からの最新情報"
   focus={Focus.articles}
+  url="/articles"
 >
   <main class="container mx-auto px-4 py-24">
     <h1 class="text-center text-4xl">すべての記事</h1>
-    <ArticleList class="mt-16" {articles} />
+    <ArticleList class="mt-16" />
   </main>
 </GlobalLayout>

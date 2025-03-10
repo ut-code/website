@@ -2,6 +2,9 @@
 import GlobalLayout from "../../layouts/GlobalLayout.astro";
 import { Focus } from "../../schema";
 import { getCollection, render } from "astro:content";
+import { Icon } from "astro-icon/components";
+import JoinUsCTA from "../../components/JoinUsCTA.astro";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const members = await getCollection("members");
@@ -17,9 +20,112 @@ const { Content } = await render(member);
 
 <GlobalLayout
   title={member.data.nameJa}
-  description="ut.code(); のメンバーです。"
+  description={`ut.code(); のメンバーの${member.data.nameJa}です。`}
   focus={Focus.members}
+  url={`/members/${member.id}`}
 >
-  Member!
-  <Content />
+  <main class="w-full">
+    <header
+      class="h-70 sm:h-100 lg:h-150"
+      style={`background-color: ${member.data["theme-light"] ?? "#DCFCE7"};`}
+    >
+      <div class="mx-auto flex h-full w-full max-w-5xl items-center">
+        <div class="flex-1 px-4 py-12">
+          <h1 class="text-3xl md:text-5xl lg:text-6xl">
+            {member.data.nameJa}
+          </h1>
+          <h2 class="text-md mt-1 md:mt-4 md:text-xl lg:text-2xl">
+            {member.data.nameEn}
+          </h2>
+          <div class="mt-4 flex gap-4 text-4xl md:mt-6">
+            {
+              member.data.github && (
+                <a
+                  href={`https://github.com/${member.data.github}`}
+                  target="_blank"
+                  class="relative -m-1 h-9 w-9 rounded-xl p-1"
+                  rel="noreferrer"
+                  aria-label="GitHubを見る"
+                >
+                  <Icon
+                    name="feather:github"
+                    class="relative active:top-0.25"
+                  />
+                </a>
+              )
+            }
+            {
+              member.data.twitter && (
+                <a
+                  href={`https://twitter.com/${member.data.twitter}`}
+                  target="_blank"
+                  class="-m-1 rounded-xl p-1"
+                  rel="noreferrer"
+                  aria-label="X (旧 Twitter) を見る"
+                >
+                  <Icon name="feather:twitter" />
+                </a>
+              )
+            }
+            {
+              member.data.website && (
+                <a
+                  href={member.data.website}
+                  target="_blank"
+                  class="-m-1 rounded-xl p-1"
+                  rel="noreferrer"
+                  aria-label="ウェブサイトを見る"
+                >
+                  <Icon name="feather:globe" />
+                </a>
+              )
+            }
+          </div>
+          <hr class="my-4 hidden border-current sm:block md:my-6 lg:my-8" />
+          <p class="sm:text-md mt-6 text-xs sm:mt-0 lg:text-lg">
+            {member.data.description}
+          </p>
+        </div>
+        <div
+          class="mr-4 min-w-[150px] flex-none overflow-clip rounded-full sm:hidden"
+        >
+          <Image
+            alt="メンバー顔写真"
+            width="1000"
+            height="1000"
+            src={member.data.faceImage}
+            class="h-50 w-50 object-cover"
+          />
+        </div>
+        <div class="hidden h-full flex-none sm:block">
+          <Image
+            class="h-full w-100 object-contain lg:w-150"
+            alt="メンバー写真"
+            width="1000"
+            height="1000"
+            src={member.data.upperBodyImage}
+          />
+        </div>
+      </div>
+    </header>
+    <article class="prose mx-auto mt-12 px-8 lg:max-w-screen-md lg:px-0">
+      <Content />
+    </article>
+  </main>
+  <div class="prose mx-auto max-w-screen-md px-4 py-12">
+    <!-- { -->
+    <!-- data.allMdx.nodes.length > 0 && ( -->
+    <!-- <> -->
+    <!-- <h2>{data.mdx?.frontmatter?.nameJa} の記事</h2> -->
+    <!-- <div class="not-prose mt-4"> -->
+    <!-- <ArticleList variant="compact" articles={data.allMdx.nodes} /> -->
+    <!-- </div> -->
+    <!-- </> -->
+    <!-- ) -->
+    <!-- } -->
+  </div>
+
+  <JoinUsCTA class="mt-8">
+    ut.code(); で{member.data.nameJa} に会いましょう
+  </JoinUsCTA>
 </GlobalLayout>

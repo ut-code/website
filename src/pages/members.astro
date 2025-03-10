@@ -16,35 +16,33 @@ const members = (await getCollection("members")).sort(
   title="メンバー"
   description="ut.code(); のメンバーの一覧"
   focus={Focus.members}
+  url="/members"
 >
   <Image
+    loading="eager"
     alt=""
     src={MembersHeader}
     width="1920"
     height="700"
-    class="h-[100vh] w-full object-cover"
+    class="fixed top-0 -z-100 h-[100vh] w-full object-cover"
     style="object-position: 50% 20%;"
+    aria-hidden
   />
-  <main class="isolate container mx-auto -mt-[300px] px-4 py-16">
+  <div class="mt-160">
     <h1
-      class="bg-opacity-80 relative w-max bg-black px-4 py-2 text-6xl text-white sm:text-[8rem]"
+      class="bg-opacity-80 relative mb-6 h-full w-max bg-black px-4 py-2 text-[6rem] text-white sm:text-[8rem] lg:pl-40"
     >
       メンバー
-      <div
-        aria-hidden
-        class="bg-opacity-80 absolute top-0 right-full h-full w-[9999px] bg-black"
-      >
-      </div>
     </h1>
-    <ul
-      class="mt-12 grid gap-4 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4"
-    >
+  </div>
+  <main class="px-4 py-16 backdrop-blur">
+    <ul class="grid w-full gap-8 px-[10%] pt-6 md:grid-cols-2 xl:grid-cols-3">
       {
         members.map((member) => (
           <li class="relative">
             <a
               href={`/members/${member.id}`}
-              class="block drop-shadow-lg hover:brightness-90"
+              class="relative block drop-shadow-lg transition-colors duration-150 hover:brightness-110 active:top-0.5"
             >
               <Image
                 alt={`${member.data?.nameJa} の写真`}
@@ -65,7 +63,7 @@ const members = (await getCollection("members")).sort(
         ))
       }
     </ul>
-    <p class="mt-16 text-gray-600">
+    <p class="mx-[10%] mt-16 text-white">
       このページは準備中です。ほとんどのメンバーの情報は反映されていません。
     </p>
   </main>

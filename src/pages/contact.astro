@@ -12,47 +12,59 @@ import ContactHeader from "../images/contact-header.jpg";
   title="連絡"
   description="ut.code(); 連絡する手段"
   focus={Focus.contact}
+  url="/contact"
 >
   <div class="container mx-auto px-4 pt-16 pb-12">
     <h1 class="text-4xl">ut.code(); に連絡する</h1>
   </div>
   <Image
     alt=""
+    loading="eager"
     src={ContactHeader}
     width="1920"
     height="600"
-    class="h-150 object-cover"
+    class="h-30 object-cover sm:h-50 md:h-100 lg:h-150"
   />
-  <main class="container mx-auto px-4 py-16">
-    <div class="prose max-w-none">
-      <h2>お問い合わせ</h2>
-      <p>ut.code(); へのお問い合わせは、各種 SNS をご利用ください。</p>
-      <p class="not-prose flex gap-4">
-        <ActionButton to="https://twitter.com/utokyo_code">
-          X (旧 Twitter)
-        </ActionButton>
-      </p>
-      <p>
-        メールでのお問い合わせをご希望の方は、次のメールアドレスまでご連絡ください。
-      </p>
-      <p id="email-loader">読込中...</p>
-      <script>
-        // スパム対策
-        setTimeout(() => {
-          const elem = document.getElementById("email-loader");
-          if (!elem) throw new Error("email loader: failed to get element");
-          const addr = `contact${String.fromCharCode(64)}utcode.net`;
-          elem.innerHTML = `<a href=${`mailto:${addr}`}>${addr}</a>`;
-        }, 3000);
-      </script>
-      <h2>ご寄付・ご協賛のお願い</h2>
-      <p>
-        ut.code();
-        では、活動を支援していただける方を募集しております。詳細につきましては、次のページをご覧ください。
-      </p>
-      <p class="not-prose">
-        <ActionButton to="/donation">ご寄付・ご協賛のお願い</ActionButton>
-      </p>
-    </div>
+  <main class="prose mx-auto max-w-none px-16 py-16 md:px-32">
+    <h2>お問い合わせ</h2>
+    <p>ut.code(); へのお問い合わせは、各種 SNS をご利用ください。</p>
+    <p class="not-prose flex gap-4">
+      <ActionButton to="https://twitter.com/utokyo_code">
+        X (旧 Twitter)
+      </ActionButton>
+    </p>
+    <p>
+      メールでのお問い合わせをご希望の方は、次のメールアドレスまでご連絡ください。
+    </p>
+    <p id="email-loader">読込中...</p>
+    <script>
+      console.log("loading email...");
+      // スパム対策
+      function showEmail() {
+        const elem = document.getElementById("email-loader");
+        if (!elem) return;
+        const addr = `contact${String.fromCharCode(64)}utcode.net`;
+        if (elem.innerText !== addr) {
+          elem.innerHTML = `<a href="mailto:${addr}">${addr}</a>`;
+        }
+      }
+      // HACK: setTimeout だとブラウザバックで戻った時、うまく実行されない
+      setInterval(showEmail, 3000);
+    </script>
+    <style>
+      #email-loader[data-loading] {
+        text-decoration: none;
+        pointer-events: none;
+        cursor: default;
+      }
+    </style>
+    <h2>ご寄付・ご協賛のお願い</h2>
+    <p>
+      ut.code();
+      では、活動を支援していただける方を募集しております。詳細につきましては、次のページをご覧ください。
+    </p>
+    <p class="not-prose">
+      <ActionButton to="/donation"> ご寄付・ご協賛のお願い </ActionButton>
+    </p>
   </main>
 </GlobalLayout>

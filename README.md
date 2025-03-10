@@ -22,7 +22,10 @@ bun install --frozen-lockfile
 
 style more
 a11y <https://astro.build/integrations/2/?search=&categories%5B%5D=performance%2Bseo&categories%5B%5D=accessibility>
-pagination https://code.vool.jp/blog/astro-pagination/
+pagination
+
+- https://code.vool.jp/blog/astro-pagination/
+- https://docs.astro.build/en/guides/routing/#pagination
 
 ## 開発
 
