@@ -1,0 +1,32 @@
+---
+import GlobalLayout from "../../layouts/GlobalLayout.astro";
+import JoinUsCTA from "../JoinUsCTA.astro";
+import { Focus } from "../../schema";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  type: string; // TODO: refine it more
+  cover: ImageMetadata;
+}
+const { type, cover } = Astro.props;
+---
+
+<GlobalLayout
+  title={type}
+  description={`ut.code(); の活動内容 - ${type}`}
+  focus={Focus.none}
+>
+  <Image
+    src={cover}
+    alt=""
+    width={1920}
+    height={72 * 4}
+    class="h-72 w-full object-cover md:h-96"
+  />
+  <slot />
+  <JoinUsCTA class="mt-16"
+    >ut.code(); で一緒に<span class="underline underline-offset-4">{type}</span
+    >しませんか？</JoinUsCTA
+  >
+</GlobalLayout>

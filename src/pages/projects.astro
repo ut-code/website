@@ -1,27 +1,7 @@
 ---
 import GlobalLayout from "../layouts/GlobalLayout.astro";
 import ProjectList from "../components/ProjectList.astro";
-import { getCollection } from "astro:content";
 import { Focus } from "../schema";
-
-`
-  query ProjectsPage {
-    allMdx(
-      filter: {
-        internal: { contentFilePath: { glob: "**/contents/projects/**" } }
-      }
-      sort: [{ frontmatter: { order: ASC } }, { frontmatter: { date: DESC } }]
-    ) {
-      nodes {
-        ...ProjectListProject
-      }
-    }
-  }
-`;
-
-interface Props {}
-
-const projects = await getCollection("projects");
 ---
 
 <GlobalLayout
@@ -30,7 +10,7 @@ const projects = await getCollection("projects");
   focus={Focus.projects}
 >
   <main class="container mx-auto px-4 py-24">
-    <h1 class="text-4xl text-center">プロジェクト</h1>
-    <ProjectList class="mt-16" {projects} />
+    <h1 class="text-center text-4xl">プロジェクト</h1>
+    <ProjectList class="mt-16" variant="index" />
   </main>
 </GlobalLayout>

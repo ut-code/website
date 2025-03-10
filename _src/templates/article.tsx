@@ -19,7 +19,7 @@ export default function ArticlePage({
   return (
     <>
       <GlobalHeader />
-      <time className="block mt-12 lg:mt-24 text-center text-gray-500">
+      <time className="mt-12 block text-center text-gray-500 lg:mt-24">
         {format(
           new Date(
             nullthrows(
@@ -30,22 +30,22 @@ export default function ArticlePage({
           "yyyy-MM-dd HH:mm",
         )}
       </time>
-      <h1 className="max-w-screen-md mx-auto mt-2 px-4 text-3xl md:text-4xl text-center">
+      <h1 className="mx-auto mt-2 max-w-screen-md px-4 text-center text-3xl md:text-4xl">
         {data.mdx?.frontmatter?.title}
       </h1>
       {author && (
         <Link
           to={`/members/${author.slug}`}
-          className="flex gap-4 items-center max-w-sm mx-auto mt-4 lg:mt-8 px-4 py-2 rounded-lg hover:bg-gray-100"
+          className="mx-auto mt-4 flex max-w-sm items-center gap-4 rounded-lg px-4 py-2 hover:bg-gray-100 lg:mt-8"
         >
-          <div className="w-14 h-14 rounded-full overflow-clip bg-gray-200">
+          <div className="h-14 w-14 overflow-clip rounded-full bg-gray-200">
             <GatsbyImage
               alt="著者の写真"
               image={nullthrows(
                 author.faceImage?.childImageSharp?.gatsbyImageData,
                 "著者の写真が指定されていません。",
               )}
-              className="w-full h-full"
+              className="h-full w-full"
             />
           </div>
           <div className="flex-1">
@@ -57,13 +57,13 @@ export default function ArticlePage({
       {imageData && (
         <div className="mt-6 text-center lg:mt-12 lg:px-8">
           <GatsbyImage
-            className="w-full max-w-screen-lg max-h-[500px] lg:rounded-2xl lg:overflow-clip lg:isolate"
+            className="max-h-[500px] w-full max-w-screen-lg lg:isolate lg:overflow-clip lg:rounded-2xl"
             alt="イメージ画像"
             image={imageData}
           />
         </div>
       )}
-      <div className="mt-6 lg:mt-12 px-4">
+      <div className="mt-6 px-4 lg:mt-12">
         <div className="prose mx-auto">{children}</div>
       </div>
       <JoinUsCTA

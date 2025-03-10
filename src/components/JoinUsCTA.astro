@@ -1,18 +1,16 @@
 ---
 import ActionButton from "./ActionButton.astro";
 interface Props {
-  title: string;
   class?: string;
 }
 const props = Astro.props;
-const { title } = props;
 ---
 
-<section class:list={["py-12 bg-gray-100", props.class]}>
+<section class:list={["bg-gray-100 py-12", props.class]}>
   <div class="container mx-auto px-4 lg:max-w-screen-lg">
-    <h2 class="text-2xl leading-normal">{title}</h2>
+    <h2 class="text-2xl leading-normal"><slot /></h2>
     <p class="mt-4 text-gray-800">
-      未経験からでも始められます。まずはお気軽にお声掛けください！
+      初めは誰もが未経験です。まずはお気軽にお声掛けください！
     </p>
     <ActionButton class="mt-6" to="/join"> ut.code(); に参加する </ActionButton>
   </div>

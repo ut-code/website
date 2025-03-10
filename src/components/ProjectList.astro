@@ -1,58 +1,53 @@
 ---
 import { Image } from "astro:assets";
-import type { Project } from "../schema";
+import { getCollection } from "astro:content";
 
 interface Props {
-  projects: {
-    data: Project;
-  }[];
+  variant: "short" | "index";
   class?: string;
 }
 const props = Astro.props;
-const { projects } = props;
-// export const query = graphql`
-//   fragment ProjectListProject on Mdx {
-//     id
-//     frontmatter {
-//       date
-//       slug
-//       title
-//       image {
-//         childImageSharp {
-//           gatsbyImageData(
-//             width: 800
-//             height: 600
-//             transformOptions: { fit: INSIDE }
-//           )
-//         }
-//       }
-//       description
-//     }
-//   }
-// `;
+const { variant } = props;
+
+const projects = (await getCollection("projects")).sort((a, b) => {
+  const a_order = a.data.order ?? Number.POSITIVE_INFINITY,
+    b_order = b.data.order ?? Number.POSITIVE_INFINITY;
+  if (a_order !== b_order) {
+    return a_order - b_order;
+  }
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+if (variant === "short") {
+  projects.splice(6);
+}
 ---
 
-<ul class:list={["grid md:grid-cols-2 xl:grid-cols-3 gap-9", props.class]}>
+<ul class:list={["grid gap-9 md:grid-cols-2 xl:grid-cols-3", props.class]}>
   {
     projects.map((project) => (
-      <li class="contents">
+      <li
+        class:list={[
+          "contents",
+          variant === "short" ? "variant-short" : "variant-index",
+        ]}
+      >
         <a
-          class="hover:brightness-95 rounded-xl overflow-clip border border-gray-200 bg-white"
-          href={`/projects/${project.data.slug}/`}
+          class="relative top-0 overflow-clip rounded-xl border border-gray-200 bg-white hover:brightness-95 active:top-0.75"
+          href={`/projects/${project.data.slug}`}
         >
           <Image
             width="800"
             height="600"
             alt="プロジェクトのイメージ画像"
             src={project.data.image}
-            class="w-full h-[16rem] object-cover"
+            class="h-[16rem] w-full object-cover"
           />
           <div class="p-4">
             <h3 class="text-xl font-bold">{project.data.title}</h3>
-            <p class="mt-2 prose">
+            <p class="prose mt-2">
               {project.data.description.length < 120
                 ? project.data.description
-                : project.data.description.slice(0, 120)}
+                : project.data.description.slice(0, 120) + "..."}
             </p>
           </div>
         </a>
@@ -60,3 +55,17 @@ const { projects } = props;
     ))
   }
 </ul>
+
+<style>
+  @import "tailwindcss";
+  @media (max-width: 64rem) {
+    li.variant-short:nth-child(n + 3) {
+      @apply hidden;
+    }
+  }
+  @media (max-width: 80rem) {
+    li.variant-short:nth-child(n + 5) {
+      @apply hidden;
+    }
+  }
+</style>

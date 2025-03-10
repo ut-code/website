@@ -15,7 +15,7 @@ export default function DonationPage() {
       <StaticImage
         alt=""
         src="../images/donation-header.jpg"
-        class="w-full h-48"
+        class="h-48 w-full"
         imgClassName="object-bottom"
       />
       <main className="container mx-auto px-4 py-16">

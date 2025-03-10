@@ -12,7 +12,7 @@ export default function ProjectsPage({
     <>
       <GlobalHeader />
       <main className="container mx-auto px-4 py-24">
-        <h1 className="text-4xl text-center">すべてのプロジェクト</h1>
+        <h1 className="text-center text-4xl">すべてのプロジェクト</h1>
         <ProjectList className="mt-16" projects={data.allMdx.nodes} />
       </main>
       <GlobalFooter />

@@ -41,15 +41,15 @@ export default function MemberPage({
             backgroundColor: backgroundColorHex,
           }}
         >
-          <div className="flex items-center max-w-3xl lg:max-w-5xl mx-auto">
+          <div className="mx-auto flex max-w-3xl items-center lg:max-w-5xl">
             <div className="flex-grow px-4 py-12">
               <h1 className="text-3xl md:text-5xl lg:text-6xl">
                 {data.mdx?.frontmatter?.nameJa}
               </h1>
-              <h2 className="mt-1 md:mt-4 text-md md:text-xl lg:text-2xl">
+              <h2 className="text-md mt-1 md:mt-4 md:text-xl lg:text-2xl">
                 {data.mdx?.frontmatter?.nameEn}
               </h2>
-              <div className="flex gap-4 mt-4 md:mt-6 text-4xl">
+              <div className="mt-4 flex gap-4 text-4xl md:mt-6">
                 {data.mdx?.frontmatter?.github && (
                   <a
                     href={`https://github.com/${data.mdx.frontmatter.github}`}
@@ -84,12 +84,12 @@ export default function MemberPage({
                   </a>
                 )}
               </div>
-              <hr className="hidden sm:block my-4 md:my-6 lg:my-8 border-current" />
-              <p className="mt-6 text-xs sm:mt-0 sm:text-md lg:text-lg">
+              <hr className="my-4 hidden border-current sm:block md:my-6 lg:my-8" />
+              <p className="sm:text-md mt-6 text-xs sm:mt-0 lg:text-lg">
                 {data.mdx?.frontmatter?.description}
               </p>
             </div>
-            <div className="sm:hidden flex-none w-1/3 min-w-[150px] rounded-full overflow-clip mr-4">
+            <div className="mr-4 w-1/3 min-w-[150px] flex-none overflow-clip rounded-full sm:hidden">
               <GatsbyImage
                 alt="メンバー顔写真"
                 image={nullthrows(
@@ -97,10 +97,10 @@ export default function MemberPage({
                     ?.gatsbyImageData,
                   "メンバーの顔写真が指定されていません。",
                 )}
-                className="w-full h-full"
+                className="h-full w-full"
               />
             </div>
-            <div className="hidden sm:block flex-none">
+            <div className="hidden flex-none sm:block">
               <GatsbyImage
                 className="w-[250px] md:w-[300px] lg:w-[400px]"
                 alt="メンバー写真"
@@ -113,22 +113,21 @@ export default function MemberPage({
             </div>
           </div>
         </div>
-        <div className="prose max-w-screen-md mx-auto px-4 py-12">
+        <div className="prose mx-auto max-w-screen-md px-4 py-12">
           {children}
           {data.allMdx.nodes.length > 0 && (
             <>
               <h2>{data.mdx?.frontmatter?.nameJa} の記事</h2>
-              <div className="mt-4 not-prose">
+              <div className="not-prose mt-4">
                 <ArticleList variant="compact" articles={data.allMdx.nodes} />
               </div>
             </>
           )}
         </div>
       </main>
-      <JoinUsCTA
-        className="mt-8"
-        title={`ut.code(); で ${data.mdx?.frontmatter?.nameJa} に会いましょう`}
-      />
+      <JoinUsCTA className="mt-8">
+        ut.code(); で{data.mdx?.frontmatter?.nameJa} に会いましょう
+      </JoinUsCTA>
       <GlobalFooter />
     </>
   );

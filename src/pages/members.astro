@@ -22,38 +22,38 @@ const members = (await getCollection("members")).sort(
     src={MembersHeader}
     width="1920"
     height="700"
-    class="w-full h-[100vh] object-cover"
+    class="h-[100vh] w-full object-cover"
     style="object-position: 50% 20%;"
   />
-  <main class="container isolate mx-auto -mt-[300px] px-4 py-16">
+  <main class="isolate container mx-auto -mt-[300px] px-4 py-16">
     <h1
-      class="relative w-max px-4 py-2 bg-black bg-opacity-80 text-white text-6xl sm:text-[8rem]"
+      class="bg-opacity-80 relative w-max bg-black px-4 py-2 text-6xl text-white sm:text-[8rem]"
     >
       メンバー
       <div
         aria-hidden
-        class="absolute top-0 right-full h-full w-[9999px] bg-black bg-opacity-80"
+        class="bg-opacity-80 absolute top-0 right-full h-full w-[9999px] bg-black"
       >
       </div>
     </h1>
     <ul
-      class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8"
+      class="mt-12 grid gap-4 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4"
     >
       {
         members.map((member) => (
           <li class="relative">
             <a
               href={`/members/${member.id}`}
-              class="block hover:brightness-90 drop-shadow-lg"
+              class="block drop-shadow-lg hover:brightness-90"
             >
               <Image
                 alt={`${member.data?.nameJa} の写真`}
                 src={member.data.upperBodyImage}
                 width="400"
                 height="400"
-                class="w-full h-[400px] object-cover"
+                class="h-[400px] w-full object-cover"
               />
-              <div class="absolute bottom-0 w-full pt-12 pb-6 px-6 bg-gradient-to-b from-transparent to-black text-white">
+              <div class="absolute bottom-0 w-full bg-gradient-to-b from-transparent to-black px-6 pt-12 pb-6 text-white">
                 <p class="text-3xl">{member.data.nameJa}</p>
                 <p class="text-md">{member.data.nameEn}</p>
                 <p class="mt-2 text-xs leading-normal">
@@ -69,5 +69,5 @@ const members = (await getCollection("members")).sort(
       このページは準備中です。ほとんどのメンバーの情報は反映されていません。
     </p>
   </main>
-  <JoinUsCTA title="愉快な仲間が皆さんをお待ちしています！" />
+  <JoinUsCTA> 愉快な仲間が皆さんをお待ちしています！</JoinUsCTA>
 </GlobalLayout>

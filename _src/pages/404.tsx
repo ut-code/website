@@ -7,7 +7,7 @@ export default function NotFoundPage() {
   return (
     <>
       <GlobalHeader />
-      <main className="container mx-auto px-4 py-12 prose">
+      <main className="prose container mx-auto px-4 py-12">
         <h1>ページが見つかりません</h1>
       </main>
       <GlobalFooter />

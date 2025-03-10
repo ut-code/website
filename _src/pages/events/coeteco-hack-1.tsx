@@ -37,12 +37,12 @@ function AIAndEducationLogo(props: { className?: string }) {
 
 function EventBannerSection() {
   return (
-    <div className="flex flex-col md:flex-row md:justify-between items-center space-y-12 md:space-y-0 px-5">
-      <AIAndEducationLogo className="w-full h-full md:w-72" />
+    <div className="flex flex-col items-center space-y-12 px-5 md:flex-row md:justify-between md:space-y-0">
+      <AIAndEducationLogo className="h-full w-full md:w-72" />
 
       <div className="w-full max-w-xs text-2xl md:text-xl">
         <div className="text-left">参加者でチームを組み</div>
-        <div className="text-center py-3">
+        <div className="py-3 text-center">
           <div className="underline decoration-lime-200 decoration-8 underline-offset-1">
             最新の AI 技術を用いて
           </div>
@@ -60,19 +60,19 @@ function EventInfoItem(props: { title: string; children: ReactNode }) {
   const { title, children } = props;
 
   return (
-    <section className="flex flex-col md:flex-row text-left items-left space-y-2 md:space-y-0 md:space-x-10">
-      <h3 className="self-start bg-lime-700 font-semibold text-white md:text-center w-full md:w-24 rounded-full px-6 md:px-4 py-2">
+    <section className="items-left flex flex-col space-y-2 text-left md:flex-row md:space-y-0 md:space-x-10">
+      <h3 className="w-full self-start rounded-full bg-lime-700 px-6 py-2 font-semibold text-white md:w-24 md:px-4 md:text-center">
         {title}
       </h3>
-      <div className="flex w-full px-6 md:px-0 items-center">{children}</div>
+      <div className="flex w-full items-center px-6 md:px-0">{children}</div>
     </section>
   );
 }
 
 function EventSummarySection() {
   return (
-    <section className="bg-lime-100 p-5 space-y-8 rounded-3xl">
-      <h2 className="text-lime-700 font-bold text-3xl text-center">
+    <section className="space-y-8 rounded-3xl bg-lime-100 p-5">
+      <h2 className="text-center text-3xl font-bold text-lime-700">
         イベント概要
       </h2>
 
@@ -86,7 +86,7 @@ function EventSummarySection() {
               </div>
             </div>
             <iframe
-              className="self-end w-full md:w-64 md:h-48 border-0 ml-4 my-2 md:my-0"
+              className="my-2 ml-4 w-full self-end border-0 md:my-0 md:h-48 md:w-64"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3241.833135217821!2d139.6968959!3d35.6564826!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b570563e8d9%3A0x6167df231171fe9a!2sGMO%20Yours!5e0!3m2!1sja!2sjp!4v1700378302591!5m2!1sja!2sjp"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -103,14 +103,14 @@ function EventSummarySection() {
       </div>
 
       <div
-        className="bg-lime-300 text-lime-800 text-center items-center px-4 py-2 space-y-2"
+        className="items-center space-y-2 bg-lime-300 px-4 py-2 text-center text-lime-800"
         style={{
           clipPath:
             "polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%, 5% 50%, 0 0)",
         }}
       >
         <div className="text-2xl font-bold">賞金総額 28 万円！</div>
-        <ul className="flex justify-around max-w-md mx-auto">
+        <ul className="mx-auto flex max-w-md justify-around">
           <li className="text-sm">1 位: 16 万円</li>
           <li className="text-sm">2 位: 8 万円</li>
           <li className="text-sm">3 位: 4 万円</li>
@@ -122,23 +122,23 @@ function EventSummarySection() {
 
 function ParticipationCTASection() {
   return (
-    <div className="flex flex-col md:flex-row md:justify-between items-center space-y-12 md:space-y-0 px-5">
-      <div className="text-xl w-full max-w-sm">
+    <div className="flex flex-col items-center space-y-12 px-5 md:flex-row md:justify-between md:space-y-0">
+      <div className="w-full max-w-sm text-xl">
         <div className="text-left">
           アイデアを
-          <span className="text-2xl underline decoration-lime-200 decoration-8 underline-offset-1 inline-block px-1 py-2 -rotate-12">
+          <span className="inline-block -rotate-12 px-1 py-2 text-2xl underline decoration-lime-200 decoration-8 underline-offset-1">
             カタチ
           </span>
           にする喜びを
         </div>
         <div className="text-right">味わってみませんか？</div>
       </div>
-      <div className="text-center space-y-2">
+      <div className="space-y-2 text-center">
         <a
           href="https://forms.gle/w6KVjyqAtrPKhW5z6"
           target="_blank"
           rel="noreferrer"
-          className="bg-amber-500 font-semibold text-white text-xl w-full md:w-64 rounded-full inline-block px-8 py-4 hover:bg-amber-600 hover:shadow-lg hover:scale-105"
+          className="inline-block w-full rounded-full bg-amber-500 px-8 py-4 text-xl font-semibold text-white hover:scale-105 hover:bg-amber-600 hover:shadow-lg md:w-64"
           aria-label="イベントへの申し込みフォームへ"
         >
           お申し込みはこちら
@@ -157,9 +157,9 @@ export default function CoetecoHackOnePage() {
   return (
     <>
       <GlobalHeader />
-      <main className="container mx-auto px-4 py-24 max-w-3xl">
+      <main className="container mx-auto max-w-3xl px-4 py-24">
         <article className="space-y-12">
-          <h1 className="text-4xl text-center">コエテコ Hack #1</h1>
+          <h1 className="text-center text-4xl">コエテコ Hack #1</h1>
 
           <StaticImage
             alt=""

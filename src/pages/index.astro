@@ -14,16 +14,6 @@ import Hero from "../images/hero.jpg";
 import LabCafe from "../images/lab-cafe.jpg";
 import LogoGMOMedia from "../images/logo-gmo-media.png";
 
-const projects = (await getCollection("projects"))
-  .sort((a, b) => {
-    const a_order = a.data.order ?? Number.POSITIVE_INFINITY,
-      b_order = b.data.order ?? Number.POSITIVE_INFINITY;
-    if (a_order !== b_order) {
-      return a_order - b_order;
-    }
-    return b.data.date.getTime() - a.data.date.getTime();
-  })
-  .slice(0, 6);
 const articles = (await getCollection("articles"))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 6);
@@ -31,24 +21,24 @@ const articles = (await getCollection("articles"))
 
 <GlobalLayout title={null} description={null} focus={Focus.none}>
   <div
-    class="h-screen grid grid-flow-col"
+    class="grid h-screen grid-flow-col"
     style={{ gridTemplateRows: "max-content minmax(0, 1fr)" }}
   >
     <div style={{ gridArea: "2 / 1" }}>
       <Image
         alt=""
-        class="w-full h-full object-cover"
+        class="h-full w-full object-cover"
         width="1920"
         height="1080"
         src={Hero}
       />
     </div>
     <div
-      class="relative bg-black/20 flex items-center"
+      class="relative flex items-center bg-black/20"
       style={{ gridArea: "2 / 1" }}
     >
       <div class="container mx-auto px-4">
-        <div class="bg-white max-w-lg p-8">
+        <div class="max-w-lg bg-white p-8">
           <h1 class="text-2xl md:text-3xl">
             <span class="inline-block">東京大学の</span><span
               class="inline-block">ソフトウェア開発</span
@@ -69,7 +59,7 @@ const articles = (await getCollection("articles"))
   <section class="bg-gray-100">
     <div class="container mx-auto px-4 py-12">
       <SectionHeader title="Activities" subtitle="活動内容" />
-      <div class="mt-8 p-6 md:p-8 bg-white rounded-xl">
+      <div class="mt-8 rounded-xl bg-white p-6 md:p-8">
         <ul class="flex flex-col gap-12 lg:flex-row">
           {
             [
@@ -96,8 +86,8 @@ const articles = (await getCollection("articles"))
               },
             ].map((activity) => (
               <li class="lg:flex-1">
-                <div class="w-max p-2 bg-black text-white rounded-md">
-                  <Icon name={activity.icon} class="w-6 h-6" />
+                <div class="w-max rounded-md bg-black p-2 text-white">
+                  <Icon name={activity.icon} class="h-6 w-6" />
                 </div>
                 <h3 class="mt-3 text-2xl">{activity.title}</h3>
                 <div class="mt-2">
@@ -108,7 +98,7 @@ const articles = (await getCollection("articles"))
                   href={`/activities/${activity.key}/`}
                 >
                   <span>Learn more</span>
-                  <Icon name="feather:arrow-right" class="w-4 h-4" />
+                  <Icon name="feather:arrow-right" class="h-4 w-4" />
                 </a>
               </li>
             ))
@@ -120,7 +110,7 @@ const articles = (await getCollection("articles"))
   <section>
     <iframe
       title="ut.code(); 紹介動画"
-      class="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[600px]"
+      class="h-[200px] w-full sm:h-[300px] md:h-[400px] lg:h-[600px]"
       src="https://www.youtube-nocookie.com/embed/aUoa1AyfbMA?rel=0"
       allow="picture-in-picture; web-share"
       allow-fullscreen></iframe>
@@ -128,21 +118,21 @@ const articles = (await getCollection("articles"))
   <section>
     <div class="container mx-auto px-4 py-12">
       <SectionHeader title="Projects" subtitle="実施中のプロジェクト" />
-      <ProjectList class="mt-10" {projects} />
+      <ProjectList variant="short" class="mt-10" />
       <ActionButton to="/projects/" class="mt-8 ml-auto">
         すべてのプロジェクト
       </ActionButton>
     </div>
   </section>
-  <section class="bg-black text-white py-12">
-    <div class="container mx-auto px-8 flex gap-12 items-center">
+  <section class="bg-black py-12 text-white">
+    <div class="container mx-auto flex items-center gap-12 px-8">
       <div class="flex-grow self-center">
         <h1 class="text-4xl leading-snug">
-          <span class="inline-block mb-3">未来の<wbr />ソフトウェアを</span>
+          <span class="mb-3 inline-block">未来の<wbr />ソフトウェアを</span>
           <br />
           <span>デザインしよう</span>
         </h1>
-        <p class="mt-3 text-gray-300 leading-loose">
+        <p class="mt-3 leading-loose text-gray-300">
           <span class="inline-block">
             ut.code(); で一緒にワクワクするソフトウェアを作りませんか？
           </span>
@@ -154,13 +144,13 @@ const articles = (await getCollection("articles"))
           JOIN US
         </ActionButton>
       </div>
-      <div class="hidden lg:block self-stretch flex-shrink">
+      <div class="hidden flex-shrink self-stretch lg:block">
         <Image
           alt="背景"
           src={LabCafe}
           width="600"
           height="400"
-          class="w-full h-full object-cover rounded-3xl overflow-clip"
+          class="h-full w-full overflow-clip rounded-3xl object-cover"
         />
       </div>
     </div>
@@ -177,7 +167,7 @@ const articles = (await getCollection("articles"))
   <section class="bg-gray-100">
     <div class="container mx-auto py-12">
       <SectionHeader title="About us" subtitle="団体概要" />
-      <ul class="grid lg:grid-cols-2 gap-x-8 mt-8 text-lg text-gray-800">
+      <ul class="mt-8 grid gap-x-8 text-lg text-gray-800 lg:grid-cols-2">
         {
           [
             { title: "団体名", content: "ut.code();" },
@@ -217,7 +207,7 @@ const articles = (await getCollection("articles"))
   <section>
     <div class="container mx-auto px-8 py-12">
       <SectionHeader title="協賛企業様" />
-      <div class="flex flex-wrap justify-center items-center mt-8 gap-4">
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
         <Image
           alt="GMOメディア株式会社"
           src={LogoGMOMedia}
@@ -230,7 +220,7 @@ const articles = (await getCollection("articles"))
   <section class="bg-gray-100">
     <div class="container mx-auto px-8 py-12">
       <SectionHeader title="ご寄付のお願い" />
-      <div class="prose max-w-none mt-8 text-center">
+      <div class="prose mt-8 max-w-none text-center">
         <p>
           <span class="inline-block">
             現在、ut.code(); の活動費は寄付によって賄われています。
@@ -240,7 +230,7 @@ const articles = (await getCollection("articles"))
           </span>
         </p>
       </div>
-      <ActionButton to="/donation/" class="mt-8 mx-auto" no-motion>
+      <ActionButton to="/donation/" class="mx-auto mt-8" no-motion>
         寄付する
       </ActionButton>
     </div>

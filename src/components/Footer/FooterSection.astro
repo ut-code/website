@@ -14,7 +14,7 @@ const { title, links } = Astro.props;
         <li>
           <a
             href={link.to}
-            class="hover:underline"
+            class="relative hover:underline active:top-0.25"
             target={link.to.startsWith("/") ? "" : "_blank"}
             rel={link.to.startsWith("/") ? "" : "noreferrer"}
           >

@@ -30,7 +30,7 @@ const articles = (await getCollection("articles")).sort(
   focus={Focus.articles}
 >
   <main class="container mx-auto px-4 py-24">
-    <h1 class="text-4xl text-center">すべての記事</h1>
+    <h1 class="text-center text-4xl">すべての記事</h1>
     <ArticleList class="mt-16" {articles} />
   </main>
 </GlobalLayout>

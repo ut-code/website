@@ -36,23 +36,23 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
   return (
     <>
       <div
-        className="h-screen grid grid-flow-col"
+        className="grid h-screen grid-flow-col"
         style={{ gridTemplateRows: "max-content minmax(0, 1fr)" }}
       >
         <GlobalHeader />
         <div style={{ gridArea: "2 / 1" }}>
           <StaticImage
             alt="活動の様子"
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
             src="../images/hero.jpg"
           />
         </div>
         <div
-          className="relative bg-black/20 flex items-center"
+          className="relative flex items-center bg-black/20"
           style={{ gridArea: "2 / 1" }}
         >
           <div className="container mx-auto px-4">
-            <div className="bg-white max-w-lg p-8">
+            <div className="max-w-lg bg-white p-8">
               <h1 className="text-2xl md:text-3xl">
                 <span className="inline-block">東京大学の</span>
                 <span className="inline-block">ソフトウェア開発</span>
@@ -75,7 +75,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
       <section className="bg-gray-100">
         <div className="container mx-auto px-4 py-12">
           <SectionHeader title="Activities" subtitle="活動内容" />
-          <div className="mt-8 p-6 md:p-8 bg-white rounded-xl">
+          <div className="mt-8 rounded-xl bg-white p-6 md:p-8">
             <ul className="flex flex-col gap-12 lg:flex-row">
               {[
                 {
@@ -101,8 +101,8 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
                 },
               ].map((activity) => (
                 <li key={activity.key} className="lg:flex-1">
-                  <div className="w-max p-2 bg-black text-white rounded-md">
-                    <activity.Icon className="w-6 h-6" />
+                  <div className="w-max rounded-md bg-black p-2 text-white">
+                    <activity.Icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-3 text-2xl">{activity.title}</h3>
                   <div className="mt-2">
@@ -113,7 +113,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
                     to={`/activities/${activity.key}/`}
                   >
                     <span>Learn more</span>
-                    <FiArrowRight className="w-4 h-4" />
+                    <FiArrowRight className="h-4 w-4" />
                   </Link>
                 </li>
               ))}
@@ -124,7 +124,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
       <section>
         <iframe
           title="ut.code(); 紹介動画"
-          className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[600px]"
+          className="h-[200px] w-full sm:h-[300px] md:h-[400px] lg:h-[600px]"
           src="https://www.youtube-nocookie.com/embed/aUoa1AyfbMA?rel=0"
           allow="picture-in-picture; web-share"
           allowFullScreen
@@ -139,8 +139,8 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
           </ActionButton>
         </div>
       </section>
-      <section className="bg-black text-white py-12">
-        <div className="container mx-auto px-8 flex gap-12 items-center">
+      <section className="bg-black py-12 text-white">
+        <div className="container mx-auto flex items-center gap-12 px-8">
           <div className="flex-grow self-center">
             <h1 className="text-4xl leading-snug">
               <span className="inline-block">未来の</span>
@@ -148,7 +148,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
               <br />
               <span>デザインしよう</span>
             </h1>
-            <p className="mt-3 text-gray-300 leading-loose">
+            <p className="mt-3 leading-loose text-gray-300">
               <span className="inline-block">
                 ut.code(); で一緒にワクワクするソフトウェアを作りませんか？
               </span>
@@ -160,12 +160,12 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
               JOIN US
             </ActionButton>
           </div>
-          <div className="hidden lg:block self-stretch flex-shrink">
+          <div className="hidden flex-shrink self-stretch lg:block">
             <StaticImage
               alt="背景"
               src="../images/lab-cafe.jpg"
               width={600}
-              className="w-full h-full object-cover rounded-3xl overflow-clip"
+              className="h-full w-full overflow-clip rounded-3xl object-cover"
             />
           </div>
         </div>
@@ -182,7 +182,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
       <section className="bg-gray-100">
         <div className="container mx-auto py-12">
           <SectionHeader title="About us" subtitle="団体概要" />
-          <ul className="grid lg:grid-cols-2 gap-x-8 mt-8 text-lg text-gray-800">
+          <ul className="mt-8 grid gap-x-8 text-lg text-gray-800 lg:grid-cols-2">
             {[
               { title: "団体名", content: "ut.code();" },
               { title: "構成人数", content: "20 名程度 (アクティブ)" },
@@ -220,7 +220,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
       <section>
         <div className="container mx-auto px-8 py-12">
           <SectionHeader title="協賛企業様" />
-          <div className="flex flex-wrap justify-center items-center mt-8 gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <StaticImage
               alt="GMOメディア株式会社"
               src="../images/logo-gmo-media.png"
@@ -233,7 +233,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
       <section className="bg-gray-100">
         <div className="container mx-auto px-8 py-12">
           <SectionHeader title="ご寄付のお願い" />
-          <div className="prose max-w-none mt-8 text-center">
+          <div className="prose mt-8 max-w-none text-center">
             <p>
               <span className="inline-block">
                 現在、ut.code(); の活動費は寄付によって賄われています。
@@ -243,7 +243,7 @@ export default function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
               </span>
             </p>
           </div>
-          <ActionButton to="/donation/" className="mt-8 mx-auto">
+          <ActionButton to="/donation/" className="mx-auto mt-8">
             寄付する
           </ActionButton>
         </div>

@@ -16,23 +16,23 @@ export default function ArticlesPage({
       <StaticImage
         alt=""
         src="../images/members-header.jpg"
-        class="w-full h-[500px]"
+        class="h-[500px] w-full"
         objectPosition="center 20%"
       />
-      <main className="container isolate mx-auto -mt-[300px] px-4 py-16">
-        <h1 className="relative w-max px-4 py-2 bg-black bg-opacity-80 text-white text-6xl">
+      <main className="isolate container mx-auto -mt-[300px] px-4 py-16">
+        <h1 className="bg-opacity-80 relative w-max bg-black px-4 py-2 text-6xl text-white">
           メンバー
           <div
             aria-hidden
-            className="absolute top-0 right-full h-full w-[9999px] bg-black bg-opacity-80"
+            className="bg-opacity-80 absolute top-0 right-full h-full w-[9999px] bg-black"
           />
         </h1>
-        <ul className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
+        <ul className="mt-12 grid gap-4 sm:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4">
           {data.allMdx.nodes.map((member) => (
             <li key={member.id} className="relative">
               <Link
                 to={`/members/${member.frontmatter?.slug}`}
-                className="block hover:brightness-90 drop-shadow-lg"
+                className="block drop-shadow-lg hover:brightness-90"
               >
                 <GatsbyImage
                   alt={`${member.frontmatter?.nameJa} の写真`}
@@ -41,10 +41,10 @@ export default function ArticlesPage({
                       ?.gatsbyImageData,
                     "写真が設定されていません",
                   )}
-                  className="w-full max-h-[400px]"
+                  className="max-h-[400px] w-full"
                   objectPosition="center 30%"
                 />
-                <div className="absolute bottom-0 w-full pt-12 pb-6 px-6 bg-gradient-to-b from-transparent to-black text-white">
+                <div className="absolute bottom-0 w-full bg-gradient-to-b from-transparent to-black px-6 pt-12 pb-6 text-white">
                   <p className="text-3xl">{member.frontmatter?.nameJa}</p>
                   <p className="text-md">{member.frontmatter?.nameEn}</p>
                   <p className="mt-2 text-xs leading-normal">

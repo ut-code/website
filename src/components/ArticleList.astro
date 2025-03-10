@@ -41,7 +41,7 @@ const { variant = "normal", articles } = props;
 -->
 <ul
   class:list={[
-    "grid grid-flow-dense md:grid-cols-2 gap-9 lg:grid-cols-3",
+    "grid grid-flow-dense gap-9 md:grid-cols-2 lg:grid-cols-3",
     variant === "normal" && "xl:grid-cols-4",
     props.class,
   ]}
@@ -71,7 +71,7 @@ const { variant = "normal", articles } = props;
           >
             <div
               class:list={[
-                "w-full h-48 object-cover rounded-xl overflow-clip isolate",
+                "isolate h-48 w-full overflow-clip rounded-xl object-cover",
                 additionalProps.imageClassName,
               ]}
             >
@@ -80,15 +80,15 @@ const { variant = "normal", articles } = props;
                 height={48 * 4 * 4}
                 width={48 * 4 * 4}
                 src={article.data.image}
-                class="w-full h-full object-cover"
+                class="h-full w-full object-cover"
               />
             </div>
             <div class="mt-4">
-              <time class="block text-gray-500 text-sm">
+              <time class="block text-sm text-gray-500">
                 {format(article.data.date, "yyyy/MM/dd HH:mm")}
               </time>
               <h3 class="text-lg font-bold">{article.data.title}</h3>
-              <p class="prose max-w-none mt-2">{additionalProps.excerpt}</p>
+              <p class="prose mt-2 max-w-none">{additionalProps.excerpt}</p>
             </div>
           </a>
         </li>

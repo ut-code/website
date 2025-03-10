@@ -12,7 +12,7 @@ export default function ArticlesPage({
     <>
       <GlobalHeader />
       <main className="container mx-auto px-4 py-24">
-        <h1 className="text-4xl text-center">すべての記事</h1>
+        <h1 className="text-center text-4xl">すべての記事</h1>
         <ArticleList className="mt-16" articles={data.allMdx.nodes} />
       </main>
       <GlobalFooter />

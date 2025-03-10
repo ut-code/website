@@ -37,7 +37,7 @@ const { focus } = Astro.props;
         </a>
       </div> */
   }
-  <div class="h-16 flex">
+  <div class="flex h-16">
     <a href="/" class="flex items-center px-4">
       <Logo class="w-36" variant="default" />
     </a>
@@ -49,7 +49,7 @@ const { focus } = Astro.props;
             <a
               href={link.to}
               class:list={[
-                "flex items-center h-full px-6 navigation-bar",
+                "navigation-bar flex h-full items-center px-6",
                 focus === link.focus && "current",
               ]}
             >
@@ -61,21 +61,17 @@ const { focus } = Astro.props;
     </ul>
     <button
       type="button"
-      class="flex justify-center items-center w-16 h-full hover:bg-gray-100 md:hidden"
+      class="flex h-full w-16 items-center justify-center hover:bg-gray-100 md:hidden"
       popovertarget="navigation_panel"
       popovertargetaction="toggle"
     >
-      <Icon name="feather:menu" class="w-6 h-6 text-gray-600" />
+      <Icon name="feather:menu" class="h-6 w-6 text-gray-600" />
     </button>
   </div>
   <div
     id="navigation_panel"
     popover
-    class="w-full
-    absolute
-    top-16
-    transition-opacity
-    duration-300"
+    class="absolute top-16 w-full transition-opacity duration-300"
   >
     <ul class="">
       {
@@ -83,7 +79,7 @@ const { focus } = Astro.props;
           <li>
             <a
               href={link.to}
-              class="block px-4 py-2 hover:bg-gray-100 transition-all duration-300"
+              class="block px-4 py-2 transition-all duration-300 hover:bg-gray-100"
             >
               {link.title}
             </a>
@@ -96,7 +92,6 @@ const { focus } = Astro.props;
 
 <style>
   /* https://stackoverflow.com/questions/77042256/css-transition-animation-not-working-for-popover-attribute */
-  /* TODO: not working now */
   [popover] {
     opacity: 0;
     &:popover-open {
@@ -115,7 +110,7 @@ const { focus } = Astro.props;
     background: linear-gradient(currentColor 0 0) bottom left/
       var(--underline-width, 0%) 0.1em no-repeat;
     text-decoration: none;
-    transition: background-size 0.5s;
+    transition: background-size 0.5s ease-out;
   }
   .navigation-bar.current {
     background: linear-gradient(lawngreen 0 0) bottom left/

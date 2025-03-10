@@ -4,7 +4,10 @@
   "private": true,
   "description": "website of ut.code();, version 3",
   "author": "aster-void",
-  "keywords": ["astro", "ut.code();"],
+  "keywords": [
+    "astro",
+    "ut.code();"
+  ],
   "scripts": {
     "prepare": "lefthook install && bun sync",
     "sync": "astro sync",
@@ -45,6 +48,7 @@
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "rollup-plugin-visualizer": "^5.14.0",
     "tailwindcss": "^4.0.12",
     "typescript": "^5.8.2"
