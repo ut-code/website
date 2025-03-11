@@ -40,6 +40,7 @@ const { focus } = Astro.props;
           class="inline-flex flex-shrink-0 items-center gap-0.5 hover:underline"
           rel={banner.link.startsWith("/") ? undefined : "noreferrer"}
           target={banner.link.startsWith("/") ? undefined : "_blank"}
+          data-astro-prefetch="viewport"
         >
           {banner.linkText ?? "詳細はこちら"}
           <Icon name="feather:arrow-right" />
@@ -48,7 +49,7 @@ const { focus } = Astro.props;
     )
   }
   <div class="flex h-16">
-    <a href="/" class="flex items-center px-4">
+    <a href="/" class="flex items-center px-4" data-astro-prefetch="load">
       <Logo class="ml-8 w-36" variant="default" />
     </a>
     <div aria-hidden="true" class="flex-grow"></div>
@@ -87,7 +88,11 @@ const { focus } = Astro.props;
       {
         links.map((link) => (
           <li class="hover:brightness-75">
-            <a href={link.to} class="block px-4 py-2">
+            <a
+              href={link.to}
+              class="block px-4 py-2"
+              data-astro-prefetch="load"
+            >
               {link.title}
             </a>
           </li>
