@@ -12,7 +12,8 @@
     "prepare": "lefthook install && bun sync",
     "sync": "astro sync",
     "dev": "astro dev",
-    "check": "astro check",
+    "check": "biome lint && astro check",
+    "fix": "biome lint . --fix --unsafe",
     "build": "astro build",
     "preview": "astro preview",
     "lint": "eslint .",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
+    "@biomejs/biome": "^1.9.4",
     "@tailwindcss/vite": "^4.0.12",
     "@types/bun": "^1.2.4",
     "lefthook": "^1.11.3",

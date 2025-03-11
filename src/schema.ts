@@ -1,4 +1,4 @@
-import { reference, type ImageFunction } from "astro:content";
+import { type ImageFunction, reference } from "astro:content";
 import { z } from "astro:schema";
 
 export type Article = z.infer<ReturnType<typeof CreateArticleSchema>>;

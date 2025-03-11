@@ -1,7 +1,7 @@
 ---
-import { format } from "date-fns";
-import { getCollection, getEntry, render } from "astro:content";
 import { Image } from "astro:assets";
+import { getCollection, getEntry, render } from "astro:content";
+import { format } from "date-fns";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
@@ -10,8 +10,8 @@ export async function getStaticPaths() {
     props: { article },
   }));
 }
-import GlobalLayout from "../../layouts/GlobalLayout.astro";
 import JoinUsCTA from "../../components/JoinUsCTA.astro";
+import GlobalLayout from "../../layouts/GlobalLayout.astro";
 import { Focus } from "../../schema";
 
 const { article } = Astro.props;
@@ -20,10 +20,7 @@ const author =
   article.data.author && (await getEntry("members", article.data.author?.id));
 if (article.data.author && !author)
   throw new Error(
-    "Author not found for article " +
-      article.id +
-      ", searched for author " +
-      article.data.author.id,
+    `Author not found for article ${article.id}, searched for author ${article.data.author.id}`,
   );
 ---
 

@@ -5,8 +5,8 @@ import { glob } from "astro/loaders";
 
 import {
   CreateArticleSchema,
-  CreateProjectSchema,
   CreateMemberSchema,
+  CreateProjectSchema,
 } from "./schema.ts";
 
 const articles = defineCollection({

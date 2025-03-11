@@ -2,33 +2,21 @@ name: Check
 on: pull_request
 jobs:
   build-type-check:
-    name: Build and Type Check
+    name: Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-bun@v2
         with:
-          node-version: "18"
-          cache: npm
-      - run: npm ci
-      - uses: actions/cache@v3
+          bun-version: "1.2.4"
+      - run: bun install --frozen-lockfile
+      - run: bun check
+      - uses: actions/cache@v4
         with:
-          key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
+          key: ${{ runner.os }}-astro-build
           path: |
-            .cache
-            public
-          restore-keys: ${{ runner.os }}-gatsby-build-
-      - run: npm run build
-      - run: npm run type-check
-
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-          cache: npm
-      - run: npm ci
-      - run: npm run lint
+            .astro
+            dist
+            node_modules/.astro/assets
+          restore-keys: ${{ runner.os }}-astro-build
+      - run: bun run build
