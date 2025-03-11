@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 import JoinUsCTA from "../components/JoinUsCTA.astro";
 import GlobalLayout from "../layouts/GlobalLayout.astro";
@@ -17,8 +17,9 @@ const members = (await getCollection("members")).sort(
   description="ut.code(); のメンバーの一覧"
   focus={Focus.members}
 >
-  <Image
+  <Picture
     loading="eager"
+    formats={["avif", "webp"]}
     alt=""
     src={MembersHeader}
     width="1920"
@@ -43,8 +44,8 @@ const members = (await getCollection("members")).sort(
               href={`/members/${member.id}`}
               class="relative block drop-shadow-lg transition-colors duration-150 hover:brightness-110 active:top-0.5"
             >
-              <Image
-                transition:animate="fade"
+              <Picture
+                formats={["avif", "webp"]}
                 transition:name={`member:image:${member.id}`}
                 alt={`${member.data?.nameJa} の写真`}
                 src={member.data.upperBodyImage}
