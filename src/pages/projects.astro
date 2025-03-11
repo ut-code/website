@@ -1,0 +1,18 @@
+---
+import ProjectList from "../components/ProjectList.astro";
+import GlobalLayout from "../layouts/GlobalLayout.astro";
+import { Focus } from "../schema";
+---
+
+<GlobalLayout
+  title="すべてのプロジェクト"
+  description="ut.code(); で開発を行っているプロジェクト一覧です。"
+  focus={Focus.projects}
+>
+  <main class="w-full px-4 py-24">
+    <article class="container mx-auto">
+      <h1 class="text-center text-4xl">プロジェクト</h1>
+      <ProjectList class="mt-16" variant="full" />
+    </article>
+  </main>
+</GlobalLayout>

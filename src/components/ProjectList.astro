@@ -1,0 +1,75 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+interface Props {
+  variant: "compact" | "full";
+  class?: string;
+}
+const props = Astro.props;
+const { variant = "full" } = props;
+
+const projects = (await getCollection("projects")).sort((a, b) => {
+  const a_order = a.data.order ?? Number.POSITIVE_INFINITY;
+  const b_order = b.data.order ?? Number.POSITIVE_INFINITY;
+  if (a_order !== b_order) {
+    return a_order - b_order;
+  }
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+if (variant === "compact") {
+  projects.splice(6);
+}
+---
+
+<ul class:list={["grid gap-9 md:grid-cols-2 xl:grid-cols-3", props.class]}>
+  {
+    projects.map((project, i) => (
+      <li
+        class:list={[
+          "contents",
+          variant === "compact" ? "variant-short" : "variant-index",
+        ]}
+      >
+        <a
+          class="relative top-0 overflow-clip rounded-xl border border-gray-200 bg-gray-50 hover:brightness-95 active:top-0.25"
+          href={`/projects/${project.data.slug}`}
+        >
+          <Image
+            transition:name={`project:image:${project.id}`}
+            loading={i < 6 ? "eager" : "lazy"}
+            width="800"
+            height="600"
+            alt="プロジェクトのイメージ画像"
+            src={project.data.image}
+            class="max-h-[24rem] w-full object-fill"
+          />
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-800">
+              {project.data.title}
+            </h3>
+            <p class="prose mt-2">
+              {project.data.description.length < 120
+                ? project.data.description
+                : project.data.description.slice(0, 120) + "..."}
+            </p>
+          </div>
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  @import "tailwindcss";
+  @media (max-width: 64rem) {
+    li.variant-short:nth-child(n + 3) {
+      @apply hidden;
+    }
+  }
+  @media (max-width: 80rem) {
+    li.variant-short:nth-child(n + 5) {
+      @apply hidden;
+    }
+  }
+</style>

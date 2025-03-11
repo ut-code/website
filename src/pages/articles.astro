@@ -1,0 +1,16 @@
+---
+import ArticleList from "../components/ArticleList.astro";
+import GlobalLayout from "../layouts/GlobalLayout.astro";
+import { Focus } from "../schema";
+---
+
+<GlobalLayout
+  title="すべての記事"
+  description="ut.code(); からの最新情報"
+  focus={Focus.articles}
+>
+  <main class="container mx-auto px-4 py-24">
+    <h1 class="text-center text-4xl">すべての記事</h1>
+    <ArticleList class="mt-16" />
+  </main>
+</GlobalLayout>

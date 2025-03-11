@@ -1,0 +1,25 @@
+---
+import "../global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import type { Focus } from "../schema";
+import Meta from "./meta.astro";
+
+interface Props {
+  title: string | null;
+  description: string | null;
+  focus: Focus;
+  class?: string;
+}
+const { title, description, focus } = Astro.props;
+---
+
+<html lang="ja" class="bg-gray-50 text-gray-800">
+  <Meta {title} {description} />
+  <body class="min-h-full w-full">
+    <Header {focus} />
+    <div aria-hidden class="mt-16"></div>
+    <slot />
+    <Footer />
+  </body>
+</html>

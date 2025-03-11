@@ -1,0 +1,103 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import { format } from "date-fns";
+import { markdownToTxt } from "markdown-to-txt";
+
+interface Props {
+  variant?: "full" | "compact";
+  class?: string;
+}
+const props = Astro.props;
+const { variant = "full" } = props;
+
+const articles = (await getCollection("articles")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+if (variant === "compact") {
+  articles.splice(3);
+}
+
+const MDXSpecialSyntax = /^import ActionButton from ".+";/;
+
+const articlesWithExcerpts = await Promise.all(
+  articles.map(async (article) => {
+    if (!article.body) throw new Error("article doesn't have body!");
+    // 😇 performance
+    const text = markdownToTxt(article.body);
+    return {
+      article,
+      text: text.replace(MDXSpecialSyntax, ""),
+    };
+  }),
+);
+---
+
+<ul
+  class:list={[
+    "grid grid-flow-dense gap-9 md:grid-cols-2 lg:grid-cols-3",
+    variant === "full" ? "variant-full xl:grid-cols-4" : "variant-compact",
+    props.class,
+  ]}
+>
+  {
+    articlesWithExcerpts.map(({ article, text }, i) => {
+      const isFeatured = variant === "full" && i % 11 === 0; // 11 記事ごとに大きく表示する
+      const additionalProps = isFeatured
+        ? {
+            cellClassName: "md:col-span-2 md:row-span-2",
+            imageClassName: "max-h-[32rem] md:max-h-[48rem]",
+            excerpt: text.slice(0, 300),
+          }
+        : {
+            cellClassName: "",
+            imageClassName: "max-h-[24rem]",
+            excerpt: text.slice(0, 80),
+          };
+      return (
+        <li class="contents">
+          <a
+            href={`/articles/${article.id}`}
+            class:list={[
+              "relative rounded-xl bg-gray-50 p-1 shadow-md hover:brightness-110 active:top-0.5",
+              additionalProps.cellClassName,
+            ]}
+          >
+            <Image
+              transition:name={`article:cover:${article.id}`}
+              loading={i < 5 ? "eager" : "lazy"}
+              alt="カバー画像"
+              height={48 * 4 * 4}
+              width={48 * 4 * 4}
+              src={article.data.image}
+              class:list={[
+                "w-full rounded-xl object-center",
+                additionalProps.imageClassName,
+              ]}
+            />
+            <div class="mt-4">
+              <time class="block text-sm text-gray-500">
+                {format(article.data.date, "yyyy/MM/dd HH:mm")}
+              </time>
+              <h3 class="text-lg font-bold">{article.data.title}</h3>
+              <p class="prose mt-2 max-w-none">{additionalProps.excerpt}...</p>
+            </div>
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>
+<style>
+  @import "tailwindcss";
+  @media (max-width: 64rem) {
+    .variant-compact :nth-child(n + 3) a {
+      @apply hidden;
+    }
+  }
+  @media (max-width: 80rem) {
+    .variant-compact :nth-child(n + 4) a {
+      @apply hidden;
+    }
+  }
+</style>

@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  to: string;
+  variant?: "light" | "dark";
+  "no-motion"?: boolean;
+  class?: string;
+}
+const props = Astro.props;
+const { to, variant = "dark" } = props;
+---
+
+<a
+  href={to}
+  {...!to.startsWith("/") ? { target: "_blank", rel: "noreferrer" } : {}}
+  class:list={[
+    "not-prose relative flex w-max items-center gap-4 rounded-full bg-gray-50 px-6 py-3 font-bold text-black hover:brightness-95 active:top-0.25",
+    variant === "dark" && "border border-black",
+    !props["no-motion"] && "motion",
+    Astro.props.class,
+  ]}
+>
+  <slot />
+  <Icon
+    id="icon"
+    name="feather:arrow-right"
+    class="relative h-8 w-8 motion-reduce:left-1"
+  />
+</a>
+<style>
+  @media not (prefers-reduced-motion) {
+    #icon {
+      left: -2px;
+      transition: left 0.15s ease-out;
+    }
+    a:hover.motion #icon {
+      left: 6px;
+    }
+  }
+</style>

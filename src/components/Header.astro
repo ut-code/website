@@ -1,0 +1,145 @@
+---
+import { ClientRouter, fade } from "astro:transitions";
+import { Icon } from "astro-icon/components";
+
+import banner from "../content/banner.ts";
+import { Focus } from "../schema.ts";
+import Logo from "./Logo.astro";
+
+const links = [
+  { title: "プロジェクト", to: "/projects", focus: Focus.projects },
+  { title: "記事", to: "/articles", focus: Focus.articles },
+  { title: "メンバー", to: "/members", focus: Focus.members },
+  { title: "参加", to: "/join", focus: Focus.join },
+  { title: "お問い合わせ", to: "/contact", focus: Focus.contact },
+];
+
+interface Props {
+  focus: Focus;
+}
+const { focus } = Astro.props;
+---
+
+<ClientRouter transition:animate={fade({ duration: 30 })} />
+<header class="fixed top-0 z-20 w-full bg-gray-50">
+  {
+    banner.shown && (
+      <div
+        id="banner"
+        class:list={[
+          "flex h-10 items-center justify-center gap-4 px-1 md:h-8",
+          banner.kind === "error" ? "bg-red-300" : "bg-green-300",
+        ]}
+      >
+        <span class="hidden md:inline">{banner.long}</span>
+        <span aria-hidden class="inline md:hidden">
+          {banner.short}
+        </span>
+        <a
+          href={banner.link}
+          class="inline-flex flex-shrink-0 items-center gap-0.5 hover:underline"
+          rel={banner.link.startsWith("/") ? undefined : "noreferrer"}
+          target={banner.link.startsWith("/") ? undefined : "_blank"}
+          data-astro-prefetch="viewport"
+        >
+          {banner.linkText ?? "詳細はこちら"}
+          <Icon name="feather:arrow-right" />
+        </a>
+      </div>
+    )
+  }
+  <div class="flex h-16">
+    <a href="/" class="flex items-center px-4" data-astro-prefetch="load">
+      <Logo class="ml-8 w-36" variant="default" />
+    </a>
+    <div aria-hidden="true" class="flex-grow"></div>
+    <ul class="hidden md:flex">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.to}
+              class:list={[
+                "navigation-bar flex h-full items-center justify-center px-6 text-center lg:min-w-24",
+                focus === link.focus && "current",
+              ]}
+            >
+              {link.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <button
+      type="button"
+      class="flex h-full w-16 items-center justify-center hover:bg-gray-100 md:hidden"
+      popovertarget="navigation-panel"
+      popovertargetaction="toggle"
+    >
+      <Icon name="feather:menu" class="h-6 w-6 text-gray-600" />
+    </button>
+  </div>
+  <div
+    id="navigation-panel"
+    popover
+    class="top-0 w-full transition-opacity duration-300 md:hidden"
+  >
+    <ul class="">
+      {
+        links.map((link) => (
+          <li class="hover:brightness-75">
+            <a
+              href={link.to}
+              class="block px-4 py-2"
+              data-astro-prefetch="load"
+            >
+              {link.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</header>
+
+<style>
+  :popover-open {
+    inset: unset;
+    position: fixed;
+  }
+  /* https://stackoverflow.com/questions/77042256/css-transition-animation-not-working-for-popover-attribute */
+  [popover] {
+    opacity: 0;
+    &:popover-open {
+      opacity: 1;
+      @starting-style {
+        opacity: 0;
+      }
+    }
+    transition:
+      opacity 0.3s,
+      display 0.3s;
+    transition-behavior: allow-discrete;
+  }
+
+  .navigation-bar {
+    background: linear-gradient(black 0 0) bottom left/
+      var(--underline-width, 0%) 0.1em no-repeat;
+    text-decoration: none;
+  }
+  .navigation-bar.current {
+    background: linear-gradient(lawngreen 0 0) bottom left/
+      var(--underline-width, 0%) 0.1em no-repeat;
+  }
+  .navigation-bar:hover {
+    --underline-width: 100%;
+    @starting-style {
+      --underline-width: 0%;
+    }
+  }
+  @media not (prefers-reduced-motion) {
+    .navigation-bar {
+      transition: background-size 0.5s;
+    }
+  }
+</style>
