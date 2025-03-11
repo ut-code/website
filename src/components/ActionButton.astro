@@ -15,22 +15,27 @@ const { to, variant = "dark" } = props;
   href={to}
   {...!to.startsWith("/") ? { target: "_blank", rel: "noreferrer" } : {}}
   class:list={[
-    "not-prose relative flex w-max items-center gap-4 rounded-full bg-white px-6 py-3 font-bold text-black hover:brightness-95 active:top-0.25",
+    "not-prose relative flex w-max items-center gap-4 rounded-full bg-gray-50 px-6 py-3 font-bold text-black hover:brightness-95 active:top-0.25",
     variant === "dark" && "border border-black",
     !props["no-motion"] && "motion",
     Astro.props.class,
   ]}
 >
   <slot />
-  <Icon id="icon" name="feather:arrow-right" class="relative h-8 w-8" />
+  <Icon
+    id="icon"
+    name="feather:arrow-right"
+    class="relative h-8 w-8 motion-reduce:left-1"
+  />
 </a>
 <style>
-  /* TODO: @media not(prefers-reduced-motion) */
-  #icon {
-    left: -2px;
-    transition: left 0.15s ease-out;
-  }
-  a:hover.motion #icon {
-    left: 6px;
+  @media not (prefers-reduced-motion) {
+    #icon {
+      left: -2px;
+      transition: left 0.15s ease-out;
+    }
+    a:hover.motion #icon {
+      left: 6px;
+    }
   }
 </style>

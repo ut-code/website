@@ -46,12 +46,12 @@ const articlesWithExcerpts = await Promise.all(
       const additionalProps = isFeatured
         ? {
             cellClassName: "md:col-span-2 md:row-span-2",
-            imageClassName: "max-h-[350px] md:max-h-[450px]",
+            imageClassName: "max-h-[32rem] md:max-h-[48rem]",
             excerpt: text.slice(0, 300),
           }
         : {
             cellClassName: "",
-            imageClassName: "max-h-[200px]",
+            imageClassName: "max-h-[24rem]",
             excerpt: text.slice(0, 80),
           };
       return (
@@ -59,18 +59,19 @@ const articlesWithExcerpts = await Promise.all(
           <a
             href={`/articles/${article.id}`}
             class:list={[
-              "relative rounded-xl p-1 shadow-md hover:brightness-110 active:top-0.5",
+              "relative rounded-xl bg-gray-50 p-1 shadow-md hover:brightness-110 active:top-0.5",
               additionalProps.cellClassName,
             ]}
           >
             <Image
+              transition:name={`article:cover:${article.id}`}
               loading={i < 5 ? "eager" : "lazy"}
               alt="カバー画像"
               height={48 * 4 * 4}
               width={48 * 4 * 4}
               src={article.data.image}
               class:list={[
-                "animate-move w-full rounded-xl object-contain object-top",
+                "animate-move w-full rounded-xl object-center",
                 additionalProps.imageClassName,
               ]}
             />

@@ -21,7 +21,7 @@ const { focus } = Astro.props;
 ---
 
 <ClientRouter />
-<header class="fixed top-0 z-20 w-full bg-white">
+<header class="fixed top-0 z-20 w-full bg-gray-50">
   {
     banner.shown && (
       <div
@@ -118,10 +118,9 @@ const { focus } = Astro.props;
   }
 
   .navigation-bar {
-    background: linear-gradient(currentColor 0 0) bottom left/
+    background: linear-gradient(black 0 0) bottom left/
       var(--underline-width, 0%) 0.1em no-repeat;
     text-decoration: none;
-    transition: background-size 0.5s;
   }
   .navigation-bar.current {
     background: linear-gradient(lawngreen 0 0) bottom left/
@@ -131,6 +130,11 @@ const { focus } = Astro.props;
     --underline-width: 100%;
     @starting-style {
       --underline-width: 0%;
+    }
+  }
+  @media not (prefers-reduced-motion) {
+    .navigation-bar {
+      transition: background-size 0.5s;
     }
   }
 </style>

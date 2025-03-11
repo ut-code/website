@@ -32,19 +32,22 @@ if (variant === "compact") {
         ]}
       >
         <a
-          class="relative top-0 overflow-clip rounded-xl border border-gray-200 bg-white hover:brightness-95 active:top-0.25"
+          class="relative top-0 overflow-clip rounded-xl border border-gray-200 bg-gray-50 hover:brightness-95 active:top-0.25"
           href={`/projects/${project.data.slug}`}
         >
           <Image
+            transition:name={`project:image:${project.id}`}
             loading={i < 6 ? "eager" : "lazy"}
             width="800"
             height="600"
             alt="プロジェクトのイメージ画像"
             src={project.data.image}
-            class="h-[16rem] w-full object-cover"
+            class="max-h-[24rem] w-full object-fill"
           />
           <div class="p-4">
-            <h3 class="text-xl font-bold">{project.data.title}</h3>
+            <h3 class="text-xl font-bold text-gray-800">
+              {project.data.title}
+            </h3>
             <p class="prose mt-2">
               {project.data.description.length < 120
                 ? project.data.description

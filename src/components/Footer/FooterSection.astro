@@ -14,7 +14,7 @@ const { title, links } = Astro.props;
         <li>
           <a
             href={link.to}
-            class="link relative active:top-0.25"
+            class="link relative active:top-0.25 motion-reduce:hover:underline"
             target={link.to.startsWith("/") ? "" : "_blank"}
             rel={link.to.startsWith("/") ? "" : "noreferrer"}
           >
@@ -26,16 +26,18 @@ const { title, links } = Astro.props;
   </ul>
 </div>
 <style>
-  .link {
-    background: linear-gradient(currentColor 0 0) bottom left/
-      var(--underline-width, 0%) 0.1em no-repeat;
-    text-decoration: none;
-    transition: background-size 0.1s linear;
-  }
-  .link:hover {
-    --underline-width: 100%;
-    @starting-style {
-      --underline-width: 0%;
+  @media not (prefers-reduced-motion) {
+    .link {
+      background: linear-gradient(currentColor 0 0) bottom left/
+        var(--underline-width, 0%) 0.1em no-repeat;
+      text-decoration: none;
+      transition: background-size 0.1s linear;
+    }
+    .link:hover {
+      --underline-width: 100%;
+      @starting-style {
+        --underline-width: 0%;
+      }
     }
   }
 </style>

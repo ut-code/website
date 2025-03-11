@@ -29,7 +29,7 @@ const members = (await getCollection("members")).sort(
   />
   <div class="mt-160">
     <h1
-      class="bg-opacity-80 relative mb-6 h-full w-max bg-black px-4 py-2 text-[6rem] text-white sm:text-[8rem] lg:pl-40"
+      class="relative mb-6 h-full w-max bg-gray-950 px-4 py-2 text-[6rem] text-white sm:text-[8rem] lg:pl-40"
     >
       メンバー
     </h1>
@@ -44,6 +44,8 @@ const members = (await getCollection("members")).sort(
               class="relative block drop-shadow-lg transition-colors duration-150 hover:brightness-110 active:top-0.5"
             >
               <Image
+                transition:animate="fade"
+                transition:name={`member:image:${member.id}`}
                 alt={`${member.data?.nameJa} の写真`}
                 src={member.data.upperBodyImage}
                 width="400"

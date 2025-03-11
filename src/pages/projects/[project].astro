@@ -27,12 +27,13 @@ const { Content } = await render(project);
   description={project.data.description}
   focus={Focus.projects}
 >
-  <main>
+  <main class="mt-36">
     <div
       class="lg:mx-auto lg:flex lg:max-w-screen-lg lg:flex-row-reverse lg:items-center lg:gap-4 lg:px-4 lg:py-12"
     >
       <Image
-        class="h-64 w-full md:h-96 lg:h-[400px] lg:w-[600px] lg:rounded-2xl"
+        transition:name={`project:image:${project.id}`}
+        class="w-full lg:rounded-2xl"
         alt="プロジェクト画像"
         src={project.data.image}
       />

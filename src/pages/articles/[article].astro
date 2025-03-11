@@ -34,10 +34,11 @@ if (article.data.author && !author)
 >
   {
     article.data.image && (
-      <div class="mt-6 text-center lg:mt-12 lg:px-8">
+      <div class="mt-36 text-center lg:mt-48 lg:px-8">
         <Image
+          transition:name={`article:cover:${article.id}`}
           loading="eager"
-          class="mr-auto ml-auto max-h-200 w-full max-w-screen-lg object-contain lg:isolate lg:overflow-clip lg:rounded-2xl"
+          class="mr-auto ml-auto max-h-400 w-full max-w-screen-lg lg:rounded-2xl"
           alt="イメージ画像"
           src={article.data.image}
         />
@@ -77,5 +78,3 @@ if (article.data.author && !author)
     ut.code(); に参加する準備はできましたか？
   </JoinUsCTA>
 </GlobalLayout>
-
-); }
