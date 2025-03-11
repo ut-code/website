@@ -18,12 +18,12 @@ import LogoGMOMedia from "../images/logo-gmo-media.png";
   <Image
     alt=""
     loading="eager"
-    class="sticky -top-40 -z-10 h-[120vh] w-full object-cover object-center"
+    class="fixed -top-[0vh] -z-10 h-[100vh] w-full object-cover object-center motion-reduce:fixed motion-reduce:bottom-0"
     width="1920"
     height="1080"
     src={Hero}
   />
-  <div class="absolute top-[50%] left-10 max-w-lg bg-white/90 p-8 pb-24">
+  <div class="absolute top-[40%] left-10 max-w-lg bg-white/90 p-8 pb-24">
     <h1 class="text-2xl md:text-3xl">
       <span class="inline-block">東京大学の</span><span class="inline-block"
         >ソフトウェア開発</span
@@ -37,7 +37,9 @@ import LogoGMOMedia from "../images/logo-gmo-media.png";
       </p>
     </div>
   </div>
-  <section class="border-t-2 border-white bg-gray-100/70 backdrop-blur-lg">
+  <section
+    class="mt-[100vh] border-t-2 border-white bg-gray-100/70 backdrop-blur-lg"
+  >
     <div class="container mx-auto px-4 py-12">
       <SectionHeader title="Activities" subtitle="活動内容" />
       <div class="mt-8 rounded-xl bg-white/100 p-8 shadow-2xl md:p-12">
@@ -98,34 +100,51 @@ import LogoGMOMedia from "../images/logo-gmo-media.png";
     </div>
   </section>
   <section class="bg-black py-80 text-white">
-    <div class="mx-auto flex items-center gap-12 px-8">
-      <div class="flex-grow self-center">
-        <h1 class="text-6xl leading-snug">
-          <span class="mb-3 inline-block">未来の<wbr />ソフトウェアを</span>
-          <br />
-          <span>デザインしよう</span>
+    <div
+      class="mx-auto block items-center gap-12 px-8 xl:flex xl:flex-row-reverse 2xl:mx-24"
+    >
+      <Image
+        alt=""
+        src={LabCafe}
+        width="1000"
+        height="800"
+        class="mr-6 ml-auto hidden h-full w-full max-w-2xl flex-1 overflow-clip rounded-3xl object-cover md:block xl:max-w-3xl"
+      />
+      <article class="mt-12 self-center md:ml-12">
+        <h1 class="max-w-2xl text-4xl leading-snug sm:text-5xl md:text-6xl">
+          <span
+            id="text-future-software"
+            class="mb-3 inline-block bg-white text-black"
+            onmouseover="document.getElementById('text-future-software')?.setAttribute('data-highlighted', '');"
+            tabindex="0"
+            onfocus="document.getElementById('text-future-software')?.setAttribute('data-highlighted', '');"
+            >未来の<wbr />ソフトウェア</span
+          >を<br /><span>デザインしよう</span>
         </h1>
-        <p class="mt-3 text-xl leading-loose text-gray-300">
+        <p class="text-md mt-3 max-w-xl leading-loose text-gray-400 sm:text-xl">
           <span class="inline-block">
             ut.code(); で一緒にワクワクするソフトウェアを作りませんか？
-          </span>
-          <span class="inline-block">
             初心者から実務経験者、学年を問わずどなたでも大歓迎です。
           </span>
         </p>
         <ActionButton to="/join/" variant="dark" class="mt-8">
           JOIN US
         </ActionButton>
-      </div>
-      <div class="hidden flex-shrink self-stretch lg:block">
-        <Image
-          alt=""
-          src={LabCafe}
-          width="600"
-          height="400"
-          class="h-full w-full overflow-clip rounded-3xl object-cover"
-        />
-      </div>
+      </article>
+      <script>
+        var text = document.getElementById("text-future-software");
+        document.onscroll = () => {
+          if (!text) return;
+          if (!document.scrollingElement) return;
+          var screenTop = document.scrollingElement.scrollTop;
+          var screenBottom = screenTop && +innerHeight;
+          var textTop = text.getBoundingClientRect().top;
+
+          if (textTop < screenBottom - 500) {
+            text.setAttribute("data-highlighted", "");
+          }
+        };
+      </script>
     </div>
   </section>
   <section class="bg-gray-100/70 backdrop-blur-sm">
@@ -230,6 +249,20 @@ import LogoGMOMedia from "../images/logo-gmo-media.png";
     --underline-width: 100%;
     @starting-style {
       --underline-width: 0%;
+    }
+  }
+
+  @media not (prefers-reduced-motion) {
+    #text-future-software {
+      text-decoration: underline white;
+      text-underline-offset: 12px;
+      --bg-left: 0%;
+      background: linear-gradient(white 0 0) bottom left/var(--bg-left, 0%) 100%
+        no-repeat;
+      transition: background-size 0.8s ease-in-out;
+    }
+    #text-future-software[data-highlighted] {
+      --bg-left: 100%;
     }
   }
 </style>

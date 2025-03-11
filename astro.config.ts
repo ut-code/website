@@ -29,4 +29,7 @@ export default defineConfig({
     prefetchAll: true,
     defaultStrategy: "hover",
   },
+  experimental: {
+    clientPrerender: true,
+  },
 });
