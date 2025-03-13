@@ -1,8 +1,8 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { format } from "date-fns";
 import { markdownToTxt } from "markdown-to-txt";
+import LazyImage from "./LazyImage.astro";
 
 interface Props {
   variant?: "full" | "compact";
@@ -63,7 +63,8 @@ const articlesWithExcerpts = await Promise.all(
               additionalProps.cellClassName,
             ]}
           >
-            <Image
+            <LazyImage
+              size="small"
               transition:name={`article:cover:${article.id}`}
               loading={i < 5 ? "eager" : "lazy"}
               alt="カバー画像"

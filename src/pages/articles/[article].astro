@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection, getEntry, render } from "astro:content";
 import { format } from "date-fns";
 
@@ -13,6 +12,7 @@ export async function getStaticPaths() {
 import JoinUsCTA from "../../components/JoinUsCTA.astro";
 import GlobalLayout from "../../layouts/GlobalLayout.astro";
 import { Focus } from "../../schema";
+import LazyImage from "../../components/LazyImage.astro";
 
 const { article } = Astro.props;
 const { Content } = await render(article);
@@ -32,8 +32,11 @@ if (article.data.author && !author)
   {
     article.data.image && (
       <div class="mt-36 text-center lg:mt-48 lg:px-8">
-        <Image
+        <LazyImage
+          size="heading"
           transition:name={`article:cover:${article.id}`}
+          width="1200"
+          height="600"
           loading="eager"
           class="mr-auto ml-auto max-h-400 w-full max-w-screen-lg lg:rounded-2xl"
           alt="イメージ画像"
@@ -52,8 +55,11 @@ if (article.data.author && !author)
         class="mx-auto mt-4 flex max-w-sm items-center gap-4 rounded-lg px-4 py-2 hover:bg-gray-100 lg:mt-8"
       >
         <div class="h-14 w-14 overflow-clip rounded-full bg-gray-200">
-          <Image
+          <LazyImage
+            size="small"
             alt="著者の写真"
+            width="56"
+            height="56"
             src={author.data.faceImage}
             class="h-full w-full"
           />

@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import { Focus } from "../schema.ts";
 
@@ -12,10 +11,12 @@ import GlobalLayout from "../layouts/GlobalLayout.astro";
 import Hero from "../images/hero.jpg";
 import LabCafe from "../images/lab-cafe.jpg";
 import LogoGMOMedia from "../images/logo-gmo-media.png";
+import LazyImage from "../components/LazyImage.astro";
 ---
 
 <GlobalLayout title={null} description={null} focus={Focus.none}>
-  <Image
+  <LazyImage
+    size="fullscreen"
     alt=""
     loading="eager"
     class="fixed -top-[0vh] -z-10 h-[100vh] w-full object-cover object-center motion-reduce:fixed motion-reduce:bottom-0"
@@ -103,7 +104,8 @@ import LogoGMOMedia from "../images/logo-gmo-media.png";
     <div
       class="mx-auto block items-center gap-12 px-8 xl:flex xl:flex-row-reverse 2xl:mx-16 2xl:gap-20"
     >
-      <Image
+      <LazyImage
+        size="small"
         alt=""
         src={LabCafe}
         width="1000"
@@ -210,7 +212,8 @@ import LogoGMOMedia from "../images/logo-gmo-media.png";
     <div class="container mx-auto px-8 py-24">
       <SectionHeader title="協賛企業様" />
       <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <Image
+        <LazyImage
+          size="small"
           alt="GMOメディア株式会社"
           src={LogoGMOMedia}
           width="400"

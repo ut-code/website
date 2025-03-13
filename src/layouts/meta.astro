@@ -15,18 +15,19 @@ const url = Astro.url.href;
 
 const favicon = await getImage({
   src: Favicon,
-  height: 128,
-  width: 128,
+  height: 32,
+  width: 32,
 });
 ---
 
-<title>{title ? title + " | ut.code();" : "ut.code();"}</title>
 <meta charset="utf-8" />
+<title>{title ? title + " | ut.code();" : "ut.code();"}</title>
+<link rel="icon" href={favicon.src} />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
   content={description ?? "東京大学のソフトウェアエンジニアリングコミュニティ"}
 />
-<link rel="icon" href={favicon.src} />
 <meta property="og:site_name" content="ut.code();" />
 <meta property="og:title" content={title} />
 <!-- TODO: make the origin flexible -->

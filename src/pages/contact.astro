@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import LazyImage from "../components/LazyImage.astro";
 
 import GlobalLayout from "../layouts/GlobalLayout.astro";
 import { Focus } from "../schema";
@@ -16,7 +16,8 @@ import ContactHeader from "../images/contact-header.jpg";
   <div class="container mx-auto px-4 pt-16 pb-12">
     <h1 class="text-4xl">ut.code(); に連絡する</h1>
   </div>
-  <Image
+  <LazyImage
+    size="fullscreen"
     alt=""
     loading="eager"
     src={ContactHeader}

@@ -1,6 +1,6 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import LazyImage from "./LazyImage.astro";
 
 interface Props {
   variant: "compact" | "full";
@@ -35,7 +35,8 @@ if (variant === "compact") {
           class="relative top-0 overflow-clip rounded-xl border border-gray-200 bg-gray-50 hover:brightness-95 active:top-0.25"
           href={`/projects/${project.data.slug}`}
         >
-          <Image
+          <LazyImage
+            size="small"
             transition:name={`project:image:${project.id}`}
             loading={i < 6 ? "eager" : "lazy"}
             width="800"

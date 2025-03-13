@@ -1,8 +1,8 @@
 ---
-import { Image } from "astro:assets";
 import type { GetStaticPaths } from "astro";
 import { Icon } from "astro-icon/components";
 
+import LazyImage from "../../components/LazyImage.astro";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
 import ActionButton from "../../components/ActionButton.astro";
@@ -31,8 +31,11 @@ const { Content } = await render(project);
     <div
       class="lg:mx-auto lg:flex lg:max-w-screen-lg lg:flex-row-reverse lg:items-center lg:gap-4 lg:px-4 lg:py-12"
     >
-      <Image
+      <LazyImage
+        size="heading"
         transition:name={`project:image:${project.id}`}
+        width="1200"
+        height="600"
         class="w-full lg:rounded-2xl"
         alt="プロジェクト画像"
         src={project.data.image}

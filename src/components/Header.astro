@@ -20,8 +20,8 @@ interface Props {
 const { focus } = Astro.props;
 ---
 
-<ClientRouter transition:animate={fade({ duration: 30 })} />
 <header class="fixed top-0 z-20 w-full bg-gray-50">
+  <!-- <ClientRouter transition:animate={fade({ duration: 30 })} /> -->
   {
     banner.shown && (
       <div

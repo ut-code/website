@@ -1,9 +1,8 @@
 ---
-import { Image } from "astro:assets";
-
 import GlobalLayout from "../layouts/GlobalLayout.astro";
 import { Focus } from "../schema";
 
+import LazyImage from "../components/LazyImage.astro";
 import ActionButton from "../components/ActionButton.astro";
 import DonationHeader from "../images/donation-header.jpg";
 ---
@@ -15,7 +14,8 @@ import DonationHeader from "../images/donation-header.jpg";
   class="prose"
 >
   <h1 class="mt-12 ml-[20%] text-4xl">ご寄付・ご協賛のお願い</h1>
-  <Image
+  <LazyImage
+    size="heading"
     alt=""
     loading="eager"
     src={DonationHeader}

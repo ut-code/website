@@ -1,5 +1,4 @@
 ---
-import "../global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import type { Focus } from "../schema";
@@ -21,5 +20,14 @@ const { title, description, focus } = Astro.props;
     <div aria-hidden class="mt-16"></div>
     <slot />
     <Footer />
+    <style is:global>
+      @import "tailwindcss";
+      @plugin "@tailwindcss/typography";
+
+      /* do we need this? */
+      :root {
+        --color-primary-main: #00d372;
+      }
+    </style>
   </body>
 </html>
