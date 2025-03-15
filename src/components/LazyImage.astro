@@ -1,52 +1,22 @@
 ---
-import { getImage, Picture } from "astro:assets";
+import { Picture } from "astro:assets";
 interface Props {
-  size: "fullscreen" | "heading" | "small";
+  size?: "fullscreen" | "heading" | "small";
   src: ImageMetadata;
   alt: string;
-  width: number | `${number}`;
-  height: number | `${number}`;
+  width?: number | `${number}`;
+  height?: number | `${number}`;
   loading?: "eager" | "lazy";
   class?: string;
   "class:list"?: string[];
   style?: string;
+  layout?: "responsive" | "fixed";
 }
 
 const props = Astro.props;
-
-const size = { width: 5, height: 5 };
-// props.size === "fullscreen"
-//   ? {
-//       width: 192,
-//       height: 108,
-//     }
-//   : props.size === "heading"
-//     ? {
-//         width: 50,
-//         height: 50,
-//       }
-//     : props.size === "small"
-//       ? {
-//           width: 20,
-//           height: 20,
-//         }
-//       : (props.size satisfies never);
-
-const small = await getImage({
-  src: props.src,
-  format: "webp",
-  ...size,
-});
-console.log(small.src);
 ---
 
-<div
-  class="object-cover object-center"
-  class={props.class}
-  class:list={props["class:list"] ?? []}
-  style={`background-size: cover; background-image: url(${small.src});` +
-    props.style}
->
+<div class="skeleton">
   <Picture
     loading={props.loading || "lazy"}
     {...props}

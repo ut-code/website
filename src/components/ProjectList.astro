@@ -28,7 +28,7 @@ if (variant === "compact") {
       <li
         class:list={[
           "contents",
-          variant === "compact" ? "variant-short" : "variant-index",
+          variant === "compact" ? "variant-short" : "variant-full",
         ]}
       >
         <a
@@ -39,11 +39,9 @@ if (variant === "compact") {
             size="small"
             transition:name={`project:image:${project.id}`}
             loading={i < 6 ? "eager" : "lazy"}
-            width="800"
-            height="600"
             alt="プロジェクトのイメージ画像"
             src={project.data.image}
-            class="max-h-[24rem] w-full object-fill"
+            class="max-h-[24rem] w-full object-contain"
           />
           <div class="p-4">
             <h3 class="text-xl font-bold text-gray-800">

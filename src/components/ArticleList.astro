@@ -59,7 +59,7 @@ const articlesWithExcerpts = await Promise.all(
           <a
             href={`/articles/${article.id}`}
             class:list={[
-              "relative rounded-xl bg-gray-50 p-1 shadow-md hover:brightness-110 active:top-0.5",
+              "relative rounded-xl bg-gray-50 p-1 shadow-md grayscale-50 duration-300 hover:grayscale-0 active:top-0.5",
               additionalProps.cellClassName,
             ]}
           >
@@ -68,11 +68,9 @@ const articlesWithExcerpts = await Promise.all(
               transition:name={`article:cover:${article.id}`}
               loading={i < 5 ? "eager" : "lazy"}
               alt="カバー画像"
-              height={48 * 4 * 4}
-              width={48 * 4 * 4}
               src={article.data.image}
               class:list={[
-                "w-full rounded-xl object-center",
+                "min-h-0 w-full rounded-xl object-center",
                 additionalProps.imageClassName,
               ]}
             />
@@ -81,7 +79,14 @@ const articlesWithExcerpts = await Promise.all(
                 {format(article.data.date, "yyyy/MM/dd HH:mm")}
               </time>
               <h3 class="text-lg font-bold">{article.data.title}</h3>
-              <p class="prose mt-2 max-w-none">{additionalProps.excerpt}...</p>
+              <p
+                class:list={[
+                  "prose mt-2 line-clamp-3 max-w-none",
+                  isFeatured && "md:line-clamp-6",
+                ]}
+              >
+                {additionalProps.excerpt}...
+              </p>
             </div>
           </a>
         </li>

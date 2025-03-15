@@ -18,31 +18,29 @@ const members = (await getCollection("members")).sort(
   focus={Focus.members}
 >
   <LazyImage
+    layout="fixed"
     loading="eager"
     size="fullscreen"
     alt=""
     src={MembersHeader}
-    width="1920"
-    height="700"
-    class="fixed top-0 -z-100 h-[100vh] w-full object-cover"
+    class="fixed top-32 -z-100 max-h-[100%] w-full object-cover md:h-[100vh]"
     style="object-position: 75% 20%;"
     aria-hidden
   />
-  <div class="mt-160">
-    <h1
-      class="relative mb-6 h-full w-max bg-gray-950 px-4 py-2 text-[6rem] text-white sm:text-[8rem] lg:pl-40"
-    >
-      メンバー
-    </h1>
-  </div>
-  <main class="border-t-2 border-gray-600 px-4 py-16 backdrop-blur">
+  <h1
+    class="absolute bottom-6 w-max bg-gray-950 px-4 py-2 text-[4rem] text-white sm:text-[8rem] lg:pl-40"
+  >
+    メンバー
+  </h1>
+  <main class="mt-[100vh] border-t-2 border-gray-600 px-4 py-16 backdrop-blur">
     <ul class="grid w-full gap-8 px-[10%] pt-6 md:grid-cols-2 xl:grid-cols-3">
       {
         members.map((member) => (
           <li class="relative">
             <a
               href={`/members/${member.id}`}
-              class="relative block drop-shadow-lg transition-colors duration-150 hover:brightness-110 active:top-0.5"
+              class="relative block w-fit drop-shadow-lg transition-colors duration-150 hover:brightness-110 active:top-0.5"
+              data-astro-prefetch="hover"
             >
               <LazyImage
                 size="small"
@@ -54,7 +52,7 @@ const members = (await getCollection("members")).sort(
                 class="h-[400px] w-full object-cover"
               />
               <div class="absolute bottom-0 w-full bg-gradient-to-b from-transparent to-black px-6 pt-12 pb-6 text-white">
-                <p class="text-3xl">{member.data.nameJa}</p>
+                <h2 class="text-3xl">{member.data.nameJa}</h2>
                 <p class="text-md">{member.data.nameEn}</p>
                 <p class="mt-2 text-xs leading-normal">
                   {member.data.description}

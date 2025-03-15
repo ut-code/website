@@ -19,19 +19,22 @@ interface Props {
 const { focus } = Astro.props;
 ---
 
-<header class="fixed top-0 z-20 w-full bg-gray-50">
+<header class="sticky top-0 z-20 w-full bg-gray-50">
   <!-- <ClientRouter transition:animate={fade({ duration: 30 })} /> -->
   {
     banner.shown && (
       <div
         id="banner"
         class:list={[
-          "flex h-10 items-center justify-center gap-4 px-1 md:h-8",
+          "flex items-center justify-center gap-4 px-1 py-2",
           banner.kind === "error" ? "bg-red-300" : "bg-green-300",
         ]}
       >
         <span class="hidden md:inline">{banner.long}</span>
-        <span aria-hidden class="inline md:hidden">
+        <span
+          aria-hidden
+          class="sm:text-md inline text-center text-sm md:hidden"
+        >
           {banner.short}
         </span>
         <a
@@ -49,10 +52,10 @@ const { focus } = Astro.props;
   }
   <div class="flex h-16">
     <a href="/" class="flex items-center px-4" data-astro-prefetch="viewport">
-      <Logo class="ml-8 w-36" variant="default" />
+      <Logo class="w-36 sm:ml-8" variant="default" />
     </a>
-    <div aria-hidden="true" class="flex-grow"></div>
-    <ul class="hidden md:flex">
+    <div aria-hidden class="flex-1"></div>
+    <ul class="hidden lg:flex">
       {
         links.map((link) => (
           <li>
@@ -71,7 +74,7 @@ const { focus } = Astro.props;
     </ul>
     <button
       type="button"
-      class="flex h-full w-16 items-center justify-center hover:bg-gray-100 md:hidden"
+      class="flex h-full w-16 items-center justify-center hover:bg-gray-100 lg:hidden"
       popovertarget="navigation-panel"
       popovertargetaction="toggle"
     >
@@ -81,9 +84,9 @@ const { focus } = Astro.props;
   <div
     id="navigation-panel"
     popover
-    class="top-0 w-full transition-opacity duration-300 md:hidden"
+    class="absolute inset-auto top-0 w-full transition-opacity duration-300 lg:hidden"
   >
-    <ul class="">
+    <ul>
       {
         links.map((link) => (
           <li class="hover:brightness-75">
@@ -107,6 +110,7 @@ const { focus } = Astro.props;
     position: fixed;
   }
   /* https://stackoverflow.com/questions/77042256/css-transition-animation-not-working-for-popover-attribute */
+  /* https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using#animating_popovers */
   [popover] {
     opacity: 0;
     &:popover-open {
@@ -115,9 +119,7 @@ const { focus } = Astro.props;
         opacity: 0;
       }
     }
-    transition:
-      opacity 0.3s,
-      display 0.3s;
+    transition: opacity 0.3s;
     transition-behavior: allow-discrete;
   }
 

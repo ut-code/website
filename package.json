@@ -26,6 +26,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "astro": "^5.4.2",
     "astro-icon": "^1.1.5",
+    "daisyui": "^5.0.4",
     "date-fns": "^4.1.0",
     "markdown-to-txt": "^2.0.1",
     "sharp": "^0.33.5"

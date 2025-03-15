@@ -12,19 +12,19 @@ import Hero from "../images/hero.jpg";
 import LabCafe from "../images/lab-cafe.jpg";
 import LogoGMOMedia from "../images/logo-gmo-media.png";
 import LazyImage from "../components/LazyImage.astro";
+import { Picture } from "astro:assets";
 ---
 
 <GlobalLayout title={null} description={null} focus={Focus.none}>
-  <LazyImage
-    size="fullscreen"
+  <Picture
+    layout="fixed"
+    formats={["avif", "webp"]}
     alt=""
-    loading="eager"
-    class="fixed -top-[0vh] -z-10 h-[100vh] w-full object-cover object-center motion-reduce:fixed motion-reduce:bottom-0"
-    width="1920"
-    height="1080"
+    loading="lazy"
+    class="fixed bottom-0 -z-10 max-h-full max-w-full object-cover object-center select-none"
     src={Hero}
   />
-  <div class="absolute top-[40%] left-10 max-w-lg bg-gray-50 p-8 pb-24">
+  <div class="absolute top-[40%] left-10 mr-10 max-w-lg bg-gray-50 p-8 pb-24">
     <h1 class="text-2xl md:text-3xl">
       <span class="inline-block">東京大学の</span><span class="inline-block"
         >ソフトウェア開発</span
@@ -43,7 +43,7 @@ import LazyImage from "../components/LazyImage.astro";
   >
     <div class="container mx-auto px-4 py-12">
       <SectionHeader title="Activities" subtitle="活動内容" />
-      <div class="mt-8 rounded-xl bg-gray-50 p-8 shadow-2xl md:p-12">
+      <div class="mt-8 rounded-xl bg-gray-50 p-12 shadow-2xl sm:p-12">
         <ul class="flex flex-col gap-12 lg:flex-row">
           {
             [
@@ -105,11 +105,11 @@ import LazyImage from "../components/LazyImage.astro";
       class="mx-auto block items-center gap-12 px-8 xl:flex xl:flex-row-reverse 2xl:mx-16 2xl:gap-20"
     >
       <LazyImage
-        size="small"
         alt=""
         src={LabCafe}
         width="1000"
         height="800"
+        layout="fixed"
         class="mr-6 ml-auto hidden h-full w-full max-w-2xl flex-1 overflow-clip rounded-3xl object-cover md:block xl:mb-60 xl:max-w-3xl"
       />
       <article class="mt-12 self-center md:ml-12">

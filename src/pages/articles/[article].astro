@@ -31,51 +31,56 @@ if (article.data.author && !author)
 >
   {
     article.data.image && (
-      <div class="mt-36 text-center lg:mt-48 lg:px-8">
+      <div class="text-center lg:px-8">
         <LazyImage
           size="heading"
           transition:name={`article:cover:${article.id}`}
-          width="1200"
-          height="600"
           loading="eager"
-          class="mr-auto ml-auto max-h-400 w-full max-w-screen-lg lg:rounded-2xl"
+          class="mx-auto max-h-400 max-w-md lg:rounded-2xl"
           alt="イメージ画像"
           src={article.data.image}
         />
       </div>
     )
   }
-  <time class="mt-12 block text-center text-gray-500 lg:mt-24">
-    {format(article.data.date, "yyyy-MM-dd HH:mm")}
-  </time>
-  {
-    author && (
-      <a
-        href={`/members/${author.id}`}
-        class="mx-auto mt-4 flex max-w-sm items-center gap-4 rounded-lg px-4 py-2 hover:bg-gray-100 lg:mt-8"
-      >
-        <div class="h-14 w-14 overflow-clip rounded-full bg-gray-200">
-          <LazyImage
-            size="small"
-            alt="著者の写真"
-            width="56"
-            height="56"
-            src={author.data.faceImage}
-            class="h-full w-full"
-          />
-        </div>
-        <div class="flex-1">
-          <div class="text-lg">{author.data.nameJa}</div>
-          <div class="text-sm text-gray-800">{author.data.description}</div>
-        </div>
-      </a>
-    )
-  }
-  <main class="prose mx-auto mt-6 mb-80 lg:mt-12">
-    <h1 class="not-prose text-4xl">
+  <div
+    id="meta"
+    class="mx-auto mt-4 flex max-w-xl flex-wrap justify-around px-4 align-middle sm:gap-8 lg:mt-24"
+  >
+    {
+      author && (
+        <a
+          href={`/members/${author.id}`}
+          class="flex max-w-sm min-w-75 items-center gap-4 rounded-lg px-4 py-2 hover:bg-gray-100"
+        >
+          <div class="h-14 w-14 overflow-clip rounded-full bg-gray-200">
+            <LazyImage
+              size="small"
+              alt="著者"
+              width="56"
+              height="56"
+              src={author.data.faceImage}
+              class="h-full w-full"
+            />
+          </div>
+          <div class="flex-1">
+            <div class="text-lg">{author.data.nameJa}</div>
+            <div class="text-sm text-gray-800">{author.data.description}</div>
+          </div>
+        </a>
+      )
+    }
+    <time class="my-auto mt-4 text-gray-500">
+      {format(article.data.date, "yyyy-MM-dd")}
+    </time>
+  </div>
+  <main class="mx-auto lg:mt-12">
+    <h1 class="mx-auto my-8 max-w-2xl px-8 text-center text-2xl lg:text-3xl">
       {article.data.title}
     </h1>
-    <Content />
+    <article class="prose mx-auto max-w-xl px-8">
+      <Content />
+    </article>
   </main>
   <JoinUsCTA class="mt-24">
     ut.code(); に参加する準備はできましたか？
