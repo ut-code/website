@@ -90,15 +90,9 @@ const articlesWithExcerpts = await Promise.all(
   }
 </ul>
 <style>
-  @import "tailwindcss";
   @media (max-width: 64rem) {
     .variant-compact :nth-child(n + 3) a {
-      @apply hidden;
-    }
-  }
-  @media (max-width: 80rem) {
-    .variant-compact :nth-child(n + 4) a {
-      @apply hidden;
+      display: none;
     }
   }
 </style>

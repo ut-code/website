@@ -1,5 +1,4 @@
 ---
-import { ClientRouter, fade } from "astro:transitions";
 import { Icon } from "astro-icon/components";
 
 import banner from "../content/banner.ts";
@@ -49,7 +48,7 @@ const { focus } = Astro.props;
     )
   }
   <div class="flex h-16">
-    <a href="/" class="flex items-center px-4" data-astro-prefetch="load">
+    <a href="/" class="flex items-center px-4" data-astro-prefetch="viewport">
       <Logo class="ml-8 w-36" variant="default" />
     </a>
     <div aria-hidden="true" class="flex-grow"></div>
@@ -91,7 +90,7 @@ const { focus } = Astro.props;
             <a
               href={link.to}
               class="block px-4 py-2"
-              data-astro-prefetch="load"
+              data-astro-prefetch="viewport"
             >
               {link.title}
             </a>

@@ -62,15 +62,14 @@ if (variant === "compact") {
 </ul>
 
 <style>
-  @import "tailwindcss";
   @media (max-width: 64rem) {
     li.variant-short:nth-child(n + 3) {
-      @apply hidden;
+      display: none;
     }
   }
   @media (max-width: 80rem) {
     li.variant-short:nth-child(n + 5) {
-      @apply hidden;
+      display: none;
     }
   }
 </style>

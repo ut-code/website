@@ -21,13 +21,7 @@ const { title, description, focus } = Astro.props;
     <slot />
     <Footer />
     <style is:global>
-      @import "tailwindcss";
-      @plugin "@tailwindcss/typography";
-
-      /* do we need this? */
-      :root {
-        --color-primary-main: #00d372;
-      }
+      @import "../global.css";
     </style>
   </body>
 </html>

@@ -27,9 +27,14 @@ export default defineConfig({
 
   prefetch: {
     prefetchAll: true,
-    defaultStrategy: "viewport", //
+    defaultStrategy: "hover",
+  },
+  image: {
+    experimentalLayout: "responsive",
   },
   experimental: {
     clientPrerender: true,
+    responsiveImages: true,
+    contentIntellisense: true,
   },
 });
