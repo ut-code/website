@@ -1,3 +1,4 @@
+import { TZDate } from "@date-fns/tz";
 import { type ImageFunction, reference } from "astro:content";
 import { z } from "astro:schema";
 
@@ -9,7 +10,9 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
   z.object({
     // excerpt: z.string().nullable(),
     // longExcerpt: z.string().nullable(),
-    date: z.date(),
+    date: z
+      .date()
+      .transform((date) => new TZDate(date).withTimeZone("Asia/Tokyo")),
     slug: z.string().nullable(),
     title: z.string().nullable(),
     image: image(),

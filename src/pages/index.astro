@@ -11,7 +11,6 @@ import GlobalLayout from "../layouts/GlobalLayout.astro";
 import Hero from "../images/hero.jpg";
 import LabCafe from "../images/lab-cafe.jpg";
 import LogoGMOMedia from "../images/logo-gmo-media.png";
-import LazyImage from "../components/LazyImage.astro";
 import { Picture } from "astro:assets";
 ---
 
@@ -102,23 +101,23 @@ import { Picture } from "astro:assets";
   </section>
   <section class="bg-black py-80 text-white">
     <div
-      class="mx-auto block items-center gap-12 px-8 xl:flex xl:flex-row-reverse 2xl:mx-16 2xl:gap-20"
+      class="mx-auto block items-center justify-evenly gap-12 px-8 xl:flex xl:flex-row-reverse"
     >
-      <LazyImage
+      <Picture
+        formats={["avif", "webp"]}
         alt=""
         src={LabCafe}
-        width="1000"
-        height="800"
-        layout="fixed"
-        class="mr-6 ml-auto hidden h-full w-full max-w-2xl flex-1 overflow-clip rounded-3xl object-cover md:block xl:mb-60 xl:max-w-3xl"
+        layout="none"
+        class="mr-6 ml-auto block max-w-[80%] min-w-0 flex-1 overflow-clip rounded-3xl object-cover md:max-w-2xl xl:mb-60 xl:max-w-xl"
       />
-      <article class="mt-12 self-center md:ml-12">
+      <article class="mt-12 flex-shrink-0 self-center md:ml-12 lg:w-150">
         <h1 class="max-w-2xl text-4xl leading-snug sm:text-5xl md:text-6xl">
           <span
             id="text-future-software"
             class="mb-3 inline-block bg-white text-black"
             onmouseover="document.getElementById('text-future-software')?.setAttribute('data-highlighted', '');"
             tabindex="0"
+            data-highlighted={true /* enable by default then immediately disable using JS s.t. it will show with noscript */}
             onfocus="document.getElementById('text-future-software')?.setAttribute('data-highlighted', '');"
             >未来の<wbr />ソフトウェア</span
           >を<br /><span>デザインしよう</span>
@@ -135,6 +134,7 @@ import { Picture } from "astro:assets";
       </article>
       <script>
         var text = document.getElementById("text-future-software");
+        text?.removeAttribute("data-highlighted");
         document.onscroll = () => {
           if (!text) return;
           if (!document.scrollingElement) return;
@@ -142,7 +142,7 @@ import { Picture } from "astro:assets";
           var screenBottom = screenTop && +innerHeight;
           var textTop = text.getBoundingClientRect().top;
 
-          if (textTop < screenBottom - 500) {
+          if (textTop < screenBottom - 400) {
             text.setAttribute("data-highlighted", "");
           }
         };
@@ -208,19 +208,20 @@ import { Picture } from "astro:assets";
       allow="picture-in-picture; web-share"
       allow-fullscreen></iframe>
   </section>
-  <section class="bg-gray-50">
-    <div class="container mx-auto px-8 py-24">
-      <SectionHeader title="協賛企業様" />
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <LazyImage
-          size="small"
+  <section class="bg-gray-50 py-24">
+    <SectionHeader title="協賛企業様" />
+    <ul
+      class="mx-auto mt-8 flex flex-row flex-wrap items-center justify-center gap-16 px-24"
+    >
+      <li>
+        <Picture
           alt="GMOメディア株式会社"
           src={LogoGMOMedia}
-          width="400"
-          height="600"
+          class="object-contain"
+          width="320"
         />
-      </div>
-    </div>
+      </li>
+    </ul>
   </section>
   <section class="bg-gray-200">
     <div class="container mx-auto px-8 py-12">
@@ -264,7 +265,9 @@ import { Picture } from "astro:assets";
         no-repeat;
       transition: background-size 0.8s ease-in-out;
     }
-    #text-future-software[data-highlighted] {
+    #text-future-software[data-highlighted],
+    #text-future-software:hover,
+    #text-future-software:active {
       --bg-left: 100%;
     }
   }
