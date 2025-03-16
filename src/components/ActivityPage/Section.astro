@@ -1,6 +1,5 @@
 ---
-import LazyImage from "../LazyImage.astro";
-
+import { Picture } from "astro:assets";
 interface Props {
   title: string;
   edge: "left" | "right";
@@ -22,8 +21,8 @@ const { title, edge, image, imageAlt } = Astro.props;
         }[edge],
       ]}
     >
-      <LazyImage
-        size="heading"
+      <Picture
+        formats={["avif", "webp"]}
         alt={imageAlt}
         src={image}
         width="1500"

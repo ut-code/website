@@ -8,9 +8,9 @@ tags: [C++, Python, JavaScript, TypeScript, WebSocket, MessagePack, React]
 github: https://github.com/na-trium-144/webcface
 ---
 
-* ROS1 のようなプロセス間通信と、GUI によるデータの可視化や関数呼び出し、また Immediate-Mode でのシンプルな UI の作成ができます。
-* C++ (C++17以上), C, Python (3.6以上), JavaScript/TypeScript で相互に数値、文字列、画像などのデータを送受信したり、関数を呼び出したりすることができます。
-* Linux, MacOS, Windows(MSVC, MinGW, MSYS2, Cygwin) で動作します。
+- ROS1 のようなプロセス間通信と、GUI によるデータの可視化や関数呼び出し、また Immediate-Mode でのシンプルな UI の作成ができます。
+- C++ (C++17以上), C, Python (3.6以上), JavaScript/TypeScript で相互に数値、文字列、画像などのデータを送受信したり、関数を呼び出したりすることができます。
+- Linux, MacOS, Windows(MSVC, MinGW, MSYS2, Cygwin) で動作します。
 
 ## Easy to Setup
 
@@ -24,11 +24,11 @@ WebCFace の通信には WebSocket と MessagePack を使っています。 こ�
 
 WebCFaceで送受信できるデータ型として
 
-* 数値型・数値配列型 (Value)
-* 文字列型 (Text)
-* 画像 (Image)
-* 関数呼び出し (Func)
-* テキストログ (Log)
+- 数値型・数値配列型 (Value)
+- 文字列型 (Text)
+- 画像 (Image)
+- 関数呼び出し (Func)
+- テキストログ (Log)
 
 などの型が用意されています。 ユーザーがメッセージ型を定義できる ROS や gRPC と比べると自由度は低いかもしれませんが、 これらのデータ型の組み合わせであれば簡単に送受信させることができます。
 
@@ -49,4 +49,3 @@ WebCFace ではプログラム間でデータの送受信ができる API だけ
 webcface-launcher は事前に登録しておいたコマンドの起動・停止を WebCFace の View から操作することができる機能です。 server と launcher だけを常時起動しておき、WebUI を使ってプログラムをリモートに操作するという使い方ができます。
 
 webcface-tui はターミナル上で操作できる TUI アプリで、Web ブラウザを開かなくてもデータをリアルタイムで確認したり、View の操作もできます。
-

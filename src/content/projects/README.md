@@ -14,7 +14,7 @@
 | `description` | ✅   | 短い説明。                                                                     |
 | `tags`        | ✅   | 使用されている技術など。現状タグごとのフィルタリング機能等は提供していません。 |
 | `github`      |      | プロジェクトの GitHub 上での URL。                                             |
-| `youtube`      |      | プロジェクトの YouTube 上での URL。                                             |
+| `youtube`     |      | プロジェクトの YouTube 上での URL。                                            |
 | `website`     |      | プロジェクトのウェブサイトの URL。                                             |
 
-* URL とアイコンを追加したい場合は、 [`project.tsx`](/src/templates/project.tsx) のアイコン表示部分と、末尾にある query を編集する必要があります
+- URL とアイコンを追加したい場合は、 [`project.tsx`](/src/templates/project.tsx) のアイコン表示部分と、末尾にある query を編集する必要があります

@@ -1,11 +1,10 @@
 ---
-import LazyImage from "../components/LazyImage.astro";
+import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 import JoinUsCTA from "../components/JoinUsCTA.astro";
+import MembersHeader from "../images/members-header.jpg";
 import GlobalLayout from "../layouts/GlobalLayout.astro";
 import { Focus } from "../schema";
-
-import MembersHeader from "../images/members-header.jpg";
 
 const members = (await getCollection("members")).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime(),
@@ -17,10 +16,8 @@ const members = (await getCollection("members")).sort(
   description="ut.code(); のメンバーの一覧"
   focus={Focus.members}
 >
-  <LazyImage
-    layout="fixed"
+  <Picture
     loading="eager"
-    size="fullscreen"
     alt=""
     src={MembersHeader}
     class="fixed top-32 -z-100 max-h-[100%] w-full object-cover md:h-[100vh]"
@@ -42,15 +39,15 @@ const members = (await getCollection("members")).sort(
               class="relative block w-fit drop-shadow-lg transition-colors duration-150 hover:brightness-110 active:top-0.5"
               data-astro-prefetch="hover"
             >
-              <LazyImage
-                size="small"
+              <Picture
+                formats={["avif", "webp"]}
                 alt={`${member.data?.nameJa} の写真`}
                 src={member.data.upperBodyImage}
                 width="400"
                 height="400"
                 class="h-[400px] w-full object-cover"
               />
-              <div class="absolute bottom-0 w-full bg-gradient-to-b from-transparent to-black px-6 pt-12 pb-6 text-white">
+              <div class="absolute bottom-0 w-full min-w-45 bg-gradient-to-b from-transparent to-black px-6 pt-12 pb-6 text-white">
                 <h2 class="text-3xl">{member.data.nameJa}</h2>
                 <p class="text-md">{member.data.nameEn}</p>
                 <p class="mt-2 text-xs leading-normal">

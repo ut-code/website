@@ -1,7 +1,17 @@
 ---
+import { getCollection } from "astro:content";
 import ProjectList from "../components/ProjectList.astro";
 import GlobalLayout from "../layouts/GlobalLayout.astro";
 import { Focus } from "../schema";
+
+const projects = (await getCollection("projects")).sort((a, b) => {
+  const a_order = a.data.order ?? Number.POSITIVE_INFINITY;
+  const b_order = b.data.order ?? Number.POSITIVE_INFINITY;
+  if (a_order !== b_order) {
+    return a_order - b_order;
+  }
+  return b.data.date.getTime() - a.data.date.getTime();
+});
 ---
 
 <GlobalLayout
@@ -12,7 +22,7 @@ import { Focus } from "../schema";
   <main class="w-full px-4 py-24">
     <article class="container mx-auto">
       <h1 class="text-center text-4xl">プロジェクト</h1>
-      <ProjectList class="mt-16" variant="full" />
+      <ProjectList {projects} class="mt-16" variant="full" />
     </article>
   </main>
 </GlobalLayout>

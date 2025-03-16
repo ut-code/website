@@ -1,6 +1,6 @@
-import { TZDate } from "@date-fns/tz";
 import { type ImageFunction, reference } from "astro:content";
 import { z } from "astro:schema";
+import { TZDate } from "@date-fns/tz";
 
 export type Article = z.infer<ReturnType<typeof CreateArticleSchema>>;
 export type Member = z.infer<ReturnType<typeof CreateMemberSchema>>;
@@ -23,7 +23,6 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
 export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
   z.object({
     title: z.string(),
-    slug: z.string(),
     order: z.number().optional(),
     date: z.date(),
     image: image(),

@@ -1,22 +1,38 @@
 ---
+import { Picture } from "astro:assets";
+import { getCollection } from "astro:content";
 import { Icon } from "astro-icon/components";
-import { Focus } from "../schema.ts";
+
+import GlobalLayout from "../layouts/GlobalLayout.astro";
 
 import ActionButton from "../components/ActionButton.astro";
 import ArticleList from "../components/ArticleList.astro";
 import ProjectList from "../components/ProjectList.astro";
 import SectionHeader from "../components/per-page/SectionHeader.astro";
-import GlobalLayout from "../layouts/GlobalLayout.astro";
+import { Focus } from "../schema.ts";
 
 import Hero from "../images/hero.jpg";
 import LabCafe from "../images/lab-cafe.jpg";
 import LogoGMOMedia from "../images/logo-gmo-media.png";
-import { Picture } from "astro:assets";
+
+const projects = (await getCollection("projects")).sort((a, b) => {
+  const a_order = a.data.order ?? Number.POSITIVE_INFINITY;
+  const b_order = b.data.order ?? Number.POSITIVE_INFINITY;
+  if (a_order !== b_order) {
+    return a_order - b_order;
+  }
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+projects.splice(6);
+
+const articles = (await getCollection("articles")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+articles.splice(3);
 ---
 
 <GlobalLayout title={null} description={null} focus={Focus.none}>
   <Picture
-    layout="fixed"
     formats={["avif", "webp"]}
     alt=""
     loading="lazy"
@@ -93,7 +109,7 @@ import { Picture } from "astro:assets";
   <section class="bg-gray-50">
     <div class="px-12 py-12 lg:px-36">
       <SectionHeader title="Projects" subtitle="実施中のプロジェクト" />
-      <ProjectList variant="compact" class="mt-10" />
+      <ProjectList {projects} variant="compact" class="mt-10" />
       <ActionButton to="/projects/" class="mt-8 ml-auto">
         すべてのプロジェクト
       </ActionButton>
@@ -107,7 +123,6 @@ import { Picture } from "astro:assets";
         formats={["avif", "webp"]}
         alt=""
         src={LabCafe}
-        layout="none"
         class="mr-6 ml-auto block max-w-[80%] min-w-0 flex-1 overflow-clip rounded-3xl object-cover md:max-w-2xl xl:mb-60 xl:max-w-xl"
       />
       <article class="mt-12 flex-shrink-0 self-center md:ml-12 lg:w-150">
@@ -193,7 +208,7 @@ import { Picture } from "astro:assets";
   <section class="bg-gray-50">
     <div class="container mx-auto px-4 py-12">
       <SectionHeader title="News" subtitle="最新情報" />
-      <ArticleList variant="compact" class="mt-10" />
+      <ArticleList {articles} variant="compact" class="mt-10" />
       <ActionButton to="/articles" class="mt-8 ml-auto">
         すべての記事
       </ActionButton>

@@ -2,6 +2,11 @@
 import ArticleList from "../components/ArticleList.astro";
 import GlobalLayout from "../layouts/GlobalLayout.astro";
 import { Focus } from "../schema";
+
+import { getCollection } from "astro:content";
+const articles = (await getCollection("articles")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
 ---
 
 <GlobalLayout
@@ -11,6 +16,6 @@ import { Focus } from "../schema";
 >
   <main class="container mx-auto px-4 py-24">
     <h1 class="text-center text-4xl">すべての記事</h1>
-    <ArticleList class="mt-16" />
+    <ArticleList {articles} class="mt-16" />
   </main>
 </GlobalLayout>

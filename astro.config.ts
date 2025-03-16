@@ -30,11 +30,11 @@ export default defineConfig({
     defaultStrategy: "hover",
   },
   image: {
-    experimentalLayout: "responsive",
+    // experimentalLayout: "responsive",
   },
   experimental: {
     clientPrerender: true,
-    responsiveImages: true,
+    // responsiveImages: true,
     contentIntellisense: true,
   },
 });

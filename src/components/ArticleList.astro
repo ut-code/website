@@ -1,22 +1,16 @@
 ---
-import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
 import { format } from "date-fns";
 import { markdownToTxt } from "markdown-to-txt";
-import LazyImage from "./LazyImage.astro";
+import type { Article } from "../schema";
 
 interface Props {
+  articles: { id: string; data: Article; body?: string }[];
   variant?: "full" | "compact";
   class?: string;
 }
 const props = Astro.props;
-const { variant = "full" } = props;
-
-const articles = (await getCollection("articles")).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
-);
-if (variant === "compact") {
-  articles.splice(3);
-}
+const { articles, variant = "full" } = props;
 
 const MDXSpecialSyntax = /^import ActionButton from ".+";/;
 
@@ -63,9 +57,9 @@ const articlesWithExcerpts = await Promise.all(
               additionalProps.cellClassName,
             ]}
           >
-            <LazyImage
-              size="small"
-              loading={i < 5 ? "eager" : "lazy"}
+            <Picture
+              loading={i < 5 && variant === "full" ? "eager" : "lazy"}
+              formats={["avif", "webp"]}
               alt="カバー画像"
               src={article.data.image}
               class:list={[

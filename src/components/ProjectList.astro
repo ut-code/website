@@ -1,25 +1,14 @@
 ---
-import { getCollection } from "astro:content";
-import LazyImage from "./LazyImage.astro";
+import { Picture } from "astro:assets";
+import type { Project } from "../schema";
 
 interface Props {
+  projects: { id: string; data: Project }[];
   variant: "compact" | "full";
   class?: string;
 }
 const props = Astro.props;
-const { variant = "full" } = props;
-
-const projects = (await getCollection("projects")).sort((a, b) => {
-  const a_order = a.data.order ?? Number.POSITIVE_INFINITY;
-  const b_order = b.data.order ?? Number.POSITIVE_INFINITY;
-  if (a_order !== b_order) {
-    return a_order - b_order;
-  }
-  return b.data.date.getTime() - a.data.date.getTime();
-});
-if (variant === "compact") {
-  projects.splice(6);
-}
+const { projects, variant = "full" } = props;
 ---
 
 <ul class:list={["grid gap-9 md:grid-cols-2 xl:grid-cols-3", props.class]}>
@@ -33,11 +22,10 @@ if (variant === "compact") {
       >
         <a
           class="relative top-0 overflow-clip rounded-xl border border-gray-200 bg-gray-50 hover:brightness-95 active:top-0.25"
-          href={`/projects/${project.data.slug}`}
+          href={`/projects/${project.id}`}
         >
-          <LazyImage
-            size="small"
-            loading={i < 6 ? "eager" : "lazy"}
+          <Picture
+            loading={i < 6 && variant === "full" ? "eager" : "lazy"}
             alt="プロジェクトのイメージ画像"
             src={project.data.image}
             class="max-h-[24rem] w-full object-contain"

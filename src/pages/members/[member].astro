@@ -1,10 +1,10 @@
 ---
+import { Picture } from "astro:assets";
 import { getCollection, render } from "astro:content";
 import { Icon } from "astro-icon/components";
 import JoinUsCTA from "../../components/JoinUsCTA.astro";
 import GlobalLayout from "../../layouts/GlobalLayout.astro";
 import { Focus } from "../../schema";
-import LazyImage from "../../components/LazyImage.astro";
 
 export async function getStaticPaths() {
   const members = await getCollection("members");
@@ -88,22 +88,21 @@ const { Content } = await render(member);
         <div
           class="mr-4 min-w-[150px] flex-none overflow-clip rounded-full sm:hidden"
         >
-          <LazyImage
-            size="small"
+          <Picture
             alt="メンバー顔写真"
-            width="1000"
-            height="1000"
+            width="200"
+            height="200"
             src={member.data.faceImage}
-            class="h-50 w-50 object-cover"
+            class="object-cover"
           />
         </div>
         <div class="hidden h-full flex-none sm:block">
-          <LazyImage
-            size="heading"
-            class="h-full w-100 object-contain lg:w-150"
+          <Picture
+            fit="cover"
+            class="h-full w-100 lg:w-150"
             alt="メンバー写真"
-            width="1000"
-            height="1000"
+            width="600"
+            height="600"
             src={member.data.upperBodyImage}
           />
         </div>

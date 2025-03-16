@@ -1,6 +1,10 @@
 ---
+import { Picture } from "astro:assets";
 import { getCollection, getEntry, render } from "astro:content";
 import { format } from "date-fns";
+import JoinUsCTA from "../../components/JoinUsCTA.astro";
+import GlobalLayout from "../../layouts/GlobalLayout.astro";
+import { Focus } from "../../schema";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
@@ -9,10 +13,6 @@ export async function getStaticPaths() {
     props: { article },
   }));
 }
-import JoinUsCTA from "../../components/JoinUsCTA.astro";
-import GlobalLayout from "../../layouts/GlobalLayout.astro";
-import { Focus } from "../../schema";
-import LazyImage from "../../components/LazyImage.astro";
 
 const { article } = Astro.props;
 const { Content } = await render(article);
@@ -32,9 +32,9 @@ if (article.data.author && !author)
   {
     article.data.image && (
       <div class="text-center lg:px-8">
-        <LazyImage
-          size="heading"
+        <Picture
           loading="eager"
+          formats={["avif", "webp"]}
           class="mx-auto max-h-400 max-w-md lg:rounded-2xl"
           alt="イメージ画像"
           src={article.data.image}
@@ -53,9 +53,9 @@ if (article.data.author && !author)
           class="flex max-w-sm min-w-75 items-center gap-4 rounded-lg px-4 py-2 hover:bg-gray-100"
         >
           <div class="h-14 w-14 overflow-clip rounded-full bg-gray-200">
-            <LazyImage
-              size="small"
+            <Picture
               alt="著者"
+              formats={["avif", "webp"]}
               width="56"
               height="56"
               src={author.data.faceImage}
