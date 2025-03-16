@@ -65,7 +65,6 @@ const articlesWithExcerpts = await Promise.all(
           >
             <LazyImage
               size="small"
-              transition:name={`article:cover:${article.id}`}
               loading={i < 5 ? "eager" : "lazy"}
               alt="カバー画像"
               src={article.data.image}

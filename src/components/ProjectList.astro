@@ -37,7 +37,6 @@ if (variant === "compact") {
         >
           <LazyImage
             size="small"
-            transition:name={`project:image:${project.id}`}
             loading={i < 6 ? "eager" : "lazy"}
             alt="プロジェクトのイメージ画像"
             src={project.data.image}

@@ -44,7 +44,6 @@ const members = (await getCollection("members")).sort(
             >
               <LazyImage
                 size="small"
-                transition:name={`member:image:${member.id}`}
                 alt={`${member.data?.nameJa} の写真`}
                 src={member.data.upperBodyImage}
                 width="400"
