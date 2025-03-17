@@ -28,7 +28,7 @@ const { projects, variant = "full" } = props;
             loading={i < 6 && variant === "full" ? "eager" : "lazy"}
             alt="プロジェクトのイメージ画像"
             src={project.data.image}
-            class="max-h-[24rem] w-full object-contain"
+            class="skeleton max-h-[24rem] w-full object-contain"
           />
           <div class="p-4">
             <h3 class="text-xl font-bold text-gray-800">

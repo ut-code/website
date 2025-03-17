@@ -21,7 +21,7 @@ const members = (await getCollection("members")).sort(
     loading="eager"
     alt=""
     src={Header}
-    class="fixed bottom-0 -z-100 h-[100vh] object-cover"
+    class="fixed bottom-0 -z-100 h-[100vh] bg-neutral-400 object-cover"
     style="object-position: 75% 20%;"
     aria-hidden
   />
@@ -47,6 +47,7 @@ const members = (await getCollection("members")).sort(
                 src={member.data.upperBodyImage}
                 width="400"
                 height="400"
+                class="skeleton"
               />
               <div class="absolute bottom-0 w-full min-w-45 bg-gradient-to-b from-transparent to-black px-6 pt-12 pb-6 text-white">
                 <h2 class="text-3xl">{member.data.nameJa}</h2>

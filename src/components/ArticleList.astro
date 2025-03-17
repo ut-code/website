@@ -63,7 +63,7 @@ const articlesWithExcerpts = await Promise.all(
               alt="カバー画像"
               src={article.data.image}
               class:list={[
-                "min-h-0 w-full rounded-xl object-center",
+                "skeleton min-h-0 w-full rounded-xl object-center",
                 additionalProps.imageClassName,
               ]}
             />
