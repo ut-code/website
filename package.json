@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.1.0",
+    "@astrojs/sitemap": "^3.2.1",
     "@date-fns/tz": "^1.2.0",
     "@iconify-json/feather": "^1.2.1",
     "@tailwindcss/typography": "^0.5.16",
