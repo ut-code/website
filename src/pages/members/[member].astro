@@ -25,13 +25,15 @@ const { Content } = await render(member);
   image={member.data.upperBodyImage}
 >
   <main class="w-full">
-    <header
-      class="h-70 sm:h-100 lg:h-150"
+    <div
+      class=""
       style={`background-color: ${member.data["theme-light"] ?? "#DCFCE7"};`}
     >
-      <div class="mx-auto flex h-full w-full max-w-5xl items-center">
-        <div class="flex-1 px-4 py-12">
-          <h1 class="text-3xl md:text-5xl lg:text-6xl">
+      <div
+        class="mx-auto flex h-full w-full max-w-5xl items-center justify-around"
+      >
+        <div class="w-fit flex-1 px-4 py-12">
+          <h1 class="text-3xl">
             {member.data.nameJa}
           </h1>
           <h2 class="text-md mt-1 md:mt-4 md:text-xl lg:text-2xl">
@@ -43,14 +45,11 @@ const { Content } = await render(member);
                 <a
                   href={`https://github.com/${member.data.github}`}
                   target="_blank"
-                  class="relative -m-1 h-9 w-9 rounded-xl p-1"
+                  class="-m-1 rounded-xl p-1"
                   rel="noreferrer"
                   aria-label="GitHubを見る"
                 >
-                  <Icon
-                    name="feather:github"
-                    class="relative active:top-0.25"
-                  />
+                  <Icon name="feather:github" class="" />
                 </a>
               )
             }
@@ -86,21 +85,10 @@ const { Content } = await render(member);
             {member.data.description}
           </p>
         </div>
-        <div
-          class="mr-4 min-w-[150px] flex-none overflow-clip rounded-full sm:hidden"
-        >
-          <Picture
-            alt="メンバー顔写真"
-            width="200"
-            height="200"
-            src={member.data.faceImage}
-            class="object-cover"
-          />
-        </div>
-        <div class="hidden h-full flex-none sm:block">
+        <div class="flex-1">
           <Picture
             fit="cover"
-            class="h-full w-100 lg:w-150"
+            class="w-40 rounded-full sm:w-100 sm:rounded-none lg:w-150"
             alt="メンバー写真"
             width="600"
             height="600"
@@ -108,7 +96,7 @@ const { Content } = await render(member);
           />
         </div>
       </div>
-    </header>
+    </div>
     <article class="prose mx-auto mt-12 px-8 lg:max-w-screen-md lg:px-0">
       <Content />
     </article>
