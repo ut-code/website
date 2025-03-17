@@ -20,7 +20,6 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 ---
 
-<!--- TODO: truncate project.body -->
 <GlobalLayout
   title={project.data.title}
   description={project.data.description}
@@ -36,7 +35,7 @@ const { Content } = await render(project);
         formats={["avif", "webp"]}
         width="1200"
         height="600"
-        class="w-full lg:rounded-2xl"
+        class="w-full lg:w-150 lg:rounded-2xl"
         alt="プロジェクト画像"
         src={project.data.image}
       />
@@ -59,39 +58,35 @@ const { Content } = await render(project);
             </ul>
           )
         }
-        {
-          /* 表示する icon が無いときは、親要素の高さの分間隔が広くなりすぎるので、親要素ごと表示しないようにする。 */
-        }
-        {
-          (project.data.github || project.data.youtube) && (
-            <>
-              <div class="mt-6 flex gap-4 text-4xl">
-                {project.data.github && (
+        <div class="flex gap-4 text-4xl">
+          {
+            [
+              {
+                href: project.data.github,
+                icon: "feather:github",
+                label: "GitHub",
+              },
+              {
+                href: project.data.youtube,
+                icon: "feather:youtube",
+                label: "YouTube",
+              },
+            ].map(
+              (link) =>
+                link.href && (
                   <a
-                    href={project.data.github}
+                    href={link.href}
                     target="_blank"
-                    class="-m-1 rounded-xl p-1 hover:bg-gray-100"
+                    class="-m-1 mt-6 rounded-xl p-1 hover:bg-gray-100"
                     rel="noreferrer"
-                    aria-label="GitHubを見る"
+                    aria-label={`${link.label}を見る`}
                   >
-                    <Icon name="feather:github" />
+                    <Icon name={link.icon} class="h-9 w-9" />
                   </a>
-                )}
-              </div>
-              {project.data.youtube && (
-                <a
-                  href={project.data.youtube}
-                  target="_blank"
-                  class="-m-1 rounded-xl p-1 hover:bg-gray-100"
-                  rel="noreferrer"
-                  aria-label="YouTubeを見る"
-                >
-                  <Icon name="feather:youtube" />
-                </a>
-              )}
-            </>
-          )
-        }
+                ),
+            )
+          }
+        </div>
         {
           project.data.website && (
             <ActionButton to={project.data.website} class="my-6">
