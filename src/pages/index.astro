@@ -117,16 +117,18 @@ articles.splice(3);
   </section>
   <section class="bg-black py-80 text-white">
     <div
-      class="mx-auto block items-center justify-evenly gap-12 px-8 xl:flex xl:flex-row-reverse"
+      class="mx-auto block items-center justify-evenly gap-12 overflow-hidden px-8 xl:flex xl:flex-row-reverse"
     >
       <Picture
         formats={["avif", "webp"]}
         alt=""
         src={LabCafe}
-        class="mr-6 ml-auto block max-w-[80%] min-w-0 flex-1 overflow-clip rounded-3xl object-cover md:max-w-2xl xl:mb-60 xl:max-w-xl"
+        width="600"
+        height="600"
+        class="mx-2 flex-1 rounded-3xl object-cover sm:mr-6 sm:ml-auto sm:max-w-xl xl:mb-120"
       />
       <article class="mt-12 flex-shrink-0 self-center md:ml-12 lg:w-150">
-        <h1 class="max-w-2xl text-4xl leading-snug sm:text-5xl md:text-6xl">
+        <h1 class="max-w-2xl text-2xl leading-snug sm:text-5xl md:text-6xl">
           <span
             id="text-future-software"
             class="mb-3 inline-block bg-white text-black"
@@ -134,10 +136,10 @@ articles.splice(3);
             tabindex="0"
             data-highlighted={true /* enable by default then immediately disable using JS s.t. it will show with noscript */}
             onfocus="document.getElementById('text-future-software')?.setAttribute('data-highlighted', '');"
-            >未来の<wbr />ソフトウェア</span
+            >未来のソフトウェア</span
           >を<br /><span>デザインしよう</span>
         </h1>
-        <p class="text-md mt-3 max-w-xl leading-loose text-gray-300 sm:text-xl">
+        <p class="mt-3 max-w-xl text-sm leading-loose text-gray-300 sm:text-xl">
           <span class="inline-block">
             ut.code(); で一緒にワクワクするソフトウェアを作りませんか？
             初心者から実務経験者、学年を問わずどなたでも大歓迎です。
