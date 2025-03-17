@@ -2,7 +2,7 @@
 import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 import JoinUsCTA from "../components/JoinUsCTA.astro";
-import MembersHeader from "../images/members-header.jpg";
+import Header from "../images/headers/members.jpg";
 import GlobalLayout from "../layouts/GlobalLayout.astro";
 import { Focus } from "../schema";
 
@@ -15,12 +15,12 @@ const members = (await getCollection("members")).sort(
   title="メンバー"
   description="ut.code(); のメンバーの一覧"
   focus={Focus.members}
-  image={MembersHeader}
+  image={Header}
 >
   <Picture
     loading="eager"
     alt=""
-    src={MembersHeader}
+    src={Header}
     class="fixed bottom-0 -z-100 h-[100vh] object-cover"
     style="object-position: 75% 20%;"
     aria-hidden

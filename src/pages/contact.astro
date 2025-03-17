@@ -1,7 +1,7 @@
 ---
 import { Picture } from "astro:assets";
 import ActionButton from "../components/ActionButton.astro";
-import ContactHeader from "../images/contact-header.jpg";
+import Header from "../images/headers/contact.jpg";
 import GlobalLayout from "../layouts/GlobalLayout.astro";
 import { Focus } from "../schema";
 ---
@@ -10,7 +10,7 @@ import { Focus } from "../schema";
   title="連絡"
   description="ut.code(); に連絡する手段"
   focus={Focus.contact}
-  image={ContactHeader}
+  image={Header}
 >
   <div class="container mx-auto px-4 pt-16 pb-12">
     <h1 class="text-4xl">ut.code(); に連絡する</h1>
@@ -19,7 +19,7 @@ import { Focus } from "../schema";
     formats={["avif", "webp"]}
     alt=""
     loading="eager"
-    src={ContactHeader}
+    src={Header}
     width="1920"
     height="600"
     class="h-30 object-cover sm:h-50 md:h-100"
