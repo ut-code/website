@@ -12,13 +12,10 @@
     "prepare": "lefthook install && bun sync",
     "sync": "astro sync",
     "dev": "astro dev",
-    "check": "biome lint && astro check",
+    "check": "biome check . && astro check",
     "fix": "biome lint . --fix --unsafe",
     "build": "astro build",
-    "preview": "astro preview",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "type-check": "tsc --noEmit"
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.1.0",
