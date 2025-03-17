@@ -12,7 +12,7 @@ import { Focus } from "../schema";
   focus={Focus.contact}
   class="prose"
 >
-  <h1 class="mt-12 ml-[20%] text-4xl">ご寄付・ご協賛のお願い</h1>
+  <h1 class="mt-12 ml-4 text-4xl md:ml-[20%]">ご寄付・ご協賛のお願い</h1>
   <Picture
     formats={["avif", "webp"]}
     alt=""
@@ -20,9 +20,9 @@ import { Focus } from "../schema";
     src={DonationHeader}
     width="1920"
     height="600"
-    class="my-8 h-150 w-full object-cover"
+    class="my-8 h-100 w-full object-cover md:h-150"
   />
-  <article class="prose mb-20">
+  <article class="prose mx-5 mb-20 max-w-xl sm:mx-10 md:mx-auto">
     <p>ut.code(); は、学生の手で自主的に運営されている団体です。</p><p>
       多くの方にソフトウェア開発の魅力を知っていただくため、活動はすべて無償で行っています。
     </p>
@@ -70,10 +70,4 @@ import { Focus } from "../schema";
       <li>2024/3/11 コウノマサノリ様</li>
     </ul>
   </article>
-
-  <style>
-    article {
-      margin-inline: 20%;
-    }
-  </style>
 </GlobalLayout>
