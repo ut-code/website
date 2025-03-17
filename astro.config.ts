@@ -24,7 +24,14 @@ export default defineConfig({
       },
     }),
     mdx(),
-    sitemap(),
+    sitemap({
+      i18n: {
+        defaultLocale: "ja",
+        locales: {
+          ja: "ja-JP",
+        },
+      },
+    }),
   ],
 
   prefetch: {
