@@ -53,7 +53,7 @@ const articlesWithExcerpts = await Promise.all(
           <a
             href={`/articles/${article.id}`}
             class:list={[
-              "relative rounded-xl bg-gray-50 p-1 shadow-md grayscale-50 duration-300 hover:grayscale-0 active:top-0.5",
+              "relative rounded-xl bg-gray-50 hover:brightness-110 active:top-0.5",
               additionalProps.cellClassName,
             ]}
           >
@@ -67,7 +67,7 @@ const articlesWithExcerpts = await Promise.all(
                 additionalProps.imageClassName,
               ]}
             />
-            <div class="mt-4">
+            <div class="mt-4 p-1">
               <time class="block text-sm text-gray-500">
                 {format(article.data.date, "yyyy/MM/dd HH:mm")}
               </time>

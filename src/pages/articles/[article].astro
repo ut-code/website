@@ -36,7 +36,7 @@ if (article.data.author && !author)
         <Picture
           loading="eager"
           formats={["avif", "webp"]}
-          class="mx-auto max-h-400 max-w-md lg:rounded-2xl"
+          class="mx-auto md:max-w-xl md:rounded-2xl"
           alt="イメージ画像"
           src={article.data.image}
         />
@@ -45,7 +45,7 @@ if (article.data.author && !author)
   }
   <div
     id="meta"
-    class="mx-auto mt-4 flex max-w-xl flex-wrap justify-around px-4 align-middle sm:gap-8 lg:mt-24"
+    class="mx-auto mt-4 flex max-w-xl flex-wrap justify-around px-4 align-middle sm:gap-8"
   >
     {
       author && (
@@ -74,7 +74,7 @@ if (article.data.author && !author)
       {format(article.data.date, "yyyy-MM-dd")}
     </time>
   </div>
-  <main class="mx-auto lg:mt-12">
+  <main class="mx-auto">
     <h1 class="mx-auto my-8 max-w-2xl px-8 text-center text-2xl lg:text-3xl">
       {article.data.title}
     </h1>
