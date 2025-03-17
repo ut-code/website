@@ -12,8 +12,9 @@
     "prepare": "lefthook install && bun sync",
     "sync": "astro sync",
     "dev": "astro dev",
-    "check": "biome check . && astro check",
-    "fix": "biome lint . --fix --unsafe",
+    "check": "biome check . && astro check && bun prettier --check .",
+    "fix": "biome check . --fix --unsafe && bun prettier . --write",
+    "fix:staged": "biome check . --fix && astro check && bun prettier --write",
     "build": "astro build",
     "preview": "astro preview"
   },

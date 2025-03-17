@@ -3,8 +3,8 @@ import { defineConfig } from "astro/config";
 import tailwind from "@tailwindcss/vite";
 
 import mdx from "@astrojs/mdx";
-import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
+import icon from "astro-icon";
 // import { visualizer } from "rollup-plugin-visualizer";
 
 // https://astro.build/config
