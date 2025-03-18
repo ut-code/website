@@ -10,7 +10,7 @@ import {
 } from "./schema.ts";
 
 const articles = defineCollection({
-  loader: glob({ base: "./contents/articles", pattern: "*/index.{md,mdx}" }),
+  loader: glob({ base: "./contents/articles", pattern: "**/index.{md,mdx}" }),
   schema: CreateArticleSchema,
 });
 
