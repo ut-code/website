@@ -10,16 +10,16 @@ import {
 } from "./schema.ts";
 
 const articles = defineCollection({
-  loader: glob({ base: "src/content/articles", pattern: "*/index.{md,mdx}" }),
+  loader: glob({ base: "./contents/articles", pattern: "*/index.{md,mdx}" }),
   schema: CreateArticleSchema,
 });
 
 const members = defineCollection({
-  loader: glob({ base: "src/content/members", pattern: "*/index.{md,mdx}" }),
+  loader: glob({ base: "./contents/members", pattern: "*/index.{md,mdx}" }),
   schema: CreateMemberSchema,
 });
 const projects = defineCollection({
-  loader: glob({ base: "src/content/projects", pattern: "*/index.{md,mdx}" }),
+  loader: glob({ base: "./contents/projects", pattern: "*/index.{md,mdx}" }),
   schema: CreateProjectSchema,
 });
 
