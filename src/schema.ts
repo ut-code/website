@@ -13,7 +13,6 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
     date: z
       .date()
       .transform((date) => new TZDate(date).withTimeZone("Asia/Tokyo")),
-    slug: z.string().nullable(),
     title: z.string().nullable(),
     image: image(),
     categories: z.array(z.string()).optional(),
