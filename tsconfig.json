@@ -5,6 +5,7 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "esnext",
     "moduleResolution": "bundler",
+    "noEmit": true,
     "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,

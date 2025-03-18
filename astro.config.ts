@@ -4,6 +4,7 @@ import tailwind from "@tailwindcss/vite";
 
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import svelte from "@astrojs/svelte";
 import icon from "astro-icon";
 // import { visualizer } from "rollup-plugin-visualizer";
 
@@ -32,6 +33,7 @@ export default defineConfig({
         },
       },
     }),
+    svelte(),
   ],
 
   prefetch: {

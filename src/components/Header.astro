@@ -2,15 +2,16 @@
 import { Icon } from "astro-icon/components";
 
 import banner from "../content/banner.ts";
+import HamburgerButton from "../islands/svelte/hamburger-button.svelte";
 import { Focus } from "../schema.ts";
 import Logo from "./Logo.astro";
 
 const links = [
-  { title: "プロジェクト", to: "/projects", focus: Focus.projects },
-  { title: "記事", to: "/articles", focus: Focus.articles },
-  { title: "メンバー", to: "/members", focus: Focus.members },
-  { title: "参加", to: "/join", focus: Focus.join },
-  { title: "お問い合わせ", to: "/contact", focus: Focus.contact },
+  { title: "プロジェクト", href: "/projects", focus: Focus.projects },
+  { title: "記事", href: "/articles", focus: Focus.articles },
+  { title: "メンバー", href: "/members", focus: Focus.members },
+  { title: "参加", href: "/join", focus: Focus.join },
+  { title: "お問い合わせ", href: "/contact", focus: Focus.contact },
 ];
 
 interface Props {
@@ -60,7 +61,7 @@ const { focus } = Astro.props;
         links.map((link) => (
           <li>
             <a
-              href={link.to}
+              href={link.href}
               class:list={[
                 "navigation-bar flex h-full items-center justify-center px-6 text-center lg:min-w-24",
                 focus === link.focus && "current",
@@ -72,35 +73,9 @@ const { focus } = Astro.props;
         ))
       }
     </ul>
-    <button
-      type="button"
-      class="flex h-full w-16 items-center justify-center hover:bg-gray-100 lg:hidden"
-      popovertarget="navigation-panel"
-      popovertargetaction="toggle"
-    >
-      <Icon name="feather:menu" class="h-6 w-6 text-gray-600" />
-    </button>
-  </div>
-  <div
-    id="navigation-panel"
-    popover
-    class="absolute inset-auto top-0 w-full transition-opacity duration-300 lg:hidden"
-  >
-    <ul>
-      {
-        links.map((link) => (
-          <li class="hover:brightness-75">
-            <a
-              href={link.to}
-              class="block px-4 py-2"
-              data-astro-prefetch="viewport"
-            >
-              {link.title}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    <div class="lg:hidden">
+      <HamburgerButton client:visible {links} />
+    </div>
   </div>
 </header>
 
