@@ -134,8 +134,9 @@ articles.splice(3);
             class="mb-3 inline-block bg-white text-black"
             onmouseover="document.getElementById('text-future-software')?.setAttribute('data-highlighted', '');"
             tabindex="0"
-            data-highlighted={true /* enable by default then immediately disable using JS s.t. it will show with noscript */}
             onfocus="document.getElementById('text-future-software')?.setAttribute('data-highlighted', '');"
+            data-highlighted={true /* enable by default then immediately disable using JS s.t. it will show with noscript */}
+            onload="document.getElementById('text-future-software')?.removeAttribute('data-highlighted')"
             >未来のソフトウェア</span
           >を<br /><span>デザインしよう</span>
         </h1>
@@ -151,7 +152,6 @@ articles.splice(3);
       </article>
       <script>
         var text = document.getElementById("text-future-software");
-        text?.removeAttribute("data-highlighted");
         document.onscroll = () => {
           if (!text) return;
           if (!document.scrollingElement) return;
