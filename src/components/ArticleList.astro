@@ -6,11 +6,23 @@ import type { Article } from "../schema";
 
 interface Props {
   articles: { id: string; data: Article; body?: string }[];
-  variant?: "full" | "compact";
+  enlarge?: boolean; // 11 記事ごとに大きくする
+  minify?: boolean; // (index.astro 用) 画面幅に合わせて短くする
+  "max-cols"?: number | `${number}`;
+  loading?: "eager" | "lazy";
   class?: string;
 }
 const props = Astro.props;
-const { articles, variant = "full" } = props;
+const {
+  articles,
+  enlarge = false,
+  minify = false,
+  "max-cols": _maxCols = 4,
+  loading = "lazy",
+} = props;
+
+const maxCols =
+  typeof _maxCols === "string" ? Number.parseInt(_maxCols) : _maxCols;
 
 const MDXSpecialSyntax = /^import ActionButton from ".+";/;
 
@@ -29,14 +41,17 @@ const articlesWithExcerpts = await Promise.all(
 
 <ul
   class:list={[
-    "grid grid-flow-dense gap-9 md:grid-cols-2 lg:grid-cols-3",
-    variant === "full" ? "variant-full xl:grid-cols-4" : "variant-compact",
+    "grid grid-flow-dense gap-9",
+    maxCols >= 2 && "md:grid-cols-2",
+    maxCols >= 3 && "lg:grid-cols-3",
+    maxCols >= 4 && "xl:grid-cols-4",
+    minify && "minify",
     props.class,
   ]}
 >
   {
     articlesWithExcerpts.map(({ article, text }, i) => {
-      const isFeatured = variant === "full" && i % 11 === 0; // 11 記事ごとに大きく表示する
+      const isFeatured = enlarge && i % 11 === 0; // 11 記事ごとに大きく表示する
       const additionalProps = isFeatured
         ? {
             cellClassName: "md:col-span-2 md:row-span-2",
@@ -58,7 +73,7 @@ const articlesWithExcerpts = await Promise.all(
             ]}
           >
             <Picture
-              loading={i < 5 && variant === "full" ? "eager" : "lazy"}
+              loading={i < 5 ? loading : "lazy"}
               formats={["avif", "webp"]}
               alt="カバー画像"
               src={article.data.image}
@@ -87,9 +102,10 @@ const articlesWithExcerpts = await Promise.all(
     })
   }
 </ul>
+
 <style>
-  @media (max-width: 64rem) {
-    .variant-compact :nth-child(n + 3) a {
+  container (width > 64rem) {
+    .minify.variant-compact :nth-child(n + 3) a {
       display: none;
     }
   }

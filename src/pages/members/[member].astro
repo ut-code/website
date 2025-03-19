@@ -2,6 +2,7 @@
 import { Picture } from "astro:assets";
 import { getCollection, render } from "astro:content";
 import { Icon } from "astro-icon/components";
+import ArticleList from "../../components/ArticleList.astro";
 import JoinUsCTA from "../../components/JoinUsCTA.astro";
 import GlobalLayout from "../../layouts/GlobalLayout.astro";
 import { Focus } from "../../schema";
@@ -16,6 +17,11 @@ export async function getStaticPaths() {
 
 const { member } = Astro.props;
 const { Content } = await render(member);
+
+const articles = await getCollection(
+  "articles",
+  (article) => article.data.author?.id === member.id,
+);
 ---
 
 <GlobalLayout
@@ -33,7 +39,7 @@ const { Content } = await render(member);
         class="mx-auto flex h-full w-full max-w-5xl items-center justify-around"
       >
         <div class="w-fit flex-1 px-4 py-12">
-          <h1 class="text-3xl">
+          <h1 class="text-3xl lg:text-6xl">
             {member.data.nameJa}
           </h1>
           <h2 class="text-md mt-1 md:mt-4 md:text-xl lg:text-2xl">
@@ -102,16 +108,16 @@ const { Content } = await render(member);
     </article>
   </main>
   <div class="prose mx-auto max-w-screen-md px-4 py-12">
-    <!-- { -->
-    <!-- data.allMdx.nodes.length > 0 && ( -->
-    <!-- <> -->
-    <!-- <h2>{data.mdx?.frontmatter?.nameJa} の記事</h2> -->
-    <!-- <div class="not-prose mt-4"> -->
-    <!-- <ArticleList variant="compact" articles={data.allMdx.nodes} /> -->
-    <!-- </div> -->
-    <!-- </> -->
-    <!-- ) -->
-    <!-- } -->
+    {
+      articles.length > 0 && (
+        <section class="mx-auto max-w-90 md:max-w-none">
+          <h2>{member.data.nameJa} の記事</h2>
+          <div class="not-prose mt-4">
+            <ArticleList max-cols="2" articles={articles} />
+          </div>
+        </section>
+      )
+    }
   </div>
 
   <JoinUsCTA class="mt-8">

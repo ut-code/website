@@ -210,7 +210,7 @@ articles.splice(3);
   <section class="bg-gray-50">
     <div class="container mx-auto px-4 py-12">
       <SectionHeader title="News" subtitle="最新情報" />
-      <ArticleList {articles} variant="compact" class="mt-10" />
+      <ArticleList minify {articles} max-cols="3" class="mt-10" />
       <ActionButton to="/articles" class="mt-8 ml-auto">
         すべての記事
       </ActionButton>

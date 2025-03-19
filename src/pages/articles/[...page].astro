@@ -23,7 +23,7 @@ const { page } = Astro.props;
 >
   <main class="container mx-auto px-4 py-24">
     <h1 class="text-center text-4xl">すべての記事</h1>
-    <ArticleList articles={page.data} class="mt-16" />
+    <ArticleList enlarge articles={page.data} class="mt-16" />
     <div class="join mx-auto block w-fit pt-16 text-xl">
       <a
         href={page.url.prev}
