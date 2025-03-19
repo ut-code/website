@@ -7,7 +7,7 @@ type Banner = {
   linkText?: string;
 };
 const banner: Banner = {
-  shown: true,
+  shown: false,
   kind: "error",
   long: "開発中の Website V3 を見ています",
   short: "開発中の Website です",
