@@ -1,7 +1,8 @@
 <script lang="ts">
-  const { links }: { links: { href: string; title: string }[] } = $props();
-
   import { Popover } from "bits-ui";
+  import { fade } from "svelte/transition";
+
+  const { links }: { links: { href: string; title: string }[] } = $props();
 </script>
 
 <Popover.Root>
@@ -29,7 +30,10 @@
   </Popover.Trigger>
 
   <Popover.Content align="end" side="bottom" strategy="fixed">
-    <div class="w-[100vw] bg-white transition-opacity duration-300 lg:hidden">
+    <div
+      transition:fade|global={{ duration: 70 }}
+      class="w-[100vw] bg-white transition-opacity duration-300 lg:hidden"
+    >
       <ul>
         {#each links as link}
           <li class="hover:bg-gray-200">
