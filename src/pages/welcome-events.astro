@@ -1,0 +1,102 @@
+---
+import { Picture } from "astro:assets";
+import Header from "../images/headers/welcome-events.jpg";
+import DatesTable from "../images/shinkan-nittei-v2.png";
+import GlobalLayout from "../layouts/GlobalLayout.astro";
+import StaticDocumentWrapper from "../layouts/StaticDocumentWrapper.astro";
+import { Focus } from "../schema";
+---
+
+<GlobalLayout
+  title="参加"
+  description="新歓イベント"
+  focus={Focus.join}
+  image={Header}
+>
+  <StaticDocumentWrapper
+    header={Header}
+    fill="bg-gray-300"
+    title="新歓イベントの詳細"
+    position="object-top"
+  >
+    <h2>📅 新歓日程</h2>
+    <p>
+      今年の新歓日程は以下のとおりです。
+      興味がある方は、ぜひ気軽に参加してみてください！
+    </p>
+    <p>日時・場所の詳細は確定し次第追加します。</p>
+    <a
+      href="/shinkan-nittei.png"
+      target="_blank"
+      aria-label="新しいページで開く"
+    >
+      <Picture src={DatesTable} alt="新歓日程" />
+    </a>
+    <section aria-label="新歓日程一覧">
+      <section id="online-information-session">
+        <h3>新歓オンライン説明会</h3>
+        <ul>
+          <li>日時: 3/30 (日) 20:00~</li>
+          <li>場所: Zoom</li>
+          <li>
+            参加フォーム:
+            <a
+              class="link link-primary"
+              target="_blank"
+              href="https://forms.gle/12xKpLEv8qnJFdCz5"
+              >https://forms.gle/12xKpLEv8qnJFdCz5</a
+            >
+          </li>
+          <li>飛び入り参加可能！</li>
+        </ul>
+      </section>
+      <section id="club-orientation">
+        <h3>サーオリ</h3>
+        <ul>
+          <li>日時: 4/3(木), 4/4(金) 全日</li>
+          <li>場所: 1232教室</li>
+        </ul>
+      </section>
+      <section id="joint-welcome-event">
+        <h3>エンジニア系サークル合同新歓</h3>
+        <ul>
+          <li>日時: 4/9 (水) 19:00 ~ 20:00、4/15 (火) 19:00 ~ 20:00</li>
+          <li>場所: 確定し次第お知らせします。(学生会館予定)</li>
+          <li>TSG、UTFF、RoboTech、灯と合同で新歓説明会を開催！</li>
+        </ul>
+      </section>
+      <section id="welcome-seminar">
+        <h3>新歓講習会</h3>
+        <ul>
+          <li>日時: 4/6 (日) 15:45 ~、 4/12 (土) 15:45 ~</li>
+          <li>場所: 確定し次第お知らせします。(学生会館予定)</li>
+          <li>飛び入り参加可能！</li>
+          <li>
+            授業形式で HTML・CSS・JavaScript の基礎を学び、簡単な Web
+            アプリを公開できるようになります。
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>先取り自主勉強会</h3>
+        <ul>
+          <li>
+            日時: 4/7 (月), 11 (金), 16 (水), 18 (金), 23 (水), 25 (金), 30 (水)
+            すべて 19:00 ~ 21:30
+          </li>
+          <li>場所: 駒場学生会館 313 B (部室)</li>
+          <li>途中参加・途中退出可。</li>
+          <li>
+            いち早くプログラミングを学び、プロジェクトに参加できるスキルをつけよう！
+            経験者も新しい知識を学ぶチャンス！
+          </li>
+        </ul>
+      </section>
+    </section>
+  </StaticDocumentWrapper>
+</GlobalLayout>
+<style>
+  section {
+    margin-top: 3rem;
+  }
+</style>

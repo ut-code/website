@@ -7,12 +7,12 @@ type Banner = {
   linkText?: string;
 };
 const banner: Banner = {
-  shown: false,
-  kind: "error",
-  long: "開発中の Website V3 を見ています",
-  short: "開発中の Website です",
-  link: "https://utcode.net",
-  linkText: "リリース版に戻る",
+  shown: true,
+  kind: "notify",
+  long: "3/30 (日) 20:00 から新歓オンライン説明会を開催します",
+  short: "3/30 (日) 新歓説明会を開催します",
+  link: "/welcome-events",
+  linkText: "詳細",
 };
 
 export default banner;
