@@ -9,7 +9,7 @@ type Banner = {
 const banner: Banner = {
   shown: true,
   kind: "notify",
-  long: "3/30 (日) 20:00 から新歓オンライン説明会を開催します",
+  long: "3/30 (日) 20:00 からオンライン新歓説明会を開催します",
   short: "3/30 (日) 新歓説明会を開催します",
   link: "/welcome-events",
   linkText: "詳細",
