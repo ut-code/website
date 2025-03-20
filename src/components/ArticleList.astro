@@ -1,0 +1,112 @@
+---
+import { Picture } from "astro:assets";
+import { format } from "date-fns";
+import { markdownToTxt } from "markdown-to-txt";
+import type { Article } from "../schema";
+
+interface Props {
+  articles: { id: string; data: Article; body?: string }[];
+  enlarge?: boolean; // 11 記事ごとに大きくする
+  minify?: boolean; // (index.astro 用) 画面幅に合わせて短くする
+  "max-cols"?: number | `${number}`;
+  loading?: "eager" | "lazy";
+  class?: string;
+}
+const props = Astro.props;
+const {
+  articles,
+  enlarge = false,
+  minify = false,
+  "max-cols": _maxCols = 4,
+  loading = "lazy",
+} = props;
+
+const maxCols =
+  typeof _maxCols === "string" ? Number.parseInt(_maxCols) : _maxCols;
+
+const MDXSpecialSyntax = /^import ActionButton from ".+";/;
+
+const articlesWithExcerpts = await Promise.all(
+  articles.map(async (article) => {
+    if (!article.body) throw new Error("article doesn't have body!");
+    // 😇 performance
+    const text = markdownToTxt(article.body);
+    return {
+      article,
+      text: text.replace(MDXSpecialSyntax, ""),
+    };
+  }),
+);
+---
+
+<ul
+  class:list={[
+    "grid grid-flow-dense gap-9",
+    maxCols >= 2 && "md:grid-cols-2",
+    maxCols >= 3 && "lg:grid-cols-3",
+    maxCols >= 4 && "xl:grid-cols-4",
+    minify && "minify",
+    props.class,
+  ]}
+>
+  {
+    articlesWithExcerpts.map(({ article, text }, i) => {
+      const isFeatured = enlarge && i % 11 === 0; // 11 記事ごとに大きく表示する
+      const additionalProps = isFeatured
+        ? {
+            cellClassName: "md:col-span-2 md:row-span-2",
+            imageClassName: "max-h-[32rem] md:max-h-[48rem]",
+            excerpt: text.slice(0, 300),
+          }
+        : {
+            cellClassName: "",
+            imageClassName: "max-h-[24rem]",
+            excerpt: text.slice(0, 80),
+          };
+      return (
+        <li class="contents">
+          <a
+            href={`/articles/${article.id}`}
+            class:list={[
+              "relative rounded-xl bg-gray-50 hover:brightness-110 active:top-0.5",
+              additionalProps.cellClassName,
+            ]}
+          >
+            <Picture
+              loading={i < 5 ? loading : "lazy"}
+              formats={["avif", "webp"]}
+              alt="カバー画像"
+              src={article.data.image}
+              class:list={[
+                "skeleton min-h-0 w-full rounded-xl object-center",
+                additionalProps.imageClassName,
+              ]}
+            />
+            <div class="mt-4 p-1">
+              <time class="block text-sm text-gray-500">
+                {format(article.data.date, "yyyy/MM/dd HH:mm")}
+              </time>
+              <h3 class="text-lg font-bold">{article.data.title}</h3>
+              <p
+                class:list={[
+                  "prose mt-2 line-clamp-3 max-w-none",
+                  isFeatured && "md:line-clamp-6",
+                ]}
+              >
+                {additionalProps.excerpt}...
+              </p>
+            </div>
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  container (width > 64rem) {
+    .minify.variant-compact :nth-child(n + 3) a {
+      display: none;
+    }
+  }
+</style>

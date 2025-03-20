@@ -1,0 +1,16 @@
+[language-servers]
+astro-ls = { command = "astro-ls", args = ["--stdio"] }
+
+[[language]]
+name = "astro"
+formatter = { command = "bun", args = ["prettier", "--parser", "astro"] }
+language-servers = ["astro-ls", "tailwindcss-ls"]
+
+[[language]]
+name = "typescript"
+formatter = { command = "bun", args = ["prettier", "--parser", "typescript"] }
+
+[[language]]
+name = "svelte"
+formatter = { command = "bun", args = ["prettier", "--parser", "svelte"] }
+auto-format = true

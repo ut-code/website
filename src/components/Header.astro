@@ -1,0 +1,121 @@
+---
+import { Icon } from "astro-icon/components";
+
+import banner from "../../contents/banner.ts";
+import HamburgerButton from "../islands/svelte/hamburger-button.svelte";
+import { Focus } from "../schema.ts";
+import Logo from "./Logo.astro";
+
+const links = [
+  { title: "プロジェクト", href: "/projects", focus: Focus.projects },
+  { title: "記事", href: "/articles", focus: Focus.articles },
+  { title: "メンバー", href: "/members", focus: Focus.members },
+  { title: "参加", href: "/join", focus: Focus.join },
+  { title: "お問い合わせ", href: "/contact", focus: Focus.contact },
+];
+
+interface Props {
+  focus: Focus;
+}
+const { focus } = Astro.props;
+---
+
+<header class="sticky top-0 z-20 w-full bg-gray-50">
+  <!-- <ClientRouter transition:animate={fade({ duration: 30 })} /> -->
+  {
+    banner.shown && (
+      <div
+        id="banner"
+        class:list={[
+          "flex items-center justify-center gap-4 px-1 py-2",
+          banner.kind === "error" ? "bg-red-300" : "bg-green-300",
+        ]}
+      >
+        <span class="hidden md:inline">{banner.long}</span>
+        <span
+          aria-hidden
+          class="sm:text-md inline text-center text-sm md:hidden"
+        >
+          {banner.short}
+        </span>
+        <a
+          href={banner.link}
+          class="inline-flex flex-shrink-0 items-center gap-0.5 hover:underline"
+          rel={banner.link.startsWith("/") ? undefined : "noreferrer"}
+          target={banner.link.startsWith("/") ? undefined : "_blank"}
+          data-astro-prefetch="viewport"
+        >
+          {banner.linkText ?? "詳細はこちら"}
+          <Icon name="feather:arrow-right" />
+        </a>
+      </div>
+    )
+  }
+  <div class="flex h-16">
+    <a href="/" class="flex items-center px-4" data-astro-prefetch="viewport">
+      <Logo class="w-36 sm:ml-8" variant="default" />
+    </a>
+    <div aria-hidden class="flex-1"></div>
+    <ul class="hidden lg:flex">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                "navigation-bar flex h-full items-center justify-center px-6 text-center lg:min-w-24",
+                focus === link.focus && "current",
+              ]}
+            >
+              {link.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="lg:hidden">
+      <HamburgerButton client:visible {links} />
+    </div>
+  </div>
+</header>
+
+<style>
+  :popover-open {
+    inset: unset;
+    position: fixed;
+  }
+  /* https://stackoverflow.com/questions/77042256/css-transition-animation-not-working-for-popover-attribute */
+  /* https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using#animating_popovers */
+  [popover] {
+    opacity: 0;
+    &:popover-open {
+      opacity: 1;
+      @starting-style {
+        opacity: 0;
+      }
+    }
+    transition: opacity 0.3s;
+    transition-behavior: allow-discrete;
+  }
+
+  .navigation-bar {
+    background: linear-gradient(black 0 0) bottom left/
+      var(--underline-width, 0%) 0.1em no-repeat;
+    text-decoration: none;
+  }
+  .navigation-bar.current {
+    background: linear-gradient(lawngreen 0 0) bottom left/
+      var(--underline-width, 0%) 0.1em no-repeat;
+  }
+  .navigation-bar:hover {
+    --underline-width: 100%;
+    @starting-style {
+      --underline-width: 0%;
+    }
+  }
+  @media not (prefers-reduced-motion) {
+    .navigation-bar {
+      transition: background-size 0.5s;
+    }
+  }
+</style>

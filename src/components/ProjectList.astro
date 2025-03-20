@@ -1,0 +1,60 @@
+---
+import { Picture } from "astro:assets";
+import type { Project } from "../schema";
+
+interface Props {
+  projects: { id: string; data: Project }[];
+  variant: "compact" | "full";
+  class?: string;
+}
+const props = Astro.props;
+const { projects, variant = "full" } = props;
+---
+
+<ul class:list={["grid gap-9 md:grid-cols-2 xl:grid-cols-3", props.class]}>
+  {
+    projects.map((project, i) => (
+      <li
+        class:list={[
+          "contents",
+          variant === "compact" ? "variant-short" : "variant-full",
+        ]}
+      >
+        <a
+          class="relative top-0 overflow-clip rounded-xl border border-gray-200 bg-gray-50 hover:brightness-95 active:top-0.25"
+          href={`/projects/${project.id}`}
+        >
+          <Picture
+            loading={i < 6 && variant === "full" ? "eager" : "lazy"}
+            alt="プロジェクトのイメージ画像"
+            src={project.data.image}
+            class="skeleton max-h-[24rem] w-full object-contain"
+          />
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-800">
+              {project.data.title}
+            </h3>
+            <p class="prose mt-2">
+              {project.data.description.length < 120
+                ? project.data.description
+                : project.data.description.slice(0, 120) + "..."}
+            </p>
+          </div>
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  @media (max-width: 64rem) {
+    li.variant-short:nth-child(n + 3) {
+      display: none;
+    }
+  }
+  @media (max-width: 80rem) {
+    li.variant-short:nth-child(n + 5) {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui";
+
+/* do we need this? */
+:root {
+  --color-primary-main: #00d372;
+}

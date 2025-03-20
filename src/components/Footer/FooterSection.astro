@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  links: { title: string; to: string }[];
+}
+const { title, links } = Astro.props;
+---
+
+<div>
+  <h4 class="text-lg">{title}</h4>
+  <ul class="mt-4 space-y-2">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            href={link.to}
+            class="link relative active:top-0.25 motion-reduce:hover:underline"
+            target={link.to.startsWith("/") ? "" : "_blank"}
+            rel={link.to.startsWith("/") ? "" : "noreferrer"}
+          >
+            {link.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+<style>
+  @media not (prefers-reduced-motion) {
+    .link {
+      background: linear-gradient(currentColor 0 0) bottom left/
+        var(--underline-width, 0%) 0.1em no-repeat;
+      text-decoration: none;
+      transition: background-size 0.1s linear;
+    }
+    .link:hover {
+      --underline-width: 100%;
+      @starting-style {
+        --underline-width: 0%;
+      }
+    }
+  }
+</style>

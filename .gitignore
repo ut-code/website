@@ -1,9 +1,10 @@
-node_modules/
+/node_modules/
 
 # artifact
-.cache/
-public
+/.astro/
+/dist
 src/gatsby-types.d.ts
+dist
 
 # editor
 .DS_Store
@@ -11,6 +12,5 @@ src/gatsby-types.d.ts
 !.vscode/extensions.json
 
 # env
-.envrc
 .direnv
-shell.nix
+.envrc

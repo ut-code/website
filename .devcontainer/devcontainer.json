@@ -1,11 +1,12 @@
 // https://github.com/devcontainers/templates/tree/main/src/javascript-node
+// TODO: I don't use devcontainer, someone check if this works
 {
-  "name": "Node.js",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
-  "forwardPorts": [8000],
-  "updateContentCommand": "npm ci",
-  "postAttachCommand": "npm run develop",
-  "portsAttributes": { "8000": { "onAutoForward": "openPreview" } },
+  "name": "ut.code(); Website",
+  "image": "ghcr.io/nhaef/devcontainer-bun:latest",
+  "forwardPorts": [4321],
+  "updateContentCommand": "bun i --frozen-lockfile",
+  "postAttachCommand": "bun dev",
+  "portsAttributes": { "4321": { "onAutoForward": "openPreview" } },
   "customizations": {
     "vscode": {
       "extensions": ["dbaeumer.vscode-eslint", "apollographql.vscode-apollo"]

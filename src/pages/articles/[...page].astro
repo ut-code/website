@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import ArticleList from "../../components/ArticleList.astro";
+import GlobalLayout from "../../layouts/GlobalLayout.astro";
+import { Focus } from "../../schema";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const articles = (await getCollection("articles")).sort(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+  );
+  return paginate(articles, { pageSize: 18 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<GlobalLayout
+  title="すべての記事"
+  description="ut.code(); からの最新情報"
+  focus={Focus.articles}
+  image={null}
+>
+  <main class="container mx-auto px-4 py-24">
+    <h1 class="text-center text-4xl">すべての記事</h1>
+    <ArticleList enlarge articles={page.data} class="mt-16" />
+    <div class="join mx-auto block w-fit pt-16 text-xl">
+      <a
+        href={page.url.prev}
+        class:list={["join-item btn", !page.url.prev && "invisible"]}
+        aria-hidden={!page.url.prev}
+        data-astro-prefetch="viewport"
+      >
+        «
+      </a>
+      <span class="join-item btn">Page {page.currentPage}</span>
+      <a
+        href={page.url.next}
+        class:list={["join-item btn", !page.url.next && "invisible"]}
+        aria-hidden={!page.url.next}
+        data-astro-prefetch="load"
+      >
+        »
+      </a>
+    </div>
+  </main>
+</GlobalLayout>

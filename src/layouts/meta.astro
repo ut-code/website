@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string | null;
+  description: string | null;
+  keywords?: string[];
+  image: ImageMetadata;
+}
+const { title, description, keywords = [], image } = Astro.props;
+const url = Astro.url.href;
+---
+
+<meta charset="utf-8" />
+<title>{title ? title + " | ut.code();" : "ut.code();"}</title>
+<link rel="icon" href="/favicon-64x.png" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content={description ?? "東京大学のソフトウェアエンジニアリングコミュニティ"}
+/>
+<meta property="og:site_name" content="ut.code();" />
+<meta property="og:title" content={title} />
+<meta property="og:image" content={image.src} />
+<meta property="og:url" content={url} />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@utokyo_code" />
+<meta
+  name="keywords"
+  content={[
+    ...keywords,
+    "ソフトウェアエンジニアリング,プログラミング,東京大学,サークル",
+  ].join(",")}
+/>
+<!-- 何だこれ -->
+<!-- {linkedData && ( -->
+<!-- <script type="application/ld+json">{JSON.stringify(linkedData)}</script> -->
+<!-- )} -->

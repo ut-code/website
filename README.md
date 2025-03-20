@@ -1,33 +1,35 @@
 # ut.code(); 公式ウェブサイト
 
+## 環境構築
+
+### devcontainer
+
 下のボタンを押すと開発環境が起動します。
 起動までしばらく時間がかかるのでお待ちください。
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ut-code/website)
 
-## 環境構築 (手動)
+### 手動
 
-- (必須) Node.js v18
-- (推奨) VSCode
-  - [ESLint 拡張機能](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-  - [Apollo 拡張機能](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo)
+- (必須) Bun >= v1.1.39
+- 任意のエディタ https://docs.astro.build/en/editor-setup/
 
 ```shell
-npm ci
+bun install --frozen-lockfile
 ```
 
 ## 開発
 
 ```shell
-npm start
+bun dev
 ```
 
-<http://localhost:8000/> で開発用サーバーが起動します。
+<http://localhost:4321/> で開発用サーバーが起動します。
 
 ## ビルド
 
 ```shell
-npm run build
+bun run build
 ```
 
 ## ディレクトリ構造
