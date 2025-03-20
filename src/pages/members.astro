@@ -1,10 +1,10 @@
 ---
 import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
-import JoinUsCTA from "../components/JoinUsCTA.astro";
-import Header from "../images/headers/members.jpg";
-import GlobalLayout from "../layouts/GlobalLayout.astro";
-import { Focus } from "../schema";
+import JoinUsCTA from "+/components/JoinUsCTA.astro";
+import Header from "+/images/headers/members.jpg";
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import { Focus } from "+/schema";
 
 const members = (await getCollection("members")).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime(),

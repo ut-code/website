@@ -1,11 +1,11 @@
 ---
 import { Picture } from "astro:assets";
 import { getCollection, render } from "astro:content";
+import ArticleList from "+/components/ArticleList.astro";
+import JoinUsCTA from "+/components/JoinUsCTA.astro";
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import { Focus } from "+/schema";
 import { Icon } from "astro-icon/components";
-import ArticleList from "../../components/ArticleList.astro";
-import JoinUsCTA from "../../components/JoinUsCTA.astro";
-import GlobalLayout from "../../layouts/GlobalLayout.astro";
-import { Focus } from "../../schema";
 
 export async function getStaticPaths() {
   const members = await getCollection("members");

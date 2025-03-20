@@ -1,9 +1,9 @@
 ---
 import { Picture } from "astro:assets";
+import JoinUsCTA from "+/components/JoinUsCTA.astro";
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import { Focus } from "+/schema";
 import type { ImageMetadata } from "astro";
-import GlobalLayout from "../../layouts/GlobalLayout.astro";
-import { Focus } from "../../schema";
-import JoinUsCTA from "../JoinUsCTA.astro";
 
 interface Props {
   type: string; // TODO: refine it more

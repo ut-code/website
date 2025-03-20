@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
+import ArticleList from "+/components/ArticleList.astro";
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import { Focus } from "+/schema";
 import type { GetStaticPaths } from "astro";
-import ArticleList from "../../components/ArticleList.astro";
-import GlobalLayout from "../../layouts/GlobalLayout.astro";
-import { Focus } from "../../schema";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const articles = (await getCollection("articles")).sort(

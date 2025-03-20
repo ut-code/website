@@ -1,8 +1,8 @@
 ---
 import { Picture } from "astro:assets";
+import type { Article } from "+/schema";
 import { format } from "date-fns";
 import { markdownToTxt } from "markdown-to-txt";
-import type { Article } from "../schema";
 
 interface Props {
   articles: { id: string; data: Article; body?: string }[];
