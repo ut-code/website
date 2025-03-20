@@ -1,8 +1,8 @@
 ---
-import { Picture } from "astro:assets";
 import ActionButton from "../components/ActionButton.astro";
 import Header from "../images/headers/contact.jpg";
 import GlobalLayout from "../layouts/GlobalLayout.astro";
+import StaticDocumentWrapper from "../layouts/StaticDocumentWrapper.astro";
 import { Focus } from "../schema";
 ---
 
@@ -12,23 +12,15 @@ import { Focus } from "../schema";
   focus={Focus.contact}
   image={Header}
 >
-  <div class="container mx-auto px-4 pt-16 pb-12">
-    <h1 class="text-4xl">ut.code(); に連絡する</h1>
-  </div>
-  <Picture
-    formats={["avif", "webp"]}
-    alt=""
-    loading="eager"
-    src={Header}
-    width="1920"
-    height="600"
-    class="h-30 bg-amber-200 object-cover sm:h-50 md:h-100"
-  />
-  <main class="prose mx-auto max-w-none px-16 py-16 md:px-32">
+  <StaticDocumentWrapper
+    title="ut.code(); に連絡する"
+    header={Header}
+    fill="bg-amber-200"
+  >
     <h2>お問い合わせ</h2>
     <p>ut.code(); へのお問い合わせは、各種 SNS をご利用ください。</p>
     <p class="not-prose flex gap-4">
-      <ActionButton to="https://twitter.com/utokyo_code">
+      <ActionButton to="https://x.com/utokyo_code">
         X (旧 Twitter)
       </ActionButton>
     </p>
@@ -65,5 +57,5 @@ import { Focus } from "../schema";
     <p class="not-prose">
       <ActionButton to="/donation"> ご寄付・ご協賛のお願い </ActionButton>
     </p>
-  </main>
+  </StaticDocumentWrapper>
 </GlobalLayout>

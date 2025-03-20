@@ -32,7 +32,7 @@
   <Popover.Content align="end" side="bottom" strategy="fixed">
     <div
       transition:fade|global={{ duration: 70 }}
-      class="w-[100vw] bg-white transition-opacity duration-300 lg:hidden"
+      class="w-[100vw] bg-gray-50 transition-opacity duration-300 lg:hidden"
     >
       <ul>
         {#each links as link}

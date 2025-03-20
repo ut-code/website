@@ -1,8 +1,8 @@
 ---
-import { Picture } from "astro:assets";
 import ActionButton from "../components/ActionButton.astro";
 import Header from "../images/headers/donation.jpg";
 import GlobalLayout from "../layouts/GlobalLayout.astro";
+import StaticDocumentWrapper from "../layouts/StaticDocumentWrapper.astro";
 import { Focus } from "../schema";
 ---
 
@@ -13,17 +13,11 @@ import { Focus } from "../schema";
   class="prose"
   image={Header}
 >
-  <h1 class="mt-12 ml-4 text-4xl md:ml-[20%]">ご寄付・ご協賛のお願い</h1>
-  <Picture
-    formats={["avif", "webp"]}
-    alt=""
-    loading="eager"
-    src={Header}
-    width="1920"
-    height="600"
-    class="my-8 h-100 w-full bg-stone-500 object-cover md:h-150"
-  />
-  <article class="prose mx-5 mb-20 max-w-xl sm:mx-10 md:mx-auto">
+  <StaticDocumentWrapper
+    title="ご寄付・ご協賛のお願い"
+    header={Header}
+    fill="bg-stone-500"
+  >
     <p>ut.code(); は、学生の手で自主的に運営されている団体です。</p><p>
       多くの方にソフトウェア開発の魅力を知っていただくため、活動はすべて無償で行っています。
     </p>
@@ -70,5 +64,5 @@ import { Focus } from "../schema";
     <ul>
       <li>2024/3/11 コウノマサノリ様</li>
     </ul>
-  </article>
+  </StaticDocumentWrapper>
 </GlobalLayout>

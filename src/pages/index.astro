@@ -36,7 +36,7 @@ articles.splice(3);
     formats={["avif", "webp"]}
     alt=""
     loading="lazy"
-    class="skeleton fixed bottom-0 -z-10 h-full max-w-full object-cover object-center select-none"
+    class="skeleton fixed bottom-0 -z-10 h-[100lvh] max-w-full object-cover object-center select-none"
     src={Hero}
   />
   <div class="absolute top-[40%] left-10 mr-10 max-w-lg bg-gray-50 p-8 pb-24">
@@ -135,8 +135,6 @@ articles.splice(3);
             onmouseover="document.getElementById('text-future-software')?.setAttribute('data-highlighted', '');"
             tabindex="0"
             onfocus="document.getElementById('text-future-software')?.setAttribute('data-highlighted', '');"
-            data-highlighted={true /* enable by default then immediately disable using JS s.t. it will show with noscript */}
-            onload="document.getElementById('text-future-software')?.removeAttribute('data-highlighted')"
             >未来のソフトウェア</span
           >を<br /><span>デザインしよう</span>
         </h1>
@@ -161,6 +159,7 @@ articles.splice(3);
 
           if (textTop < screenBottom - 400) {
             text.setAttribute("data-highlighted", "");
+            document.onscroll = null;
           }
         };
       </script>

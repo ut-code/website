@@ -22,6 +22,7 @@ const articles = await getCollection(
   "articles",
   (article) => article.data.author?.id === member.id,
 );
+articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <GlobalLayout
