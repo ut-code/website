@@ -1,9 +1,11 @@
 ---
+import { Picture } from "astro:assets";
 import ActionButton from "+/components/ActionButton.astro";
 import Header from "+/images/headers/join.jpg";
 import GlobalLayout from "+/layouts/GlobalLayout.astro";
 import StaticDocumentWrapper from "+/layouts/StaticDocumentWrapper.astro";
 import { Focus } from "+/schema";
+import DatesTable from "./join/shinkan-nittei.jpg";
 ---
 
 <GlobalLayout
@@ -17,6 +19,18 @@ import { Focus } from "+/schema";
     fill="bg-pink-100"
     title="ut.code(); に参加する"
   >
+    <p
+      role="alert"
+      class="alert alert-vertical border-info sm:alert-horizontal flex border-2"
+    >
+      <span class="flex-grow"> 3/30 (日) 20:00~ 新歓説明会を実施します </span>
+      <a
+        class="link link-primary"
+        target="_blank"
+        href="https://forms.gle/12xKpLEv8qnJFdCz5"
+        >参加フォーム
+      </a>
+    </p>
     <p>
       ut.code();
       は、プログラミングはもちろん、ものづくりが好きな人、デザインに興味がある人、アイデアを形にしたい人など、幅広い人を歓迎しています！
@@ -35,7 +49,7 @@ import { Focus } from "+/schema";
       variant="dark"
       to="https://sites.google.com/g.ecc.u-tokyo.ac.jp/utcode/discord-%E6%96%B0%E6%AD%93%E3%81%AE%E6%96%B9%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89"
     >
-      東大の学生の方はこちら
+      東大生の方はこちら
     </ActionButton>
     <p>
       学外の方でサークル参加希望の方は、
@@ -44,12 +58,28 @@ import { Focus } from "+/schema";
     </p>
     <h2>📅 新歓日程</h2>
     <p>今年の新歓日程は以下のとおりです。</p>
+    <a
+      href="/shinkan-nittei.jpg"
+      target="_blank"
+      aria-label="新しいページで開く"
+    >
+      <Picture src={DatesTable} alt="新歓日程" />
+    </a>
     <p>日時・場所の詳細は確定し次第追加します。</p>
     <ul aria-label="新歓日程一覧">
       <li>
         3/30 (日) オンライン説明会
         <ul>
-          <li>場所: Zoom (リンクは追って公開します)</li>
+          <li>場所: Zoom</li>
+          <li>
+            参加フォーム:
+            <a
+              class="link link-primary"
+              target="_blank"
+              href="https://forms.gle/12xKpLEv8qnJFdCz5"
+              >https://forms.gle/12xKpLEv8qnJFdCz5</a
+            >
+          </li>
           <li>飛び入り参加可能！</li>
         </ul>
       </li>
