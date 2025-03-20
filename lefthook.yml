@@ -2,8 +2,11 @@ pre-commit:
   parallel: true
   commands:
     check:
-      glob: "*.{js,ts,jsx,tsx,html,svelte,css,md,mdx,astro}"
-      run: bun fix:staged {staged_files}
+      glob: "*.{js,json,ts,jsx,tsx,html,svelte,css,md,mdx,astro}"
+      run: bun check:only
+    fix:
+      glob: "*.{js,json,ts,jsx,tsx,html,svelte,css,md,mdx,astro}"
+      run: bun format:staged {staged_files}
       stage_fixed: true
     sync:
       run: bun sync
