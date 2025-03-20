@@ -2,12 +2,12 @@
 import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
+import ActionButton from "+/components/ActionButton.astro";
+import JoinUsCTA from "+/components/JoinUsCTA.astro";
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import { Focus, type Project } from "+/schema";
 import type { GetStaticPaths } from "astro";
 import { Icon } from "astro-icon/components";
-import ActionButton from "../../components/ActionButton.astro";
-import JoinUsCTA from "../../components/JoinUsCTA.astro";
-import GlobalLayout from "../../layouts/GlobalLayout.astro";
-import { Focus, type Project } from "../../schema";
 
 export const getStaticPaths = (async () => {
   const projects = await getCollection("projects");

@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "private": true,
   "description": "website of ut.code();, version 3",
   "author": "aster-void and others",
@@ -13,9 +13,11 @@
     "prepare": "lefthook install && bun sync",
     "sync": "astro sync",
     "dev": "astro dev",
-    "check": "biome check . && astro check && bun prettier --check .",
-    "fix": "biome check . --fix --unsafe && bun prettier . --write",
-    "fix:staged": "biome check . --fix && astro check && bun prettier --write",
+    "check": "bun check:only && bun format:check",
+    "check:only": "astro check",
+    "format": "biome check . --fix --unsafe && bun prettier . --write",
+    "format:check": "biome check . && bun prettier --check .",
+    "format:staged": "biome check . --fix && bun prettier --write",
     "build": "astro build",
     "preview": "astro preview"
   },

@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import ProjectList from "../components/ProjectList.astro";
-import GlobalLayout from "../layouts/GlobalLayout.astro";
-import { Focus } from "../schema";
+import ProjectList from "+/components/ProjectList.astro";
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import { Focus } from "+/schema";
 
 const projects = (await getCollection("projects")).sort((a, b) => {
   const a_order = a.data.order ?? Number.POSITIVE_INFINITY;

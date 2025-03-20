@@ -5,12 +5,20 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "esnext",
     "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true,
     "noEmit": true,
     "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "+/*": ["src/*"], // not @ because it's reserved by YAML
+      "+contents/*": ["contents/*"]
+    }
+  },
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"]
 }

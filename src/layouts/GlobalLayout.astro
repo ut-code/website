@@ -1,9 +1,9 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import Logo from "../images/favicon.png";
-import type { Focus } from "../schema";
+import Footer from "+/components/Footer.astro";
+import Header from "+/components/Header.astro";
+import Logo from "+/images/favicon.png";
+import type { Focus } from "+/schema";
 import Meta from "./meta.astro";
 
 interface Props {
@@ -20,7 +20,7 @@ const { title, description, focus, image } = Astro.props;
   <Meta {title} {description} image={image ?? Logo} />
   <body class="min-h-full w-full">
     <style is:global>
-      @import "../global.css";
+      @import "+/global.css";
     </style>
     <Header {focus} />
     <slot />

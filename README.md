@@ -9,18 +9,18 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ut-code/website)
 
-### 手動
+### ローカル
 
 - (必須) Bun >= v1.1.39
 - 任意のエディタ https://docs.astro.build/en/editor-setup/
 
-```shell
+```sh
 bun install --frozen-lockfile
 ```
 
 ## 開発
 
-```shell
+```sh
 bun dev
 ```
 
@@ -28,30 +28,20 @@ bun dev
 
 ## ビルド
 
-```shell
+```sh
 bun run build
 ```
 
 ## ディレクトリ構造
 
-- `contents`: 記事のデータです。`/templates` ディレクトリ内のファイルで HTML への変換ルールが定義されます。
-  - `articles`: 記事です。`/articles/サブディレクトリ名` に出力されます。
-  - `members`: メンバーの情報です。現状メンバー専用ページは用意していませんが、記事ページから表示できます。
-  - `projects`: プロジェクトの情報です。`/projects/サブディレクトリ名` に出力されます。
-- `src`
-  - `components`: 共通コンポーネント
-  - `images`: 記事ではなくデザインに用いる画像です。import しない限り出力されません。
-  - `pages`: Gatsby の機能によりファイル名がパスに変換されます。
-  - `styles`: CSS ファイルです。
-  - `templates`: `contents` ディレクトリ内の Markdown ファイルを HTML に変換するルールを定義します。対応関係は `gatsby-node.ts` で定義されています。
-  - `gatsby-types.d.ts`: GraphQL クエリの型情報が入ります。自動生成されます。
-  - `images.d.ts`: TypeScript ファイルから画像ファイルを import できるようにするための型定義ファイルです。
-- `gatsby-{browser,config,node}.ts`: Gatsby の設定ファイルです。
-- `apollo.config.js`: Apollo Language Server が動作するために必要なファイルです。削除してもウェブサイトの動作には影響を与えません。
-- `{postcss,tailwind}.config.js`: Tailwind 用の設定です。
-
-## プルリクエストを出す前に
-
-```shell
-npm run lint && npm run type-check
-```
+- `contents/`: 記事のデータです。Astro の Content Collection を使って `src/pages` から読み込みます。
+- `src/`
+  - `images/`: 記事ではなくデザインに用いる画像です。
+  - `pages/`: Astro の機能によりファイル名がパスに変換されます。
+  - `islands/`: Astro で読み込む Island の集合です。
+  - `content.config.ts`: Astro の Content Collection の設定を書きます。
+  - `global.css`: Tailwind の設定ファイルです。
+- `astro.config.ts`: Astro の設定ファイルです。Vite の設定もここに書きます。
+- `biome.jsonc`: Biome の設定ファイルです。Biome のフォーマット部分は Astro に対応していないので、Lint だけ使っています。対応したら両方 Biome にしましょう。
+- `.prettier{rc,ignore}`: Prettier の設定ファイルです。 Prettier には、 astro と svelte と tailwind のプラグインが入っています。
+- `svelte.config.js`: 最もフィジカルで、最もプリミティブで、そして最もフェティッシュなフレームワークでいかせていただきます。
