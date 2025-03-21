@@ -4,6 +4,7 @@ import Header from "+/images/headers/join.jpg";
 import GlobalLayout from "+/layouts/GlobalLayout.astro";
 import StaticDocumentWrapper from "+/layouts/StaticDocumentWrapper.astro";
 import { Focus } from "+/schema";
+import { Icon } from "astro-icon/components";
 ---
 
 <GlobalLayout
@@ -17,6 +18,21 @@ import { Focus } from "+/schema";
     fill="bg-pink-100"
     title="ut.code(); に参加する"
   >
+    <p
+      role="alert"
+      class="alert not-prose alert-vertical border-info sm:alert-horizontal border-2 sm:flex-row"
+    >
+      <Icon name="feather:info" />
+      <span> 3/30 (日) 20:00~ オンライン新歓説明会を実施します </span>
+      <a class="link" href="/welcome-events"> 詳細 </a>
+      <a
+        class="link link-primary"
+        target="_blank"
+        href="https://forms.gle/12xKpLEv8qnJFdCz5"
+      >
+        参加フォーム
+      </a>
+    </p>
     <p>
       ut.code();
       は、プログラミングはもちろん、ものづくりが好きな人、デザインに興味がある人、アイデアを形にしたい人など、幅広い人を歓迎しています！
@@ -35,7 +51,7 @@ import { Focus } from "+/schema";
       variant="dark"
       to="https://sites.google.com/g.ecc.u-tokyo.ac.jp/utcode/discord-%E6%96%B0%E6%AD%93%E3%81%AE%E6%96%B9%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89"
     >
-      東大の学生の方はこちら
+      東大生の方はこちら
     </ActionButton>
     <p>
       学外の方でサークル参加希望の方は、
@@ -43,51 +59,8 @@ import { Focus } from "+/schema";
       からご連絡ください。
     </p>
     <h2>📅 新歓日程</h2>
-    <p>今年の新歓日程は以下のとおりです。</p>
-    <p>日時・場所の詳細は確定し次第追加します。</p>
-    <ul aria-label="新歓日程一覧">
-      <li>
-        3/30 (日) オンライン説明会
-        <ul>
-          <li>場所: Zoom (リンクは追って公開します)</li>
-          <li>飛び入り参加可能！</li>
-        </ul>
-      </li>
-      <li>4/3(木), 4/4(金) サーオリ</li>
-      <li>
-        4/7 (月), 11 (金), 16 (水), 18 (金), 23 (水), 25 (金), 30 (水) 19:00 ~
-        21:30 先取り自主勉強会
-        <ul>
-          <li>場所: 駒場学生会館 313 B (部室)</li>
-          <li>途中参加・途中退出可。</li>
-          <li>
-            いち早くプログラミングを学び、プロジェクトに参加できるスキルをつけよう！
-            経験者も新しい知識を学ぶチャンス！
-          </li>
-        </ul>
-      </li>
-      <li>
-        4/9 (水) エンジニア系サークル合同新歓 @対面
-        <ul>
-          <li>場所: 確定し次第お知らせします。(学生会館予定)</li>
-          <li>TSG、UTFF、RoboTech、灯と合同で新歓説明会を開催！</li>
-        </ul>
-      </li>
-      <li>
-        4/12 (土) 新歓講習会 15:45~
-        <ul>
-          <li>場所: 確定し次第お知らせします。(学生会館予定)</li>
-          <li>飛び入り参加可能！</li>
-          <li>
-            授業形式で HTML・CSS・JavaScript の基礎を学び、簡単な Web
-            アプリを公開できるようになります。
-          </li>
-        </ul>
-      </li>
-      <li>4/15 (火) エンジニア系サークル合同新歓 (4/9 と同じ内容です)</li>
-      <li>4/20 (日) 新歓講習会 (4/12 と同じ内容です)</li>
-    </ul>
-    <p>興味がある方は、ぜひ気軽に参加してみてください！</p>
+    <p>新歓の日程は、こちらから確認できます。</p>
+    <ActionButton to="/welcome-events">新歓イベント日程</ActionButton>
     <h2>💬 コミュニティについて</h2>
     <p>また、 ut.code(); では Slack コミュニティを運営しています。</p>
     <p>
