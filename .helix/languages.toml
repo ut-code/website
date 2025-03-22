@@ -1,5 +1,7 @@
-[language-servers]
-astro-ls = { command = "astro-ls", args = ["--stdio"] }
+[language-servers.astro-ls]
+command = "astro-ls"
+args = ["--stdio"]
+config = { contentIntellisense = true } # not working?
 
 [[language]]
 name = "astro"
@@ -14,3 +16,8 @@ formatter = { command = "bun", args = ["prettier", "--parser", "typescript"] }
 name = "svelte"
 formatter = { command = "bun", args = ["prettier", "--parser", "svelte"] }
 auto-format = true
+
+[[language]]
+name = "markdown"
+file-types = ["md", "mdx"]
+language-servers = ["astro-ls"]

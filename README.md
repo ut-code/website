@@ -12,7 +12,8 @@
 ### ローカル
 
 - (必須) Bun >= v1.1.39
-- 任意のエディタ https://docs.astro.build/en/editor-setup/
+- (推奨) Typos <https://github.com/crate-ci/typos>
+- 任意のエディタ <https://docs.astro.build/en/editor-setup/>
 
 ```sh
 bun install --frozen-lockfile

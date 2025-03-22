@@ -8,8 +8,6 @@ export type Project = z.infer<ReturnType<typeof CreateProjectSchema>>;
 
 export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
   z.object({
-    // excerpt: z.string().nullable(),
-    // longExcerpt: z.string().nullable(),
     date: z
       .date()
       .transform((date) => new TZDate(date).withTimeZone("Asia/Tokyo")),

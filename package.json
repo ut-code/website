@@ -1,14 +1,14 @@
 {
   "name": "website",
-  "version": "3.1.0",
-  "private": true,
+  "homepage": "https://utcode.net",
   "description": "website of ut.code();, version 3",
-  "author": "aster-void and others",
-  "type": "module",
+  "private": true,
+  "version": "3.1.1",
   "keywords": [
     "astro",
     "ut.code();"
   ],
+  "type": "module",
   "scripts": {
     "prepare": "lefthook install && bun sync",
     "sync": "astro sync",

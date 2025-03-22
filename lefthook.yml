@@ -10,3 +10,5 @@ pre-commit:
       stage_fixed: true
     sync:
       run: bun sync
+    typos:
+      run: if command -v typos 2&> /dev/null; then typos; fi
