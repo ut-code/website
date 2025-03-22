@@ -10,3 +10,5 @@ pre-commit:
       stage_fixed: true
     sync:
       run: bun sync
+    typos:
+      run: typos
