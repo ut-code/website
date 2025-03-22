@@ -1,5 +1,7 @@
-[language-servers]
-astro-ls = { command = "astro-ls", args = ["--stdio"] }
+[language-servers.astro-ls]
+command = "astro-ls"
+args = ["--stdio"]
+config = { contentIntellisense = true }
 
 [[language]]
 name = "astro"
