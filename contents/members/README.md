@@ -1,6 +1,6 @@
 # メンバーページ
 
-[``](/src/pages/members/[member].astro) によってレンダリングされるメンバー詳細ページです。
+[`[member].astro`](/src/pages/members/[member].astro) によってレンダリングされるメンバー詳細ページです。
 
 顔写真や本名を掲載しない場合は、ハンドルネームやアバター画像を代わりに指定してください。
 
