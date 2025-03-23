@@ -1,5 +1,6 @@
 ---
 import { Picture } from "astro:assets";
+import Link from "+/components/Link.astro";
 import Header from "+/images/headers/welcome-events.jpg";
 import DatesTable from "+/images/shinkan-nittei-v2.png";
 import GlobalLayout from "+/layouts/GlobalLayout.astro";
@@ -40,12 +41,11 @@ import { Focus } from "+/schema";
           <li>場所: Zoom</li>
           <li>
             参加フォーム:
-            <a
+            <Link
               class="link link-primary"
-              target="_blank"
               href="https://forms.gle/12xKpLEv8qnJFdCz5"
-              >https://forms.gle/12xKpLEv8qnJFdCz5</a
-            >
+              _blank
+            />
           </li>
           <li>飛び入り参加可能！</li>
         </ul>
@@ -60,8 +60,16 @@ import { Focus } from "+/schema";
       <section id="joint-welcome-event">
         <h3>エンジニア系サークル合同新歓</h3>
         <ul>
-          <li>日時: 4/9 (水) 19:00 ~ 20:00、4/15 (火) 19:00 ~ 20:00</li>
+          <li>日時: 4/9 (水) 19:00 ~ 21:00、4/15 (火) 19:00 ~ 21:00</li>
           <li>場所: 確定し次第お知らせします。(学生会館予定)</li>
+          <li>
+            参加フォーム:
+            <Link
+              class="link link-primary"
+              href="https://forms.gle/sAU7A9uMVerQPpUb6"
+              _blank
+            />
+          </li>
           <li>TSG、UTFF、RoboTech、灯と合同で新歓説明会を開催！</li>
         </ul>
       </section>

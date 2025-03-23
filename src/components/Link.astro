@@ -1,0 +1,13 @@
+---
+interface Props {
+  class?: string;
+  href: string;
+  _blank?: boolean;
+}
+const props = Astro.props;
+const { href, _blank } = props;
+---
+
+<a class={props.class} href={href} target={_blank ? "_blank" : undefined}
+  >{href}</a
+>
