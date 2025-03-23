@@ -7,7 +7,7 @@ import GlobalLayout from "+/layouts/GlobalLayout.astro";
 import { Focus } from "+/schema";
 
 const members = (await getCollection("members")).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+  (a, b) => b.data.joinYear - a.data.joinYear,
 );
 ---
 

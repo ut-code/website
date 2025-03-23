@@ -34,7 +34,7 @@ export const CreateMemberSchema = ({ image }: { image: ImageFunction }) =>
   z.object({
     nameJa: z.string(),
     nameEn: z.string(),
-    date: z.coerce.date(),
+    joinYear: z.number(),
     description: z.string(),
     github: z.string().optional(),
     twitter: z.string().optional(),
