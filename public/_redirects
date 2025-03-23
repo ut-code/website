@@ -1,10 +1,2 @@
-# 旧ウェブサイトのリダイレクト
 # Cloudflare Pages の機能で処理される
-/2020/events/%e7%ac%ac93%e5%9b%9e%e4%ba%94%e6%9c%88%e7%a5%ad%e3%81%ab%e5%8f%82%e5%8a%a0%e3%81%97%e3%81%be%e3%81%97%e3%81%9f/ /articles/may-fes-93/ 301
-/2022/events/%e7%ac%ac73%e5%9b%9e%e9%a7%92%e5%a0%b4%e7%a5%ad%e3%81%ab%e5%8f%82%e5%8a%a0%e3%81%97%e3%81%a6%e3%81%84%e3%81%be%e3%81%99/ /articles/komaba-fes-73/ 301
-/values/ / 301
-/about-us/ / 301
-/2022/:category/:slug/ /articles/:slug/ 301
-/2021/:category/:slug/ /articles/:slug/ 301
-/2020/:category/:slug/ /articles/:slug/ 301
-/2019/:category/:slug/ /articles/:slug/ 301
+/articles/2025-spring-camp /articles/2025/02-20_spring-camp
