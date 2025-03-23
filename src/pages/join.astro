@@ -47,16 +47,29 @@ import { Icon } from "astro-icon/components";
       東大生の方は、次のリンクから Discord に参加できます。大学が提供する Google
       Workspace アカウントでのログインが必要です。
     </p>
+    <!--
+    旧リンク (Google Sites) https://sites.google.com/g.ecc.u-tokyo.ac.jp/utcode/discord-%E6%96%B0%E6%AD%93%E3%81%AE%E6%96%B9%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89
+    -->
     <ActionButton
       variant="dark"
-      to="https://sites.google.com/g.ecc.u-tokyo.ac.jp/utcode/discord-%E6%96%B0%E6%AD%93%E3%81%AE%E6%96%B9%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89"
+      to="https://docs.google.com/document/d/1_EwpsuEniMIkBh8jpvVc_lp0T8_BJbfbZwNfwT5qJ6Y/edit?usp=sharing"
       class="my-4"
     >
       東大生の方はこちら
     </ActionButton>
     <div role="alert" class="alert alert-error alert-outline">
-      すでに別のアカウントでログインしていると、404 NOT FOUND
-      ページが表示される場合があります。お手数ですが、一度別のタブでログアウトしてからもう一度お試しください。
+      <span>
+        すでに別のアカウントでログインしていると、404 NOT FOUND
+        ページが表示される場合があります。お手数ですが、一度
+        <a
+          class="link link-error"
+          target="_blank"
+          href="https://www.google.com"
+        >
+          https://www.google.com
+        </a>
+        のアカウント操作メニューで ECCS アカウントにログインしてからもう一度お試しください。
+      </span>
     </div>
     <p>
       学外の方でサークル参加希望の方は、
