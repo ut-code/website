@@ -21,6 +21,7 @@ const url = Astro.url.href;
 />
 <meta property="og:site_name" content="ut.code();" />
 <meta property="og:title" content={title} />
+{description && <meta property="og:description" content={description} />}
 <meta property="og:image" content={image.src} />
 <meta property="og:url" content={url} />
 <meta property="og:locale" content="ja_JP" />
