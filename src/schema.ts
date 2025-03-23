@@ -12,7 +12,6 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
       .date()
       .transform((date) => new TZDate(date).withTimeZone("Asia/Tokyo")),
     title: z.string().nullable(),
-    description: z.string().optional(), // og:description に使われます
     image: image(),
     categories: z.array(z.string()).optional(),
     author: reference("members").optional(),
