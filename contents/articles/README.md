@@ -2,16 +2,35 @@
 
 ## frontmatter
 
-| キー          | 必須 | 説明                                                                           |
-| ------------- | ---- | ---|
-| `title`       | ✅   | 記事タイトル|
-| `date`        | ✅   | **記事を書いた** 日。|
-| `image`       | ✅   | イメージ画像 |
-| `fit` | | (画像) object-fit。 default = "cover" |
-| `position` | | (画像) object-position。 (縦軸上から 横軸左から)。default = "50% 50%" |
-| `categories`  |      | 何なんだろうね。 |
-| `author`|  | 著者の id |
+### base
 
-## 画像
+- title: string
+  - 記事タイトル。
 
-縦横比 3:5 に crop されます。
+- date: Date
+  - **記事を書いた**日。
+
+- author: string & keyof Member
+  - 著者。
+
+- categories: string[]
+  - 何なんだろうね。
+
+### image 系
+
+- image: path
+  - タイトル画像。記事一覧とトップで使うよ。
+  - 縦横比 3:5 に crop されるよ。
+
+- fit?: "cover" | "contain" | fill" | "none" = "cover"
+  - `object-fit`
+  - Astro のビルド段階で Sharp に渡されるよ。
+  - <https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit>
+
+- position?: "center" | "left" | "right" | "top" | "bottom"
+  - `object-position`
+  - Astro のビルド段階で Sharp に渡されるよ。
+
+- bg_color?: string
+  - ロード中や画像の漏れたところに見せる背景色。
+  - 設定しないと DaisyUI の `skeleton` を使うよ。

@@ -7,17 +7,31 @@ export type Member = z.infer<ReturnType<typeof CreateMemberSchema>>;
 export type Project = z.infer<ReturnType<typeof CreateProjectSchema>>;
 
 export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
-  z.object({
-    date: z
-      .date()
-      .transform((date) => new TZDate(date).withTimeZone("Asia/Tokyo")),
-    title: z.string(),
-    fit: z.string().optional(),
-    position: z.string().optional(),
-    image: image(),
-    categories: z.array(z.string()).optional(),
-    author: reference("members").optional(),
-  });
+  z
+    .object({
+      // base
+      title: z.string(),
+      date: z
+        .date()
+        .transform((date) => new TZDate(date).withTimeZone("Asia/Tokyo")),
+      author: reference("members").optional(),
+      categories: z.array(z.string()).optional(),
+      // 画像系
+      image: image(),
+      fit: z.enum(["cover", "contain", "fill", "none"]).optional(),
+      position: z.enum(["center", "top", "bottom", "left", "right"]).optional(),
+      bg_color: z.string().optional(),
+    })
+    .refine(
+      (self) => {
+        const bad = self.fit === "contain" && self.bg_color === undefined;
+        return !bad;
+      },
+      {
+        message: "fit: contain の場合、 bg_color を指定する必要があります",
+        path: ["bg_color"],
+      },
+    );
 
 export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
   z.object({

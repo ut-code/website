@@ -56,9 +56,10 @@ const articlesWithExcerpts = await Promise.all(
       const imageWidth = baseW * (isFeatured ? 2 : 1);
       const imageHeight = baseW * (3 / 5) * (isFeatured ? 2 : 1);
 
+      console.log(article.data.bg_color);
+
       article.data.fit ??= "cover";
       article.data.position ??= "center";
-      console.log(article.data);
 
       const additionalProps = isFeatured
         ? {
@@ -90,10 +91,18 @@ const articlesWithExcerpts = await Promise.all(
               fit={article.data.fit}
               src={article.data.image}
               class:list={[
-                "skeleton min-h-0 w-full rounded-xl",
+                "min-h-0 w-full rounded-xl",
+                !article.data["bg_color"] && "skeleton",
                 additionalProps.imageClassName,
               ]}
-              style={`aspect-ratio: 5 / 3; object-fit: ${article.data.fit}; object-position: ${article.data.position}`}
+              style={`
+              aspect-ratio: 5 / 3;
+              object-fit: ${article.data.fit};
+              ${
+                article.data.bg_color
+                  ? `background-color: ${article.data.bg_color}`
+                  : ""
+              }`}
             />
             <div class="mt-4 p-1">
               <time class="block text-sm text-gray-500">
