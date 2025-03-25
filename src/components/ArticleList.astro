@@ -52,6 +52,15 @@ const articlesWithExcerpts = await Promise.all(
   {
     articlesWithExcerpts.map(({ article, text }, i) => {
       const isFeatured = enlarge && i % 11 === 0; // 11 記事ごとに大きく表示する
+      const baseW = 400;
+      const imageWidth = baseW * (isFeatured ? 2 : 1);
+      const imageHeight = baseW * (3 / 5) * (isFeatured ? 2 : 1);
+
+      console.log(article.data.bg_color);
+
+      article.data.fit ??= "cover";
+      article.data.position ??= "center";
+
       const additionalProps = isFeatured
         ? {
             cellClassName: "md:col-span-2 md:row-span-2",
@@ -75,12 +84,25 @@ const articlesWithExcerpts = await Promise.all(
             <Picture
               loading={i < 5 ? loading : "lazy"}
               formats={["avif", "webp"]}
-              alt="カバー画像"
+              position={article.data.position}
+              width={imageWidth}
+              height={imageHeight}
+              alt=""
+              fit={article.data.fit}
               src={article.data.image}
               class:list={[
-                "skeleton min-h-0 w-full rounded-xl object-center",
+                "min-h-0 w-full rounded-xl",
+                !article.data["bg_color"] && "skeleton",
                 additionalProps.imageClassName,
               ]}
+              style={`
+              aspect-ratio: 5 / 3;
+              object-fit: ${article.data.fit};
+              ${
+                article.data.bg_color
+                  ? `background-color: ${article.data.bg_color}`
+                  : ""
+              }`}
             />
             <div class="mt-4 p-1">
               <time class="block text-sm text-gray-500">

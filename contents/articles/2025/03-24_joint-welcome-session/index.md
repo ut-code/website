@@ -2,9 +2,11 @@
 title: 東大エンジニア系サークル合同新歓を開催します
 image: ./thumbnail.png
 categories:
-- event
+  - event
 author: ykobayashi
 date: 2025-03-24
+fit: contain
+bg_color: "#A5FFD3"
 ---
 
 ## 📌 イベント概要
