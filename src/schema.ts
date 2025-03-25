@@ -11,7 +11,9 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
     date: z
       .date()
       .transform((date) => new TZDate(date).withTimeZone("Asia/Tokyo")),
-    title: z.string().nullable(),
+    title: z.string(),
+    fit: z.string().optional(),
+    position: z.string().optional(),
     image: image(),
     categories: z.array(z.string()).optional(),
     author: reference("members").optional(),
