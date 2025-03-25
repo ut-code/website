@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 const { article } = Astro.props;
 const { Content } = await render(article);
 const author =
-  article.data.author && (await getEntry("members", article.data.author?.id));
+  article.data.author && (await getEntry("members", article.data.author.id));
 if (article.data.author && !author)
   throw new Error(
     `Author not found for article ${article.id}, searched for author ${article.data.author.id}`,
@@ -26,7 +26,7 @@ if (article.data.author && !author)
 
 <GlobalLayout
   title={article.data.title}
-  description="ut.code(); のウェブサイトに書かれた記事のひとつです。"
+  description={"ut.code(); のウェブサイトに書かれた記事のひとつです。"}
   focus={Focus.articles}
   image={article.data.image}
 >
