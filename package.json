@@ -15,6 +15,7 @@
     "dev": "astro dev",
     "check": "bun check:only && bun format:check",
     "check:only": "astro check",
+    "fix": "bun format",
     "format": "biome check . --fix --unsafe && bun prettier . --write",
     "format:check": "biome check . && bun prettier --check .",
     "format:staged": "biome check . --fix && bun prettier --write",
