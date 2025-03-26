@@ -7,7 +7,7 @@ import { markdownToTxt } from "markdown-to-txt";
 interface Props {
   articles: { id: string; data: Article; body?: string }[];
   enlarge?: boolean; // 11 記事ごとに大きくする
-  minify?: boolean; // (index.astro 用) 画面幅に合わせて短くする
+  truncate?: boolean; // (index.astro 用) 画面幅に合わせて短くする
   "max-cols"?: number | `${number}`;
   loading?: "eager" | "lazy";
   class?: string;
@@ -16,7 +16,7 @@ const props = Astro.props;
 const {
   articles,
   enlarge = false,
-  minify = false,
+  truncate = false,
   "max-cols": _maxCols = 4,
   loading = "lazy",
 } = props;
@@ -41,11 +41,11 @@ const articlesWithExcerpts = await Promise.all(
 
 <ul
   class:list={[
-    "grid grid-flow-dense gap-9",
+    "grid grid-flow-dense gap-5",
     maxCols >= 2 && "md:grid-cols-2",
     maxCols >= 3 && "lg:grid-cols-3",
     maxCols >= 4 && "xl:grid-cols-4",
-    minify && "minify",
+    truncate && "truncate",
     props.class,
   ]}
 >
@@ -75,7 +75,7 @@ const articlesWithExcerpts = await Promise.all(
           <a
             href={`/articles/${article.id}`}
             class:list={[
-              "relative rounded-xl bg-gray-50 hover:brightness-110 active:top-0.5",
+              "relative rounded-xl bg-gray-50 p-2 hover:brightness-95",
               additionalProps.cellClassName,
             ]}
           >
@@ -109,7 +109,7 @@ const articlesWithExcerpts = await Promise.all(
               <h3 class="text-lg font-bold">{article.data.title}</h3>
               <p
                 class:list={[
-                  "prose mt-2 line-clamp-3 max-w-none",
+                  "prose mt-2 line-clamp-3 max-w-none text-gray-500",
                   isFeatured && "md:line-clamp-6",
                 ]}
               >
@@ -125,7 +125,7 @@ const articlesWithExcerpts = await Promise.all(
 
 <style>
   @container (width > 64rem) {
-    .minify.variant-compact :nth-child(n + 3) a {
+    .truncate.variant-compact :nth-child(n + 3) a {
       display: none;
     }
   }

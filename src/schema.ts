@@ -38,7 +38,11 @@ export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
     title: z.string(),
     order: z.number().optional(),
     date: z.date(),
-    image: image(),
+    image: z.object({
+      src: image(),
+      fit: z.enum(["cover", "contain", "fill"]).optional().default("cover"),
+      bg: z.string().optional().default("whitesmoke"),
+    }),
     description: z.string(),
     tags: z.array(z.string()),
     github: z.string().url().optional(),

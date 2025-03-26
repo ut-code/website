@@ -6,7 +6,7 @@
 </script>
 
 <Popover.Root>
-  <Popover.Trigger class="h-16 w-16 hover:bg-gray-100 lg:hidden">
+  <Popover.Trigger class="h-16 w-16 hover:bg-gray-200 lg:hidden">
     <div class="mx-auto my-auto h-6 w-6 text-gray-600">
       <img src="/icons/menu.svg" alt="open menu" />
     </div>
