@@ -1,5 +1,4 @@
 ---
-import { ClientRouter } from "astro:transitions";
 import Footer from "+/components/Footer.astro";
 import Header from "+/components/Header.astro";
 import Logo from "+/images/favicon.png";
@@ -25,6 +24,8 @@ const { title, description, focus, image } = Astro.props;
     <Header {focus} />
     <slot />
     <Footer />
-    <ClientRouter />
+    <script>
+      import "@hotwired/turbo";
+    </script>
   </body>
 </html>

@@ -56,8 +56,6 @@ const articlesWithExcerpts = await Promise.all(
       const imageWidth = baseW * (isFeatured ? 2 : 1);
       const imageHeight = baseW * (3 / 5) * (isFeatured ? 2 : 1);
 
-      console.log(article.data.bg_color);
-
       article.data.fit ??= "cover";
       article.data.position ??= "center";
 
