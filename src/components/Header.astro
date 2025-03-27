@@ -20,7 +20,7 @@ interface Props {
 const { focus } = Astro.props;
 ---
 
-<header class="sticky top-0 z-20 w-full bg-gray-50">
+<header class="sticky top-0 z-20 w-full">
   <!-- <ClientRouter transition:animate={fade({ duration: 30 })} /> -->
   {
     banner.shown && (
@@ -28,7 +28,7 @@ const { focus } = Astro.props;
         id="banner"
         class:list={[
           "flex items-center justify-center gap-4 px-1 py-2",
-          banner.kind === "error" ? "bg-red-300" : "bg-green-300",
+          banner.kind === "error" ? "bg-red-300/70" : "bg-green-300",
         ]}
       >
         <span class="hidden md:inline">{banner.long}</span>
@@ -51,7 +51,7 @@ const { focus } = Astro.props;
       </div>
     )
   }
-  <div class="flex h-16">
+  <div class="flex h-16 bg-gray-50/70 backdrop-blur-lg">
     <a href="/" class="flex items-center px-4" data-astro-prefetch="viewport">
       <Logo class="w-36 sm:ml-8" variant="default" />
     </a>
