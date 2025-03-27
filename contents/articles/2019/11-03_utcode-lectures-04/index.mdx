@@ -155,7 +155,9 @@ CSS セレクタは、ブラウザが CSS を適用する際、どの HTML 要�
 
 疑似クラスを用いると、CSS を用いたインタラクティブな表現が簡単に実装できます。以下の文字列にカーソルを合わせてみてください。
 
-<div class="hover:text-red hover:text-lg" />
+<div class="hover:text-[red] hover:text-lg">
+Hello World!
+</div>
 
 これは、以下のようにして実装されています。
 
@@ -166,7 +168,7 @@ CSS セレクタは、ブラウザが CSS を適用する際、どの HTML 要�
 ```
 #message:hover {
   color: red;
-  font-size: 30px;
+  font-size: 18px;
 }
 ```
 

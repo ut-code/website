@@ -36,7 +36,7 @@ articles.splice(3);
     formats={["avif", "webp"]}
     alt=""
     loading="lazy"
-    class="skeleton fixed bottom-0 -z-10 h-[100lvh] max-w-full object-cover object-center select-none"
+    class="skeleton fixed top-0 -z-10 h-[100lvh] max-w-full object-cover object-center select-none"
     src={Hero}
   />
   <div class="absolute top-[40%] left-10 mr-10 max-w-lg bg-gray-50 p-8 pb-24">
@@ -209,7 +209,7 @@ articles.splice(3);
   <section class="bg-gray-50">
     <div class="container mx-auto px-4 py-12">
       <SectionHeader title="News" subtitle="最新情報" />
-      <ArticleList minify {articles} max-cols="3" class="mt-10" />
+      <ArticleList truncate {articles} max-cols="3" class="mt-10" />
       <ActionButton to="/articles" class="mt-8 ml-auto">
         すべての記事
       </ActionButton>
@@ -276,6 +276,9 @@ articles.splice(3);
     #text-future-software {
       text-decoration: underline white;
       text-underline-offset: 12px;
+      @media (max-width: 40rem) {
+        text-underline-offset: 6px;
+      }
       --bg-left: 0%;
       background: linear-gradient(white 0 0) bottom left/var(--bg-left, 0%) 100%
         no-repeat;

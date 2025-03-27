@@ -21,7 +21,7 @@ const members = (await getCollection("members")).sort(
     loading="eager"
     alt=""
     src={Header}
-    class="fixed bottom-0 -z-100 h-[100vh] bg-neutral-400 object-cover"
+    class="fixed top-0 -z-100 h-[100lvh] bg-neutral-400 object-cover"
     style="object-position: 75% 20%;"
     aria-hidden
   />
@@ -39,7 +39,7 @@ const members = (await getCollection("members")).sort(
           <li>
             <a
               href={`/members/${member.id}`}
-              class="relative block w-fit drop-shadow-lg transition-colors duration-150 hover:brightness-110 active:top-0.5"
+              class="relative block w-fit drop-shadow-lg transition-colors duration-150"
               data-astro-prefetch="hover"
             >
               <Picture
@@ -51,7 +51,7 @@ const members = (await getCollection("members")).sort(
                 height="400"
                 class="skeleton rounded-none"
               />
-              <div class="absolute bottom-0 w-full min-w-45 bg-gradient-to-b from-transparent to-black px-6 pt-12 pb-6 text-white">
+              <div class="absolute bottom-0 w-full min-w-45 bg-gradient-to-b from-transparent to-black px-6 pt-12 pb-6 text-white transition-all">
                 <h2 class="text-3xl">{member.data.nameJa}</h2>
                 <p class="text-md">{member.data.nameEn}</p>
                 <p class="mt-2 text-xs leading-normal">

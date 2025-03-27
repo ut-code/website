@@ -39,7 +39,7 @@ if (article.data.author && !author)
           height="800"
           quality="80"
           formats={["avif", "webp"]}
-          class="skeleton mx-auto md:max-w-xl md:rounded-2xl"
+          class="skeleton mx-auto rounded-none md:max-w-3xl md:rounded-2xl"
           alt="イメージ画像"
           src={article.data.image}
         />
@@ -56,19 +56,17 @@ if (article.data.author && !author)
           href={`/members/${author.id}`}
           class="flex max-w-sm min-w-75 items-center gap-4 rounded-lg px-4 py-2 hover:bg-gray-200"
         >
-          <div class="h-14 w-14 overflow-clip rounded-full bg-gray-200">
-            <Picture
-              alt="著者"
-              formats={["avif", "webp"]}
-              width="56"
-              height="56"
-              src={author.data.faceImage}
-              class="h-full w-full"
-            />
-          </div>
+          <Picture
+            alt="著者"
+            formats={["avif", "webp"]}
+            width="64"
+            height="64"
+            src={author.data.faceImage}
+            class="overflow-clip rounded-full bg-gray-200"
+          />
           <div class="flex-1">
-            <div class="text-lg">{author.data.nameJa}</div>
-            <div class="text-sm text-gray-800">{author.data.description}</div>
+            <div class="text-lg text-gray-800">{author.data.nameJa}</div>
+            <div class="text-sm text-gray-500">{author.data.description}</div>
           </div>
         </a>
       )
@@ -77,11 +75,11 @@ if (article.data.author && !author)
       {format(article.data.date, "yyyy-MM-dd")}
     </time>
   </div>
-  <main class="mx-auto">
-    <h1 class="mx-auto my-8 max-w-2xl px-8 text-center text-2xl lg:text-3xl">
+  <main class="mx-auto max-w-xl px-4 2xl:max-w-4xl">
+    <h1 class="my-8 w-full text-center text-2xl lg:text-3xl">
       {article.data.title}
     </h1>
-    <article class="prose mx-auto max-w-xl px-8">
+    <article class="prose w-full max-w-none">
       <Content />
     </article>
   </main>
