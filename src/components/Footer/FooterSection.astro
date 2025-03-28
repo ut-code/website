@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 interface Props {
   title: string;
   links: { title: string; to: string }[];
@@ -11,7 +13,7 @@ const { title, links } = Astro.props;
   <ul class="mt-4 space-y-2">
     {
       links.map((link) => (
-        <li>
+        <li class="align-middle">
           <a
             href={link.to}
             class="link relative active:top-0.25 motion-reduce:hover:underline"
@@ -19,6 +21,9 @@ const { title, links } = Astro.props;
             rel={link.to.startsWith("/") ? "" : "noreferrer"}
           >
             {link.title}
+            {!link.to.startsWith("/") && (
+              <Icon name="feather:external-link" class="mx-1 mb-1 inline" />
+            )}
           </a>
         </li>
       ))

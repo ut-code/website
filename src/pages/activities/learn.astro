@@ -5,10 +5,9 @@ import Summary from "+/components/ActivityPage/Summary.astro";
 import Title from "+/components/ActivityPage/Title.astro";
 
 import ActionButton from "+/components/ActionButton.astro";
-import Festival from "+/images/activity-learn-festival.png";
-import Seminar from "+/images/activity-learn-specialized-seminar.jpg";
-import UTCodeLearn from "+/images/activity-learn-utcode-learn.jpg";
-import Cover from "+/images/activity-learn.jpg";
+import Cover from "+/images/activity/learn/cover.jpg";
+import Seminar from "+/images/activity/learn/specialized-seminar.jpg";
+import UTCodeLearn from "+/images/activity/learn/utcode-learn.jpg";
 ---
 
 <Layout type="学習" cover={Cover}>
@@ -22,8 +21,8 @@ import Cover from "+/images/activity-learn.jpg";
   <Section
     title="ut.code(); Learn"
     image={UTCodeLearn}
-    imageAlt="ut.code(); Learn のスクリーンショット"
-    edge="left"
+    imageAlt="ut.code(); Learn"
+    align-image="right"
   >
     <p>
       ut.code(); Learn は、ut.code();
@@ -39,30 +38,16 @@ import Cover from "+/images/activity-learn.jpg";
     title="全ゼミ / 自主ゼミ「モダン Web システム開発入門」"
     image={Seminar}
     imageAlt=""
-    edge="right"
+    align-image="left"
   >
     <p>
       ut.code(); Learn を教材に、駒場キャンパスで講義形式で Web
-      システム開発を学ぶことのできる自主ゼミです。自学自習のペース配分が苦手でも、毎週の参加と課題により学習を進めることができます。
-    </p>
-    <p>
-      ut.code();
-      の新歓イベントを兼ねていますが、ゼミのみへの参加も、ゼミなしでの
-      ut.code(); への入会も歓迎しています。
+      システム開発を学ぶことのできるゼミです。自学自習のペース配分が苦手でも、毎週の参加と課題により学習を進めることができます。
     </p>
   </Section>
-  <Section
-    title="はじめてのプログラミング教室"
-    image={Festival}
-    imageAlt=""
-    edge="left"
-  >
-    <p>
-      例年 5 月に開催される五月祭、11
-      月に開催される駒場祭にそれぞれ出展しています。様々な企画を用意していますが、その中でも「はじめてのプログラミング教室」は、プログラムに触れたことのない方でもアルゴリズムの力に触れることのできる企画となっています。
-    </p>
-    <ActionButton to="/articles/komaba-festival-74-day3">
-      駒場祭参加報告
-    </ActionButton>
-  </Section>
+  <!--
+  TODO: write about:
+    - extralearn
+    - ドキュメントを読む会
+  -->
 </Layout>

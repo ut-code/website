@@ -2,12 +2,12 @@
 import { Picture } from "astro:assets";
 interface Props {
   title: string;
-  edge: "left" | "right";
+  "align-image": "left" | "right";
   image: ImageMetadata;
   imageAlt: string;
 }
 
-const { title, edge, image, imageAlt } = Astro.props;
+const { title, "align-image": align, image, imageAlt } = Astro.props;
 ---
 
 <section class="mt-16 lg:grid lg:items-center">
@@ -16,9 +16,9 @@ const { title, edge, image, imageAlt } = Astro.props;
       class:list={[
         "isolate h-[300px] overflow-clip md:h-[400px] lg:h-[500px] lg:w-1/2 xl:h-[600px]",
         {
-          left: "lg:ml-auto lg:rounded-l-2xl",
-          right: "lg:rounded-r-2xl",
-        }[edge],
+          left: "lg:rounded-r-2xl",
+          right: "lg:ml-auto lg:rounded-l-2xl",
+        }[align],
       ]}
     >
       <Picture
@@ -35,7 +35,7 @@ const { title, edge, image, imageAlt } = Astro.props;
     style={{ gridArea: "1 / 1" }}
     class="container mx-auto lg:max-w-screen-lg"
   >
-    <div class:list={["p-8 lg:w-1/2", edge === "right" && "lg:ml-auto"]}>
+    <div class:list={["p-8 lg:w-1/2", align === "left" && "lg:ml-auto"]}>
       <h2 class="text-4xl">{title}</h2>
       <div class="prose mt-4 max-w-none">
         <slot />
