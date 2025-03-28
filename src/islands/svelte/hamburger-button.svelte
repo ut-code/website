@@ -13,23 +13,25 @@
   </Popover.Trigger>
 
   <Popover.Content align="end" side="bottom" strategy="fixed">
-    <div
-      transition:fade|global={{ duration: 70 }}
-      class="w-[100vw] bg-gray-50/70 backdrop-blur-lg transition-opacity duration-300 lg:hidden"
-    >
-      <ul>
-        {#each links as link}
-          <li class="hover:bg-gray-100">
-            <a
-              href={link.href}
-              class="block px-4 py-2"
-              data-astro-prefetch="viewport"
-            >
-              {link.title}
-            </a>
-          </li>
-        {/each}
-      </ul>
-    </div>
+    <Popover.Portal to="#menu-popover-slot">
+      <div
+        transition:fade|global={{ duration: 70 }}
+        class="w-full bg-gray-50/70 backdrop-blur-md lg:hidden"
+      >
+        <ul>
+          {#each links as link}
+            <li class="hover:bg-gray-100">
+              <a
+                href={link.href}
+                class="block px-4 py-2"
+                data-astro-prefetch="viewport"
+              >
+                {link.title}
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </div>
+    </Popover.Portal>
   </Popover.Content>
 </Popover.Root>
