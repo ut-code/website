@@ -5,10 +5,12 @@ import Summary from "+/components/ActivityPage/Summary.astro";
 import Title from "+/components/ActivityPage/Title.astro";
 
 import ActionButton from "+/components/ActionButton.astro";
-import Brainstorming from "+/images/activity-develop-brainstorming.jpg";
-import Meeting from "+/images/activity-develop-meeting.jpg";
-import Project from "+/images/activity-develop-project.jpg";
-import Cover from "+/images/activity-develop.jpg";
+
+import Cover from "+/images/activity/develop/cover.jpg";
+
+import Hackathon from "+/images/activity/develop/hackathon.jpg";
+import Project from "+/images/activity/develop/project.jpg";
+import Meeting from "+/images/activity/develop/solo-dev.jpg";
 ---
 
 <Layout type="開発" cover={Cover}>
@@ -24,46 +26,33 @@ import Cover from "+/images/activity-develop.jpg";
     title="プロジェクト"
     image={Project}
     imageAlt="共同作業の様子"
-    edge="left"
+    align-image="right"
   >
-    {/* eslint-disable prettier/prettier */}
     <p>
       プロジェクトは、ut.code();
       内のチームにより開発されるソフトウェアの単位で、多くはそれぞれ独立した
-      Slack チャンネル、Notion ページ、Google Drive
-      フォルダを持っています。成果物はオープンソースにすることが推奨されており、
+      Slack チャンネル、Notion ページ、Google Drive フォルダを持っています。
+      成果物はすべてオープンソースであり、
       <a href="https://github.com/ut-code" target="_blank" rel="noreferrer">
         GitHub</a
-      >
-      上で公開されています。
+      > 上で公開されています。
     </p>
     <ActionButton to="/projects"> すべてのプロジェクト </ActionButton>
   </Section>
-  <Section
-    title="ブレインストーミング"
-    image={Brainstorming}
-    imageAlt="2022 年度大忘年会の様子"
-    edge="right"
-  >
+  <Section title="ハッカソン" image={Hackathon} imageAlt="" align-image="left">
     <p>
-      ソフトウェアは、作り始める前にしっかりとアイデアを練り上げることが重要です。ut.code();
-      では、プロジェクトの実施の前にブレインストーミング会を実施し、多くの人から作りたいプロダクトについてのアイデアに対するフィードバックを得る機会を提供しています。
+      ハッカソンは、限られた時間の中でアイデアを形にし、実際に動くプロダクトを開発するイベントです。
+      参加者はチームを組み、短期間で設計・実装・発表までを行うため、創造力や技術力、チームワークが試されます。
+      アイデアを素早く具体化し、試行錯誤しながらブラッシュアップする過程を通じて、実践的なスキルを磨くことができます。
     </p>
   </Section>
-  <Section
-    title="定例ミーティング"
-    image={Meeting}
-    imageAlt="定例ミーティング"
-    edge="left"
-  >
+  <Section title="個人開発" image={Meeting} imageAlt="" align-image="right">
     <p>
-      プロジェクトが動き始めた後、重要になってくるのは継続です。ut.code();
-      では、すべてのプロジェクトで週 1
-      度の定例ミーティングを実施することを推奨しています。テスト期間など、時間がとりづらい時期でも、週に
-      1
-      度、ほんの少しだけ実施中のプロジェクトに意識を向けることにより、プロジェクトの成功率を大きく高めることができます。
+      個人開発は、アイデアを自由に形にし、自分のペースで開発を進めるスタイルです。
+      発想から実装までを一貫して行うことで、技術力や問題解決能力を高めることができます。
+      思いついたものをすぐに試し、試行錯誤を重ねながらプロダクトを作り上げていく過程そのものが、大きな学びや発見につながります。
+      ut.code();
+      は、そんな個人開発を支えるため、発表の場や開発に必要なリソース提供を通じて、開発者の挑戦をサポートしています。
     </p>
   </Section>
 </Layout>
-); }
-

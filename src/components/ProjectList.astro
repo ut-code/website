@@ -15,13 +15,10 @@ const { projects, variant = "full" } = props;
   {
     projects.map((project, i) => (
       <li
-        class:list={[
-          "contents",
-          variant === "compact" ? "variant-short" : "variant-full",
-        ]}
+        class:list={["contents", variant === "compact" && "data-variant-short"]}
       >
         <a
-          class="relative top-0 overflow-clip rounded-xl border border-gray-200 hover:brightness-95"
+          class="overflow-clip rounded-xl border border-gray-200 bg-gray-50 hover:brightness-95"
           href={`/projects/${project.id}`}
         >
           <Picture
@@ -61,12 +58,12 @@ const { projects, variant = "full" } = props;
 
 <style>
   @media (max-width: 48rem) {
-    li.variant-short:nth-child(n + 3) {
+    li.data-variant-short:nth-child(n + 3) {
       display: none;
     }
   }
   @media (max-width: 80rem) {
-    li.variant-short:nth-child(n + 5) {
+    li.data-variant-short:nth-child(n + 5) {
       display: none;
     }
   }
