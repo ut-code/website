@@ -12,7 +12,7 @@ const banner: Banner = {
   long: "新歓イベントを行っています",
   short: "新歓イベントを行っています",
   link: "/welcome-events",
-  linkText: "日程",
+  linkText: "詳細日程",
 };
 
 export default banner;
