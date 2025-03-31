@@ -20,46 +20,34 @@ import { Focus } from "+/schema";
     title="新歓イベント"
     position="object-top"
   >
-    <p>
-      <h2>イベント参加例</h2>
+    <section>
+      <h2>☕️新歓配布資料</h2>
       <ul>
-        <li>説明会 (任意)・学習型イベント・新歓合宿</li>
         <li>
-          説明会 (任意)・学習型イベント (新歓合宿は予定が合わず参加できない)
-        </li>
-        <li>
-          説明会 (任意)・新歓合宿
-          <ul>
-            <li>
-              この場合、合宿では学習型イベントでやる予定の学習をしてもらいます
-            </li>
-          </ul>
-        </li>
-        <li>
-          すべて参加できない場合
-          <ul>
-            <li>
-              全く問題ありません。プロジェクト参加後に学習をしていただきます。
-            </li>
-          </ul>
+          ut.code(); 紹介スライド <a
+            href="https://docs.google.com/presentation/d/1c8eWT2ihAr1Y1ppYphcG_sRRV2cSsc9N1v7nWg_FPtQ/edit?usp=sharing"
+            >サークル紹介スライド | Google Docs</a
+          >
         </li>
       </ul>
-    </p>
-    <h2>📅 新歓イベント日程</h2>
-    <p>
-      今年の新歓イベントの日程は以下のとおりです。
-      興味がある方は、ぜひ気軽に参加してみてください！
-    </p>
-    <p>日時・場所の詳細は確定し次第追加します。</p>
-    <a
-      href="/shinkan-nittei.png"
-      target="_blank"
-      aria-label="新しいページで開く"
-    >
-      <Picture src={DatesTable} alt="新歓日程" />
-    </a>
-    <section aria-label="新歓日程一覧">
-      <div class="divider mt-20">説明会</div>
+    </section>
+    <section>
+      <h2>📅 新歓イベント日程</h2>
+      <p>
+        今年の新歓イベントの日程は以下のとおりです。
+        興味がある方は、ぜひ気軽に参加してみてください！
+      </p>
+      <p>日時・場所の詳細は確定し次第追加します。</p>
+      <a
+        href="/shinkan-nittei.png"
+        target="_blank"
+        aria-label="新しいページで開く"
+      >
+        <Picture src={DatesTable} alt="新歓日程" />
+      </a>
+    </section>
+    <section aria-label="各イベント詳細">
+      <div class="divider">説明会系</div>
       <section id="online-information-session">
         <div class="not-prose text-xl"><h3>オンライン新歓説明会</h3></div>
         <ul>
@@ -144,7 +132,6 @@ import { Focus } from "+/schema";
       <section>
         <h3>新歓合宿</h3>
         <ul>
-          <li>5/3 ~ 5/5</li>
           <li>日程: 5/3(土) ~ 5/5(月)</li>
           <li>場所: 東京大学山中寮内藤セミナーハウス</li>
           <li>
@@ -153,11 +140,50 @@ import { Focus } from "+/schema";
           <li>
             ut.code(); の新歓イベントとしては一番大きなものになります！
             <br />
-            ut.code(); の普段の活動を知ることができますし、部員や他の新入生とも交流できるいい機会になりますよ〜
+            ut.code(); の普段の活動を知ることができますし、部員や他の新入生とも交流できるいい機会になります！
             ぜひご参加ください！
           </li>
         </ul>
       </section>
+      <section>
+        <h3>新プロジェクト発足会</h3>
+        <ul>
+          <li>日程: ６月頃予定</li>
+          <li>場所: 駒場・渋谷付近予定</li>
+          <li>
+            みんなで食事をしながら、新プロジェクト発足に向けた話をしていくそんなイベントです。
+          </li>
+          <li>
+            プロジェクト発足会以外でもプロジェクトは生まれますが、多くのプロジェクトはここで発足しています！
+          </li>
+        </ul>
+      </section>
+      <div class="divider"></div>
+    </section>
+    <section>
+      <h2>✍️イベント参加例</h2>
+      <ul>
+        <li>説明会 (任意)・学習系イベント・新歓合宿</li>
+        <li>
+          説明会 (任意)・学習系イベント (新歓合宿は予定が合わず参加できない)
+        </li>
+        <li>
+          説明会 (任意)・新歓合宿
+          <ul>
+            <li>
+              この場合、合宿では学習系イベントでやる予定の学習をしてもらいます
+            </li>
+          </ul>
+        </li>
+        <li>
+          すべて参加できない場合
+          <ul>
+            <li>
+              全く問題ありません。プロジェクトに参加しつつ学習のサポートをします。
+            </li>
+          </ul>
+        </li>
+      </ul>
     </section>
   </StaticDocumentWrapper>
 </GlobalLayout>
