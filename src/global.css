@@ -2,7 +2,12 @@
 @plugin "@tailwindcss/typography";
 @plugin "daisyui";
 
-/* do we need this? */
-:root {
-  --color-primary-main: #00d372;
+@plugin "daisyui/theme" {
+  /* biome-ignore lint/correctness/noUnknownProperty: daisyui */
+  name: "light";
+  --color-primary: #00d372;
+}
+
+.link:not(.link-uncolor) {
+  color: var(--color-blue-500);
 }
