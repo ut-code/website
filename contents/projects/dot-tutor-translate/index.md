@@ -3,7 +3,7 @@ title: Dot Tutor Translate
 kind: long-term
 status: stable
 image:
-  src: ./image.png
+  src: ./thumbnail.png
   fit: contain
 date: 2023-01-28
 description: 点字翻訳サイト Dot Tutor Translate です。

@@ -3,7 +3,7 @@ title: WebCFace
 kind: long-term
 status: stable
 image:
-  src: ./image.png
+  src: ./thumbnail.png
 date: 2023-09-28
 description: プロセス間通信 & GUIを提供するライブラリ
 tags: [C++, Python, JavaScript, TypeScript, WebSocket, MessagePack, React]
