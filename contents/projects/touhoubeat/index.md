@@ -1,8 +1,9 @@
 ---
 title: 東方競争曲
-slug: touhoubeat
+kind: long-term
+status: stable
 image:
-  src: ./image.png
+  src: ./thumbnail.png
 date: 2023-12-19
 description: 東方Projectのアレンジ曲で遊べるリズムゲーム
 tags: [C#, Unity, AWS, Go, TypeScript, React]

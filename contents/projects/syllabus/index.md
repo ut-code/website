@@ -1,7 +1,8 @@
 ---
 title: シ楽バス
-slug: syllabus
 order: 2
+kind: long-term
+status: stable
 image:
   src: ./image.jpg
 date: 2023-10-02

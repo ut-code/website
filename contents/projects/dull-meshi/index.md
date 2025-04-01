@@ -1,8 +1,9 @@
 ---
 title: だるめし
-slug: dull-meshi
+kind: long-term
+status: stable
 image:
-  src: ./dull-meshi.jpg
+  src: ./thumbnail.jpg
   fit: contain
   bg: "#E6E0DB"
 date: 2023-04-05

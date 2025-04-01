@@ -1,8 +1,9 @@
 ---
 title: Falling Nikochan
-slug: nikochan
+kind: long-term
+status: released
 image:
-  src: ./image.jpg
+  src: ./thumbnail.jpg
 date: 2024-09-24
 description: シンプルでかわいい音ゲーです。誰でも譜面を作ってシェアできます。
 tags: [JavaScript, TypeScript, React, Next.js, Hono, MongoDB]

@@ -1,8 +1,9 @@
 ---
 title: PostPut
-slug: postput
+kind: long-term
+status: dead
 image:
-  src: ./image.png
+  src: ./thumbnail.png
 date: 2023-04-03
 description: 送信したメッセージに後からタグ付けできるチャットツール
 tags: [JavaScript, React, Node.js, Express, Passport.js, Prisma, WebSocket]

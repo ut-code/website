@@ -1,8 +1,9 @@
 ---
 title: Dot Tutor Learn
-slug: dot-tutor-learn
+kind: long-term
+status: stable
 image:
-  src: ./image.png
+  src: ./thumbnail.png
   fit: contain
 date: 2023-01-28
 description: 体験型点字学習サイト Dot Tutor Learn です。

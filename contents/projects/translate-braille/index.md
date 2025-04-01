@@ -1,6 +1,7 @@
 ---
 title: Dot Tutor Translate
-slug: dot-tutor-translate
+kind: long-term
+status: stable
 image:
   src: ./image.png
   fit: contain

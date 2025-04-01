@@ -36,6 +36,15 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
 export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
   z.object({
     title: z.string(),
+    kind: z.enum(["long-term", "hackathon", "festival"]),
+    status: z.enum([
+      "plan",
+      "under-development",
+      "released",
+      "stable",
+      "finished",
+      "dead",
+    ]),
     order: z.number().optional(),
     date: z.date(),
     image: z.object({

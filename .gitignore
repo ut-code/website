@@ -8,8 +8,6 @@ dist
 
 # editor
 .DS_Store
-.vscode/*
-!.vscode/extensions.json
 
 # env
 .direnv
