@@ -1,5 +1,6 @@
 import { type ImageFunction, reference } from "astro:content";
 import { z } from "astro:schema";
+import { kinds } from "+contents/project-kinds";
 import { TZDate } from "@date-fns/tz";
 
 export type Article = z.infer<ReturnType<typeof CreateArticleSchema>>;
@@ -33,10 +34,11 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
       },
     );
 
+type Kind = (typeof kinds)[number]["frontmatter"];
 export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
   z.object({
     title: z.string(),
-    kind: z.enum(["long-term", "hackathon", "festival"]),
+    kind: z.enum(kinds.map((kind) => kind.frontmatter) as [Kind, ...Kind[]]),
     status: z.enum([
       "plan",
       "under-development",

@@ -3,47 +3,20 @@ import { getCollection } from "astro:content";
 import ProjectList from "+/components/ProjectList.astro";
 import GlobalLayout from "+/layouts/GlobalLayout.astro";
 import { Focus } from "+/schema";
+import { kinds } from "+contents/project-kinds.ts";
 
-const kinds = [
-  {
-    path: undefined,
-    kind: "long-term",
-    title: "長期プロジェクト",
-    tab: "長期プロジェクト",
-  },
-  {
-    path: "hackathon",
-    kind: "hackathon",
-    title: "ハッカソン",
-    tab: "ハッカソン",
-  },
-  {
-    path: "festival",
-    kind: "festival",
-    title: "学園祭プロジェクト",
-    tab: "学園祭",
-  },
-];
-export function getStaticPaths(params) {
+export function getStaticPaths() {
   return kinds.map((kind) => ({
     params: { kind: kind.path },
     props: { kind },
   }));
 }
 
-const tabFocus = Astro.props.kind.kind;
-const titles = new Map([
-  ["long-term", "長期プロジェクト"],
-  ["festival", "学園祭プロジェクト"],
-  ["hackathon", "ハッカソン"],
-]);
-function getTitle() {
-  return titles.get(Astro.props.kind);
-}
+const kind = Astro.props.kind;
 
 const projects = (await getCollection("projects"))
   .filter((project) => {
-    return project.data.kind === Astro.props.kind;
+    return project.data.kind === kind.frontmatter;
   })
   .sort((a, b) => {
     const a_order = a.data.order ?? Number.POSITIVE_INFINITY;
@@ -62,26 +35,40 @@ const projects = (await getCollection("projects"))
   image={null}
 >
   <main class="container mx-auto px-4 py-24">
-    <h1 class="text-center text-4xl">長期プロジェクト</h1>
-    <div role="tablist" class="tabs">
-      <a
-        role="tab"
-        class:list={["tab", { "tab-active": tabFocus === "long-term" }]}
-        href="/projects">長期プロジェクト</a
-      >
-      <a
-        role="tab"
-        class="tab"
-        class:list={["tab", { "tab-active": tabFocus === "festival" }]}
-        href="/projects/festival">学園祭</a
-      >
-      <a
-        role="tab"
-        class="tab"
-        class:list={["tab", { "tab-active": tabFocus === "hackathon" }]}
-        href="/projects/hackathon">ハッカソン</a
-      >
+    <h1 class="text-center text-4xl">{kind.title}</h1>
+    <div role="tablist" class="tabs tabs-lift">
+      {
+        kinds.map((tab) => (
+          <a>
+            <a
+              role="tab"
+              class:list={[
+                "tab",
+                { "tab-active": kind.frontmatter === tab.frontmatter },
+              ]}
+              href={tab.path ? `/projects/${tab.path}` : "/projects"}
+            >
+              {tab.tabTitle}
+            </a>
+          </a>
+        ))
+      }
     </div>
-    <ProjectList {projects} class="mt-16" variant="full" />
+    {
+      projects.length === 0 ? (
+        <p class="mt-30 text-center text-gray-500">
+          プロジェクトはまだありません。
+        </p>
+      ) : (
+        <ProjectList {projects} class="mt-16" variant="full" />
+      )
+    }
+    {
+      projects.length < 10 && (
+        <p class="mt-30 text-center text-gray-500">
+          このページは準備中です。ほとんどのプロジェクトは反映されていません。
+        </p>
+      )
+    }
   </main>
 </GlobalLayout>
