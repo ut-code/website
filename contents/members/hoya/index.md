@@ -1,7 +1,6 @@
 ---
 nameJa: 大矢 宏輝
 nameEn: Hiroki Oya
-slug: hoya
 joinYear: 2024
 description: 絶賛勉強中です。
 faceImage: ./face.jpg
