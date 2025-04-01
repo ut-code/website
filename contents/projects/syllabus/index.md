@@ -1,9 +1,10 @@
 ---
 title: シ楽バス
-slug: syllabus
-order: 2
+order: 3
+kind: long-term
+status: stable
 image:
-  src: ./image.jpg
+  src: ./thumbnail.jpg
 date: 2023-10-02
 description: 前期課程に特化した時間割サービス
 tags: [JavaScript]
