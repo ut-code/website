@@ -1,6 +1,7 @@
 ---
 title: WebCFace
-slug: webcface
+kind: long-term
+status: stable
 image:
   src: ./image.png
 date: 2023-09-28

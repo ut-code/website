@@ -5,7 +5,7 @@ status: dead
 date: 2023-04-04
 description: 仮想空間を参加者全員で作り上げ、自分たちだけの世界を作るメタバースを作ります
 image:
-  src: ./image.png
+  src: ./thumbnail.png
 tags: [C#, Unity]
 github: https://github.com/ut-code/cobuilder
 ---

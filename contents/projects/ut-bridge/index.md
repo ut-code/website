@@ -2,23 +2,23 @@
 title: UT-Bridge
 kind: long-term
 status: released
+order: 2
 date: 2025-04-01
 image:
   src: ./thumbnail.png
 
 description: "同じキャンパスにいる留学生と手軽に交流できるアプリです。従来の言語交換プログラムとは異なり、面倒な手続きなしで、気軽に国際交流を楽しめます。"
 tags:
-  - JavaScript
   - TypeScript
   - React
   - Next.js
   - Tailwind
   - DaisyUI
-  - Bun
   - Hono
   - Prisma
   - Cloudflare
   - Firebase
+  - Fly.io
 github: https://github.com/ut-code/ut-bridge
 website: https://ut-bridge-web.pages.dev
 ---
