@@ -35,7 +35,7 @@ const projects = (await getCollection("projects"))
   image={null}
 >
   <main class="container mx-auto px-4 py-24">
-    <h1 class="text-center text-4xl">{kind.title}</h1>
+    <h1 class="mb-5 min-h-[2.25em] text-center text-4xl">{kind.title}</h1>
     <div role="tablist" class="tabs tabs-lift">
       {
         kinds.map((tab) => (
