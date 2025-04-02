@@ -19,8 +19,12 @@ const members = defineCollection({
   schema: CreateMemberSchema,
 });
 const projects = defineCollection({
-  loader: glob({ base: "./contents/projects", pattern: "*/index.{md,mdx}" }),
+  loader: glob({ base: "./contents/projects", pattern: "**/index.{md,mdx}" }),
   schema: CreateProjectSchema,
 });
 
-export const collections = { articles, members, projects };
+export const collections = {
+  articles,
+  members,
+  projects,
+};

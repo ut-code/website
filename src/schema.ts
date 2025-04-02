@@ -34,7 +34,7 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
       },
     );
 
-type Kind = (typeof kinds)[number]["frontmatter"];
+export type Kind = (typeof kinds)[number]["frontmatter"];
 export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
   z.object({
     title: z.string(),

@@ -1,18 +1,18 @@
 ---
 import { Picture } from "astro:assets";
-import { getCollection } from "astro:content";
 import { render } from "astro:content";
 import ActionButton from "+/components/ActionButton.astro";
 import JoinUsCTA from "+/components/JoinUsCTA.astro";
 import GlobalLayout from "+/layouts/GlobalLayout.astro";
-import { Focus, type Project } from "+/schema";
+import { getProjects } from "+/query";
+import { Focus } from "+/schema.ts";
 import type { GetStaticPaths } from "astro";
 import { Icon } from "astro-icon/components";
 
 export const getStaticPaths = (async () => {
-  const projects = await getCollection("projects");
+  const projects = await getProjects("all");
   return projects.map((project) => ({
-    params: { project: project.id },
+    params: { id: project.id },
     props: { project },
   }));
 }) satisfies GetStaticPaths;

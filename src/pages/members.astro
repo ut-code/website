@@ -1,14 +1,12 @@
 ---
 import { Picture } from "astro:assets";
-import { getCollection } from "astro:content";
 import JoinUsCTA from "+/components/JoinUsCTA.astro";
 import Header from "+/images/headers/members.jpg";
 import GlobalLayout from "+/layouts/GlobalLayout.astro";
-import { Focus } from "+/schema";
+import { getMembers } from "+/query.ts";
+import { Focus } from "+/schema.ts";
 
-const members = (await getCollection("members")).sort(
-  (a, b) => b.data.joinYear - a.data.joinYear,
-);
+const members = await getMembers();
 ---
 
 <GlobalLayout

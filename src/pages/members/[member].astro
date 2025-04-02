@@ -1,14 +1,15 @@
 ---
 import { Picture } from "astro:assets";
-import { getCollection, render } from "astro:content";
+import { render } from "astro:content";
 import ArticleList from "+/components/ArticleList.astro";
 import JoinUsCTA from "+/components/JoinUsCTA.astro";
 import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import { getArticles, getMembers } from "+/query";
 import { Focus } from "+/schema";
 import { Icon } from "astro-icon/components";
 
 export async function getStaticPaths() {
-  const members = await getCollection("members");
+  const members = await getMembers();
   return members.map((member) => ({
     params: { member: member.id },
     props: { member },
@@ -18,11 +19,9 @@ export async function getStaticPaths() {
 const { member } = Astro.props;
 const { Content } = await render(member);
 
-const articles = await getCollection(
-  "articles",
-  (article) => article.data.author?.id === member.id,
-);
-articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const articles = await getArticles({
+  where: (article) => article.data.author?.id === member.id,
+});
 ---
 
 <GlobalLayout
