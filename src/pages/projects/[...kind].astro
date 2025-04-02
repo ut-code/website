@@ -43,7 +43,7 @@ const projects = await getProjects(kind.frontmatter);
     {
       projects.length === 0 ? (
         <p class="mt-30 text-center text-gray-500">
-          プロジェクトはまだありません。
+          プロジェクトはまだ反映されていません。。
         </p>
       ) : (
         <ProjectList {projects} class="mt-16" variant="full" />

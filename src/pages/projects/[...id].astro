@@ -8,6 +8,7 @@ import { getProjects } from "+/query";
 import { Focus } from "+/schema.ts";
 import type { GetStaticPaths } from "astro";
 import { Icon } from "astro-icon/components";
+import { format } from "date-fns";
 
 export const getStaticPaths = (async () => {
   const projects = await getProjects("all");
@@ -86,10 +87,10 @@ const { Content } = await render(project);
           }
         </div>
         {
-          project.data.website && (
+          project.data.website && project.data.status !== "dead" && (
             <ActionButton to={project.data.website} class="my-6">
               <Icon name="feather:globe" class="mr-2 inline-block h-6 w-6" />
-              <span>{project.data.title} へ</span>
+              {project.data.title} へ
             </ActionButton>
           )
         }
@@ -97,12 +98,43 @@ const { Content } = await render(project);
     </div>
     <div class="container mx-auto mt-6 px-4 lg:max-w-screen-lg">
       <div class="prose max-w-none rounded-lg bg-gray-100 p-4">
-        {project.data.description}
+        {
+          project.data.kind === "hackathon"
+            ? `${format(project.data.date, "yyyy年M月d日")}
+              に行われたハッカソンで作成されたプロジェクトです。`
+            : project.data.description
+        }
       </div>
-      <div class="prose mt-8 max-w-none"><Content /></div>
+      <div class="prose mt-8 max-w-none">
+        {
+          project.data.kind === "hackathon" ? (
+            project.data.description
+          ) : (
+            <Content />
+          )
+        }
+      </div>
     </div>
   </main>
-  <JoinUsCTA class="mt-8">
-    ut.code(); で{project.data.title}を開発しませんか？
-  </JoinUsCTA>
+  {
+    project.data.kind === "long-term" && (
+      <JoinUsCTA class="mt-8">
+        ut.code(); で{project.data.title}を開発しませんか？
+      </JoinUsCTA>
+    )
+  }
+  {
+    project.data.kind === "hackathon" && (
+      <JoinUsCTA class="mt-8">
+        ut.code(); では、定期的にハッカソンイベントを行っています。
+      </JoinUsCTA>
+    )
+  }
+  {
+    project.data.kind === "festival" && (
+      <JoinUsCTA class="mt-8">
+        ut.code(); は、毎年五月祭・駒場祭に参加しています。
+      </JoinUsCTA>
+    )
+  }
 </GlobalLayout>
