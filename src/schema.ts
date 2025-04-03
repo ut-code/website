@@ -55,7 +55,7 @@ export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
       bg: z.string().optional().default("whitesmoke"),
     }),
     description: z.string(),
-    tags: z.array(z.string()),
+    tags: z.array(z.string()).optional().default([]),
     github: z.string().url().optional(),
     youtube: z.string().url().optional(),
     website: z.string().url().optional(),
