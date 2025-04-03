@@ -8,7 +8,6 @@ import { getProjects } from "+/query";
 import { Focus } from "+/schema.ts";
 import type { GetStaticPaths } from "astro";
 import { Icon } from "astro-icon/components";
-import { format } from "date-fns";
 
 export const getStaticPaths = (async () => {
   const projects = await getProjects("all");
@@ -96,25 +95,24 @@ const { Content } = await render(project);
         }
       </div>
     </div>
-    <div class="container mx-auto mt-6 px-4 lg:max-w-screen-lg">
-      <div class="prose max-w-none rounded-lg bg-gray-100 p-4">
-        {
-          project.data.kind === "hackathon"
-            ? `${format(project.data.date, "yyyy年M月d日")}
-              に行われたハッカソンで作成されたプロジェクトです。`
-            : project.data.description
-        }
-      </div>
+    <article class="container mx-auto mt-6 px-4 lg:max-w-screen-lg">
+      {
+        project.data.kind === "long-term" && (
+          <div class="prose max-w-none rounded-lg bg-gray-100 p-4">
+            {project.data.description}
+          </div>
+        )
+      }
       <div class="prose mt-8 max-w-none">
         {
-          project.data.kind === "hackathon" ? (
-            project.data.description
-          ) : (
+          project.data.kind === "long-term" ? (
             <Content />
+          ) : (
+            project.data.description
           )
         }
       </div>
-    </div>
+    </article>
   </main>
   {
     project.data.kind === "long-term" && (
