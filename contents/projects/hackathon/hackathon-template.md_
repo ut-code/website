@@ -6,13 +6,6 @@ status: finished
 image:
   src: ./thumbnail.png
 description: "簡単なタワーディフェンスゲームです。自機も移動して攻撃すると言う特徴があります。"
-members:
-  - ykobayashi
-tags:
-  - TypeScript
-  - Svelte
-  - DaisyUI
-  - Cloudflare
-github: https://github.com/aster-void/tower-battle
-website: https://tower-d5g.pages.dev
+github: https://github.com/ut-code/your-project
+website: https://your-project.pages.dev
 ---
