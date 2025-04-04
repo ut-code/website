@@ -1,6 +1,5 @@
 ---
 import { Picture } from "astro:assets";
-import { getCollection } from "astro:content";
 import { Icon } from "astro-icon/components";
 
 import GlobalLayout from "+/layouts/GlobalLayout.astro";
@@ -9,25 +8,17 @@ import ActionButton from "+/components/ActionButton.astro";
 import ArticleList from "+/components/ArticleList.astro";
 import ProjectList from "+/components/ProjectList.astro";
 import SectionHeader from "+/components/per-page/SectionHeader.astro";
+import { getArticles, getProjects } from "+/query.ts";
 import { Focus } from "+/schema.ts";
 
 import LogoGMOMedia from "+/images/donators/gmo-media.png";
 import Hero from "+/images/headers/index.jpg";
 import LabCafe from "+/images/lab-cafe.jpg";
 
-const projects = (await getCollection("projects")).sort((a, b) => {
-  const a_order = a.data.order ?? Number.POSITIVE_INFINITY;
-  const b_order = b.data.order ?? Number.POSITIVE_INFINITY;
-  if (a_order !== b_order) {
-    return a_order - b_order;
-  }
-  return b.data.date.getTime() - a.data.date.getTime();
-});
+const projects = await getProjects("long-term");
 projects.splice(6);
 
-const articles = (await getCollection("articles")).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
-);
+const articles = await getArticles();
 articles.splice(3);
 ---
 

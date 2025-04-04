@@ -1,18 +1,18 @@
 ---
 import { Picture } from "astro:assets";
-import { getCollection } from "astro:content";
 import { render } from "astro:content";
 import ActionButton from "+/components/ActionButton.astro";
 import JoinUsCTA from "+/components/JoinUsCTA.astro";
 import GlobalLayout from "+/layouts/GlobalLayout.astro";
-import { Focus, type Project } from "+/schema";
+import { getProjects } from "+/query";
+import { Focus } from "+/schema.ts";
 import type { GetStaticPaths } from "astro";
 import { Icon } from "astro-icon/components";
 
 export const getStaticPaths = (async () => {
-  const projects = await getCollection("projects");
+  const projects = await getProjects("all");
   return projects.map((project) => ({
-    params: { project: project.id },
+    params: { id: project.id },
     props: { project },
   }));
 }) satisfies GetStaticPaths;
@@ -26,7 +26,7 @@ const { Content } = await render(project);
   focus={Focus.projects}
   image={project.data.image.src}
 >
-  <main class="mt-36">
+  <main>
     <div
       class="lg:mx-auto lg:flex lg:max-w-screen-lg lg:flex-row-reverse lg:items-center lg:gap-4 lg:px-4 lg:py-12"
     >
@@ -86,23 +86,53 @@ const { Content } = await render(project);
           }
         </div>
         {
-          project.data.website && (
+          project.data.website && project.data.status !== "dead" && (
             <ActionButton to={project.data.website} class="my-6">
               <Icon name="feather:globe" class="mr-2 inline-block h-6 w-6" />
-              <span>{project.data.title} へ</span>
+              {project.data.title} へ
             </ActionButton>
           )
         }
       </div>
     </div>
-    <div class="container mx-auto mt-6 px-4 lg:max-w-screen-lg">
-      <div class="prose max-w-none rounded-lg bg-gray-100 p-4">
-        {project.data.description}
+    <article class="container mx-auto mt-6 px-4 lg:max-w-screen-lg">
+      {
+        project.data.kind === "long-term" && (
+          <div class="prose max-w-none rounded-lg bg-gray-100 p-4">
+            {project.data.description}
+          </div>
+        )
+      }
+      <div class="prose mt-8 max-w-none">
+        {
+          project.data.kind === "long-term" ? (
+            <Content />
+          ) : (
+            project.data.description
+          )
+        }
       </div>
-      <div class="prose mt-8 max-w-none"><Content /></div>
-    </div>
+    </article>
   </main>
-  <JoinUsCTA class="mt-8">
-    ut.code(); で{project.data.title}を開発しませんか？
-  </JoinUsCTA>
+  {
+    project.data.kind === "long-term" && (
+      <JoinUsCTA class="mt-8">
+        ut.code(); で{project.data.title}を開発しませんか？
+      </JoinUsCTA>
+    )
+  }
+  {
+    project.data.kind === "hackathon" && (
+      <JoinUsCTA class="mt-8">
+        ut.code(); では、定期的にハッカソンイベントを行っています。
+      </JoinUsCTA>
+    )
+  }
+  {
+    project.data.kind === "festival" && (
+      <JoinUsCTA class="mt-8">
+        ut.code(); は、毎年五月祭・駒場祭に参加しています。
+      </JoinUsCTA>
+    )
+  }
 </GlobalLayout>
