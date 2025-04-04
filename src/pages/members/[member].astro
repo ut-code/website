@@ -32,7 +32,6 @@ const articles = await getArticles({
 >
   <main class="w-full">
     <div
-      class=""
       style={`background-color: ${member.data["theme-light"] ?? "#DCFCE7"};`}
     >
       <div
@@ -55,7 +54,7 @@ const articles = await getArticles({
                   rel="noreferrer"
                   aria-label="GitHubを見る"
                 >
-                  <Icon name="feather:github" class="" />
+                  <Icon name="feather:github" />
                 </a>
               )
             }
