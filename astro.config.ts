@@ -22,6 +22,7 @@ export default defineConfig({
     icon({
       include: {
         feather: ["*"],
+        flowbite: ["*"],
       },
     }),
     mdx(),

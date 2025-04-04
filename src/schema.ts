@@ -78,9 +78,9 @@ export const CreateMemberSchema = ({ image }: { image: ImageFunction }) =>
 // ヘッダーのスタイリングに使われています
 export enum Focus {
   none = 0,
-  projects = 1,
-  articles = 2,
-  members = 3,
-  join = 4,
-  contact = 5,
+  about = 1,
+  projects = 2,
+  articles = 3,
+  members = 4,
+  join = 5,
 }
