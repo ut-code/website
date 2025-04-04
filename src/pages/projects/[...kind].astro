@@ -27,17 +27,22 @@ const projects = await getProjects(kind.frontmatter);
     <h1 class="mb-5 min-h-[2.25em] text-center text-4xl">{kind.title}</h1>
     <div role="tablist" class="tabs tabs-lift">
       {
-        kinds.map((tab) => (
-          <a>
-            <a
-              role="tab"
-              class:list={["tab", { "tab-active": kind.path === tab.path }]}
-              href={tab.path ? `/projects/${tab.path}` : "/projects"}
-            >
-              {tab.tabTitle}
+        kinds
+          .filter(
+            (kind) =>
+              kind.path !== "festival" /* TODO: migrate festival projects */,
+          )
+          .map((tab) => (
+            <a>
+              <a
+                role="tab"
+                class:list={["tab", { "tab-active": kind.path === tab.path }]}
+                href={tab.path ? `/projects/${tab.path}` : "/projects"}
+              >
+                {tab.tabTitle}
+              </a>
             </a>
-          </a>
-        ))
+          ))
       }
     </div>
     {
