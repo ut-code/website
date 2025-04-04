@@ -29,15 +29,12 @@ const { projects, variant = "full" } = props;
             height={(600 * 3) / 5}
             class:list={[
               "aspect-5/3 w-full",
-              !project.data.image.bg && "skeleton",
+              project.data.image.fit !== "contain" && "skeleton",
             ]}
             style={{
               "object-fit": project.data.image.fit,
-              ...(project.data.image.bg
-                ? {
-                    "background-color": project.data.image.bg,
-                  }
-                : {}),
+              "object-position": project.data.image.position,
+              "background-color": project.data.image.bg,
             }}
           />
           <div class="p-4">

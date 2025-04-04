@@ -6,6 +6,9 @@ status: released
 description: "Git の差分から Gemini がコミットメッセージを考えてくれるツール"
 image:
   src: ./gemmit.png
+  position: top
+  bg: white
+
 members:
   - rtakanaka
 tags:

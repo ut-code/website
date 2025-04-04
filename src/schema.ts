@@ -7,6 +7,8 @@ export type Article = z.infer<ReturnType<typeof CreateArticleSchema>>;
 export type Member = z.infer<ReturnType<typeof CreateMemberSchema>>;
 export type Project = z.infer<ReturnType<typeof CreateProjectSchema>>;
 
+const Position = z.enum(["center", "top", "bottom", "left", "right"]);
+const Fit = z.enum(["cover", "contain", "fill", "none"]);
 export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
   z
     .object({
@@ -19,8 +21,8 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
       categories: z.array(z.string()).optional(),
       // 画像系
       image: image(),
-      fit: z.enum(["cover", "contain", "fill", "none"]).optional(),
-      position: z.enum(["center", "top", "bottom", "left", "right"]).optional(),
+      fit: Fit.optional(),
+      position: Position.default("center"),
       bg_color: z.string().optional(),
     })
     .refine(
@@ -51,7 +53,8 @@ export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
     date: z.date(),
     image: z.object({
       src: image(),
-      fit: z.enum(["cover", "contain", "fill"]).optional().default("cover"),
+      position: Position.default("center"),
+      fit: Fit.default("cover"),
       bg: z.string().optional().default("whitesmoke"),
     }),
     description: z.string(),

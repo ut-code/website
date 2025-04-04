@@ -5,6 +5,10 @@ kind: hackathon
 status: finished
 image:
   src: ./music-app.png
+  position: top
+  fit: contain
+  bg: white
+
 description: その日の気分にあった作業用BGMを生成してくれるアプリ
 github: https://github.com/ut-code/music-app
 website: https://ut-code.github.io/music-app
