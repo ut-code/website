@@ -16,7 +16,6 @@ import { Focus } from "+/schema";
   <StaticDocumentWrapper title="About Us" header={Header} fill="bg-gray-400">
     <section>
       <h2>団体概要</h2>
-
       <ul>
         <li>団体名: ut.code();</li>
         <li>構成人数: 30 人程度</li>
@@ -34,13 +33,6 @@ import { Focus } from "+/schema";
           >
         </li>
         <li>Email: <span id="email-loader">読込中...</span></li>
-        <li>
-          紹介動画: <a
-            target="_blank"
-            class="link"
-            href="https://www.youtube.com/watch?v=aUoa1AyfbMA">Youtube</a
-          >
-        </li>
       </ul>
       <script>
         document.getElementById("");
@@ -57,6 +49,16 @@ import { Focus } from "+/schema";
         // HACK: setTimeout だとブラウザバックで戻った時、うまく実行されない
         setInterval(showEmail, 3000);
       </script>
+    </section>
+    <section>
+      <h2>紹介動画</h2>
+      <iframe
+        title="ut.code(); 紹介動画"
+        class="aspect-video w-full"
+        src="https://www.youtube-nocookie.com/embed/aUoa1AyfbMA?rel=0"
+        loading="lazy"
+        allow="picture-in-picture; web-share"
+        allow-fullscreen></iframe>
     </section>
     <section>
       <h2>活動内容</h2>
