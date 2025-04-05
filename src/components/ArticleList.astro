@@ -87,11 +87,10 @@ const articlesWithExcerpts = await Promise.all(
               fit={article.data.fit}
               src={article.data.image}
               class:list={[
-                "min-h-0 w-full rounded-xl",
+                "aspect-5/3 min-h-0 w-full rounded-xl",
                 !article.data["bg_color"] && "skeleton",
               ]}
               style={{
-                "aspect-ratio": "5 / 3",
                 "object-fit": article.data.fit,
                 ...(article.data.bg_color
                   ? {

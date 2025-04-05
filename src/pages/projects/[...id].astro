@@ -33,9 +33,16 @@ const { Content } = await render(project);
       <Picture
         loading="eager"
         formats={["avif", "webp"]}
-        class="skeleton w-full object-cover lg:w-150 lg:rounded-2xl"
+        class="skeleton aspect-5/3 w-full object-cover lg:w-150 lg:rounded-2xl"
         alt="プロジェクト画像"
         src={project.data.image.src}
+        position={project.data.image.position}
+        width="1000"
+        height="600"
+        style={{
+          "object-position": project.data.image.position,
+          "object-fit": project.data.image.fit,
+        }}
       />
       <div class="container mx-auto mt-8 px-4 lg:mx-0 lg:flex-1">
         <p class="flex items-center gap-1 text-gray-600">
