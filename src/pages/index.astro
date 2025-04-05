@@ -106,7 +106,7 @@ articles.splice(3);
       </ActionButton>
     </div>
   </section>
-  <section class="bg-black py-80 text-white">
+  <section class="bg-black pt-60 pb-20 text-white">
     <div
       class="mx-auto block items-center justify-evenly gap-12 overflow-hidden px-8 xl:flex xl:flex-row-reverse"
     >
@@ -156,6 +156,15 @@ articles.splice(3);
       </script>
     </div>
   </section>
+  <section class="bg-gray-50">
+    <div class="container mx-auto px-4 py-12">
+      <SectionHeader title="News" subtitle="最新情報" />
+      <ArticleList truncate {articles} max-cols="3" class="mt-10" />
+      <ActionButton to="/articles" class="mt-8 ml-auto">
+        すべての記事
+      </ActionButton>
+    </div>
+  </section>
   <section class="bg-gray-100/70 backdrop-blur-sm">
     <div class="container mx-auto py-16">
       <SectionHeader title="About us" subtitle="団体概要" />
@@ -191,24 +200,6 @@ articles.splice(3);
         }
       </ul>
     </div>
-  </section>
-  <section class="bg-gray-50">
-    <div class="container mx-auto px-4 py-12">
-      <SectionHeader title="News" subtitle="最新情報" />
-      <ArticleList truncate {articles} max-cols="3" class="mt-10" />
-      <ActionButton to="/articles" class="mt-8 ml-auto">
-        すべての記事
-      </ActionButton>
-    </div>
-  </section>
-  <section class="w-full bg-gray-50">
-    <iframe
-      title="ut.code(); 紹介動画"
-      class="h-[300px] w-full sm:h-[400px] md:h-[500px] lg:h-[100vh]"
-      src="https://www.youtube-nocookie.com/embed/aUoa1AyfbMA?rel=0"
-      loading="lazy"
-      allow="picture-in-picture; web-share"
-      allow-fullscreen></iframe>
   </section>
   <section class="bg-gray-50 py-24">
     <SectionHeader title="協賛企業様" />

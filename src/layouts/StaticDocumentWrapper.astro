@@ -21,12 +21,8 @@ const { header, fill, title, position } = Astro.props;
     loading="eager"
     src={header}
     width="1920"
-    height="600"
-    class:list={[
-      "my-8 h-100 w-full object-cover md:h-100 lg:h-150",
-      fill,
-      position,
-    ]}
+    height={300}
+    class:list={["my-8 h-75 w-full object-cover", fill, position]}
   />
   <article class="prose mx-5 mb-20 max-w-xl sm:mx-10 md:mx-auto">
     <slot />
