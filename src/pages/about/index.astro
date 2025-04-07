@@ -20,6 +20,8 @@ import { Focus } from "+/schema";
         <li>団体名: ut.code();</li>
         <li>構成人数: 30 人程度</li>
         <li>発足: 2019 年</li>
+        <li>部室: 駒場学生会館 313B</li>
+        <li>所属: 東京大学工学部丁友会 (2025年度)</li>
         <li>
           X: <a class="link" target="_blank" href="https://x.com/utokyo_code"
             >utokyo_code</a
@@ -43,6 +45,7 @@ import { Focus } from "+/schema";
           if (!elem) return;
           const addr = `contact${String.fromCharCode(64)}utcode.net`;
           if (elem.innerText !== addr) {
+            console.log("loaded email");
             elem.outerHTML = `<a class="link" href="mailto:${addr}">${addr}</a>`;
           }
         }
@@ -93,7 +96,7 @@ import { Focus } from "+/schema";
       </article>
       <article>
         <h3>Q: 東京大学ではないです・一年生ではありません・文系です</h3>
-        A: 全く問題ありません！ ut.code(); は大学名・学年による制限は設けていません。
+        A: 全く問題ありません！ ut.code(); は大学名・学年・文理による制限は設けていません。
       </article>
     </section>
     <section>
@@ -102,7 +105,7 @@ import { Focus } from "+/schema";
         具体的な使用技術はプロジェクトによって異なります。
       </aside>
       <ul>
-        <li>言語: JavaScript, TypeScript など</li>
+        <li>言語: TypeScript など</li>
         <li>フレームワーク: React・Next.js, Svelte(Kit) など</li>
         <li>UI: MUI, Tailwind, DaisyUI など</li>
         <li>バックエンド: Hono, Express, Prisma, Drizzle など</li>
