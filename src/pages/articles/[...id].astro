@@ -57,6 +57,7 @@ const author = article.data.author && (await getMember(article.data.author.id));
             formats={["avif", "webp"]}
             width="64"
             height="64"
+            fit="cover"
             src={author.data.faceImage}
             class="overflow-clip rounded-full bg-gray-200"
           />
