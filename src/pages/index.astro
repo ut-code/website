@@ -27,6 +27,9 @@ articles.splice(3);
     formats={["avif", "webp"]}
     alt=""
     loading="lazy"
+    quality="mid"
+    width="1920"
+    height="1080"
     class="skeleton fixed top-0 -z-10 h-[100lvh] max-w-full object-cover object-center select-none"
     src={Hero}
   />
@@ -86,6 +89,7 @@ articles.splice(3);
                 <a
                   class="hover-underline mt-2 inline flex-0 items-center gap-1"
                   href={`/activities/${activity.key}/`}
+                  aria-label={activity.title}
                 >
                   <span>Learn more</span>
                   <Icon name="feather:arrow-right" class="inline h-4 w-4" />

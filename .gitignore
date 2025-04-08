@@ -12,3 +12,5 @@ dist
 # env
 .direnv
 .envrc
+
+.unlighthouse
