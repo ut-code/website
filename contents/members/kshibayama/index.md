@@ -1,5 +1,5 @@
 ---
-nameJa: 柴山慧一朗
+nameJa: 柴山 慧一朗
 nameEn: Keiichiro Shibayama
 joinYear: 2024
 description: サークルいっぱい入ってる多趣味な人。

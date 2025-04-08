@@ -1,5 +1,5 @@
 ---
-nameJa: 高仲　隆平
+nameJa: 高仲 隆平
 nameEn: Ryuhei Takanaka
 joinYear: 2023
 description: 麻雀が好きです。

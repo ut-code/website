@@ -1,5 +1,5 @@
 ---
-nameJa: 野村　侑輝
+nameJa: 野村 侑輝
 nameEn: Yuki Nomura
 joinYear: 2024
 description: 身長170cmで手のリーチ180cmです。

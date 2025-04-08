@@ -1,5 +1,5 @@
 ---
-nameJa: 安村　拓也
+nameJa: 安村 拓也
 nameEn: Takuya Yasumura
 joinYear: 2024
 description: 初心者です。
