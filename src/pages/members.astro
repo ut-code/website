@@ -18,6 +18,10 @@ const members = await getMembers();
   <Picture
     loading="eager"
     alt=""
+    formats={["avif", "webp"]}
+    width="1920"
+    height="1080"
+    quality="mid"
     src={Header}
     class="fixed top-0 -z-100 h-[100lvh] bg-neutral-400 object-cover"
     style="object-position: 75% 20%;"

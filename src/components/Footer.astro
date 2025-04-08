@@ -17,10 +17,8 @@ const props = Astro.props;
       class="grid gap-x-16 gap-y-8 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1"
     >
       <div style={{ gridRow: "1 / -1" }}>
+        <h1 class="my-4 text-xl">ソフトウェア開発コミュニティ</h1>
         <Logo class="w-36" variant="light" />
-        <p class="mt-4 text-sm">
-          東京大学のソフトウェアエンジニアリングコミュニティ
-        </p>
         <ActionButton to="/join/" variant="dark" class="mx-auto mt-6 md:mx-0">
           参加する
         </ActionButton>
@@ -28,7 +26,7 @@ const props = Astro.props;
       <FooterSection
         title="活動"
         links={[
-          { title: "プロジェクト", to: "/projects" },
+          { title: "プロジェクト", to: "/projects/" },
           { title: "ご寄付・ご協賛のお願い", to: "/donation/" },
           { title: "ut.code(); で学習する", to: "/activities/learn/" },
           { title: "ut.code(); で交流する", to: "/activities/share/" },
