@@ -1,2 +1,6 @@
-# if you are using nix
-use flake || use nix
+# if you are using flakes
+watch_file ./shell.nix
+use flake 
+
+# else if you are using nix-shell
+use nix
