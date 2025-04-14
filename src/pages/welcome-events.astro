@@ -62,24 +62,75 @@ import MayTable from "+/images/welcome/welcome-events-calendar/may.png";
     </section>
     <section>
       <h2>☘️ 各イベント詳細</h2>
-      <details class="text-gray-500">
-        <summary>終了済みイベント</summary>
-        <section id="online-information-session">
-          <h3>オンライン新歓説明会</h3>
-          <ul>
-            <li>日時: 3/30 (日) 20:00~</li>
-            <li>場所: Zoom</li>
-          </ul>
-        </section>
-        <section id="club-orientation">
-          <h3>サーオリ</h3>
-          <ul>
-            <li>日時: 4/3(木), 4/4(金) 全日</li>
-            <li>場所: 1232教室</li>
-          </ul>
-        </section>
+      <details
+        id="closed"
+        class="collapse-arrow collapse border border-gray-400"
+      >
+        <summary class="collapse-title">締め切り済み・終了済みイベント</summary>
+        <div class="collapse-content">
+          <div class="divider">説明会系イベント</div>
+          <section id="online-information-session">
+            <h3>オンライン新歓説明会</h3>
+            <ul>
+              <li>日時: 3/30 (日) 20:00~</li>
+              <li>場所: Zoom</li>
+            </ul>
+          </section>
+          <section id="club-orientation">
+            <h3>サーオリ</h3>
+            <ul>
+              <li>日時: 4/3(木), 4/4(金) 全日</li>
+              <li>場所: 1232教室</li>
+            </ul>
+          </section>
+          <div class="divider">学習系イベント</div>
+          <section id="welcome-seminar">
+            <h3>新歓講習会</h3>
+            <ul>
+              <li>日時: 4/6 (日) 14:00 ~ 17:30、4/12 (土) 14:00 ~ 17:30</li>
+              <li>
+                場所:
+                <ul>
+                  <li>4/6 (日): 駒場キャンパス 1 号館 102 教室</li>
+                  <li>4/12 (土): 駒場キャンパス 11 号館 1105 教室</li>
+                </ul>
+              </li>
+              <li>
+                参加フォーム:
+                <Link
+                  class="link"
+                  href="https://forms.gle/Bo5gHDgz12XtA4NW8"
+                  _blank
+                />
+              </li>
+              <li>
+                授業形式で HTML・CSS・JavaScript の基礎を学び、簡単な Web
+                アプリを公開できるようになります。
+              </li>
+            </ul>
+          </section>
+          <div class="divider">交流・開発系イベント</div>
+          <section>
+            <h3>新歓合宿</h3>
+            <ul>
+              <li>日程: 5/3(土) ~ 5/5(月)</li>
+              <li>場所: 東京大学山中寮内藤セミナーハウス</li>
+              <li>フォーム: Discord にあります</li>
+              <li>フォーム提出期限: 4/13 (日) 18:00</li>
+              <li>
+                合宿を通してプログラミングの基礎を身につけ、自分なりのサイトやアプリを作りましょう！
+              </li>
+              <li>
+                ut.code(); の新歓イベントとしては一番大きなものになります！
+                <br />
+                ut.code(); の普段の活動を知ることができますし、部員や他の新入生とも交流できるいい機会になります！
+                ぜひご参加ください！
+              </li>
+            </ul>
+          </section>
+        </div>
       </details>
-      <div class="divider">説明会系</div>
+      <div class="divider">説明会系イベント</div>
       <section id="joint-welcome-event">
         <h3>エンジニア系サークル合同新歓</h3>
         <ul>
@@ -104,134 +155,102 @@ import MayTable from "+/images/welcome/welcome-events-calendar/may.png";
           <li>TSG、UTFF、RoboTech、灯と合同で新歓説明会を開催！</li>
         </ul>
       </section>
-      <div class="divider mt-20">学習系</div>
-      <section id="welcome-seminar">
-        <h3>新歓講習会</h3>
-        <ul>
-          <li>日時: 4/6 (日) 14:00 ~ 17:30、4/12 (土) 14:00 ~ 17:30</li>
-          <li>
-            場所:
-            <ul>
-              <li>4/6 (日): 駒場キャンパス 1 号館 102 教室</li>
-              <li>4/12 (土): 駒場キャンパス 11 号館 1105 教室</li>
-            </ul>
-          </li>
-          <li>
-            参加フォーム:
-            <Link
-              class="link"
-              href="https://forms.gle/Bo5gHDgz12XtA4NW8"
-              _blank
-            />
-          </li>
-          <li>
-            授業形式で HTML・CSS・JavaScript の基礎を学び、簡単な Web
-            アプリを公開できるようになります。
-          </li>
-        </ul>
-      </section>
+      <div class="divider mt-20">学習系イベント</div>
       <section>
-        <h3>先取り自主勉強会</h3>
+        <h3>勉強会</h3>
         <ul>
           <li>
-            日時: 4/7 (月), 11 (金), 16 (水), 18 (金), 23 (水), 25 (金), 30 (水)
-            すべて 19:00 ~ 21:30
+            日時: 4/7 (月), 16 (水), 18 (金), 23 (水), 25 (金), 30 (水) すべて
+            19:00 ~ 21:30
           </li>
           <li>場所: 駒場学生会館 313 B (部室)</li>
           <li>途中参加・途中退出可。</li>
           <li>
-            いち早くプログラミングを学び、プロジェクトに参加できるスキルをつけよう！
+            自分のペースでプログラミングを学び、プロジェクトに参加できるスキルをつけよう！
             経験者も新しい知識を学ぶチャンス！
           </li>
         </ul>
-      </section>
-      <div class="divider mt-20">交流・開発</div>
-      <section>
-        <h3>新歓合宿</h3>
-        <ul>
-          <li>日程: 5/3(土) ~ 5/5(月)</li>
-          <li>場所: 東京大学山中寮内藤セミナーハウス</li>
-          <li>フォーム: Discord にあります</li>
-          <li>フォーム提出期限: 4/13 (日) 18:00</li>
-          <li>
-            合宿を通してプログラミングの基礎を身につけ、自分なりのサイトやアプリを作りましょう！
-          </li>
-          <li>
-            ut.code(); の新歓イベントとしては一番大きなものになります！
-            <br />
-            ut.code(); の普段の活動を知ることができますし、部員や他の新入生とも交流できるいい機会になります！
-            ぜひご参加ください！
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h3>新歓個人ハッカソン</h3>
-        <ul>
-          <li>日程: 5/10 (土)、 5/11 (日)</li>
-          <li>
-            ut.code(); Learn
-            の復習を兼ねて、自分なりのフルスタックアプリケーションを作りましょう！
-          </li>
-          <li>事前に進めておいたり、終わったあとに続けて開発しても OK！</li>
-          <li>
-            希望者は制作物を五月祭や Website などに展示することができます。
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h3>プロジェクト発足会</h3>
-        <ul>
-          <li>日程: ６月頃予定</li>
-          <li>場所: 駒場・渋谷付近予定</li>
-          <li>
-            みんなで食事をしながら、新プロジェクトの発足に向けた話をしていくそんなイベントです。
-          </li>
-          <li>プロジェクトの多くはここで発足しています！</li>
-        </ul>
-      </section>
-      <div class="divider mt-20">その他</div>
-      <section>
-        <h3>部員フォーム締め切り</h3>
-        <ul>
-          <li>日程: 5/17 (土)</li>
-          <li>
-            ut.code(); の 2025
-            年春新歓での新入生の受付は、ここまでとさせていただきます。
-          </li>
-        </ul>
-      </section>
-    </section>
-    <div class="divider mt-20"></div>
-    <section>
-      <h2>✍️イベント参加例</h2>
-      <ul>
-        <li>説明会 (任意)・学習系イベント・新歓合宿</li>
-        <li>
-          説明会 (任意)・学習系イベント (新歓合宿は予定が合わず参加できない)
-        </li>
-        <li>
-          説明会 (任意)・新歓合宿
+        <div class="divider mt-20">交流・開発系イベント</div>
+        <section>
+          <h3>新歓個人ハッカソン</h3>
           <ul>
+            <li>日程: 5/10 (土)、 5/11 (日)</li>
             <li>
-              この場合、合宿では学習系イベントでやる予定の学習をしてもらいます
+              ut.code(); Learn
+              の復習を兼ねて、自分なりのフルスタックアプリケーションを作りましょう！
+            </li>
+            <li>事前に進めておいたり、終わったあとに続けて開発しても OK！</li>
+            <li>
+              合宿や勉強会に参加するなどして、 ut.code(); Learn の第 3
+              章「Webサーバーが動作する仕組みを知ろう」まで終わらせているとスムーズに開発ができます。
+            </li>
+            <li>
+              希望者は制作物を五月祭や Website などに展示することができます。
             </li>
           </ul>
-        </li>
-        <li>
-          すべて参加できない場合
+          <section>
+            <h3>プロジェクト発足会</h3>
+            <ul>
+              <li>日程: ６月頃予定</li>
+              <li>場所: 駒場・渋谷付近予定</li>
+              <li>
+                みんなで食事をしながら、新プロジェクトの発足に向けた話をしていくそんなイベントです。
+              </li>
+              <li>プロジェクトの多くはここで発足しています！</li>
+            </ul>
+          </section>
+          <div class="divider mt-20">その他</div>
+          <section>
+            <h3>部員フォーム締め切り</h3>
+            <ul>
+              <li>日程: 5/17 (土)</li>
+              <li>
+                ut.code(); の 2025
+                年春新歓での新入生の受付は、ここまでとさせていただきます。
+              </li>
+            </ul>
+          </section>
+        </section>
+        <div class="divider mt-20"></div>
+        <section>
+          <h2>✍️イベント参加例</h2>
           <ul>
+            <li>説明会 (任意)・学習系イベント・新歓合宿</li>
             <li>
-              全く問題ありません。プロジェクトに参加しつつ学習のサポートをします。
+              説明会 (任意)・学習系イベント (新歓合宿は予定が合わず参加できない)
+            </li>
+            <li>
+              説明会 (任意)・新歓合宿
+              <ul>
+                <li>
+                  この場合、合宿では学習系イベントでやる予定の学習をしてもらいます
+                </li>
+              </ul>
+            </li>
+            <li>
+              すべて参加できない場合
+              <ul>
+                <li>
+                  全く問題ありません。プロジェクトに参加しつつ学習のサポートをします。
+                </li>
+              </ul>
             </li>
           </ul>
-        </li>
-      </ul>
+        </section>
+      </section>
     </section>
+
+    <style>
+      section {
+        margin-top: 3rem;
+      }
+      #closed h3 {
+        font-weight: normal;
+        color: var(--color-gray-600);
+      }
+      .divider {
+        color: var(--color-gray-600);
+      }
+    </style>
   </StaticDocumentWrapper>
 </GlobalLayout>
-
-<style>
-  section {
-    margin-top: 3rem;
-  }
-</style>
