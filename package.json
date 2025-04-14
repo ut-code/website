@@ -25,7 +25,7 @@
   "dependencies": {
     "@astrojs/mdx": "^4.2.3",
     "@astrojs/sitemap": "^3.3.0",
-    "@astrojs/svelte": "^7.0.9",
+    "@astrojs/svelte": "^7.0.10",
     "@date-fns/tz": "^1.2.0",
     "@iconify-json/feather": "^1.2.1",
     "@iconify-json/flowbite": "^1.2.5",
