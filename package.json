@@ -23,7 +23,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.2.3",
+    "@astrojs/mdx": "^4.2.4",
     "@astrojs/sitemap": "^3.3.0",
     "@astrojs/svelte": "^7.0.9",
     "@date-fns/tz": "^1.2.0",
