@@ -4,7 +4,7 @@ interface Props {
   title: string;
   "align-image": "left" | "right";
   image: ImageMetadata;
-  imageAlt: string;
+  imageAlt?: string;
 }
 
 const { title, "align-image": align, image, imageAlt } = Astro.props;
@@ -23,7 +23,7 @@ const { title, "align-image": align, image, imageAlt } = Astro.props;
     >
       <Picture
         formats={["avif", "webp"]}
-        alt={imageAlt}
+        alt={imageAlt || ""}
         src={image}
         width="1500"
         height="800"
