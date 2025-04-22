@@ -9,10 +9,10 @@ type Banner = {
 const banner: Banner = {
   shown: true,
   kind: "notify",
-  long: "新歓イベントを行っています",
-  short: "新歓イベントを行っています",
-  link: "/welcome-events",
-  linkText: "詳細日程",
+  long: "新歓を行っています",
+  short: "新歓を行っています",
+  link: "/join",
+  linkText: "参加",
 };
 
 export default banner;
