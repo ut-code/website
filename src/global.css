@@ -11,3 +11,7 @@
 .link:not(.link-uncolor) {
   color: var(--color-blue-500);
 }
+
+.bg-image {
+  @apply fixed top-0 -z-10 min-h-[100lvh] w-full object-cover object-center select-none;
+}
