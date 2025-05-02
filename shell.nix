@@ -5,7 +5,5 @@ pkgs.mkShell {
     pkgs.biome
     pkgs.astro-language-server
     pkgs.nodejs-slim # required by astro to find sharp
-    pkgs.typos
-    pkgs.typos-lsp
   ];
 }

@@ -12,7 +12,6 @@
 ### ローカル
 
 - (必須) Bun >= v1.1.39
-- (推奨) Typos <https://github.com/crate-ci/typos>
 - 任意のエディタ <https://docs.astro.build/en/editor-setup/>
 
 ```sh
