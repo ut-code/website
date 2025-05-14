@@ -86,7 +86,7 @@ IMEを簡単に自作できるツールになる予定のものです。
 
 一応、ログイン/ログアウトとIMEの個別ページの表示まではいけました:
 
-[WebIMEBuilder](./webimebuilder.png)
+![WebIMEBuilder](./webimebuilder.png)
 
 ### **太鼓の達人っぽいゲーム**
 
