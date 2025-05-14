@@ -1,47 +1,33 @@
 # ut.code(); 公式ウェブサイト
 
-## 環境構築
+## 環境構築・コマンド
 
-### devcontainer
+`./docs/develop.md` を参照。
 
-下のボタンを押すと開発環境が起動します。
-起動までしばらく時間がかかるのでお待ちください。
+## Guidelines
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ut-code/website)
+### 一般
 
-### ローカル
+フォーマッタは Prettier を用います。
+各フロントマッター (トップに書く YAML) のプロパティは `./docs/contents` に説明があります。
 
-- (必須) Bun >= v1.1.39
-- 任意のエディタ <https://docs.astro.build/en/editor-setup/>
+### メンバー
 
-```sh
-bun install --frozen-lockfile
-```
+- メンバー画像や名前に本名・顔写真を使う必要はありません。
+- メンバー画像は、 `faceImage` と `upperBodyImage` の 2 つあります。
+  - どちらも 1:1 にクロップされます。
+  - `faceImage` はアップの、 `upperBodyImage` は引いた画像を使ってください。元となる画像は同じ画像を使ってください。
 
-## 開発
+### 記事
 
-```sh
-bun dev
-```
+- サムネイルは縦横比 3:5 にクロップされます。
 
-<http://localhost:4321/> で開発用サーバーが起動します。
+  - 可能なら 3:5 に近い画像を使い、
+  - できないかつクロップが許容できない場合は、 `fit: contain` と背景色 (`bg_color:`) を指定してください。
 
-## ビルド
+- 画像サイズは 1MB 未満に抑えてください。 ffmpeg や ImageMagick を使い、解像度を下げたり、画質 (Quality) を下げたり、WebP (or AVIF) に変換するなどができます。
+  - 参考 <https://stackoverflow.com/questions/7261855/recommendation-for-compressing-jpg-files-with-imagemagick>
 
-```sh
-bun run build
-```
+### プロジェクト
 
-## ディレクトリ構造
-
-- `contents/`: 記事のデータです。Astro の Content Collection を使って `src/pages` から読み込みます。
-- `src/`
-  - `images/`: 記事ではなくデザインに用いる画像です。
-  - `pages/`: Astro の機能によりファイル名がパスに変換されます。
-  - `islands/`: Astro で読み込む Island の集合です。
-  - `content.config.ts`: Astro の Content Collection の設定を書きます。
-  - `global.css`: Tailwind の設定ファイルです。
-- `astro.config.ts`: Astro の設定ファイルです。Vite の設定もここに書きます。
-- `biome.jsonc`: Biome の設定ファイルです。Biome のフォーマット部分は Astro に対応していないので、Lint だけ使っています。対応したら両方 Biome にしましょう。
-- `.prettier{rc,ignore}`: Prettier の設定ファイルです。 Prettier には、 astro と svelte と tailwind のプラグインが入っています。
-- `svelte.config.js`: 最もフィジカルで、最もプリミティブで、そして最もフェティッシュなフレームワークでいかせていただきます。
+- サムネイルは縦横比 3:5 にクロップされます。
