@@ -3,7 +3,7 @@ title: ut.code(); 新歓ハッカソンを実施しました
 date: 2025-05-14
 author: ykobayashi
 
-image: ./typing-and-word-quiz.jpg
+image: ./thumbnail.jpeg
 ---
 
 ut.code(); は、2024年5月10日（金）、5月11日（土）の二日間にわたり、新歓個人開発会を開催しました。
