@@ -57,7 +57,7 @@ author: "kshibayama"
 
 ![対戦型ゲーム](./game.avif)
 
-![chatアプリ](./chat.avif)
+![chatアプリ](./ChatApp.avif)
 
 ![Twitterもどき](./twi.avif)
 
