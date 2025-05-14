@@ -30,10 +30,11 @@
   - 参考 <https://stackoverflow.com/questions/7261855/recommendation-for-compressing-jpg-files-with-imagemagick>
   - 例:
 
-    - `mogrify -resize 800x -quality 80 -fromat webp *.png *.jpg *.jpeg`
-      - 見ての通り。
+    - `mogrify -resize 800x -quality 80 -format webp *.png *.jpg *.jpeg`
+      - ImageMagick についてきます。
+      - コマンドの引数は見ての通り。
     - `ffmpeg -i ./input.png -vf 'scale=1920:-1' -crf 10 output.avif`
-      - -> 50~300kb 程度になります。AVIF の場合、多少 (数秒~1分程度) 時間がかかります。
+      - -> 50〜300kb 程度になります。AVIF の場合、多少 (数秒〜1分程度) 時間がかかります。
       - `-vf scale={width}:{height}`: 画像の横幅。height が -1 のときは、横幅から計算する。
       - `-crf`: 画像の圧縮率。大きいほうが圧縮率が高い。
 
