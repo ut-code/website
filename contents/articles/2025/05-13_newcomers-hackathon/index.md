@@ -1,6 +1,6 @@
 ---
 title: ut.code(); 新歓ハッカソンを実施しました
-date: 2025-05-11
+date: 2025-05-11 20:00:00+09:00
 author: ykobayashi
 
 image: ./thumbnail.jpeg

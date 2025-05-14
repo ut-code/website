@@ -10,6 +10,9 @@
 
 - date: Date
   - **記事を書いた**日。
+  - フォーマット:
+    - yyyy-MM-dd (日付のみ)
+    - yyyy-MM-dd hh:mm:ss+09:00 (日付+時間)
 
 - author: string & keyof Member
   - 著者。
