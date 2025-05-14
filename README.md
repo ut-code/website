@@ -26,13 +26,20 @@
   - できないかつクロップが許容できない場合は、 `fit: contain` と背景色 (`bg_color:`) を指定してください。
 
 - 画像サイズは 1MB 未満に抑えてください。 ffmpeg や ImageMagick を使い、解像度を下げたり、画質 (Quality) を下げたり、WebP (or AVIF) に変換するなどができます。
+
   - 参考 <https://stackoverflow.com/questions/7261855/recommendation-for-compressing-jpg-files-with-imagemagick>
-  - 例: `ffmpeg -i ./input.png -vf 'scale=1920:-1' output.avif`
-    - -> 50~300kb 程度になります。多少 (数秒~1分程度) 時間がかかります。
-    - 横幅がそこまで必要ない画像は、scale の width を落としてもよいです。
+  - 例: `ffmpeg -i ./input.png -vf 'scale=1920:-1' -crf 10 output.avif`
+
+    - -> 50~300kb 程度になります。AVIF の場合、多少 (数秒~1分程度) 時間がかかります。
+    - `-vf scale={width}:{height}`: 画像の横幅。height が -1 のときは、横幅から計算する。
+    - `-crf`: 画像の圧縮率。大きいほうが圧縮率が高い。
+
   - HEIC は対応していないので、 ImageMagick で他のフォーマットに変換してください。
     - 例: `magick picture.HEIC picture.webp`
-- 記事ごとのファイルサイズの合計は5 MB までに抑えてください。
+
+- 各記事のファイルサイズの合計は5 MB までに抑えてください。
+  - 理想は 1MB 未満です。
+  - ファイルサイズの確認には、`ncdu` が使いやすいです。
 
 ### プロジェクト
 
