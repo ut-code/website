@@ -12,11 +12,11 @@ image: +/images/no-image.svg
 
 [Visual Studio Code](https://code.visualstudio.com/)（以下 VSCode）は、Microsoft のエディタです。様々なプログラミング言語を軽快に扱えることで有名な、今最も人気のソフトウェアです。
 
-![VSCodeの公式サイト](./vscode-official.png)
+![VSCodeの公式サイト](./vscode-official.webp)
 
 インストールが終わったら、「Remote: SSH」プラグインを追加しておきましょう。
 
-![Remote - SSHプラグイン](./remote-ssh.png)
+![Remote - SSHプラグイン](./remote-ssh.webp)
 
 ## PC とサーバー・VPS の利用
 
@@ -30,7 +30,7 @@ image: +/images/no-image.svg
 
 [こちら](https://www.vultr.com/?ref=8284679-4F)から登録すると、ut.code();の公式サイトを運営するためのアカウントからの紹介としてカウントされるため、（広告のようで心苦しいのですが）$10 の入金で一ヶ月間使える$50 分のクーポンがもらえます。
 
-[![Vultr公式サイト](./vultr-home.png)](https://www.vultr.com/?ref=8284679-4F)
+[![Vultr公式サイト](./vultr-home.webp)](https://www.vultr.com/?ref=8284679-4F)
 
 日本で使える VPS サービスとして、他にも ConoHa というサービスもあります。どちらを使っても大して変わりませんが萌えキャラが好きな方は ConoHa を使いましょう（詳しくはググりましょう）。
 
@@ -38,11 +38,11 @@ image: +/images/no-image.svg
 
 以下の内容は Vultr に特有の内容ですが、基本的にどの VPS を利用しても同じです。
 
-![Vultrの管理画面トップページ](./vultr-admin.png)
+![Vultrの管理画面トップページ](./vultr-admin.webp)
 
 Vultr の管理画面はシンプルで大変使いやすいデザインになっています。新しいサーバーを立ち上げる場合は、「＋」ボタンを押してください。
 
-![Vultrサーバーの設定画面](./launch-instance.png)
+![Vultrサーバーの設定画面](./launch-instance.webp)
 
 今回は上の画像のように設定してみましょう。OS の種類は Ubuntu 18.04 としています。実は Linux には様々な種類があり、Ubuntu はその中でも世界中で最も有名なものです。トラブルになった時にも情報が得られやすいので、ut.code();では基本的に Ubuntu を利用していきます。
 
@@ -52,11 +52,11 @@ Vultr の管理画面はシンプルで大変使いやすいデザインにな�
 
 ## サーバーと IP アドレス
 
-![IPアドレス](./ip-address.png)
+![IPアドレス](./ip-address.webp)
 
 リストに戻ると、4 つの数字がドット記号で区切られている部分があります。これを**IP アドレス**と呼びます。IP アドレスとは、一般的なネットワークに接続されているコンピューターを区別するための番号です。ネットワークに接続する全ての端末に、重複しないように割り当てられます。今皆さんが目の前にしている PC やスマホにも、もちろん割り当てられていますよ！
 
-![サーバーの詳細情報](./server-info.png)
+![サーバーの詳細情報](./server-info.webp)
 
 サーバーの詳細情報を表示させると、ログイン用の ID やパスワードも表示できます。
 
@@ -66,11 +66,11 @@ Vultr の管理画面はシンプルで大変使いやすいデザインにな�
 
 VSCode を起動して、\[Cmd / Ctrl\] + \[Shift\] + \[P\]を押してください。このショートカットキーは、現在利用可能なすべての機能を一覧表示（コマンドパレット）し、素早くアクセスするためのショートカットキーです。VSCode は、このショートカットキーさえ覚えてしまえばどこに何の機能があるのかを全く覚えなくても使用できます。面倒くさがり屋のためのショートカットキーですね笑
 
-![コマンドパレット](./command-palette.png)
+![コマンドパレット](./command-palette.webp)
 
 コマンドパレットから、「Remote-SSH: Connect Current Window to Host...」を実行します。実際には適当に入力して絞り込みをかけると素早くアクセスできます。
 
-![ユーザー名とホスト名の指定](./connection-string.png)
+![ユーザー名とホスト名の指定](./connection-string.webp)
 
 先ほど確認したユーザー名と IP アドレスを、「ユーザー名@IP アドレス」の形式で指定します。続いてパスワードの入力も求められるので、同じように入力しましょう。途中で「Continue / Cancel」の選択を求められた場合は「Continue」を押して続行してください。
 
