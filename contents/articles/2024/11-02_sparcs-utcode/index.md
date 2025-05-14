@@ -1,7 +1,7 @@
 ---
 title: SPARCS × ut.code(); 合同交流会2024を開催しました
 date: 2024-11-02T21:00:00+09:00
-image: ./image.jpg
+image: ./thumbnail.webp
 author: ywatahiki
 ---
 
@@ -15,7 +15,7 @@ SPARCS × ut.code(); 合同交流会2024は、日韓の大学生間で交流す�
 
 イベントのはじめには、それぞれの大学および団体の紹介を行い、その後それぞれの団体が作成しているプロダクトの紹介を行いました。それぞれの紹介の後には質疑応答の時間が設けられており、気になったことやもっと深く知りたいことについて質疑応答を行いました。
 
-![当日の流れ](./time-schedule.png)
+![当日の流れ](./time-schedule.webp)
 
 ## 大学および団体の紹介の様子
 
@@ -23,13 +23,13 @@ SPARCS × ut.code(); 合同交流会2024は、日韓の大学生間で交流す�
 
 ### ut.code();の紹介の様子
 
-![ut.code();の紹介のスライド](./utcode-slides.jpg)
+![ut.code();の紹介のスライド](./utcode-slides.webp)
 
 はじめに、ut.code();の紹介を行いました。ut.code();が普段どのような活動をしているのかについてやどのようなプロダクトを作成しているのかについての紹介を行いました。
 
 ### SPARCSの紹介の様子
 
-![SPARCSの紹介のスライド](./sparcs-slides.jpg)
+![SPARCSの紹介のスライド](./sparcs-slides.webp)
 
 次に、SPARCSの紹介を行いました。SPARCSがどのようなことを目指して活動を続けているのかについてやどのようなプロダクトを作成しているのかについての紹介を行いました。
 
@@ -39,7 +39,7 @@ SPARCS × ut.code(); 合同交流会2024は、日韓の大学生間で交流す�
 
 ### ut.code(); Learnの紹介の様子
 
-![ut.code(); Learnの紹介のスライド](./utcode-learn-slides.jpg)
+![ut.code(); Learnの紹介のスライド](./utcode-learn-slides.webp)
 
 ut.code();のプロダクトの紹介の1つ目は、ut.code(); Learnでした。
 
@@ -47,29 +47,29 @@ ut.code(); Learnは、未経験の状態からでも自力でWebサービスの�
 
 ### OTLの紹介の様子
 
-![OTLの紹介のスライド](./otl-slides.jpg)
+![OTLの紹介のスライド](./otl-slides.webp)
 
 SPARCSのプロダクトの紹介の1つ目は、OTLでした。
 
 OTLは、KAISTの学生が時間割の作成や講義の評価を効率的に行えるようにするためのサービスです。OTLにはどのような機能があり最近どのような機能が追加されたのかについてや、実際にどれぐらい使われているのかについてなどが紹介されました。
 
-![OTLの紹介の様子](./otl.jpg)
+![OTLの紹介の様子](./otl.webp)
 
 ### CourseMateの紹介の様子
 
-![CourseMateの紹介のスライド](./coursemate-slides.jpg)
+![CourseMateの紹介のスライド](./coursemate-slides.webp)
 
 ut.code();のプロダクトの紹介の2つ目は、CourseMateでした。
 
 CourseMateは、同じ授業を履修している友達を気軽に探すことができるサービスです。同じ授業を履修している友達を探すことができる機能やその友達とやり取りを行うことができる機能があること、使用している技術スタックなどが紹介されました。
 
-![CourseMateの紹介の様子1](./coursemate-1.jpg)
+![CourseMateの紹介の様子1](./coursemate-1.webp)
 
-![CourseMateの紹介の様子2](./coursemate-2.jpg)
+![CourseMateの紹介の様子2](./coursemate-2.webp)
 
 ### SPARCS Networkの紹介の様子
 
-![SPARCS Networkの紹介のスライド](./sparcs-network-slides.jpg)
+![SPARCS Networkの紹介のスライド](./sparcs-network-slides.webp)
 
 SPARCSのプロダクトの紹介の2つ目は、SPARCS Networkでした。
 
@@ -77,30 +77,30 @@ KAIST内のITインフラの管理についてやSPARCSが運営しているミ�
 
 ### CreateCPUの紹介の様子
 
-![CreateCPUの紹介のスライド](./create-cpu-slides.jpg)
+![CreateCPUの紹介のスライド](./create-cpu-slides.webp)
 
 ut.code();のプロダクトの紹介の3つ目は、CreateCPUでした。
 
 CreateCPUは、Webブラウザ上で論理回路を学ぶことができるサービスです。最も単純な回路素子をつなぎ合わせて自分だけのCPUを作り上げることができます。CreateCPUにある他の論理回路シミュレーターにはない特徴についてなどが実演を交えながら紹介されました。
 
-![CreateCPUの紹介の様子1](./create-cpu-1.jpg)
+![CreateCPUの紹介の様子1](./create-cpu-1.webp)
 
-![CreateCPUの紹介の様子2](./create-cpu-2.jpg)
+![CreateCPUの紹介の様子2](./create-cpu-2.webp)
 
 ### Taxiの紹介の様子
 
-![Taxiの紹介のスライド](./taxi-slides.jpg)
+![Taxiの紹介のスライド](./taxi-slides.webp)
 
 SPARCSのプロダクトの紹介の3つ目は、Taxiでした。
 
 Taxiは、タクシーの同乗者を簡単に見つけることができるアプリで、これによりタクシーの料金を節約したり、同乗者との調整をスムーズに行うことができます。Taxiができる前にKAISTの学生にとってどのような問題があったのか、どのようにして多くの人に使ってもらえるように広報を行ったのかなどが紹介されました。
 
-![Taxiの紹介の様子1](./taxi-1.jpg)
+![Taxiの紹介の様子1](./taxi-1.webp)
 
-![Taxiの紹介の様子2](./taxi-2.jpg)
+![Taxiの紹介の様子2](./taxi-2.webp)
 
 ## 最後に
 
 どのような問題を解決しようとしているのかや、実際に作ったプロダクトを使ってもらうためにどうしてきたのかなど、ut.code();のメンバーにとっても、SPARCSのメンバーにとっても、学びになることがたくさんあるイベントになりました。今後も、今回のようにお互いに情報交換ができるイベントやその他のイベントを行っていきたいと思っています。参加していただいたSPARCSのメンバーのみなさん、ut.code();のメンバーのみなさん、ありがとうございました。
 
-![集合写真](./group-photo.jpg)
+![集合写真](./group-photo.webp)
