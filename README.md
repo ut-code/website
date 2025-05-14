@@ -27,6 +27,12 @@
 
 - 画像サイズは 1MB 未満に抑えてください。 ffmpeg や ImageMagick を使い、解像度を下げたり、画質 (Quality) を下げたり、WebP (or AVIF) に変換するなどができます。
   - 参考 <https://stackoverflow.com/questions/7261855/recommendation-for-compressing-jpg-files-with-imagemagick>
+  - 例: `ffmpeg -i ./input.png -vf 'scale=1920:-1' output.avif`
+    - -> 50~300kb 程度になります。多少 (数秒~1分程度) 時間がかかります。
+    - 横幅がそこまで必要ない画像は、scale の width を落としてもよいです。
+  - HEIC は対応していないので、 ImageMagick で他のフォーマットに変換してください。
+    - 例: `magick picture.HEIC picture.webp`
+- 記事ごとのファイルサイズの合計は5 MB までに抑えてください。
 
 ### プロジェクト
 
