@@ -3,8 +3,8 @@ nameJa: 安村 拓也
 nameEn: Takuya Yasumura
 joinYear: 2024
 description: 初心者です。
-faceImage: ./face.jpg
-upperBodyImage: ./upper-body.jpg
+faceImage: ./face.webp
+upperBodyImage: ./upper-body.webp
 github: nakomochi
 ---
 

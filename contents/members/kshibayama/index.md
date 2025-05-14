@@ -3,8 +3,8 @@ nameJa: 柴山 慧一朗
 nameEn: Keiichiro Shibayama
 joinYear: 2024
 description: サークルいっぱい入ってる多趣味な人。
-faceImage: ./face.jpg
-upperBodyImage: ./upper-body.jpg
+faceImage: ./face.webp
+upperBodyImage: ./upper-body.webp
 github: Tsurubara-UTcode
 theme-light: "#CEDDF2"
 ---
