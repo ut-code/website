@@ -1,4 +1,6 @@
 ---
+import "+/global.css";
+
 import { ClientRouter } from "astro:transitions";
 import Footer from "+/components/Footer.astro";
 import Header from "+/components/Header.astro";
@@ -16,14 +18,13 @@ const { title, description, focus, image } = Astro.props;
 ---
 
 <html lang="ja" class="bg-gray-50 text-gray-800" data-theme="light">
-  <Meta {title} {description} image={image} />
-  <body class="min-h-full w-full">
-    <style is:global>
-      @import "+/global.css";
-    </style>
+  <head>
+    <Meta {title} {description} image={image} />
+  </head>
+  <body class="min-h-[100vh]">
+    <ClientRouter />
     <Header {focus} />
     <slot />
     <Footer />
-    <ClientRouter />
   </body>
 </html>

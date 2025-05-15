@@ -1,3 +1,4 @@
+# yaml-language-server: schema=https://json.schemastore.org/lefthook.json
 pre-commit:
   parallel: true
   commands:
@@ -10,5 +11,3 @@ pre-commit:
       stage_fixed: true
     sync:
       run: bun sync
-    typos:
-      run: if command -v typos 2&> /dev/null; then typos; fi

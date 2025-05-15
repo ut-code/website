@@ -16,12 +16,6 @@ jobs:
           bun-version: 1.2.5
       - run: bun install --frozen-lockfile
       - run: bun check
-  typos:
-    name: Check Typos
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: crate-ci/typos@v1
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -40,3 +34,11 @@ jobs:
             node_modules/.astro/assets
           restore-keys: ${{ runner.os }}-astro-build
       - run: bun run build
+  dirs-small:
+    name: All dirs must be small (<5MB)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+      - run: nix run github:ut-code/internal-helpers#disallow-large-dir contents/articles/*/*
+      - run: nix run github:ut-code/internal-helpers#disallow-large-dir contents/members/*

@@ -1,4 +1,6 @@
 ---
+import { addOrigin } from "+/lib/utils";
+
 interface Props {
   title: string | null;
   description: string | null;
@@ -22,7 +24,10 @@ const url = Astro.url.href;
 <meta property="og:site_name" content="ut.code();" />
 <meta property="og:title" content={title} />
 {description && <meta property="og:description" content={description} />}
-<meta property="og:image" content={image?.src ?? "/utcode-logo/normal.png"} />
+<meta
+  property="og:image"
+  content={addOrigin(image?.src ?? "/utcode-logo/normal.png", Astro.site)}
+/>
 <meta property="og:url" content={url} />
 <meta property="og:locale" content="ja_JP" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -31,10 +36,6 @@ const url = Astro.url.href;
   name="keywords"
   content={[
     ...keywords,
-    "ユーティーコード,ソフトウェアエンジニアリング,プログラミング,東京大学,サークル",
+    "プログラミング,サークル,東京大学,Web開発,ソフトウェアエンジニアリング,ユーティーコード",
   ].join(",")}
 />
-<!-- 何だこれ -->
-<!-- {linkedData && ( -->
-<!-- <script type="application/ld+json">{JSON.stringify(linkedData)}</script> -->
-<!-- )} -->

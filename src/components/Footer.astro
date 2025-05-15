@@ -1,51 +1,64 @@
 ---
+import { Icon } from "astro-icon/components";
 import ActionButton from "./ActionButton.astro";
-import FooterSection from "./Footer/FooterSection.astro";
 import Logo from "./Logo.astro";
-
-interface Props {
-  class?: string;
-}
-const props = Astro.props;
 ---
 
-<footer
-  class:list={["mt-auto mb-0 w-full bg-black text-gray-200", props.class]}
->
-  <div class="relative bottom-0 mx-auto px-8 py-12">
-    <div
-      class="grid gap-x-16 gap-y-8 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1"
-    >
-      <div style={{ gridRow: "1 / -1" }}>
-        <Logo class="w-36" variant="light" />
-        <p class="mt-4 text-sm">
-          東京大学のソフトウェアエンジニアリングコミュニティ
-        </p>
-        <ActionButton to="/join/" variant="dark" class="mx-auto mt-6 md:mx-0">
-          参加する
-        </ActionButton>
+<footer class="bg-base-content text-base-200 p-18">
+  <div class="footer footer-vertical sm:footer-horizontal">
+    <aside>
+      <Logo class="w-72" variant="light" />
+      <h1 class="text-md my-4">
+        東京大学のソフトウェアエンジニアリングコミュニティ
+      </h1>
+      <ActionButton to="/join/" variant="dark" class="mx-auto mt-1 md:mx-0">
+        参加する
+      </ActionButton>
+    </aside>
+    <nav>
+      <h6 class="footer-title">活動</h6>
+      <a href="/projects/" class="link link-uncolor link-hover">
+        プロジェクト一覧
+      </a>
+      <a href="/activities/learn/" class="link link-uncolor link-hover">
+        学習・教育
+      </a>
+      <a href="/activities/share/" class="link link-uncolor link-hover">
+        交流
+      </a>
+      <a href="/activities/develop/" class="link link-uncolor link-hover">
+        開発
+      </a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">ソーシャルリンク</h6>
+      <div class="grid grid-flow-col gap-4">
+        <a href="https://github.com/ut-code" target="_blank">
+          <Icon name="flowbite:github-solid" class="text-5xl" />
+        </a>
+        <a href="https://x.com/utokyo_code" target="_blank">
+          <Icon name="flowbite:x-solid" class="text-5xl" />
+        </a>
       </div>
-      <FooterSection
-        title="活動"
-        links={[
-          { title: "プロジェクト", to: "/projects" },
-          { title: "ご寄付・ご協賛のお願い", to: "/donation/" },
-          { title: "ut.code(); で学習する", to: "/activities/learn/" },
-          { title: "ut.code(); で交流する", to: "/activities/share/" },
-          { title: "ut.code(); で開発する", to: "/activities/develop/" },
-        ]}
-      />
-      <FooterSection
-        title="リンク"
-        links={[
-          { title: "ut.code(); Learn", to: "https://learn.utcode.net/" },
-          { title: "GitHub", to: "https://github.com/ut-code" },
-          { title: "X", to: "https://x.com/utokyo_code" },
-        ]}
-      />
-    </div>
-    <p class="mt-12 text-center text-sm text-gray-400">
-      &copy; {new Date().getFullYear()} ut.code();
-    </p>
+    </nav>
   </div>
+  <aside class="mt-12 w-full text-center text-sm text-gray-400">
+    &copy; {new Date().getFullYear()} ut.code();
+  </aside>
 </footer>
+<style>
+  @media not (prefers-reduced-motion) {
+    .link {
+      background: linear-gradient(currentColor 0 0) bottom left/
+        var(--underline-width, 0%) 0.1em no-repeat;
+      text-decoration: none;
+      transition: background-size 0.1s linear;
+    }
+    .link:hover {
+      --underline-width: 100%;
+      @starting-style {
+        --underline-width: 0%;
+      }
+    }
+  }
+</style>

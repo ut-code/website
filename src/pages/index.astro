@@ -1,6 +1,5 @@
 ---
 import { Picture } from "astro:assets";
-import { getCollection } from "astro:content";
 import { Icon } from "astro-icon/components";
 
 import GlobalLayout from "+/layouts/GlobalLayout.astro";
@@ -9,25 +8,17 @@ import ActionButton from "+/components/ActionButton.astro";
 import ArticleList from "+/components/ArticleList.astro";
 import ProjectList from "+/components/ProjectList.astro";
 import SectionHeader from "+/components/per-page/SectionHeader.astro";
+import { getArticles, getProjects } from "+/query.ts";
 import { Focus } from "+/schema.ts";
 
 import LogoGMOMedia from "+/images/donators/gmo-media.png";
 import Hero from "+/images/headers/index.jpg";
 import LabCafe from "+/images/lab-cafe.jpg";
 
-const projects = (await getCollection("projects")).sort((a, b) => {
-  const a_order = a.data.order ?? Number.POSITIVE_INFINITY;
-  const b_order = b.data.order ?? Number.POSITIVE_INFINITY;
-  if (a_order !== b_order) {
-    return a_order - b_order;
-  }
-  return b.data.date.getTime() - a.data.date.getTime();
-});
+const projects = await getProjects("long-term");
 projects.splice(6);
 
-const articles = (await getCollection("articles")).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
-);
+const articles = await getArticles();
 articles.splice(3);
 ---
 
@@ -36,15 +27,14 @@ articles.splice(3);
     formats={["avif", "webp"]}
     alt=""
     loading="lazy"
-    class="skeleton fixed top-0 -z-10 h-[100lvh] max-w-full object-cover object-center select-none"
+    quality="mid"
+    width="1920"
+    height="1080"
+    class="bg-image bg-neutral-400"
     src={Hero}
   />
   <div class="absolute top-[40%] left-10 mr-10 max-w-lg bg-gray-50 p-8 pb-24">
-    <h1 class="text-2xl md:text-3xl">
-      <span class="inline-block">東京大学の</span><span class="inline-block"
-        >ソフトウェア開発</span
-      ><span class="inline-block">コミュニティ</span>
-    </h1>
+    <h1 class="text-2xl md:text-3xl">東京大学のソフトウェア開発サークル</h1>
     <div class="prose mt-3">
       <p>
         ut.code(); は、 2019
@@ -64,9 +54,9 @@ articles.splice(3);
             [
               {
                 key: "learn",
-                title: "学習",
+                title: "学習・教育",
                 description:
-                  "プログラミングに初めて取り組む皆さんに向け、学習会を開催しています。また、初心者からでも実際にサービスを開発できるよう、学習カリキュラムをオープンソースで公開しています。",
+                  "プログラミング未経験の方から経験者まで、共に学び、教え合う学習会を開催しています。また、実践的なスキルを身につけ、サービス開発に取り組めるよう、独自の学習コンテンツやカリキュラムをオープンソースで公開しています。",
                 icon: "feather:book-open",
               },
               {
@@ -95,6 +85,7 @@ articles.splice(3);
                 <a
                   class="hover-underline mt-2 inline flex-0 items-center gap-1"
                   href={`/activities/${activity.key}/`}
+                  aria-label={activity.title}
                 >
                   <span>Learn more</span>
                   <Icon name="feather:arrow-right" class="inline h-4 w-4" />
@@ -115,7 +106,7 @@ articles.splice(3);
       </ActionButton>
     </div>
   </section>
-  <section class="bg-black py-80 text-white">
+  <section class="bg-black pt-60 pb-20 text-white">
     <div
       class="mx-auto block items-center justify-evenly gap-12 overflow-hidden px-8 xl:flex xl:flex-row-reverse"
     >
@@ -165,6 +156,15 @@ articles.splice(3);
       </script>
     </div>
   </section>
+  <section class="bg-gray-50">
+    <div class="container mx-auto px-4 py-12">
+      <SectionHeader title="News" subtitle="最新情報" />
+      <ArticleList truncate {articles} max-cols="3" class="mt-10" />
+      <ActionButton to="/articles" class="mt-8 ml-auto">
+        すべての記事
+      </ActionButton>
+    </div>
+  </section>
   <section class="bg-gray-100/70 backdrop-blur-sm">
     <div class="container mx-auto py-16">
       <SectionHeader title="About us" subtitle="団体概要" />
@@ -172,8 +172,8 @@ articles.splice(3);
         {
           [
             { title: "団体名", content: "ut.code();" },
-            { title: "構成人数", content: "20 名程度 (アクティブ)" },
-            { title: "発足", content: "2019 年" },
+            { title: "部員", content: "30 名程度" },
+            { title: "所属", content: "東京大学工学部丁友会 (2025 年度)" },
             { title: "部室", content: "駒場キャンパス学生会館 313B 教室" },
             {
               title: "X",
@@ -182,9 +182,13 @@ articles.splice(3);
             },
             {
               title: "活動場所",
-              content: "オンライン, 部室, KOMAD, その他施設",
+              content: "オンライン, 部室, 本郷図書館プロジェクトボックス等",
             },
-            { title: "所属", content: "東京大学工学部丁友会 (2022 年度)" },
+            {
+              title: "GitHub",
+              content: "ut-code",
+              link: "https://github.com/ut-code",
+            },
           ].map(({ title, content, link }) => (
             <li class="flex gap-4 border-b border-gray-400 px-6 py-3">
               <div class="w-24">{title}</div>
@@ -200,24 +204,6 @@ articles.splice(3);
         }
       </ul>
     </div>
-  </section>
-  <section class="bg-gray-50">
-    <div class="container mx-auto px-4 py-12">
-      <SectionHeader title="News" subtitle="最新情報" />
-      <ArticleList truncate {articles} max-cols="3" class="mt-10" />
-      <ActionButton to="/articles" class="mt-8 ml-auto">
-        すべての記事
-      </ActionButton>
-    </div>
-  </section>
-  <section class="w-full bg-gray-50">
-    <iframe
-      title="ut.code(); 紹介動画"
-      class="h-[300px] w-full sm:h-[400px] md:h-[500px] lg:h-[100vh]"
-      src="https://www.youtube-nocookie.com/embed/aUoa1AyfbMA?rel=0"
-      loading="lazy"
-      allow="picture-in-picture; web-share"
-      allow-fullscreen></iframe>
   </section>
   <section class="bg-gray-50 py-24">
     <SectionHeader title="協賛企業様" />

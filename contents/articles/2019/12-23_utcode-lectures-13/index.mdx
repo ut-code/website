@@ -26,7 +26,7 @@ node index.js
 
 node コマンドは、Node.js を起動させるためのコマンドです。引数としてファイル名を与えることで、そのファイルを JavaScript と解釈して実行します。
 
-![Node.jsでHello World](./run-node.png)
+![Node.jsでHello World](./run-node.webp)
 
 おめでとうございます！Hello World と表示できました！
 
@@ -207,7 +207,7 @@ document.getElementById("calculate").onclick = () => {
 
 トランスパイルやモジュールバンドル伴うプロジェクトの場合、ソースファイルとトランスパイル後のファイルが共存することになります。この時、プロジェクトのルートディレクトリにソースファイルを配置してしまうと、最終的に出力されたファイルを置く場所がなくなってしまいます。そのため、適当なディレクトリを作成し、その中でコードを書き進めると良いです。今回は src ディレクトリ（よく使われる source の略語です）を使用しました。
 
-![ディレクトリ構造](./directory-structure.png)
+![ディレクトリ構造](./directory-structure.webp)
 
 Parcel コマンドは引数にエントリポイントをとります。src/index.pug を指定して、Parcel を実行しましょう。
 
@@ -215,7 +215,7 @@ Parcel コマンドは引数にエントリポイントをとります。src/ind
 npx parcel src/index.html
 ```
 
-![Parcelを実行する](./run-parcel.png)
+![Parcelを実行する](./run-parcel.webp)
 
 Parcel は、index.html の中に記載された script タグや link タグを自動的に認識し、それらの参照先ファイルがトランスパイルの対象であれば、自動的にトランスパイルし、バンドリングします。出力されたファイルはプロジェクトディレクトリ直下に自動的に生成される dist ディレクトリ（この挙動は変更可能です）に生成され、ブラウザから表示させることが可能です。また、Parcel にはホットリロード可能な開発用サーバーを起動する機能も標準で用意されているため、そのためのリンクが表示されます。
 

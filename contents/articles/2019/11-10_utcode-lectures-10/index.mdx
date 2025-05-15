@@ -35,7 +35,7 @@ HTML において method 属性を get に指定した form タグを使用し�
 ようこそ！<?php print($_GET['user-name']); ?>さん！
 ```
 
-![実行結果](./get-request-result.png)
+![実行結果](./get-request-result.webp)
 
 フォームの送信先の画面のアドレスバーに注目しましょう。index.html で入力された値が、URL のクエリパラメータとして引き渡されているのが分かります（なお、昨今のブラウザは URL エンコードされた文字列をデコードしてアドレスバーに表示する機能を持っているため、アドレスバーにエンコード済みの文字列が表示されていません）。
 
@@ -99,7 +99,7 @@ Vary: Accept-Encoding
 
 一般的に使用される GET メソッドの代わりに、POST メソッドを使用することで、大規模なデータをサーバーに送信することができます。**GET メソッドと POST メソッドの最大の違いは、リクエストボディが存在するかどうか**になります。リクエストボディが存在するということで、POST メソッドを用いたリクエストの場合は、リクエストボディの種類を Content-Type リクエストヘッダで指定します。サーバーは、リクエストボディの内容に応じて、適切に処理を行うことができます。
 
-![GETメソッドとPOSTメソッド](./get-post.png)
+![GETメソッドとPOSTメソッド](./get-post.webp)
 
 GET メソッドと POST メソッド
 
@@ -116,7 +116,7 @@ GET メソッドと POST メソッド
 ようこそ！<?php print($_POST['user-name']); ?>さん！
 ```
 
-![実行結果](./post-request-result.png)
+![実行結果](./post-request-result.webp)
 
 ご覧の通り、HTML 側の form タグの method 属性が get から post に変わり、PHP 側の$\_GETが$\_POST に変わった以外に目立った変化はありません。
 

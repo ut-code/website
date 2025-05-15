@@ -1,11 +1,14 @@
 import { type ImageFunction, reference } from "astro:content";
 import { z } from "astro:schema";
+import { kinds } from "+contents/project-kinds";
 import { TZDate } from "@date-fns/tz";
 
 export type Article = z.infer<ReturnType<typeof CreateArticleSchema>>;
 export type Member = z.infer<ReturnType<typeof CreateMemberSchema>>;
 export type Project = z.infer<ReturnType<typeof CreateProjectSchema>>;
 
+const Position = z.enum(["center", "top", "bottom", "left", "right"]);
+const Fit = z.enum(["cover", "contain", "fill", "none"]);
 export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
   z
     .object({
@@ -18,8 +21,8 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
       categories: z.array(z.string()).optional(),
       // 画像系
       image: image(),
-      fit: z.enum(["cover", "contain", "fill", "none"]).optional(),
-      position: z.enum(["center", "top", "bottom", "left", "right"]).optional(),
+      fit: Fit.optional(),
+      position: Position.default("center"),
       bg_color: z.string().optional(),
     })
     .refine(
@@ -33,10 +36,11 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
       },
     );
 
+export type Kind = (typeof kinds)[number]["frontmatter"];
 export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
   z.object({
     title: z.string(),
-    kind: z.enum(["long-term", "hackathon", "festival"]),
+    kind: z.enum(kinds.map((kind) => kind.frontmatter) as [Kind, ...Kind[]]),
     status: z.enum([
       "plan",
       "under-development",
@@ -49,11 +53,12 @@ export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
     date: z.date(),
     image: z.object({
       src: image(),
-      fit: z.enum(["cover", "contain", "fill"]).optional().default("cover"),
+      position: Position.default("center"),
+      fit: Fit.default("cover"),
       bg: z.string().optional().default("whitesmoke"),
     }),
     description: z.string(),
-    tags: z.array(z.string()),
+    tags: z.array(z.string()).optional().default([]),
     github: z.string().url().optional(),
     youtube: z.string().url().optional(),
     website: z.string().url().optional(),
@@ -76,9 +81,9 @@ export const CreateMemberSchema = ({ image }: { image: ImageFunction }) =>
 // ヘッダーのスタイリングに使われています
 export enum Focus {
   none = 0,
-  projects = 1,
-  articles = 2,
-  members = 3,
-  join = 4,
-  contact = 5,
+  about = 1,
+  projects = 2,
+  articles = 3,
+  members = 4,
+  join = 5,
 }

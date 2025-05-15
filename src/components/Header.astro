@@ -11,7 +11,7 @@ const links = [
   { title: "記事", href: "/articles", focus: Focus.articles },
   { title: "メンバー", href: "/members", focus: Focus.members },
   { title: "参加", href: "/join", focus: Focus.join },
-  { title: "お問い合わせ", href: "/contact", focus: Focus.contact },
+  { title: "About", href: "/about", focus: Focus.about },
 ];
 
 interface Props {
@@ -52,7 +52,12 @@ const { focus } = Astro.props;
     )
   }
   <div class="flex h-16 bg-gray-50/70 backdrop-blur-lg">
-    <a href="/" class="flex items-center px-4" data-astro-prefetch="viewport">
+    <a
+      href="/"
+      aria-label="Go to top page"
+      class="flex items-center px-4"
+      data-astro-prefetch="viewport"
+    >
       <Logo class="w-36 sm:ml-8" variant="default" />
     </a>
     <div aria-hidden class="flex-1"></div>

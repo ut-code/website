@@ -1,13 +1,14 @@
 ---
 import { Picture } from "astro:assets";
-import { getCollection, getEntry, render } from "astro:content";
+import { render } from "astro:content";
 import JoinUsCTA from "+/components/JoinUsCTA.astro";
 import GlobalLayout from "+/layouts/GlobalLayout.astro";
-import { Focus } from "+/schema";
+import { getArticles, getMember } from "+/query.ts";
+import { Focus } from "+/schema.ts";
 import { format } from "date-fns";
 
 export async function getStaticPaths() {
-  const articles = await getCollection("articles");
+  const articles = await getArticles();
   return articles.map((article) => ({
     params: { id: article.id },
     props: { article },
@@ -16,12 +17,7 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content } = await render(article);
-const author =
-  article.data.author && (await getEntry("members", article.data.author.id));
-if (article.data.author && !author)
-  throw new Error(
-    `Author not found for article ${article.id}, searched for author ${article.data.author.id}`,
-  );
+const author = article.data.author && (await getMember(article.data.author.id));
 ---
 
 <GlobalLayout
@@ -30,22 +26,17 @@ if (article.data.author && !author)
   focus={Focus.articles}
   image={article.data.image}
 >
-  {
-    article.data.image && (
-      <div class="text-center lg:px-8">
-        <Picture
-          loading="eager"
-          width="1200"
-          height="800"
-          quality="80"
-          formats={["avif", "webp"]}
-          class="skeleton mx-auto rounded-none md:max-w-3xl md:rounded-2xl"
-          alt="イメージ画像"
-          src={article.data.image}
-        />
-      </div>
-    )
-  }
+  <div class="mt-2 text-center lg:px-8">
+    <Picture
+      loading="eager"
+      width="1200"
+      quality="90"
+      formats={["avif", "webp"]}
+      class="skeleton mx-auto rounded-none md:max-w-3xl md:rounded-2xl"
+      alt="サムネイル"
+      src={article.data.image}
+    />
+  </div>
   <div
     id="meta"
     class="mx-auto mt-4 flex max-w-xl flex-wrap justify-around px-4 align-middle sm:gap-8"
@@ -59,10 +50,11 @@ if (article.data.author && !author)
           <Picture
             alt="著者"
             formats={["avif", "webp"]}
-            width="64"
-            height="64"
+            width="256"
+            height="256"
+            fit="cover"
             src={author.data.faceImage}
-            class="overflow-clip rounded-full bg-gray-200"
+            class="h-16 w-16 overflow-clip rounded-full bg-gray-200"
           />
           <div class="flex-1">
             <div class="text-lg text-gray-800">{author.data.nameJa}</div>
