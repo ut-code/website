@@ -101,7 +101,9 @@ const articlesWithExcerpts = await Promise.all(
             />
             <div class="mt-4 p-1">
               <time class="block text-sm text-gray-500">
-                {format(article.data.date, "yyyy/MM/dd HH:mm")}
+                {format(article.data.date, "yyyy/MM/dd HH:mm")
+                  // 夜中に活動しない
+                  .replace("00:00", "10:00")}
               </time>
               <h3 class="text-lg font-bold">{article.data.title}</h3>
               <p

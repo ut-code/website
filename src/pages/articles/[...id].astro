@@ -26,21 +26,17 @@ const author = article.data.author && (await getMember(article.data.author.id));
   focus={Focus.articles}
   image={article.data.image}
 >
-  {
-    article.data.image && (
-      <div class="text-center lg:px-8">
-        <Picture
-          loading="eager"
-          width="1200"
-          quality="80"
-          formats={["avif", "webp"]}
-          class="skeleton mx-auto rounded-none md:max-w-3xl md:rounded-2xl"
-          alt="イメージ画像"
-          src={article.data.image}
-        />
-      </div>
-    )
-  }
+  <div class="mt-2 text-center lg:px-8">
+    <Picture
+      loading="eager"
+      width="1200"
+      quality="90"
+      formats={["avif", "webp"]}
+      class="skeleton mx-auto rounded-none md:max-w-3xl md:rounded-2xl"
+      alt="サムネイル"
+      src={article.data.image}
+    />
+  </div>
   <div
     id="meta"
     class="mx-auto mt-4 flex max-w-xl flex-wrap justify-around px-4 align-middle sm:gap-8"
@@ -54,11 +50,11 @@ const author = article.data.author && (await getMember(article.data.author.id));
           <Picture
             alt="著者"
             formats={["avif", "webp"]}
-            width="64"
-            height="64"
+            width="256"
+            height="256"
             fit="cover"
             src={author.data.faceImage}
-            class="overflow-clip rounded-full bg-gray-200"
+            class="h-16 w-16 overflow-clip rounded-full bg-gray-200"
           />
           <div class="flex-1">
             <div class="text-lg text-gray-800">{author.data.nameJa}</div>
