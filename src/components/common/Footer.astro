@@ -5,33 +5,38 @@ import { Icon } from "astro-icon/components";
 ---
 
 <footer class="bg-base-content text-base-200 p-18">
-  <div class="footer footer-vertical sm:footer-horizontal">
+  <div
+    id="footer-first-section"
+    class="footer footer-vertical sm:footer-horizontal"
+  >
     <aside>
       <Logo class="w-72" variant="light" />
-      <h1 class="text-md my-4">
+      <h2 class="footer-title text-md my-4">
         東京大学のソフトウェアエンジニアリングコミュニティ
-      </h1>
+      </h2>
       <ActionButton to="/join/" variant="dark" class="mx-auto mt-1 md:mx-0">
         参加する
       </ActionButton>
     </aside>
     <nav>
-      <h6 class="footer-title">活動</h6>
-      <a href="/projects/" class="link link-uncolor link-hover">
-        プロジェクト一覧
-      </a>
-      <a href="/activities/learn/" class="link link-uncolor link-hover">
-        学習・教育
-      </a>
-      <a href="/activities/share/" class="link link-uncolor link-hover">
-        交流
-      </a>
-      <a href="/activities/develop/" class="link link-uncolor link-hover">
-        開発
-      </a>
+      <h3 class="footer-title">活動</h3>
+      <a href="/projects/">プロジェクト</a>
+      <a href="/activities/learn/">学習・教育</a>
+      <a href="/activities/share/">交流</a>
+      <a href="/activities/develop/">開発</a>
     </nav>
     <nav>
-      <h6 class="footer-title">ソーシャルリンク</h6>
+      <h3 class="footer-title">サイトマップ</h3>
+      <a href="/articles/">記事</a>
+      <a href="/members/">メンバー</a>
+      <a href="/join/">参加</a>
+      <a href="/about/">団体概要</a>
+    </nav>
+    <nav>
+      <h3 class="footer-title">お問い合わせ</h3>
+      <a href="/contact/">お問い合わせ</a>
+      <a href="/donation/">ご寄付・ご協賛</a>
+      <h3 class="footer-title mt-6">ソーシャルリンク</h3>
       <div class="grid grid-flow-col gap-4">
         <a href="https://github.com/ut-code" target="_blank">
           <Icon name="flowbite:github-solid" class="text-5xl" />
@@ -42,19 +47,25 @@ import { Icon } from "astro-icon/components";
       </div>
     </nav>
   </div>
-  <aside class="mt-12 w-full text-center text-sm text-gray-400">
+
+  <aside class="mt-18 w-full text-center text-sm text-gray-400">
     &copy; {new Date().getFullYear()} ut.code();
   </aside>
 </footer>
+
 <style>
+  @media (prefers-reduced-motion) {
+    a:hover {
+      text-decoration: underline;
+    }
+  }
   @media not (prefers-reduced-motion) {
-    .link {
+    a {
       background: linear-gradient(currentColor 0 0) bottom left/
         var(--underline-width, 0%) 0.1em no-repeat;
-      text-decoration: none;
       transition: background-size 0.1s linear;
     }
-    .link:hover {
+    a:hover {
       --underline-width: 100%;
       @starting-style {
         --underline-width: 0%;
