@@ -5,7 +5,7 @@ description: マッチング理論を用いた、担当振り分けアプリで�
 date: 2025-01-01
 members: [ykobayashi, snakamura, kshibayama, tyasumura]
 leader: ykobayashi
-image:
+thumbnail:
   src: ./thumbnail.png
   fit: cover
   bg: white

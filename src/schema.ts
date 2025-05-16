@@ -51,7 +51,7 @@ export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
     ]),
     order: z.number().optional(),
     date: z.date(),
-    image: z.object({
+    thumbnail: z.object({
       src: image(),
       position: Position.default("center"),
       fit: Fit.default("cover"),
