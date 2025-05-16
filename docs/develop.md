@@ -9,8 +9,12 @@
 
 ### ローカル
 
+Nix を使うか、以下のパッケージをインストールします。
+
 - (必須) Bun >= v1.2
-- 任意のエディタ <https://docs.astro.build/en/editor-setup/>
+- (必須) Node.js
+- (推奨) 任意のエディタ <https://docs.astro.build/en/editor-setup/>
+- (推奨) ImageMagick, ffmpeg
 
 ```sh
 bun install --frozen-lockfile
