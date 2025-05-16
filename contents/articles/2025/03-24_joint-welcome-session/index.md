@@ -1,6 +1,6 @@
 ---
 title: 東大エンジニア系サークル合同新歓を開催します
-image: ./thumbnail.png
+thumbnail: ./thumbnail.png
 categories:
   - event
 author: ykobayashi

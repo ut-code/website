@@ -1,7 +1,7 @@
 ---
 title: SPARCS × ut.code(); 合同交流会2024を開催しました
 date: 2024-11-02T21:00:00+09:00
-image: ./thumbnail.webp
+thumbnail: ./thumbnail.webp
 author: ywatahiki
 ---
 

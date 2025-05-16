@@ -1,7 +1,7 @@
 ---
 title: 全ゼミが終了しました
 date: 2024-07-14T19:00:00+09:00
-image: ./image.jpg
+thumbnail: ./image.jpg
 author: ywatahiki
 ---
 

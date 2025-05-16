@@ -3,7 +3,7 @@ title: "コエテコ Hack #02 の全日程が終了しました"
 date: 2024-09-02T23:30:00+09:00
 categories:
   - events
-image: ./thumbnail.webp
+thumbnail: ./thumbnail.webp
 author: kmanabe
 ---
 

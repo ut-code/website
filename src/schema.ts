@@ -20,7 +20,7 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
       author: reference("members").optional(),
       categories: z.array(z.string()).optional(),
       // 画像系
-      image: image(),
+      thumbnail: image(),
       fit: Fit.optional(),
       position: Position.default("center"),
       bg_color: z.string().optional(),

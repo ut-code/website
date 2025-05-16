@@ -24,7 +24,7 @@ const author = article.data.author && (await getMember(article.data.author.id));
   title={article.data.title}
   description={null}
   focus={Focus.articles}
-  image={article.data.image}
+  image={article.data.thumbnail}
   type="article"
 >
   <div class="mt-2 text-center lg:px-8">
@@ -35,7 +35,7 @@ const author = article.data.author && (await getMember(article.data.author.id));
       formats={["avif", "webp"]}
       class="skeleton mx-auto rounded-none md:max-w-3xl md:rounded-2xl"
       alt="サムネイル"
-      src={article.data.image}
+      src={article.data.thumbnail}
     />
   </div>
   <div

@@ -85,7 +85,7 @@ const articlesWithExcerpts = await Promise.all(
               height={imageHeight}
               alt=""
               fit={article.data.fit}
-              src={article.data.image}
+              src={article.data.thumbnail}
               class:list={[
                 "aspect-5/3 min-h-0 w-full rounded-xl",
                 !article.data["bg_color"] && "skeleton",
