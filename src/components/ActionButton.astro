@@ -1,0 +1,12 @@
+---
+// support legacy articles because they import from this path
+import ActionButtonSource from "./utils/ActionButton.astro";
+interface Props {
+  to: string;
+}
+const props = Astro.props;
+---
+
+<ActionButtonSource {...props}>
+  <slot />
+</ActionButtonSource>
