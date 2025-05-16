@@ -4,6 +4,7 @@ import "+/global.css";
 import { ClientRouter } from "astro:transitions";
 import Footer from "+/components/Footer.astro";
 import Header from "+/components/Header.astro";
+import type { OgType } from "+/lib/types";
 import type { Focus } from "+/schema";
 import Meta from "./meta.astro";
 
@@ -13,13 +14,19 @@ interface Props {
   focus: Focus;
   class?: string;
   image: ImageMetadata | null;
+  type?: OgType;
 }
-const { title, description, focus, image } = Astro.props;
+const { title, description, focus, image, type } = Astro.props;
 ---
 
-<html lang="ja" class="bg-gray-50 text-gray-800" data-theme="light">
+<html
+  lang="ja"
+  prefix="og: http://ogp.me/ns#"
+  class="bg-gray-50 text-gray-800"
+  data-theme="light"
+>
   <head>
-    <Meta {title} {description} image={image} />
+    <Meta {title} {description} image={image} og_type={type} />
   </head>
   <body class="min-h-[100vh]">
     <ClientRouter />

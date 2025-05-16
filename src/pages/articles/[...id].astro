@@ -25,6 +25,7 @@ const author = article.data.author && (await getMember(article.data.author.id));
   description={null}
   focus={Focus.articles}
   image={article.data.image}
+  type="article"
 >
   <div class="mt-2 text-center lg:px-8">
     <Picture

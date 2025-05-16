@@ -1,13 +1,15 @@
 ---
-import { addOrigin } from "+/lib/utils";
+import type { OgType } from "+/lib/types.ts";
+import { addOrigin } from "+/lib/utils.ts";
 
 interface Props {
   title: string | null;
   description: string | null;
   keywords?: string[];
   image: ImageMetadata | null;
+  og_type?: OgType | undefined;
 }
-const { title, description, keywords = [], image } = Astro.props;
+const { title, description, keywords = [], image, og_type } = Astro.props;
 const url = Astro.url.href;
 ---
 
@@ -21,6 +23,7 @@ const url = Astro.url.href;
   name="description"
   content={description ?? "東京大学のソフトウェアエンジニアリングコミュニティ"}
 />
+<meta property="og:type" content={og_type ?? "website"} />
 <meta property="og:site_name" content="ut.code();" />
 <meta property="og:title" content={title} />
 {description && <meta property="og:description" content={description} />}
