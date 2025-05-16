@@ -3,7 +3,8 @@ title: GMO インターネットグループ株式会社と勉強会を開催し
 date: 2023-12-13T18:00:00+09:00
 categories:
   - events
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: ywatahiki
 ---
 

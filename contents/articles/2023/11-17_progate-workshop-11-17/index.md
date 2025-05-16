@@ -3,7 +3,8 @@ title: 株式会社 Progate とハンズオン勉強会を開催しました！
 date: 2023-11-17T22:00:00+09:00
 categories:
   - events
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: ywatahiki
 ---
 

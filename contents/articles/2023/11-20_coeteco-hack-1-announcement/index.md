@@ -3,7 +3,8 @@ title: GMO メディア株式会社とハッカソンを開催します！
 date: 2023-11-20T22:00:00+09:00
 categories:
   - events
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: ywatahiki
 ---
 

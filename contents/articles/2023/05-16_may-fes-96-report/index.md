@@ -3,7 +3,8 @@ title: "第96回五月祭に出展しました"
 date: 2023-05-16T12:00:00+09:00
 categories:
   - "events"
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: snakamura
 ---
 

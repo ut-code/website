@@ -1,7 +1,8 @@
 ---
 title: 2025 年度新歓合宿を開催しました
 date: 2025-05-12
-thumbnail: ./thumbnail.avif
+thumbnail:
+  src: ./thumbnail.avif
 author: "kshibayama"
 ---
 

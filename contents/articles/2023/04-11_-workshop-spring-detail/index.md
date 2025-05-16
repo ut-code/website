@@ -3,7 +3,8 @@ title: 2023年春の講習会開催のお知らせ
 date: 2023-04-12T15:01:30+09:00
 categories:
   - info
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 ---
 
 ut.code(); では、ゼミ「モダン Web 開発入門」に曜限の都合などで参加できない方向けに、講習会を開催いたします！

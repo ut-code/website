@@ -3,7 +3,8 @@ title: 2023 年度 A セメスターの全ゼミの振り返り
 date: 2024-02-06T16:00:00+09:00
 categories:
   - events
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 author: ywatahiki
 ---
 

@@ -3,7 +3,8 @@ title: Material Design 3 の輪読会を開始しました
 date: 2024-02-24T09:00:00+09:00
 categories:
   - events
-thumbnail: ./image.png
+thumbnail:
+  src: ./image.png
 author: ywatahiki
 ---
 

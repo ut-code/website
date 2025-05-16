@@ -3,7 +3,8 @@ title: 並木中等教育学校で SSH 講座を開催しました
 date: 2024-04-27T22:00:00+09:00
 categories:
   - events
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 author: ywatahiki
 ---
 

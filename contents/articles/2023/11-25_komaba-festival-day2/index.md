@@ -3,7 +3,8 @@ title: 第 74 回駒場祭の 2 日目に参加しました。
 date: 2023-11-25T18:00:00+09:00
 categories:
   - events
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: ywatahiki
 ---
 

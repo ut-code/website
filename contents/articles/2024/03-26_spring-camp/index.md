@@ -3,7 +3,8 @@ title: "2024年度春合宿を開催しました！"
 date: 2024-03-26T12:00:00+09:00
 categories:
   - event
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 author: stoko
 ---
 

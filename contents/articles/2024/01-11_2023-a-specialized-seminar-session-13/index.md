@@ -3,7 +3,8 @@ title: 全ゼミの第 13 回を開講しました。
 date: 2024-01-11T23:00:00+09:00
 categories:
   - events
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 author: ywatahiki
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: 第 72 回運営ミーティングを部室で実施しました
 date: 2024-10-06T20:00:00+09:00
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 author: snakamura
 ---
 

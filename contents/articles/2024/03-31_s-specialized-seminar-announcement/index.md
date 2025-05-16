@@ -3,7 +3,8 @@ title: 2024 年度 S セメスター全ゼミ開講のお知らせ
 date: 2024-03-31T12:00:00+09:00
 categories:
   - events
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 author: ywatahiki
 ---
 

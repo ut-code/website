@@ -3,7 +3,8 @@ title: "夏のハッカソン開催のお知らせ"
 date: 2023-08-06T12:00:00+09:00
 categories:
   - "events"
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 ---
 
 ut.code(); はこの夏、ハッカソンを開催いたします！

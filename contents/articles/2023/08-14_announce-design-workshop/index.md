@@ -3,7 +3,8 @@ title: "夏のデザイン講習会"
 date: 2023-08-14T12:00:00+09:00
 categories:
   - "events"
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 ---
 
 Webアプリをつくる上で、見た目(UI)を良くする努力は不可欠です。

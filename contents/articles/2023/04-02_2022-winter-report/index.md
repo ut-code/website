@@ -3,7 +3,8 @@ title: 2022 年度冬の活動報告
 date: 2023-04-02T22:00:00+09:00
 categories:
   - info
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 ---
 
 2022 年度もあっという間に過ぎ去り、いよいよ 2023 年度の新入生を迎えようとしています。

@@ -3,10 +3,11 @@ title: 2024 年度プロジェクト発足会を行いました
 date: 2024-12-22T22:00:00+09:00
 categories:
   - events
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
+  fit: contain
+  bg: "#00693E"
 author: snakamura
-fit: contain
-bg_color: "#00693E"
 ---
 
 ut.code(); では 2024 年 12 月 21 日にプロジェクト発足会を行いました。

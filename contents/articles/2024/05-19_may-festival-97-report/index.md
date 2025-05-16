@@ -3,7 +3,8 @@ title: 五月祭に参加しました
 date: 2024-05-19T18:00:00+09:00
 categories:
   - events
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 author: ywatahiki
 ---
 

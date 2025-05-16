@@ -3,7 +3,8 @@ title: "第 97 回五月祭に参加します"
 date: 2024-05-14T12:00:00+09:00
 categories:
   - events
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 author: ykobayashi
 ---
 

@@ -3,7 +3,8 @@ title: "新メディア開発プロジェクトが発足しました"
 date: 2022-07-02T17:57:10+09:00
 categories:
   - "info"
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 ---
 
 大学生が自由にニュースを報道できるプラットフォームである、「ut medium」をスタートさせました。

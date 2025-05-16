@@ -3,7 +3,8 @@ title: "第95回五月祭に出展しました"
 date: 2022-05-18T19:05:54+09:00
 categories:
   - "events"
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 ---
 
 ut.code();は、第 95 回五月祭に「はじめてのプログラミング教室」を出展しました。

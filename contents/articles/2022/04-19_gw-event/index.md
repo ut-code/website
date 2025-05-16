@@ -3,7 +3,8 @@ title: "ゴールデンウィークイベントについてのお知らせ"
 date: 2022-04-19T19:40:10+09:00
 categories:
   - "info"
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 ---
 
 ut.code();ではゴールデンウィークに新歓活動の一環として GW イベントを実施いたします。

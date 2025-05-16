@@ -3,7 +3,8 @@ title: "コエテコ Hack #1 の 1 日目が終了しました。"
 date: 2023-12-09T23:30:00+09:00
 categories:
   - events
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: ywatahiki
 ---
 

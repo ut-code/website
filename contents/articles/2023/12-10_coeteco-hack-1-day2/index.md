@@ -3,7 +3,8 @@ title: "コエテコ Hack #1 の全日程が終了しました"
 date: 2023-12-10T23:30:00+09:00
 categories:
   - events
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: ywatahiki
 ---
 

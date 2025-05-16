@@ -3,7 +3,8 @@ title: "2022年度夏の学習イベントのお知らせ"
 date: 2022-07-15T10:25:34+09:00
 categories:
   - "info"
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: tnagaya
 ---
 

@@ -3,7 +3,8 @@ title: "丁友会 × ut.code(); 合同プログラミング教室開催のお知
 date: 2021-09-25T08:49:44+09:00
 categories:
   - "events"
-thumbnail: +/images/no-image.svg
+thumbnail:
+  src: +/images/no-image.svg
 ---
 
 ut.code();は、丁友会と合同で、プログラミング教室を開催します。 丁友会は、工学部・工学系研究科の学生の親睦を目的とした団体ですが、このイベントは東京大学・東京大学大学院に所属する学生の方であればどなたでも参加できます。

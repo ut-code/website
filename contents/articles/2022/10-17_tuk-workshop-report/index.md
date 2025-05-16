@@ -3,7 +3,8 @@ title: 丁友会プログラミング教室を開催しました
 date: 2022-10-17T15:10:23+09:00
 categories:
   - "events"
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 ---
 
 ![会場の様子1](./image1.webp)

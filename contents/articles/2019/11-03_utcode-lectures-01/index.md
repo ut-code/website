@@ -3,7 +3,8 @@ title: "ut.code(); 学習カリキュラム #1"
 date: 2019-11-03T09:29:17+09:00
 categories:
   - "internal"
-thumbnail: +/images/no-image.svg
+thumbnail:
+  src: +/images/no-image.svg
 ---
 
 ようこそ！ut.code();へ。

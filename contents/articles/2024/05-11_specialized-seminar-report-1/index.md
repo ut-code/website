@@ -3,7 +3,8 @@ title: 全ゼミが開始しました
 date: 2024-05-11T12:00:00+09:00
 categories:
   - events
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 author: ywatahiki
 ---
 

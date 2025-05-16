@@ -3,7 +3,8 @@ title: 第 74 回駒場祭に参加します
 date: 2023-11-23T19:00:00+09:00
 categories:
   - events
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: ywatahiki
 ---
 

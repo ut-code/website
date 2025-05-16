@@ -3,7 +3,8 @@ title: 丁友会のイベントに参加しました
 date: 2024-12-22T20:00:00+09:00
 categories:
   - events
-thumbnail: ./image1.jpg
+thumbnail:
+  src: ./image1.jpg
 author: rtakanaka
 ---
 

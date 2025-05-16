@@ -3,7 +3,8 @@ title: 全ゼミの第 11 回を開講しました。
 date: 2023-12-21T22:00:00+09:00
 categories:
   - events
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: ywatahiki
 ---
 

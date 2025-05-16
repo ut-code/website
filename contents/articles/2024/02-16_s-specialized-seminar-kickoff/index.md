@@ -3,7 +3,8 @@ title: 2024 年度 S セメスター全ゼミ運営の準備を開始しまし�
 date: 2024-02-16T16:00:00+09:00
 categories:
   - events
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 author: snakamura
 ---
 

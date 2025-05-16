@@ -4,7 +4,8 @@ date: 2023-04-21T12:00:00+09:00
 categories:
   - "events"
   - "info"
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: snakamura
 ---
 

@@ -4,7 +4,8 @@ date: 2022-04-25T18:32:12+09:00
 categories:
   - "events"
   - "info"
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 ---
 
 ut.code();は、第 95 回五月祭に「[はじめてのプログラミング教室](http://gogatsusai.jp/95/visitor/campus/kikaku/325)」を出展いたします。

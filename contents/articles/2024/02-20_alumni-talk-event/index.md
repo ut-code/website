@@ -3,7 +3,8 @@ title: OB / OG トークイベントを開催しました
 date: 2024-02-20T23:00:00+09:00
 categories:
   - events
-thumbnail: ./image.png
+thumbnail:
+  src: ./image.png
 author: ywatahiki
 ---
 

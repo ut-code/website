@@ -3,7 +3,8 @@ title: "2023年度夏合宿を開催しました"
 date: 2023-09-27T14:00:00+09:00
 categories:
   - event
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 ---
 
 9/25 ~ 9/27 に 夏合宿を開催しました！

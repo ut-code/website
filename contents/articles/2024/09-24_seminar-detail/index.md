@@ -3,7 +3,8 @@ title: 2024年度 A セメスター自主ゼミのお知らせ
 date: 2024-09-24T22:00:00+09:00
 categories:
   - info
-thumbnail: ./image.png
+thumbnail:
+  src: ./image.png
 author: rtakanaka
 ---
 

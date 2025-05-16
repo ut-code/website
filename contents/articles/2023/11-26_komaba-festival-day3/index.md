@@ -3,7 +3,8 @@ title: 第 74 回駒場祭の 3 日目に参加しました。
 date: 2023-11-26T20:00:00+09:00
 categories:
   - events
-thumbnail: ./image1.webp
+thumbnail:
+  src: ./image1.webp
 author: hhashimoto
 ---
 

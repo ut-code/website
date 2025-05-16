@@ -3,7 +3,8 @@ title: 2023 年度大忘年会を開催しました！
 date: 2023-12-22T22:00:00+09:00
 categories:
   - event
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: ywatahiki
 ---
 

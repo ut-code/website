@@ -3,7 +3,8 @@ title: 新歓体験会を開催しました
 date: 2024-04-20T23:00:00+09:00
 categories:
   - events
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 author: ywatahiki
 ---
 

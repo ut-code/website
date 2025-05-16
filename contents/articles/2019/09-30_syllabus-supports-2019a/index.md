@@ -4,7 +4,8 @@ date: 2019-09-30T03:55:32+09:00
 categories:
   - "info"
 author: tnagaya
-thumbnail: +/images/no-image.svg
+thumbnail:
+  src: +/images/no-image.svg
 ---
 
 本年度 S セメスターでも大変多くの方にご好評をいただいた「[Syllabus by ut.code();](https://syllabus.utcode.net/)」が、A セメスターの授業に対応しました。

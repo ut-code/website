@@ -3,7 +3,8 @@ title: GW 講習会を開催しました
 date: 2024-05-05T23:00:00+09:00
 categories:
   - events
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 author: ywatahiki
 ---
 

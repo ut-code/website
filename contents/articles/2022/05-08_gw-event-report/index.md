@@ -3,7 +3,8 @@ title: "2022年度GWイベントを実施しました"
 date: 2022-05-08T19:34:47+09:00
 categories:
   - "events"
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 ---
 
 ut.code();は 5/4(水), 5/5(木)の 2 日間、 [検見川総合運動場・セミナーハウス](https://www.u-tokyo.ac.jp/ja/students/facility/h08_03.html)にて新歓活動の一環として GW イベントを実施しました。

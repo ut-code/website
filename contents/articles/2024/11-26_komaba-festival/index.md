@@ -3,9 +3,10 @@ title: 第 75 回駒場祭に出展しました。
 date: 2024-11-26T20:00:00+09:00
 categories:
   - events
-thumbnail: ./image1.jpg
+thumbnail:
+  src: ./image1.jpg
+  position: top
 author: kmanabe
-position: top
 ---
 
 ut.code(); は、2024 年 11 月 22 〜 24 日の合計 3 日間駒場祭に企画を出展しました。今回も多くの方にお越しいただきました。3 日間を通して来場してくださった皆様、ありがとうございました！

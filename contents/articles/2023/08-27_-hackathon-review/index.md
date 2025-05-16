@@ -3,7 +3,8 @@ title: "夏のハッカソンを開催しました！"
 date: 2023-08-27T12:00:00+09:00
 categories:
   - "events"
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 ---
 
 ut.code(); では、8 月 17 日〜19 日に、ハッカソンイベントを開催しました。16 名の参加者が 4 チームに分かれてそれぞれプロダクト開発を行いました。完成したプロジェクトのソースコードは GitHub で公開しています。

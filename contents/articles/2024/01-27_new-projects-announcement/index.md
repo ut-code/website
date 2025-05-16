@@ -3,7 +3,8 @@ title: 新プロジェクトが発足しました
 date: 2024-01-27T23:20:00+09:00
 categories:
   - events
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 author: ywatahiki
 ---
 

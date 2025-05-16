@@ -4,7 +4,8 @@ date: 2019-10-01T14:26:13+09:00
 categories:
   - "utokyo"
 author: tnagaya
-thumbnail: +/images/no-image.svg
+thumbnail:
+  src: +/images/no-image.svg
 ---
 
 皆さんが購入された Windows マシンに搭載されている OS は、最近であれば Windows 10 Home であることが多いかと思いますが、この Home エディションでは、開発に必須の Hyper-V（仮想化支援機能）が有効化できなくなっています。幸いなことに、東京大学は学生に向け、Windows 10 の最上位エディションと同等の機能が利用できる Education ライセンスを無償で提供しています。この記事では、そちらの利用方法を解説します。

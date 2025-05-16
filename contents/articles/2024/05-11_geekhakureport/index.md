@@ -3,7 +3,8 @@ title: "技育博2024に参加しました"
 date: 2024-05-11T12:00:00+09:00
 categories:
   - "events"
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 ---
 
 ut.code();は、[技育博2024](https://twitter.com/geek_pjt/status/1789225150996767102?t=YfiqPxqcbqiTNQ58a13oFA&s=19)に参加しました。

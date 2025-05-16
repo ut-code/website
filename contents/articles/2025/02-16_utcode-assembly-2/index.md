@@ -3,7 +3,8 @@ title: 第 2 回 ut.code(); 総会を開催しました
 date: 2025-02-16T20:00:00+09:00
 categories:
   - events
-thumbnail: ./image1.jpg
+thumbnail:
+  src: ./image1.jpg
 author: snakamura
 ---
 

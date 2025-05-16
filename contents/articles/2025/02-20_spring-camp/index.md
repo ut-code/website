@@ -1,7 +1,8 @@
 ---
 title: 2025 年度春合宿を開催しました
 date: 2025-03-01
-thumbnail: ./image.avif
+thumbnail:
+  src: ./image.avif
 author: "tyasumura"
 ---
 

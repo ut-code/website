@@ -3,7 +3,8 @@ title: "「エンジニアになろう」講習会初回講義を実施しまし
 date: 2019-10-03T12:01:25+09:00
 categories:
   - "info"
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: tnagaya
 ---
 

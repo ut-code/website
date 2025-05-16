@@ -3,7 +3,8 @@ title: 2022年度夏の学習体験会を実施しました
 date: 2022-08-07T16:05:36+09:00
 categories:
   - "events"
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: snakamura
 ---
 

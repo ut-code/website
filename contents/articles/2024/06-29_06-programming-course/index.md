@@ -3,7 +3,8 @@ title: 中高生のためのプログラミング講座を開催しました
 date: 2024-06-29T18:00:00+09:00
 categories:
   - events
-thumbnail: ./image.webp
+thumbnail:
+  src: ./image.webp
 author: kmanabe
 ---
 

@@ -3,7 +3,8 @@ title: 五月祭プロジェクトの中間報告会を行いました
 date: 2024-04-22T10:00:00+09:00
 categories:
   - events
-thumbnail: ./image.jpg
+thumbnail:
+  src: ./image.jpg
 author: snakamura
 ---
 
