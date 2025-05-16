@@ -4,7 +4,7 @@ kind: hackathon
 date: 2025-02-22
 status: released
 description: "Git の差分から Gemini がコミットメッセージを考えてくれるツール"
-image:
+thumbnail:
   src: ./gemmit.png
   position: top
   bg: white

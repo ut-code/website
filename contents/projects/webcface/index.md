@@ -2,7 +2,7 @@
 title: WebCFace
 kind: long-term
 status: stable
-image:
+thumbnail:
   src: ./thumbnail.png
 date: 2023-09-28
 description: プロセス間通信 & GUIを提供するライブラリ

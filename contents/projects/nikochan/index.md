@@ -2,7 +2,7 @@
 title: Falling Nikochan
 kind: long-term
 status: released
-image:
+thumbnail:
   src: ./thumbnail.jpg
 date: 2024-09-24
 description: シンプルでかわいい音ゲーです。誰でも譜面を作ってシェアできます。

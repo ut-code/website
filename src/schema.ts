@@ -7,6 +7,14 @@ export type Article = z.infer<ReturnType<typeof CreateArticleSchema>>;
 export type Member = z.infer<ReturnType<typeof CreateMemberSchema>>;
 export type Project = z.infer<ReturnType<typeof CreateProjectSchema>>;
 
+const Thumbnail = ({ image }: { image: ImageFunction }) =>
+  z.object({
+    src: image(),
+    position: Position.default("center"),
+    fit: Fit.default("cover"),
+    bg: z.string().optional(),
+  });
+
 const Position = z.enum(["center", "top", "bottom", "left", "right"]);
 const Fit = z.enum(["cover", "contain", "fill", "none"]);
 export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
@@ -20,19 +28,17 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
       author: reference("members").optional(),
       categories: z.array(z.string()).optional(),
       // 画像系
-      image: image(),
-      fit: Fit.optional(),
-      position: Position.default("center"),
-      bg_color: z.string().optional(),
+      thumbnail: Thumbnail({ image }),
     })
     .refine(
       (self) => {
-        const bad = self.fit === "contain" && self.bg_color === undefined;
+        const bad =
+          self.thumbnail.fit === "contain" && self.thumbnail.bg === undefined;
         return !bad;
       },
       {
         message: "fit: contain の場合、 bg_color を指定する必要があります",
-        path: ["bg_color"],
+        path: ["thumbnail", "bg"],
       },
     );
 
@@ -51,12 +57,7 @@ export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
     ]),
     order: z.number().optional(),
     date: z.date(),
-    image: z.object({
-      src: image(),
-      position: Position.default("center"),
-      fit: Fit.default("cover"),
-      bg: z.string().optional().default("whitesmoke"),
-    }),
+    thumbnail: Thumbnail({ image }),
     description: z.string(),
     tags: z.array(z.string()).optional().default([]),
     github: z.string().url().optional(),

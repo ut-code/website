@@ -24,17 +24,17 @@ const { projects, variant = "full" } = props;
           <Picture
             loading={i < 6 && variant === "full" ? "eager" : "lazy"}
             alt="プロジェクトのイメージ画像"
-            src={project.data.image.src}
+            src={project.data.thumbnail.src}
             width="600"
             height={(600 * 3) / 5}
             class:list={[
               "aspect-5/3 w-full",
-              project.data.image.fit !== "contain" && "skeleton",
+              project.data.thumbnail.fit !== "contain" && "skeleton",
             ]}
             style={{
-              "object-fit": project.data.image.fit,
-              "object-position": project.data.image.position,
-              "background-color": project.data.image.bg,
+              "object-fit": project.data.thumbnail.fit,
+              "object-position": project.data.thumbnail.position,
+              "background-color": project.data.thumbnail.bg,
             }}
           />
           <div class="p-4">

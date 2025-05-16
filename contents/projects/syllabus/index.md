@@ -3,7 +3,7 @@ title: シ楽バス
 order: 3
 kind: long-term
 status: stable
-image:
+thumbnail:
   src: ./thumbnail.jpg
 date: 2023-10-02
 description: 前期課程に特化した時間割サービス

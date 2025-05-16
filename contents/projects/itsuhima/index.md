@@ -3,7 +3,7 @@ title: イツヒマ
 kind: long-term
 status: released
 date: 2025-05-14
-image:
+thumbnail:
   src: ./thumbnail.png
 
 description: "いつ暇？で日程調整できるアプリ"

@@ -7,7 +7,7 @@ members:
   - ykobayashi
   - rtakanaka
 leader: ykobayashi
-image:
+thumbnail:
   src: ./thumbnail.png
 github: https://github.com/ut-code/extralearn
 website: https://extra.utcode.net

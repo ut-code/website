@@ -2,7 +2,7 @@
 title: Dot Tutor Learn
 kind: long-term
 status: stable
-image:
+thumbnail:
   src: ./thumbnail.png
   fit: contain
 date: 2023-01-28

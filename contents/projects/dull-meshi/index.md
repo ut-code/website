@@ -2,7 +2,7 @@
 title: だるめし
 kind: long-term
 status: stable
-image:
+thumbnail:
   src: ./thumbnail.jpg
   fit: contain
   bg: "#E6E0DB"

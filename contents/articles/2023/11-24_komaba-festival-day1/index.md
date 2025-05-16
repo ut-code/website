@@ -1,0 +1,21 @@
+---
+title: 第 74 回駒場祭の 1 日目に参加しました。
+date: 2023-11-24T18:00:00+09:00
+categories:
+  - events
+thumbnail:
+  src: ./thumbnail.webp
+author: ywatahiki
+---
+
+ut.code(); は、2023 年 11 月 24 日（金）に駒場祭の 1 日目に参加してきました。今日は 1 日目ですが、多くの方にお越しいただきました。26 日（日）まで開催していますので、ぜひお越しください！
+
+「あなたのためのプログラミング」という企画で、駒場祭の公式ウェブサイトにて紹介されています。
+
+[https://www.komabasai.net/74/visitor/project/384](https://www.komabasai.net/74/visitor/project/384)
+
+「あなたのためのプログラミング」は、誰でもプログラミングを楽しめる企画です。プログラミングに触れるのが初めての方も、プログラミングが大好きな方も、きっと新しい面白さを発見できることでしょう。
+
+特設サイトはこちらからご覧ください。
+
+[https://kf74.utcode.net/](https://kf74.utcode.net/)

@@ -4,7 +4,7 @@ kind: long-term
 status: released
 order: 2
 date: 2025-04-01
-image:
+thumbnail:
   src: ./thumbnail.png
 
 description: "同じキャンパスにいる留学生と手軽に交流できるアプリです。従来の言語交換プログラムとは異なり、面倒な手続きなしで、気軽に国際交流を楽しめます。"

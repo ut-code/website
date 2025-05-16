@@ -3,7 +3,7 @@ title: CourseMate
 kind: long-term
 status: released
 date: 2025-05-14
-image:
+thumbnail:
   src: ./thumbnail.png
 description: 同じ授業の友達をつくろう
 tags: [TypeScript, React]

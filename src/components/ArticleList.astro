@@ -56,8 +56,8 @@ const articlesWithExcerpts = await Promise.all(
       const imageWidth = baseW * (isFeatured ? 2 : 1);
       const imageHeight = baseW * (3 / 5) * (isFeatured ? 2 : 1);
 
-      article.data.fit ??= "cover";
-      article.data.position ??= "center";
+      article.data.thumbnail.fit ??= "cover";
+      article.data.thumbnail.position ??= "center";
 
       const additionalProps = isFeatured
         ? {
@@ -80,21 +80,21 @@ const articlesWithExcerpts = await Promise.all(
             <Picture
               loading={i < 5 ? loading : "lazy"}
               formats={["avif", "webp"]}
-              position={article.data.position}
+              position={article.data.thumbnail.position}
               width={imageWidth}
               height={imageHeight}
               alt=""
-              fit={article.data.fit}
-              src={article.data.image}
+              fit={article.data.thumbnail.fit}
+              src={article.data.thumbnail.src}
               class:list={[
                 "aspect-5/3 min-h-0 w-full rounded-xl",
-                !article.data["bg_color"] && "skeleton",
+                !article.data.thumbnail.bg && "skeleton",
               ]}
               style={{
-                "object-fit": article.data.fit,
-                ...(article.data.bg_color
+                "object-fit": article.data.thumbnail.fit,
+                ...(article.data.thumbnail.bg
                   ? {
-                      "background-color": article.data.bg_color,
+                      "background-color": article.data.thumbnail.bg,
                     }
                   : {}),
               }}

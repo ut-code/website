@@ -3,7 +3,8 @@ title: ハッカソンを開催しました
 date: 2024-06-09T19:00:00+09:00
 categories:
   - events
-image: ./thumbnail.webp
+thumbnail:
+  src: ./thumbnail.webp
 author: kanan
 ---
 

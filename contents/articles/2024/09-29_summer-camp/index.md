@@ -1,7 +1,8 @@
 ---
 title: 2024 年度夏合宿を開催しました
 date: 2024-09-29T22:00:00+09:00
-image: ./thumbnail.webp
+thumbnail:
+  src: ./thumbnail.webp
 author: snakamura
 ---
 

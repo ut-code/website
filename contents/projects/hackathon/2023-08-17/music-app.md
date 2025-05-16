@@ -3,7 +3,7 @@ title: music-app
 date: 2023-08-17
 kind: hackathon
 status: finished
-image:
+thumbnail:
   src: ./music-app.png
   position: top
   fit: contain
