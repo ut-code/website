@@ -1,11 +1,4 @@
-type Banner = {
-  shown: boolean;
-  kind: "notify" | "error";
-  long: string;
-  short: string;
-  link: string;
-  linkText?: string;
-};
+import type { Banner } from "+/schema.ts";
 const banner: Banner = {
   shown: true,
   kind: "notify",

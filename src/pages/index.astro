@@ -4,10 +4,10 @@ import { Icon } from "astro-icon/components";
 
 import GlobalLayout from "+/layouts/GlobalLayout.astro";
 
-import ActionButton from "+/components/ActionButton.astro";
-import ArticleList from "+/components/ArticleList.astro";
-import ProjectList from "+/components/ProjectList.astro";
-import SectionHeader from "+/components/per-page/SectionHeader.astro";
+import ArticleList from "+/components/common/ArticleList.astro";
+import ProjectList from "+/components/common/ProjectList.astro";
+import SectionHeader from "+/components/index/SectionHeader.astro";
+import ActionButton from "+/components/utils/ActionButton.astro";
 import { getArticles, getProjects } from "+/query.ts";
 import { Focus } from "+/schema.ts";
 

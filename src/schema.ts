@@ -88,3 +88,12 @@ export enum Focus {
   members = 4,
   join = 5,
 }
+
+export type Banner = {
+  shown: boolean;
+  kind: "notify" | "error";
+  long: string;
+  short: string;
+  link: string;
+  linkText?: string;
+};

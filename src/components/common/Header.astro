@@ -1,0 +1,24 @@
+---
+import Banner from "+/components/Header/Banner.astro";
+import NavBar from "+/components/Header/NavBar.astro";
+import { Focus } from "+/schema.ts";
+import banner from "+contents/banner.ts";
+
+const links = [
+  { title: "プロジェクト", href: "/projects", focus: Focus.projects },
+  { title: "記事", href: "/articles", focus: Focus.articles },
+  { title: "メンバー", href: "/members", focus: Focus.members },
+  { title: "参加", href: "/join", focus: Focus.join },
+  { title: "About", href: "/about", focus: Focus.about },
+];
+
+interface Props {
+  focus: Focus;
+}
+const { focus } = Astro.props;
+---
+
+<header class="sticky top-0 z-20 w-full">
+  {banner.shown && <Banner banner={banner} />}
+  <NavBar links={links} focus={focus} />
+</header>

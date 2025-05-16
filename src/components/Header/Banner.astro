@@ -1,0 +1,32 @@
+---
+import type { Banner } from "+/schema.ts";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  banner: Banner;
+}
+const { banner } = Astro.props;
+---
+
+<div
+  id="banner"
+  class:list={[
+    "flex items-center justify-center gap-4 px-1 py-2",
+    banner.kind === "error" ? "bg-red-300" : "bg-green-300",
+  ]}
+>
+  <span class="hidden md:inline">{banner.long}</span>
+  <span aria-hidden class="sm:text-md inline text-center text-sm md:hidden">
+    {banner.short}
+  </span>
+  <a
+    href={banner.link}
+    class="md:text-md inline-flex flex-shrink-0 items-center gap-0.5 text-sm hover:underline"
+    rel={banner.link.startsWith("/") ? undefined : "noreferrer"}
+    target={banner.link.startsWith("/") ? undefined : "_blank"}
+    data-astro-prefetch="viewport"
+  >
+    {banner.linkText ?? "詳細はこちら"}
+    <Icon name="feather:arrow-right" />
+  </a>
+</div>
