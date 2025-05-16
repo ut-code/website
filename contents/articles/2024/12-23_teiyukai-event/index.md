@@ -4,7 +4,7 @@ date: 2024-12-22T20:00:00+09:00
 categories:
   - events
 thumbnail:
-  src: ./image1.jpg
+  src: ./thumbnail.jpg
 author: rtakanaka
 ---
 
