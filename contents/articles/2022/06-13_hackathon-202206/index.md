@@ -4,7 +4,7 @@ date: 2022-06-13T15:22:35+09:00
 categories:
   - "events"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 ut.code(); では、6 月 13 日〜14 日に、ハッカソンイベントを開催しました。春新歓イベントの総まとめとして、20 名の参加者が 5 チームに分かれてそれぞれプロダクト開発を行いました。完成したプロジェクトは GitHub で公開しています。

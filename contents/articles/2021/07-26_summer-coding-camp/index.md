@@ -4,7 +4,7 @@ date: 2021-07-26T23:49:36+09:00
 categories:
   - "events"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 ut.code(); では、夏休み期間を利用してイベント「ut.code(); Summer Coding Camp」を実施いたします。

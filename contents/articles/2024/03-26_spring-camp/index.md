@@ -4,7 +4,7 @@ date: 2024-03-26T12:00:00+09:00
 categories:
   - event
 thumbnail:
-  src: ./image.jpg
+  src: ./thumbnail.jpg
 author: stoko
 ---
 

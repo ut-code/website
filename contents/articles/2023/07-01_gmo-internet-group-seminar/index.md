@@ -4,7 +4,7 @@ date: 2023-07-01T12:00:00+09:00
 categories:
   - "events"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 7 月 1 日 (土) に、GMO Internet Groupの成瀬さんがut.code();に向けてAWSの勉強会を開催してくださいました。

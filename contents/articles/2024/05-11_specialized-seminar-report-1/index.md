@@ -4,7 +4,7 @@ date: 2024-05-11T12:00:00+09:00
 categories:
   - events
 thumbnail:
-  src: ./image.jpg
+  src: ./thumbnail.jpg
 author: ywatahiki
 ---
 

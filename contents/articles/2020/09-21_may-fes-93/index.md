@@ -4,7 +4,7 @@ date: 2020-09-21T11:55:55+09:00
 categories:
   - "events"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 [第 93 回五月祭](https://gogatsusai.jp/93/visitor/)は、新型コロナウイルスの影響により当初の予定どおりの開催ができなくなってしまったため、9 月 20 日〜9 月 21 日にかけて、オンラインでの開催となりました。ut.code();では、農学部キャンパスから Zoom にて配信を行いました。

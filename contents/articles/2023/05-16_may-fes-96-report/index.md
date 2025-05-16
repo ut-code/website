@@ -4,7 +4,7 @@ date: 2023-05-16T12:00:00+09:00
 categories:
   - "events"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 author: snakamura
 ---
 

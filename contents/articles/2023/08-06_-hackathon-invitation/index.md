@@ -4,7 +4,7 @@ date: 2023-08-06T12:00:00+09:00
 categories:
   - "events"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 ut.code(); はこの夏、ハッカソンを開催いたします！

@@ -4,7 +4,7 @@ date: 2023-08-20T22:00:00+09:00
 categories:
   - events
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 ut.code();は 8 月 20 日に[コエテコジュニアプログラミングフェス 2023](https://expo.coeteco.jp/junior-programming-fes-2023)に出展しました。

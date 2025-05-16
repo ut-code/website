@@ -4,7 +4,7 @@ date: 2022-08-07T16:05:36+09:00
 categories:
   - "events"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 author: snakamura
 ---
 

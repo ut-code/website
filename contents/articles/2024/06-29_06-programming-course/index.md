@@ -4,7 +4,7 @@ date: 2024-06-29T18:00:00+09:00
 categories:
   - events
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 author: kmanabe
 ---
 

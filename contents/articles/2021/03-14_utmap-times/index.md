@@ -4,7 +4,7 @@ date: 2021-03-14T14:04:25+09:00
 categories:
   - "info"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 現在、ut.code();では、[UTmap Times](https://utmap.jp/)の制作に取り組んでいます。

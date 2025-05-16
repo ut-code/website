@@ -2,7 +2,7 @@
 title: 代表が交代しました
 date: 2024-06-30T10:00:00+09:00
 thumbnail:
-  src: ./image.jpg
+  src: ./thumbnail.jpg
 author: ywatahiki
 ---
 

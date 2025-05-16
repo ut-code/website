@@ -4,7 +4,7 @@ date: 2022-10-17T15:10:23+09:00
 categories:
   - "events"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 ![会場の様子1](./image1.webp)

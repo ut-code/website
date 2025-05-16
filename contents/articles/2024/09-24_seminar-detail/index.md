@@ -4,7 +4,7 @@ date: 2024-09-24T22:00:00+09:00
 categories:
   - info
 thumbnail:
-  src: ./image.png
+  src: ./thumbnail.png
 author: rtakanaka
 ---
 

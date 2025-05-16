@@ -4,7 +4,7 @@ date: 2022-11-23T17:09:29+09:00
 categories:
   - "events"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 ut.code(); では、2022年11月18日（金）〜20日（日）に行われた駒場祭において、「あなたのためのプログラミング」という企画名で参加しました。

@@ -4,7 +4,7 @@ date: 2023-09-26T23:25:00+09:00
 categories:
   - "events"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 「デザインをそれっぽく見せる方法」というタイトルで、WebアプリのUIデザインを学ぶ講習会を開催しました！

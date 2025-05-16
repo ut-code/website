@@ -4,7 +4,7 @@ date: 2022-05-18T19:05:54+09:00
 categories:
   - "events"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 ut.code();は、第 95 回五月祭に「はじめてのプログラミング教室」を出展しました。

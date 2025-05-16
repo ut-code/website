@@ -4,7 +4,7 @@ date: 2022-04-19T19:40:10+09:00
 categories:
   - "info"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 ut.code();ではゴールデンウィークに新歓活動の一環として GW イベントを実施いたします。

@@ -2,7 +2,7 @@
 title: 部室をリノベーションしました
 date: 2024-09-23T22:00:00+09:00
 thumbnail:
-  src: ./image.jpg
+  src: ./thumbnail.jpg
 author: kmanabe
 ---
 

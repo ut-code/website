@@ -4,7 +4,7 @@ date: 2021-04-16T09:12:03+09:00
 categories:
   - "info"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 ut.code();では、本年度の新歓活動を以下の通り実施いたします。

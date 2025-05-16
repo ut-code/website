@@ -4,7 +4,7 @@ date: 2022-04-03T13:24:29+09:00
 categories:
   - "events"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 ut.code(); は、4 月 3 日から 4 月 4 日にかけて行われるサークルオリエンテーションに参加しています。会場（1313 教室）では Web 技術を使った簡単なゲームをお楽しみいただけます。

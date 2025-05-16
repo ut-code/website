@@ -4,7 +4,7 @@ date: 2020-11-25T23:41:02+09:00
 categories:
   - "utokyo"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 本年度の駒場祭は、五月祭と同様オンラインでの開催となりました。ut.code();では、[Blockly](https://github.com/google/blockly)を用いたプログラミング教室を Zoom 上で開催しました。例年よりも小規模なものになってしまったものの、熱心に取り組んでくださった皆様に支えられ、本年度も最後まで走りきることができました。お忙しい中ご参加いただいた方、本当にありがとうございました！

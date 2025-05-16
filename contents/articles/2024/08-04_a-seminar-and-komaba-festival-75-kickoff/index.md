@@ -2,7 +2,7 @@
 title: 自主ゼミと駒場祭のキックオフをしました
 date: 2024-08-04T22:00:00+09:00
 thumbnail:
-  src: ./image.jpg
+  src: ./thumbnail.jpg
 author: ywatahiki
 ---
 

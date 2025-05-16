@@ -4,7 +4,7 @@ date: 2023-05-19T12:00:00+09:00
 categories:
   - "events"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 ut.code();は、[技育博2023](https://talent.supporterz.jp/geekhaku/2023/)に参加しました。

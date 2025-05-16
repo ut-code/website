@@ -4,7 +4,7 @@ date: 2023-09-27T14:00:00+09:00
 categories:
   - event
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 9/25 ~ 9/27 に 夏合宿を開催しました！

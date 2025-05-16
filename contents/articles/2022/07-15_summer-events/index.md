@@ -4,7 +4,7 @@ date: 2022-07-15T10:25:34+09:00
 categories:
   - "info"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 author: tnagaya
 ---
 

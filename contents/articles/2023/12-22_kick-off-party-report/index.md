@@ -4,7 +4,7 @@ date: 2023-12-22T22:00:00+09:00
 categories:
   - event
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 author: ywatahiki
 ---
 

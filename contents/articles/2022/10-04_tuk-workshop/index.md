@@ -4,7 +4,7 @@ date: 2022-10-04T15:00:00+09:00
 categories:
   - "events"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 ut.code(); は工学部丁友会と合同で、東京大学の学部生および大学院生を対象にプログラミング講習会を以下の通り実施いたします。

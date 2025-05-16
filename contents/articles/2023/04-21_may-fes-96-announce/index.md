@@ -5,7 +5,7 @@ categories:
   - "events"
   - "info"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 author: snakamura
 ---
 

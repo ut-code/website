@@ -4,7 +4,7 @@ date: 2024-04-03T23:00:00+09:00
 categories:
   - events
 thumbnail:
-  src: ./image.png
+  src: ./thumbnail.png
 ---
 
 ut.code(); は、[シ楽バス](https://syllabus.utcode.net/)を2024年度Sセメスターに対応するアップデートを行いました。

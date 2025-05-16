@@ -4,7 +4,7 @@ date: 2022-03-20T21:34:39+09:00
 categories:
   - "info"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 ut.code();では、2022 年度の新歓活動を以下の通り実施いたします。

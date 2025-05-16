@@ -4,7 +4,7 @@ date: 2021-05-07T23:04:19+09:00
 categories:
   - "utokyo"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 第 94 回五月祭は、大学側からの要請により、当初の日程での開催の断念を余儀なくされました。

@@ -4,7 +4,7 @@ date: 2024-12-22T22:00:00+09:00
 categories:
   - events
 thumbnail:
-  src: ./image.jpg
+  src: ./thumbnail.jpg
   fit: contain
   bg: "#00693E"
 author: snakamura

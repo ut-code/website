@@ -4,7 +4,7 @@ date: 2024-02-24T09:00:00+09:00
 categories:
   - events
 thumbnail:
-  src: ./image.png
+  src: ./thumbnail.png
 author: ywatahiki
 ---
 

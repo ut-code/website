@@ -3,8 +3,8 @@ title: ut.code(); Learn
 kind: long-term
 status: stable
 order: 1
-image:
-  src: ./image.jpg
+thumbnail:
+  src: ./thumbnail.jpg
 date: 2022-04-01
 description: ut.code(); 公式の学習カリキュラムです。ut.code(); 外部の方でもご利用いただけます。
 tags: [JavaScript, TypeScript, React, Node.js, Docusaurus]

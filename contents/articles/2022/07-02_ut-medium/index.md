@@ -4,7 +4,7 @@ date: 2022-07-02T17:57:10+09:00
 categories:
   - "info"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 ---
 
 大学生が自由にニュースを報道できるプラットフォームである、「ut medium」をスタートさせました。

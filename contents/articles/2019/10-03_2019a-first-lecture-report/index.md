@@ -4,7 +4,7 @@ date: 2019-10-03T12:01:25+09:00
 categories:
   - "info"
 thumbnail:
-  src: ./image.webp
+  src: ./thumbnail.webp
 author: tnagaya
 ---
 
