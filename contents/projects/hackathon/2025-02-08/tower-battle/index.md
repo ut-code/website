@@ -3,7 +3,7 @@ title: Tower Battle
 date: 2025-02-08
 kind: hackathon
 status: stable
-image:
+thumbnail:
   src: ./thumbnail.png
 description: "簡単なタワーディフェンスゲームです。自機も移動して攻撃すると言う特徴があります。"
 members:

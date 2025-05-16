@@ -3,7 +3,7 @@ title: Denigma
 date: 2023-08-17
 kind: hackathon
 status: dead
-image:
+thumbnail:
   src: ./denigma.png
   position: left
 

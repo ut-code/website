@@ -4,7 +4,7 @@ date: 2023-08-17
 kind: hackathon
 status: finished
 
-image:
+thumbnail:
   src: ./call-paper.png
   position: left
 

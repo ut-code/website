@@ -4,7 +4,7 @@ kind: hackathon
 status: finished
 date: 2024-06-08
 description: 複数人から登録されたシフトの希望を基に、最適なシフトを作成するアプリです。
-image:
+thumbnail:
   src: ./shift-syncer.png
 github: https://github.com/ut-code/ShiftSyncer
 ---

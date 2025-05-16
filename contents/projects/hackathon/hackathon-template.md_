@@ -3,7 +3,7 @@ title: Title
 date: hackathon-start-date
 kind: hackathon
 status: finished
-image:
+thumbnail:
   src: ./thumbnail.png
 description: "簡単なタワーディフェンスゲームです。自機も移動して攻撃すると言う特徴があります。"
 github: https://github.com/ut-code/your-project
