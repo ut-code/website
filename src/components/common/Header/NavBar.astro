@@ -1,6 +1,6 @@
 ---
 import Logo from "+/components/utils/Logo.astro";
-import HamburgerButton from "+/islands/svelte/hamburger-button.svelte";
+import NavPanel from "+/islands/svelte/nav-panel.svelte";
 import { Focus } from "+/schema.ts";
 
 type Props = {
@@ -37,7 +37,7 @@ const { links, focus }: Props = Astro.props;
     }
   </nav>
   <div class="md:hidden">
-    <HamburgerButton {links} />
+    <NavPanel client:load links={links} />
   </div>
 </div>
 
