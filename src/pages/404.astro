@@ -1,0 +1,20 @@
+---
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import { Focus } from "+/schema";
+---
+
+<GlobalLayout
+  title="404: Page Not Found"
+  focus={Focus.none}
+  description=""
+  image={null}
+>
+  <div class="prose prose-xl mx-auto mt-40 mb-72 text-center">
+    <h1 class="mb-4 text-5xl font-bold">404</h1>
+    <p class="mt-8 text-2xl text-gray-500">ページが見つかりませんでした。</p>
+    <p class="text-2xl text-gray-500">Sorry, we couldn't find that page.</p>
+    <p>
+      <a href="/" class="btn btn-primary">ホームに戻る</a>
+    </p>
+  </div>
+</GlobalLayout>

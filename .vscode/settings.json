@@ -1,3 +1,4 @@
 {
-  "astro.content-intellisense": true
+  "astro.content-intellisense": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
