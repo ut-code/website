@@ -14,6 +14,7 @@
         "astro": "^5.7.12",
         "astro-icon": "^1.1.5",
         "bits-ui": "^1.4.8",
+        "cheerio": "^1.0.0",
         "daisyui": "^5.0.35",
         "date-fns": "^4.1.0",
         "markdown-to-txt": "^2.0.1",
