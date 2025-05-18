@@ -1,14 +1,21 @@
 ---
-title: CourseMate
+app:
+  name: CourseMate
+  description: 同じ授業の友達をつくろう
+  url: https://coursemate.utcode.net/
+  platform: web
+  domain: app
+
+date: 2025-05-14
 kind: long-term
 status: released
-date: 2025-05-14
+tags: [TypeScript, React]
+
 thumbnail:
   src: ./thumbnail.png
-description: 同じ授業の友達をつくろう
-tags: [TypeScript, React]
-github: https://github.com/ut-code/coursemate
-website: https://coursemate.utcode.net/
+
+social:
+  github: https://github.com/ut-code/coursemate
 ---
 
 CourseMate は、同じ授業の友達をつくることができるアプリです。

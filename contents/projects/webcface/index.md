@@ -1,13 +1,19 @@
 ---
-title: WebCFace
+app:
+  name: WebCFace
+  description: プロセス間通信 & GUIを提供するライブラリ
+  platform: [desktop]
+  domain: [tool, lib] # WebUI の部分が tool, パッケージ部分が lib
+
+date: 2023-09-28
 kind: long-term
 status: stable
+tags: [C++, Python, JavaScript, TypeScript, WebSocket, MessagePack, React]
+
 thumbnail:
   src: ./thumbnail.png
-date: 2023-09-28
-description: プロセス間通信 & GUIを提供するライブラリ
-tags: [C++, Python, JavaScript, TypeScript, WebSocket, MessagePack, React]
-github: https://github.com/na-trium-144/webcface
+social:
+  github: https://github.com/na-trium-144/webcface
 ---
 
 - ROS1 のようなプロセス間通信と、GUI によるデータの可視化や関数呼び出し、また Immediate-Mode でのシンプルな UI の作成ができます。

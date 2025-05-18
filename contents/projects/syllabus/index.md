@@ -1,15 +1,22 @@
 ---
-title: シ楽バス
+app:
+  name: シ楽バス
+  description: 前期課程に特化した時間割サービス
+  url: https://syllabus.utcode.net/
+  platform: [web]
+  domain: [tool] # バックエンドついたら app になる
+
 order: 3
+date: 2023-10-02
 kind: long-term
 status: stable
-thumbnail:
-  src: ./thumbnail.jpg
-date: 2023-10-02
-description: 前期課程に特化した時間割サービス
 tags: [JavaScript]
-github: https://github.com/ut-code/syllabus-frontend
-website: https://syllabus.utcode.net/
+
+thumbnail:
+  src: ./thumbnailjpg
+
+social:
+  github: https://github.com/ut-code/syllabus-frontend
 ---
 
 ## 概要

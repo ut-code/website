@@ -21,8 +21,16 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 
 let iconSrc: string | undefined = undefined;
-if (project.data.website && project.data.status !== "dead") {
-  iconSrc = await fetchFavicon(project.data.website);
+if (project.data.status !== "dead") {
+  if (project.data.app.url) {
+    iconSrc = await fetchFavicon(project.data.app.url);
+  }
+  if (!iconSrc && project.data.social?.website) {
+    iconSrc = await fetchFavicon(project.data.social.website);
+  }
+  if (!iconSrc && project.data.social?.twitter) {
+    iconSrc = await fetchFavicon(project.data.social.twitter);
+  }
 }
 ---
 

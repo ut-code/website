@@ -1,15 +1,22 @@
 ---
-title: Falling Nikochan
+app:
+  name: Falling Nikochan
+  description: シンプルでかわいい音ゲーです。誰でも譜面を作ってシェアできます。
+  url: https://nikochan.utcode.net/
+  platform: [web]
+  domain: [game]
+
+date: 2024-09-24
 kind: long-term
 status: released
+tags: [JavaScript, TypeScript, React, Next.js, Hono, MongoDB]
+
 thumbnail:
   src: ./thumbnail.jpg
-date: 2024-09-24
-description: シンプルでかわいい音ゲーです。誰でも譜面を作ってシェアできます。
-tags: [JavaScript, TypeScript, React, Next.js, Hono, MongoDB]
-github: https://github.com/na-trium-144/falling-nikochan
-youtube: https://www.youtube.com/@nikochan144
-website: https://nikochan.utcode.net/
+
+social:
+  github: https://github.com/na-trium-144/falling-nikochan
+  youtube: https://www.youtube.com/@nikochan144
 ---
 
 ## 概要

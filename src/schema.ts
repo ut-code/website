@@ -45,24 +45,35 @@ export const CreateArticleSchema = ({ image }: { image: ImageFunction }) =>
 export type Kind = (typeof kinds)[number]["frontmatter"];
 export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
   z.object({
-    title: z.string(),
+    app: z.object({
+      name: z.string(),
+      description: z.string(),
+      url: z.string().url(),
+      // 各プロパティは必要に応じて追加
+      platform: z.enum(["web", "mobile", "desktop", "cli"]),
+      domain: z.enum(["app", "game", "tool", "site", "lib"]),
+    }),
     kind: z.enum(kinds.map((kind) => kind.frontmatter) as [Kind, ...Kind[]]),
     status: z.enum([
-      "plan",
-      "under-development",
-      "released",
-      "stable",
-      "finished",
-      "dead",
+      "plan", // プラン段階
+      "under-development", // 開発中 (未リリース)
+      "released", // リリース済み
+      "stable", // アクティブな開発は停止
+      "finished", // 開発停止、動いてはいる
+      "dead", // 開発停止、もう動かない
     ]),
     order: z.number().optional(),
     date: z.date(),
     thumbnail: Thumbnail({ image }),
-    description: z.string(),
     tags: z.array(z.string()).optional().default([]),
-    github: z.string().url().optional(),
-    youtube: z.string().url().optional(),
-    website: z.string().url().optional(),
+    social: z
+      .object({
+        github: z.string().url().optional(),
+        youtube: z.string().url().optional(),
+        website: z.string().url().optional(),
+        twitter: z.string().url().optional(),
+      })
+      .optional(),
   });
 
 export const CreateMemberSchema = ({ image }: { image: ImageFunction }) =>
