@@ -5,7 +5,7 @@ categories:
   - "info"
 thumbnail:
   src: ./thumbnail.webp
-author: tnagaya
+author: 2021/tatsuhiko-nagaya
 ---
 
 土曜日の午前中という時間帯での開催であったのにも関わらず、多くの方にご参加いただくことができました。ありがとうございました。

@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.png
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); では、2 月 24 日から Material Design 3 の輪読会を開始しました。

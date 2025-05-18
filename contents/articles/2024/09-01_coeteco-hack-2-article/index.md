@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.webp
-author: kmanabe
+author: 2023/kaichi-manabe
 ---
 
 ut.code(); は、2024 年 8 月 31 日（土）、9 月 1 日（日）にコエテコ Hack #02 を開催しました。

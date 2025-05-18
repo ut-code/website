@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.webp
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); は、2023 年 11 月 17 日（金）に[株式会社 Progate](https://prog-8.com/) とハンズオン勉強会を行いました。

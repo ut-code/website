@@ -6,7 +6,7 @@ categories:
   - "info"
 thumbnail:
   src: ./thumbnail.webp
-author: snakamura
+author: 2022/shogo-nakamura
 ---
 
 さて、今年もいよいよ 五月祭 の季節が近づいてまいりました。

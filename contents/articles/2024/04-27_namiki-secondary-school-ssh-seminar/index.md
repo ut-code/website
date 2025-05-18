@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.jpg
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); は、2024 年 4 月 27 日 (土) に茨城県立並木中等教育学校で SSH 講座を開催しました。

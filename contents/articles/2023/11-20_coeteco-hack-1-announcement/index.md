@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.webp
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); は、2023 年 12 月 9 日（土）と 10（日）の 2 日間、GMO メディア株式会社が運営するプログラミング教育ポータルサイト「[コエテコ byGMO](https://coeteco.jp/)」と共同で、ハッカソンイベント『コエテコ Hack byGMO #1』を開催します。

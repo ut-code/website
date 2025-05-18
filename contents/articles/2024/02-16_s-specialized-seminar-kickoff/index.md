@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.jpg
-author: snakamura
+author: 2022/shogo-nakamura
 ---
 
 ut.code(); は、2024 年度の S セメスターに開催予定の全学自由研究ゼミナール（モダン Web システム開発入門）の運営の準備を開始しました。

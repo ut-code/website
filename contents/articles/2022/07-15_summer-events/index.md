@@ -5,7 +5,7 @@ categories:
   - "info"
 thumbnail:
   src: ./thumbnail.webp
-author: tnagaya
+author: 2021/tatsuhiko-nagaya
 ---
 
 ut.code();では、夏休みの期間中にプログラミング学習イベントを以下の通り実施いたします。

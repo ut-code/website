@@ -5,7 +5,7 @@ categories:
   - event
 thumbnail:
   src: ./thumbnail.jpg
-author: stoko
+author: 2023/satohiro-toko
 ---
 
 ## 今回の春合宿の概要

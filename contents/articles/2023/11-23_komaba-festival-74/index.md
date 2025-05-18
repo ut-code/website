@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.webp
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); は、11 月 24 日（金）〜 26 日（日）に開催される第 74 回駒場祭に参加します。

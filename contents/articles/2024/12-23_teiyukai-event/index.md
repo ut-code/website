@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.jpg
-author: rtakanaka
+author: 2023/ryuhei-takanaka
 ---
 
 ut.code(); は、2024 年 12 月 23 日に行われた「 【2024】小中学生集まれ！エンジニアフェスティバルin東大」に「一人麻雀」を出展しました。来場してくださった皆様、ありがとうございました！

@@ -3,7 +3,7 @@ title: 自主ゼミと駒場祭のキックオフをしました
 date: 2024-08-04T22:00:00+09:00
 thumbnail:
   src: ./thumbnail.jpg
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code();では、8月4日に、2024年度のAセメスターに開講する自主ゼミの運営のキックオフミーティングと第75回駒場祭で出展する企画のキックオフミーティングを行いました。

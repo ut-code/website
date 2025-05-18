@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.jpg
-author: ykobayashi
+author: 2023/yuki-kobayashi
 ---
 
 ## 概要

@@ -5,7 +5,7 @@ categories:
   - "events"
 thumbnail:
   src: ./thumbnail.webp
-author: snakamura
+author: 2022/shogo-nakamura
 ---
 
 ut.code();は、5 月 13 日 (土) 、5 月 14 日 (日) に行われた第 96 回五月祭に「あなたのためのプログラミング」を出展しました。

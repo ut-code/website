@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.jpg
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); は、2024 年度の S セメスターも全学自由研究ゼミナール（モダン Web システム開発入門）を開講します！

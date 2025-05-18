@@ -3,7 +3,7 @@ title: 2025 年度新歓合宿を開催しました
 date: 2025-05-12
 thumbnail:
   src: ./thumbnail.avif
-author: "kshibayama"
+author: "2024/keiichiro-shibayama"
 ---
 
  ut.code();では５月３日から５日にかけて東京大学山中寮内藤セミナーハウスにて初の新歓合宿を実施しました。

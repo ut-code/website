@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.webp
-author: kanan
+author: 2023/kiyoka-anan
 ---
 
 ut.code(); は 6 月 8 日（土）、9 日（日）に春新歓の総まとめとしてハッカソンを開催しました。ハッカソンとは参加者がチームを組み、テーマに対して、定められた期間に集中的にソフトウェアやサービスをチームごとに開発するというイベントです。

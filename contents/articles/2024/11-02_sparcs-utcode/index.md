@@ -3,7 +3,7 @@ title: SPARCS × ut.code(); 合同交流会2024を開催しました
 date: 2024-11-02T21:00:00+09:00
 thumbnail:
   src: ./thumbnail.webp
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code();は、11月2日（土）に、韓国にある大学であるKAISTの開発コミュニティであるSPARCSと共同で、SPARCS × ut.code(); 合同交流会2024をオンラインで開催しました。

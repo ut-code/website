@@ -5,7 +5,7 @@ categories:
   - info
 thumbnail:
   src: ./thumbnail.png
-author: rtakanaka
+author: 2023/ryuhei-takanaka
 ---
 
 大学もいよいよ秋学期の始まりが近づいています。ut.code(); ではプログラミングや Web 技術を新たに学び始める人のために、自主ゼミを開講します！

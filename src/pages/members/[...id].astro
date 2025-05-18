@@ -11,7 +11,7 @@ import { Icon } from "astro-icon/components";
 export async function getStaticPaths() {
   const members = await getMembers();
   return members.map((member) => ({
-    params: { member: member.id },
+    params: { id: member.id },
     props: { member },
   }));
 }

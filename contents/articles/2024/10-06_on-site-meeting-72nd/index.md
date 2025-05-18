@@ -3,7 +3,7 @@ title: 第 72 回運営ミーティングを部室で実施しました
 date: 2024-10-06T20:00:00+09:00
 thumbnail:
   src: ./thumbnail.jpg
-author: snakamura
+author: 2022/shogo-nakamura
 ---
 
 この度、通常オンラインで実施している運営ミーティングを、部室改装を機に対面形式で開催いたしました。

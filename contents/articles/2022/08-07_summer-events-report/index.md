@@ -5,7 +5,7 @@ categories:
   - "events"
 thumbnail:
   src: ./thumbnail.webp
-author: snakamura
+author: 2022/shogo-nakamura
 ---
 
 8/3 (水), 8/5 (金) に2022年度夏のプログラミング学習体験会を実施しました。

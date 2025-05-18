@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.webp
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); は、2023 年 12 月 16 日（土）に[GMO インターネットグループ株式会社](https://www.gmo.jp/) と「ソフトウェア工学の基礎と実践: 初心者から上級者までの連携」というテーマで勉強会を行います。今回も[成瀬さん](https://nrslib.com/)がお話をしてくださいます。

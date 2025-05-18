@@ -41,4 +41,4 @@ jobs:
       - uses: actions/checkout@v4
       - uses: cachix/install-nix-action@v31
       - run: nix run github:ut-code/internal-helpers#disallow-large-dir contents/articles/*/*
-      - run: nix run github:ut-code/internal-helpers#disallow-large-dir contents/members/*
+      - run: nix run github:ut-code/internal-helpers#disallow-large-dir contents/members/*/*
