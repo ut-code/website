@@ -1,7 +1,7 @@
 ---
 app:
   name: イツヒマ
-  description: "いつ暇？で日程調整できるアプリ"
+  description: いつ暇？で日程調整できるアプリ
   url: https://itsuhima.utcode.net
   platform: [web]
   domain: [app]

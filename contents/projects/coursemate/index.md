@@ -3,8 +3,8 @@ app:
   name: CourseMate
   description: 同じ授業の友達をつくろう
   url: https://coursemate.utcode.net/
-  platform: web
-  domain: app
+  platform: [web]
+  domain: [app]
 
 date: 2025-05-14
 kind: long-term

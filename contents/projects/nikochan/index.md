@@ -1,7 +1,7 @@
 ---
 app:
   name: Falling Nikochan
-  description: シンプルでかわいい音ゲーです。誰でも譜面を作ってシェアできます。
+  description: シンプルでかわいい音ゲー
   url: https://nikochan.utcode.net/
   platform: [web]
   domain: [game]

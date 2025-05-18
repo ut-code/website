@@ -1,15 +1,23 @@
 ---
-title: Dot Tutor Learn
+app:
+  name: Dot Tutor Learn
+  url: https://learn.dot-tutor.com/
+  description: 体験型点字学習サイト
+  platform: [web]
+  domain: [learn]
+
+date: 2023-01-28
 kind: long-term
 status: stable
+tags: [TypeScript, React]
+
 thumbnail:
   src: ./thumbnail.png
   fit: contain
-date: 2023-01-28
-description: 体験型点字学習サイト Dot Tutor Learn です。
-tags: [TypeScript, React]
-github: https://github.com/ut-code/dot-tutor
-website: https://learn.dot-tutor.com/
+
+social:
+  github: https://github.com/ut-code/dot-tutor
+  website: https://learn.dot-tutor.com/
 ---
 
 ut.code();が作成した体験型点字学習サイトです。

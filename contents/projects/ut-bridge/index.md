@@ -1,13 +1,15 @@
 ---
-title: UT-Bridge
-kind: long-term
-status: released
+app:
+  name: UT-Bridge
+  url: https://ut-bridge-web.pages.dev
+  description: 同じキャンパスにいる留学生と手軽に交流できるアプリ
+  platform: [web]
+  domain: [app]
+
 order: 2
 date: 2025-04-01
-thumbnail:
-  src: ./thumbnail.png
-
-description: "同じキャンパスにいる留学生と手軽に交流できるアプリです。従来の言語交換プログラムとは異なり、面倒な手続きなしで、気軽に国際交流を楽しめます。"
+kind: long-term
+status: released
 tags:
   - TypeScript
   - React
@@ -19,8 +21,12 @@ tags:
   - Cloudflare
   - Firebase
   - Fly.io
-github: https://github.com/ut-code/ut-bridge
-website: https://ut-bridge-web.pages.dev
+
+thumbnail:
+  src: ./thumbnail.png
+
+social:
+  github: https://github.com/ut-code/ut-bridge
 ---
 
 ## UT-Bridgeとは？

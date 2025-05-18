@@ -1,13 +1,21 @@
 ---
-title: 東方競争曲
+app:
+  name: 東方競争曲
+  url: https://th-beat.net/
+  description: 東方Projectのアレンジ曲で遊べるリズムゲーム
+  platform: [web]
+  domain: [site]
+
+date: 2023-12-19
 kind: long-term
+tags: [C#, Unity, AWS, Go, TypeScript, React]
 status: stable
+
 thumbnail:
   src: ./thumbnail.png
-date: 2023-12-19
-description: 東方Projectのアレンジ曲で遊べるリズムゲーム
-tags: [C#, Unity, AWS, Go, TypeScript, React]
-website: https://th-beat.net/
+
+social:
+  website: https://th-beat.net/
 ---
 
 ## 概要

@@ -1,22 +1,29 @@
 ---
+app:
+  name: Extra Learn
+  url: https://extra.utcode.net
+  description: ut.code(); Learn と実際のプロジェクトで使われている最新技術のギャップを埋める
+  platform: [web]
+  domain: [learn]
+
 date: 2025-04-04
-kind: long-term
-title: Extra Learn
-description: ut.code(); Learn と実際のプロジェクトで使われている最新技術のギャップを埋める
 members:
   - ykobayashi
   - rtakanaka
 leader: ykobayashi
-thumbnail:
-  src: ./thumbnail.png
-github: https://github.com/ut-code/extralearn
-website: https://extra.utcode.net
+kind: long-term
 status: under-development
 tags:
   - TypeScript
   - Astro
   - Starlight
   - Cloudflare
+
+thumbnail:
+  src: ./thumbnail.png
+
+social:
+  github: https://github.com/ut-code/extralearn
 ---
 
 # 現状と問題

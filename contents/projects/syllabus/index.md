@@ -13,7 +13,7 @@ status: stable
 tags: [JavaScript]
 
 thumbnail:
-  src: ./thumbnailjpg
+  src: ./thumbnail.jpg
 
 social:
   github: https://github.com/ut-code/syllabus-frontend

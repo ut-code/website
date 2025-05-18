@@ -1,15 +1,22 @@
 ---
-title: ut.code(); Learn
+app:
+  name: ut.code(); Learn
+  url: https://learn.utcode.net/
+  description: ut.code(); 公式の学習カリキュラムです。ut.code(); 外部の方でもご利用いただけます。
+  platform: [web]
+  domain: [learn]
+
+order: 1
+date: 2022-04-01
 kind: long-term
 status: stable
-order: 1
+tags: [JavaScript, TypeScript, React, Node.js, Docusaurus]
+
 thumbnail:
   src: ./thumbnail.jpg
-date: 2022-04-01
-description: ut.code(); 公式の学習カリキュラムです。ut.code(); 外部の方でもご利用いただけます。
-tags: [JavaScript, TypeScript, React, Node.js, Docusaurus]
-github: https://github.com/ut-code/utcode-learn
-website: https://learn.utcode.net/
+
+social:
+  github: https://github.com/ut-code/utcode-learn
 ---
 
 ut.code(); Learn は、全くの未経験の状態からでも、自力で Web サービスが開発できるようになれるようにするための、ut.code(); 公式の教材です。

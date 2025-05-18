@@ -48,10 +48,19 @@ export const CreateProjectSchema = ({ image }: { image: ImageFunction }) =>
     app: z.object({
       name: z.string(),
       description: z.string(),
-      url: z.string().url(),
+      url: z.string().url().optional(),
       // 各プロパティは必要に応じて追加
-      platform: z.enum(["web", "mobile", "desktop", "cli"]),
-      domain: z.enum(["app", "game", "tool", "site", "lib"]),
+      platform: z.array(z.enum(["web", "mobile", "desktop", "cli"])),
+      domain: z.array(
+        z.enum([
+          "app", // アプリ
+          "game", // ゲーム
+          "tool", // ツール (ログイン不要なものを想定)
+          "site", // サイト (Website)
+          "learn", // 学習教材
+          "lib", // ライブラリ
+        ]),
+      ),
     }),
     kind: z.enum(kinds.map((kind) => kind.frontmatter) as [Kind, ...Kind[]]),
     status: z.enum([

@@ -35,8 +35,8 @@ if (project.data.status !== "dead") {
 ---
 
 <GlobalLayout
-  title={project.data.title}
-  description={project.data.description}
+  title={project.data.app.name}
+  description={project.data.app.description}
   focus={Focus.projects}
   image={project.data.thumbnail.src}
 >
@@ -64,7 +64,7 @@ if (project.data.status !== "dead") {
           <span>Project</span>
         </p>
         <h1 class="mt-2 text-3xl lg:text-5xl">
-          {project.data.title}
+          {project.data.app.name}
         </h1>
         {
           project.data.tags && (
@@ -81,12 +81,17 @@ if (project.data.status !== "dead") {
           {
             [
               {
-                href: project.data.github,
+                href: project.data.social?.github,
                 icon: "feather:github",
                 label: "GitHub",
               },
               {
-                href: project.data.youtube,
+                href: project.data.social?.youtube,
+                icon: "feather:youtube",
+                label: "YouTube",
+              },
+              {
+                href: project.data.social?.website,
                 icon: "feather:youtube",
                 label: "YouTube",
               },
@@ -107,14 +112,14 @@ if (project.data.status !== "dead") {
           }
         </div>
         {
-          project.data.website && project.data.status !== "dead" && (
-            <ActionButton to={project.data.website} class="my-6">
+          project.data.app.url && project.data.status !== "dead" && (
+            <ActionButton to={project.data.app.url} class="my-6">
               {iconSrc ? (
-                <img src={iconSrc} alt="favicon" class="inline-block h-6 w-6" />
+                <img src={iconSrc} alt="" class="inline-block h-6 w-6" />
               ) : (
                 <Icon name="feather:globe" class="inline-block h-6 w-6" />
               )}
-              {project.data.title} へ
+              {project.data.app.name} へ
             </ActionButton>
           )
         }
@@ -124,7 +129,7 @@ if (project.data.status !== "dead") {
       {
         project.data.kind === "long-term" && (
           <div class="prose max-w-none rounded-lg bg-gray-100 p-4">
-            {project.data.description}
+            {project.data.app.description}
           </div>
         )
       }
@@ -133,7 +138,7 @@ if (project.data.status !== "dead") {
           project.data.kind === "long-term" ? (
             <Content />
           ) : (
-            project.data.description
+            project.data.app.description
           )
         }
       </div>
@@ -142,7 +147,7 @@ if (project.data.status !== "dead") {
   {
     project.data.kind === "long-term" && (
       <JoinUsCTA class="mt-8">
-        ut.code(); で{project.data.title}を開発しませんか？
+        ut.code(); で{project.data.app.name}を開発しませんか？
       </JoinUsCTA>
     )
   }

@@ -1,12 +1,19 @@
 ---
-title: ShiftSyncer
+app:
+  name: ShiftSyncer
+  description: 複数人から登録されたシフトの希望を基に、最適なシフトを作成するアプリです。
+  platform: [web]
+  domain: [app]
+
+date: 2024-06-08
 kind: hackathon
 status: finished
-date: 2024-06-08
-description: 複数人から登録されたシフトの希望を基に、最適なシフトを作成するアプリです。
+
 thumbnail:
   src: ./shift-syncer.png
-github: https://github.com/ut-code/ShiftSyncer
+
+social:
+  github: https://github.com/ut-code/ShiftSyncer
 ---
 
 # ShiftSyncer

@@ -1,18 +1,16 @@
 ---
-title: How match
-kind: long-term
-description: マッチング理論を用いた、担当振り分けアプリです。
+app:
+  name: How match
+  url: https://howmatch.pages.dev
+  description: マッチング理論を用いた、担当振り分けアプリ
+  platform: [web]
+  domain: [tool]
+
 date: 2025-01-01
+kind: long-term
 members: [ykobayashi, snakamura, kshibayama, tyasumura]
 leader: ykobayashi
-thumbnail:
-  src: ./thumbnail.png
-  fit: cover
-  bg: white
-
 status: released
-github: https://github.com/ut-code/how-match
-website: https://howmatch.pages.dev
 tags:
   - TypeScript
   - Svelte
@@ -22,5 +20,13 @@ tags:
   - Hono
   - Drizzle
   - Cloudflare
+
+thumbnail:
+  src: ./thumbnail.png
+  fit: cover
+  bg: white
+
+social:
+  github: https://github.com/ut-code/how-match
 ---
 

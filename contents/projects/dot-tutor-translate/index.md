@@ -1,15 +1,22 @@
 ---
-title: Dot Tutor Translate
+app:
+  name: Dot Tutor Translate
+  url: https://translate.dot-tutor.com/
+  description: 点字翻訳サイト
+  platform: [web]
+  domain: [tool]
+
+date: 2023-01-28
 kind: long-term
 status: stable
+tags: [TypeScript, React, Python, FastAPI]
+
 thumbnail:
   src: ./thumbnail.png
   fit: contain
-date: 2023-01-28
-description: 点字翻訳サイト Dot Tutor Translate です。
-tags: [TypeScript, React, Python, FastAPI]
-github: https://github.com/ut-code/dot-tutor
-website: https://translate.dot-tutor.com/
+
+social:
+  github: https://github.com/ut-code/dot-tutor
 ---
 
 Dot Tutor Translate は、ut.code();が作成した自動点字翻訳サイトです。

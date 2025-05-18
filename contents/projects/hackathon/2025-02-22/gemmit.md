@@ -1,20 +1,24 @@
 ---
-title: Gemmit
+app:
+  name: Gemmit
+  url: https://www.npmjs.com/package/@tknkaa/gemmit
+  description: Git の差分から Gemini がコミットメッセージを考えてくれるツール
+  platform: [cli]
+  domain: [tool]
+
 kind: hackathon
 date: 2025-02-22
 status: released
-description: "Git の差分から Gemini がコミットメッセージを考えてくれるツール"
+tags:
+  - Rust
+  - AI
+
 thumbnail:
   src: ./gemmit.png
   position: top
   bg: white
 
-members:
-  - rtakanaka
-tags:
-  - Rust
-  - AI
-
-github: https://github.com/tknkaa/gemmit
-website: https://www.npmjs.com/package/@tknkaa/gemmit
+social:
+  github: https://github.com/tknkaa/gemmit
+  website: https://www.npmjs.com/package/@tknkaa/gemmit
 ---
