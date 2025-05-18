@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.jpg
-author: snakamura
+author: 2022/shogo-nakamura
 ---
 
 ut.code(); では、5 月 18 日 (土)、5 月 19 日 (日) に開催される第 97 回五月祭に向けて、新たな企画の制作に取り組んでいます。

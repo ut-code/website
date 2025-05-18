@@ -3,8 +3,8 @@ nameJa: えべっさん
 nameEn: ebessan
 joinYear: 2025
 description: 健康第一
-upperBodyImage: ./ebessan.jpg
-faceImage: ./ebessan.jpg
+upperBodyImage: ./ebessan.webp
+faceImage: ./ebessan.webp
 github: faithia-anastasia
 ---
 

@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.jpg
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); は、2023 年度の A セメスターに全学自由研究ゼミナール（現代の Web アプリケーションの構築方法の学習と実践）を開講しました。

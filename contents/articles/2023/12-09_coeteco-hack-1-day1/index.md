@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.webp
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); は、2023 年 12 月 9 日（土）にコエテコ Hack #1 の 1 日目を開催しました。

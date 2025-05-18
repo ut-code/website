@@ -3,7 +3,7 @@ nameJa: 束原 秀弥
 nameEn: Shuya Tsukahara
 joinYear: 2025
 description: 学食=うどん
-upperBodyImage: ./shuya-tsukahara.jpg
+upperBodyImage: ./shuya-tsukahara.webp
 faceImage: ./shuya-tsukahara.jp
 ---
 

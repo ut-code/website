@@ -3,7 +3,7 @@ title: "2019A・第一回「エンジニアになろう」講習会記録"
 date: 2019-10-04T03:36:06+09:00
 categories:
   - "events"
-author: tnagaya
+author: 2021/tatsuhiko-nagaya
 thumbnail:
   src: +/images/no-image.svg
 ---

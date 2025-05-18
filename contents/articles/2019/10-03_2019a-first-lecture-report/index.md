@@ -5,7 +5,7 @@ categories:
   - "info"
 thumbnail:
   src: ./thumbnail.webp
-author: tnagaya
+author: 2021/tatsuhiko-nagaya
 ---
 
 10/3 (水) 6 限、本セメスターの最初の活動として、[「エンジニアになろう」講習会](https://utcode.net/2019/info/2019a-schedule/)第一回を実施しました。

@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.webp
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); は、2023 年 11 月 25 日（土）に駒場祭の 2 日目に参加してきました。今日も多くの方にお越しいただきました。26 日（日）まで開催していますので、ぜひお越しください！

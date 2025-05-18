@@ -3,7 +3,7 @@ nameJa: 石橋　凌太朗
 nameEn: Ryotaro Ishibashi
 joinYear: 2025
 description: 好きな季節は秋です
-faceImage: ./ryotaro-ishibashi.jpg
-upperBodyImage: ./ryotaro-ishibashi.jpg
+faceImage: ./ryotaro-ishibashi.webp
+upperBodyImage: ./ryotaro-ishibashi.webp
 ---
 プログラミング基礎知識皆無ですが、たくさん勉強してつよつよプログラマーになります💪よろしくお願いします

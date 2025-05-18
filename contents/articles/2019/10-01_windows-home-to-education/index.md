@@ -3,7 +3,7 @@ title: "Windows 10 HomeのPCを東京大学のライセンスを用いてEducati
 date: 2019-10-01T14:26:13+09:00
 categories:
   - "utokyo"
-author: tnagaya
+author: 2021/tatsuhiko-nagaya
 thumbnail:
   src: +/images/no-image.svg
 ---

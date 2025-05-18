@@ -7,7 +7,7 @@ thumbnail:
   src: ./thumbnail.jpg
   fit: contain
   bg: "#00693E"
-author: snakamura
+author: 2022/shogo-nakamura
 ---
 
 ut.code(); では 2024 年 12 月 21 日にプロジェクト発足会を行いました。

@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.webp
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); は、2023 年 12 月 14 日（木）に全学自由研究ゼミナール（現代の Web アプリケーションの構築方法の学習と実践）の第 10 回を開講しました。

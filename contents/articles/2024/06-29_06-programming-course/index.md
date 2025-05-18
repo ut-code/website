@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.webp
-author: kmanabe
+author: 2023/kaichi-manabe
 ---
 
 ut.code(); は、6 月 15 日、22 日、29 日に「中高生のためのプログラミング講座」を開催しました。

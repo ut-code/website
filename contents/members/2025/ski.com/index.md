@@ -3,8 +3,8 @@ nameJa: ski.com
 nameEn: ski.com
 joinYear: 2025
 description: 人工言語が好きなプログラマーです。
-upperBodyImage: ./ski-com.jpg
-faceImage: ./ski-com.jpg
+upperBodyImage: ./ski-com.webp
+faceImage: ./ski-com.webp
 github: ski-dot-com
 twitter: ski_dot_com
 ---

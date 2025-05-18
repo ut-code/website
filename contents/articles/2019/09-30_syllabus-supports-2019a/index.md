@@ -3,7 +3,7 @@ title: "シラバス検索システム「Syllabus by ut.code();」が2019年度A
 date: 2019-09-30T03:55:32+09:00
 categories:
   - "info"
-author: tnagaya
+author: 2021/tatsuhiko-nagaya
 thumbnail:
   src: +/images/no-image.svg
 ---

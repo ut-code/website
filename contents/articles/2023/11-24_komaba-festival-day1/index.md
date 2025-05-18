@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.webp
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); は、2023 年 11 月 24 日（金）に駒場祭の 1 日目に参加してきました。今日は 1 日目ですが、多くの方にお越しいただきました。26 日（日）まで開催していますので、ぜひお越しください！
