@@ -4,11 +4,11 @@ import { render } from "astro:content";
 import JoinUsCTA from "+/components/common/JoinUsCTA.astro";
 import ActionButton from "+/components/utils/ActionButton.astro";
 import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import { fetchFavicon } from "+/lib/fetch-favicon";
 import { getProjects } from "+/query";
 import { Focus } from "+/schema.ts";
 import type { GetStaticPaths } from "astro";
 import { Icon } from "astro-icon/components";
-import { load as cheerioLoad } from "cheerio";
 
 export const getStaticPaths = (async () => {
   const projects = await getProjects("all");
@@ -22,27 +22,7 @@ const { Content } = await render(project);
 
 let iconSrc: string | undefined = undefined;
 if (project.data.website && project.data.status !== "dead") {
-  const websiteRes = await fetch(project.data.website);
-  if (websiteRes.ok) {
-    const websiteHtml = await websiteRes.text();
-    const website = cheerioLoad(websiteHtml);
-    const iconHref = website("link[rel='icon'], link[rel='shortcut icon']")[0]
-      ?.attribs.href;
-    if (iconHref) {
-      const faviconRes = await fetch(new URL(iconHref, project.data.website));
-      iconSrc = `data:${faviconRes.headers.get("content-type")};base64,${Buffer.from(await faviconRes.arrayBuffer()).toString("base64")}`;
-    } else {
-      const faviconRes = await fetch(
-        `${new URL(project.data.website).origin}/favicon.ico`,
-      );
-      if (
-        faviconRes.ok &&
-        !faviconRes.headers.get("content-type")?.startsWith("text/")
-      ) {
-        iconSrc = `data:${faviconRes.headers.get("content-type")};base64,${Buffer.from(await faviconRes.arrayBuffer()).toString("base64")}`;
-      }
-    }
-  }
+  iconSrc = await fetchFavicon(project.data.website);
 }
 ---
 
