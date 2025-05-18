@@ -1,0 +1,56 @@
+{
+  "name": "website",
+  "homepage": "https://utcode.net",
+  "description": "website of ut.code();, version 3",
+  "private": true,
+  "version": "3.1.2",
+  "keywords": [
+    "astro",
+    "ut.code();"
+  ],
+  "type": "module",
+  "scripts": {
+    "prepare": "lefthook install && bun sync",
+    "sync": "astro sync",
+    "dev": "astro dev",
+    "check": "bun check:only && bun format:check",
+    "check:only": "astro check",
+    "fix": "bun format",
+    "format": "biome check . --fix --unsafe && bun prettier . --write",
+    "format:check": "biome check . && bun prettier --check .",
+    "format:staged": "biome check . --fix && bun prettier --write",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.2.6",
+    "@astrojs/sitemap": "^3.3.1",
+    "@astrojs/svelte": "^7.0.13",
+    "@date-fns/tz": "^1.2.0",
+    "@iconify-json/feather": "^1.2.1",
+    "@iconify-json/flowbite": "^1.2.5",
+    "@tailwindcss/typography": "^0.5.16",
+    "astro": "^5.7.12",
+    "astro-icon": "^1.1.5",
+    "bits-ui": "^1.4.8",
+    "cheerio": "^1.0.0",
+    "daisyui": "^5.0.35",
+    "date-fns": "^4.1.0",
+    "markdown-to-txt": "^2.0.1",
+    "sharp": "^0.34.1",
+    "svelte": "^5.28.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@biomejs/biome": "^1.9.4",
+    "@tailwindcss/vite": "^4.1.6",
+    "lefthook": "^1.11.12",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-svelte": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "rollup-plugin-visualizer": "^5.14.0",
+    "tailwindcss": "^4.1.6",
+    "typescript": "^5.8.3"
+  }
+}

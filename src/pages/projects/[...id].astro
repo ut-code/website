@@ -1,0 +1,170 @@
+---
+import { Picture } from "astro:assets";
+import { render } from "astro:content";
+import JoinUsCTA from "+/components/common/JoinUsCTA.astro";
+import ActionButton from "+/components/utils/ActionButton.astro";
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import { fetchFavicon } from "+/lib/fetch-favicon";
+import { getProjects } from "+/query";
+import { Focus } from "+/schema.ts";
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+
+export const getStaticPaths = (async () => {
+  const projects = await getProjects("all");
+  return projects.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}) satisfies GetStaticPaths;
+const { project } = Astro.props;
+const { Content } = await render(project);
+
+let iconSrc: string | undefined = undefined;
+if (project.data.status !== "dead") {
+  if (project.data.favicon) iconSrc = project.data.favicon.src;
+  if (!iconSrc && project.data.app.url) {
+    iconSrc = await fetchFavicon(project.data.app.url);
+  }
+  if (!iconSrc && project.data.social?.website) {
+    iconSrc = await fetchFavicon(project.data.social.website);
+  }
+}
+---
+
+<GlobalLayout
+  title={project.data.app.name}
+  description={project.data.app.description}
+  focus={Focus.projects}
+  image={project.data.thumbnail.src}
+>
+  <main>
+    <div
+      class="lg:mx-auto lg:flex lg:max-w-screen-lg lg:flex-row-reverse lg:items-center lg:gap-4 lg:px-4 lg:py-12"
+    >
+      <Picture
+        loading="eager"
+        formats={["avif", "webp"]}
+        class:list={[
+          "aspect-5/3 w-full object-cover lg:w-150 lg:rounded-2xl",
+          !project.data.thumbnail.bg && "skeleton",
+        ]}
+        alt="プロジェクト画像"
+        src={project.data.thumbnail.src}
+        position={project.data.thumbnail.position}
+        width="1000"
+        height="600"
+        style={{
+          "object-position": project.data.thumbnail.position,
+          "object-fit": project.data.thumbnail.fit,
+          "background-color": project.data.thumbnail.bg || undefined,
+        }}
+      />
+      <div class="container mx-auto mt-8 px-4 lg:mx-0 lg:flex-1">
+        <p class="flex items-center gap-1 text-gray-600">
+          <Icon name="feather:layers" />
+          <span>Project</span>
+        </p>
+        <h1 class="mt-2 text-3xl lg:text-5xl">
+          {project.data.app.name}
+        </h1>
+        {
+          project.data.tags && (
+            <ul class="mt-4 flex flex-wrap gap-2 lg:mt-6">
+              {project.data.tags.map((tag: string) => (
+                <li class="rounded-full border border-gray-400 px-3 text-sm leading-relaxed lg:text-base">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          )
+        }
+        <div class="flex gap-4 text-4xl">
+          {
+            [
+              {
+                href: project.data.social?.github,
+                icon: "feather:github",
+                label: "GitHub",
+              },
+              {
+                href: project.data.social?.youtube,
+                icon: "feather:youtube",
+                label: "YouTube",
+              },
+              {
+                href: project.data.social?.website,
+                icon: "feather:youtube",
+                label: "YouTube",
+              },
+            ].map(
+              (link) =>
+                link.href && (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    class="-m-1 mt-6 rounded-xl p-1 hover:brightness-95"
+                    rel="noreferrer"
+                    aria-label={`${link.label}を見る`}
+                  >
+                    <Icon name={link.icon} class="h-9 w-9" />
+                  </a>
+                ),
+            )
+          }
+        </div>
+        {
+          project.data.app.url && project.data.status !== "dead" && (
+            <ActionButton to={project.data.app.url} class="my-6">
+              {iconSrc ? (
+                <img src={iconSrc} alt="" class="inline-block h-6 w-6" />
+              ) : (
+                <Icon name="feather:globe" class="inline-block h-6 w-6" />
+              )}
+              {project.data.app.name} へ
+            </ActionButton>
+          )
+        }
+      </div>
+    </div>
+    <article class="container mx-auto mt-6 px-4 lg:max-w-screen-lg">
+      {
+        project.data.kind === "long-term" && (
+          <div class="prose max-w-none rounded-lg bg-gray-100 p-4">
+            {project.data.app.description}
+          </div>
+        )
+      }
+      <div class="prose mt-8 max-w-none">
+        {
+          project.data.kind === "long-term" ? (
+            <Content />
+          ) : (
+            project.data.app.description
+          )
+        }
+      </div>
+    </article>
+  </main>
+  {
+    project.data.kind === "long-term" && (
+      <JoinUsCTA class="mt-8">
+        ut.code(); で{project.data.app.name}を開発しませんか？
+      </JoinUsCTA>
+    )
+  }
+  {
+    project.data.kind === "hackathon" && (
+      <JoinUsCTA class="mt-8">
+        ut.code(); では、定期的にハッカソンイベントを行っています。
+      </JoinUsCTA>
+    )
+  }
+  {
+    project.data.kind === "festival" && (
+      <JoinUsCTA class="mt-8">
+        ut.code(); は、毎年五月祭・駒場祭に参加しています。
+      </JoinUsCTA>
+    )
+  }
+</GlobalLayout>

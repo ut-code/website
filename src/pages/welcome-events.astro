@@ -1,0 +1,229 @@
+---
+import { Picture } from "astro:assets";
+import Link from "+/components/utils/Link.astro";
+import Header from "+/images/headers/welcome-events.jpg";
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import StaticDocumentWrapper from "+/layouts/StaticDocumentWrapper.astro";
+import { Focus } from "+/schema";
+
+import AprilTable from "+/images/welcome/welcome-events-calendar/april.png";
+import MayTable from "+/images/welcome/welcome-events-calendar/may.png";
+---
+
+<GlobalLayout
+  title="2025 年春新歓 イベント一覧"
+  description="新歓イベントの日程と詳細"
+  focus={Focus.join}
+  image={Header}
+>
+  <StaticDocumentWrapper
+    header={Header}
+    fill="bg-gray-300"
+    title="2025 年春新歓 イベント一覧"
+    position="object-top"
+  >
+    <section>
+      <h2>☕️新歓配布資料</h2>
+      <ul>
+        <li>
+          ut.code(); 紹介スライド <a
+            href="https://docs.google.com/presentation/d/1c8eWT2ihAr1Y1ppYphcG_sRRV2cSsc9N1v7nWg_FPtQ/edit?usp=sharing"
+            target="_blank">サークル紹介スライド | Google Docs</a
+          >
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>📅 新歓イベント日程</h2>
+      <p>
+        2025 年の新歓イベントの日程は以下のとおりです。
+        興味がある方は、ぜひ気軽に参加してみてください！
+      </p>
+      <p>日時・場所の詳細は確定し次第追加します。</p>
+      <div class="flex flex-row">
+        <a
+          href="/welcome-events-calendar/april.png"
+          target="_blank"
+          aria-label="新しいページで開く"
+        >
+          <Picture src={AprilTable} alt="4月新歓日程" />
+        </a>
+        <a
+          href="/welcome-events-calendar/may.png"
+          target="_blank"
+          aria-label="新しいページで開く"
+        >
+          <Picture src={MayTable} alt="5月新歓日程" />
+        </a>
+      </div>
+      <div class="text-center text-xs text-gray-500">
+        画像クリックで全画面表示
+      </div>
+    </section>
+    <section>
+      <h2>☘️ 各イベント詳細</h2>
+      <details
+        id="closed"
+        class="collapse-arrow collapse border border-gray-400"
+      >
+        <summary class="collapse-title">締め切り済み・終了済みイベント</summary>
+        <div class="collapse-content">
+          <div class="divider">説明会系イベント</div>
+          <section id="online-information-session">
+            <h3>オンライン新歓説明会</h3>
+            <ul>
+              <li>日時: 3/30 (日) 20:00~</li>
+              <li>場所: Zoom</li>
+            </ul>
+          </section>
+          <section id="club-orientation">
+            <h3>サーオリ</h3>
+            <ul>
+              <li>日時: 4/3(木), 4/4(金) 全日</li>
+              <li>場所: 1232教室</li>
+            </ul>
+          </section>
+          <div class="divider">学習系イベント</div>
+          <section id="welcome-seminar">
+            <h3>新歓講習会</h3>
+            <ul>
+              <li>日時: 4/6 (日) 14:00 ~ 17:30、4/12 (土) 14:00 ~ 17:30</li>
+              <li>
+                場所:
+                <ul>
+                  <li>4/6 (日): 駒場キャンパス 1 号館 102 教室</li>
+                  <li>4/12 (土): 駒場キャンパス 11 号館 1105 教室</li>
+                </ul>
+              </li>
+              <li>
+                参加フォーム:
+                <Link
+                  class="link link-uncolor"
+                  href="https://forms.gle/Bo5gHDgz12XtA4NW8"
+                  _blank
+                />
+              </li>
+              <li>
+                授業形式で HTML・CSS・JavaScript の基礎を学び、簡単な Web
+                アプリを公開できるようになります。
+              </li>
+            </ul>
+          </section>
+          <section id="joint-welcome-event">
+            <h3>エンジニア系サークル合同新歓</h3>
+            <ul>
+              <li>日時: 4/9 (水) 19:00 ~ 21:00、4/15 (火) 19:00 ~ 21:00</li>
+              <li>場所: 両日とも駒場キャンパス 1102 教室</li>
+              <li>
+                詳細: <a
+                  class="link link-uncolor"
+                  href="/articles/2025/03-24_joint-welcome-session"
+                >
+                  合同新歓を開催します | 記事</a
+                >
+              </li>
+              <li>
+                参加フォーム:
+                <Link
+                  class="link link-uncolor"
+                  href="https://forms.gle/sAU7A9uMVerQPpUb6"
+                  _blank
+                />
+              </li>
+              <li>TSG、UTFF、RoboTech、灯と合同で新歓説明会を開催！</li>
+            </ul>
+          </section>
+          <div class="divider">交流・開発系イベント</div>
+          <section>
+            <h3>新歓合宿</h3>
+            <ul>
+              <li>日程: 5/3(土) ~ 5/5(月)</li>
+              <li>場所: 東京大学山中寮内藤セミナーハウス</li>
+              <li>フォーム: Discord にあります</li>
+              <li>フォーム提出期限: 4/13 (日) 18:00</li>
+              <li>
+                合宿を通してプログラミングの基礎を身につけ、自分なりのサイトやアプリを作りましょう！
+              </li>
+              <li>
+                ut.code(); の新歓イベントとしては一番大きなものになります！
+                <br />
+                ut.code(); の普段の活動を知ることができますし、部員や他の新入生とも交流できるいい機会になります！
+                ぜひご参加ください！
+              </li>
+            </ul>
+          </section>
+        </div>
+      </details>
+      <div class="divider mt-20">学習系イベント</div>
+      <section>
+        <h3>自主勉強会</h3>
+        <ul>
+          <li>
+            日時: 4/7 (月), 16 (水), 18 (金), 23 (水), 25 (金), 30 (水) すべて
+            19:00 ~ 21:30
+          </li>
+          <li>場所: 駒場学生会館 313 B (部室)</li>
+          <li>途中参加・途中退出可。</li>
+          <li>
+            自分のペースでプログラミングを学び、プロジェクトに参加できるスキルをつけよう！
+            経験者も新しい知識を学ぶチャンス！
+          </li>
+        </ul>
+        <div class="divider mt-20">交流・開発系イベント</div>
+        <section>
+          <h3>新歓個人ハッカソン</h3>
+          <ul>
+            <li>日程: 5/10 (土)、 5/11 (日)</li>
+            <li>
+              ut.code(); Learn
+              の復習を兼ねて、自分なりのフルスタックアプリケーションを作りましょう！
+            </li>
+            <li>事前に進めておいたり、終わったあとに続けて開発しても OK！</li>
+            <li>
+              合宿や勉強会に参加するなどして、 ut.code(); Learn の第 3
+              章「Webサーバーが動作する仕組みを知ろう」まで終わらせているとスムーズに開発ができます。
+            </li>
+            <li>
+              希望者は制作物を五月祭や Website などに展示することができます。
+            </li>
+          </ul>
+          <section>
+            <h3>プロジェクト発足会</h3>
+            <ul>
+              <li>日程: ６月頃予定</li>
+              <li>場所: 駒場・渋谷付近予定</li>
+              <li>
+                みんなで食事をしながら、新プロジェクトの発足に向けた話をしていくそんなイベントです。
+              </li>
+              <li>プロジェクトの多くはここで発足しています！</li>
+            </ul>
+          </section>
+          <div class="divider mt-20">その他</div>
+          <section>
+            <h3>部員フォーム締め切り</h3>
+            <ul>
+              <li>日程: 5/17 (土)</li>
+              <li>
+                ut.code(); の 2025
+                年春新歓での新入生の受付は、ここまでとさせていただきます。
+              </li>
+            </ul>
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <style>
+      section {
+        margin-top: 3rem;
+      }
+      #closed h3 {
+        font-weight: normal;
+        color: var(--color-gray-600);
+      }
+      .divider {
+        color: var(--color-gray-600);
+      }
+    </style>
+  </StaticDocumentWrapper>
+</GlobalLayout>

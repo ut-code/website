@@ -1,0 +1,45 @@
+---
+import { Picture } from "astro:assets";
+interface Props {
+  title: string;
+  "align-image": "left" | "right";
+  image: ImageMetadata;
+  imageAlt: string;
+}
+
+const { title, "align-image": align, image, imageAlt } = Astro.props;
+---
+
+<section class="mt-16 lg:grid lg:items-center">
+  <div style={{ gridArea: "1 / 1" }}>
+    <div
+      class:list={[
+        "isolate h-[300px] overflow-clip md:h-[400px] lg:h-[500px] lg:w-1/2 xl:h-[600px]",
+        {
+          left: "lg:rounded-r-2xl",
+          right: "lg:ml-auto lg:rounded-l-2xl",
+        }[align],
+      ]}
+    >
+      <Picture
+        formats={["avif", "webp"]}
+        alt={imageAlt}
+        src={image}
+        width="1500"
+        height="800"
+        class="h-full w-full object-cover"
+      />
+    </div>
+  </div>
+  <div
+    style={{ gridArea: "1 / 1" }}
+    class="container mx-auto lg:max-w-screen-lg"
+  >
+    <div class:list={["p-8 lg:w-1/2", align === "left" && "lg:ml-auto"]}>
+      <h2 class="text-4xl">{title}</h2>
+      <div class="prose mt-4 max-w-none">
+        <slot />
+      </div>
+    </div>
+  </div>
+</section>

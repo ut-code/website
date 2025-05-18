@@ -1,0 +1,128 @@
+---
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import StaticDocumentWrapper from "+/layouts/StaticDocumentWrapper.astro";
+
+import ActionButton from "+/components/utils/ActionButton.astro";
+import Header from "+/images/activity/develop/solo-dev.jpg";
+import { Focus } from "+/schema";
+---
+
+<GlobalLayout
+  focus={Focus.about}
+  title="About Us"
+  description={null}
+  image={Header}
+>
+  <StaticDocumentWrapper title="About Us" header={Header} fill="bg-gray-400">
+    <section>
+      <h2>団体概要</h2>
+      <ul>
+        <li>団体名: ut.code();</li>
+        <li>構成人数: 30 人程度</li>
+        <li>発足: 2019 年</li>
+        <li>部室: 駒場学生会館 313B</li>
+        <li>所属: 東京大学工学部丁友会 (2025年度)</li>
+        <li>
+          X: <a class="link" target="_blank" href="https://x.com/utokyo_code"
+            >utokyo_code</a
+          >
+        </li>
+        <li>
+          GitHub: <a
+            class="link"
+            target="_blank"
+            href="https://github.com/ut-code">ut-code</a
+          >
+        </li>
+        <li>Email: <span id="email-loader">読込中...</span></li>
+      </ul>
+      <script>
+        document.getElementById("");
+        console.log("loading email...");
+        // スパム対策
+        function showEmail() {
+          const elem = document.getElementById("email-loader");
+          if (!elem) return;
+          const addr = `contact${String.fromCharCode(64)}utcode.net`;
+          if (elem.innerText !== addr) {
+            console.log("loaded email");
+            elem.outerHTML = `<a class="link" href="mailto:${addr}">${addr}</a>`;
+          }
+        }
+        // HACK: setTimeout だとブラウザバックで戻った時、うまく実行されない
+        setInterval(showEmail, 3000);
+      </script>
+    </section>
+    <section>
+      <h2>紹介動画</h2>
+      <iframe
+        title="ut.code(); 紹介動画"
+        class="aspect-video w-full"
+        src="https://www.youtube-nocookie.com/embed/aUoa1AyfbMA?rel=0"
+        loading="lazy"
+        allow="picture-in-picture; web-share"
+        allow-fullscreen></iframe>
+    </section>
+    <section>
+      <h2>活動内容</h2>
+      ut.code(); には「学習・教育」「交流」「開発」の三軸を主にして活動しています。
+      <p>
+        活動例:
+        <ul>
+          <li>学習・教育: ut.code(); Learn、全ゼミ・自主ゼミ</li>
+          <li>交流: 五月祭・駒場祭、合宿</li>
+          <li>開発: プロジェクト、ハッカソン</li>
+        </ul>
+      </p>
+    </section>
+    <section>
+      <h2>活動場所</h2>
+      <ul>
+        <li>部室: 駒場学生会館 313B</li>
+        <li>本郷図書館 プロジェクトボックス</li>
+        <li>オンライン (Discord)</li>
+        など
+      </ul>
+    </section>
+    <section>
+      <h2>FAQ / よくある質問</h2>
+      <article>
+        <h3>Q: 活動頻度はどのくらいですか？</h3>
+        A: プロジェクトの参加数や各プロジェクトによって異なりますが、 一般的には毎週夜のミーティングと月1~2回の作業会になります。
+      </article>
+      <article>
+        <h3>Q: 初心者でも大丈夫ですか？</h3>
+        A: 全く問題ありません！ ut.code(); は全くの初心者がフルスタックのアプリケーションを作成できるようになる教材を公開しており、その教材を用いた勉強会や講習会も実施しています！
+      </article>
+      <article>
+        <h3>Q: 東京大学ではないです・一年生ではありません・文系です</h3>
+        A: 全く問題ありません！ ut.code(); は大学名・学年・文理による制限は設けていません。
+      </article>
+    </section>
+    <section>
+      <h2>主な使用技術・スタック</h2>
+      <aside class="alert alert-outline alert-info">
+        具体的な使用技術はプロジェクトによって異なります。
+      </aside>
+      <ul>
+        <li>言語: TypeScript など</li>
+        <li>フレームワーク: React・Next.js, Svelte(Kit) など</li>
+        <li>UI: MUI, Tailwind, DaisyUI など</li>
+        <li>バックエンド: Hono, Express, Prisma, Drizzle など</li>
+        <li>データベース: Supabase, Neon など</li>
+        <li>インフラ: Cloudflare, Fly.io, Render など</li>
+        <li>情報: Notion, Discord, GitHub など</li>
+      </ul>
+    </section>
+    <section>
+      <h2>ご寄付・ご協賛のお願い</h2>
+      <p>
+        ut.code();
+        では、活動を支援していただける方を募集しております。詳細につきましては、次のページをご覧ください。
+      </p>
+      <p class="not-prose">
+        <ActionButton to="/donation"> ご寄付・ご協賛のお願い </ActionButton>
+      </p>
+    </section>
+  </StaticDocumentWrapper>
+</GlobalLayout>

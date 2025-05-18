@@ -1,0 +1,9 @@
+version: 2
+enable-beta-ecosystems: true # support bun
+updates:
+  - package-ecosystem: "npm"
+    directory: "."
+    schedule:
+      interval: "weekly"
+      timezone: "Asia/Tokyo"
+    target-branch: "main"

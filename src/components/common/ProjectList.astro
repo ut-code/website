@@ -1,0 +1,68 @@
+---
+import { Picture } from "astro:assets";
+import type { Project } from "+/schema";
+
+interface Props {
+  projects: { id: string; data: Project }[];
+  variant: "compact" | "full";
+  class?: string;
+}
+const props = Astro.props;
+const { projects, variant = "full" } = props;
+---
+
+<ul class:list={["grid gap-9 md:grid-cols-2 xl:grid-cols-3", props.class]}>
+  {
+    projects.map((project, i) => (
+      <li
+        class:list={["contents", variant === "compact" && "data-variant-short"]}
+      >
+        <a
+          class="overflow-clip rounded-xl border border-gray-200 bg-gray-50 hover:brightness-95"
+          href={`/projects/${project.id}`}
+        >
+          <Picture
+            loading={i < 6 && variant === "full" ? "eager" : "lazy"}
+            alt={`${project.data.app.name}のサムネイル`}
+            src={project.data.thumbnail.src}
+            width="600"
+            height={(600 * 3) / 5}
+            class:list={[
+              "aspect-5/3 w-full",
+              project.data.thumbnail.fit !== "contain" && "skeleton",
+            ]}
+            style={{
+              "object-fit": project.data.thumbnail.fit,
+              "object-position": project.data.thumbnail.position,
+              "background-color": project.data.thumbnail.bg,
+            }}
+          />
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-800">
+              {project.data.app.name}
+            </h3>
+            {/* h-14: 2 行はいる */}
+            <p class="prose mt-2 line-clamp-2 h-14 text-gray-500">
+              {project.data.app.description.length < 120
+                ? project.data.app.description
+                : project.data.app.description.slice(0, 120) + "..."}
+            </p>
+          </div>
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  @media (max-width: 48rem) {
+    li.data-variant-short:nth-child(n + 3) {
+      display: none;
+    }
+  }
+  @media (max-width: 80rem) {
+    li.data-variant-short:nth-child(n + 5) {
+      display: none;
+    }
+  }
+</style>

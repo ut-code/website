@@ -1,0 +1,76 @@
+---
+import { Picture } from "astro:assets";
+import JoinUsCTA from "+/components/common/JoinUsCTA.astro";
+import Header from "+/images/headers/members.jpg";
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import { getMembers } from "+/query.ts";
+import { Focus } from "+/schema.ts";
+
+const members = await getMembers();
+---
+
+<GlobalLayout
+  title="メンバー"
+  description="ut.code(); のメンバーの一覧"
+  focus={Focus.members}
+  image={Header}
+>
+  <Picture
+    loading="eager"
+    alt=""
+    formats={["avif", "webp"]}
+    width="1920"
+    height="1080"
+    quality="mid"
+    src={Header}
+    class="bg-image bg-neutral-400"
+    style="object-position: 75% 20%;"
+    aria-hidden
+  />
+  <h1
+    class="absolute bottom-6 w-max bg-gray-950 px-4 py-2 text-[4rem] text-white sm:text-[8rem] lg:pl-40"
+  >
+    メンバー
+  </h1>
+  <main
+    class="mt-[100vh] border-t-2 border-gray-600 bg-black/50 px-4 py-16 backdrop-blur"
+  >
+    <ul class="flex flex-row flex-wrap justify-center gap-8 px-[5%] pt-6">
+      {
+        members.map((member) => (
+          <li>
+            <a
+              href={`/members/${member.id}`}
+              class="relative block w-fit drop-shadow-lg transition-colors duration-150"
+              data-astro-prefetch="hover"
+            >
+              <Picture
+                formats={["avif", "webp"]}
+                fit="cover"
+                alt={`${member.data?.nameJa} の写真`}
+                src={member.data.upperBodyImage}
+                width="400"
+                height="400"
+                class="skeleton rounded-none"
+              />
+              <div class="absolute bottom-0 w-full min-w-45 bg-gradient-to-b from-transparent to-black px-6 pt-12 pb-6 text-white transition-all">
+                {member.data.nameJa === member.data.nameEn ? (
+                  <h2 class="mb-4 text-4xl">{member.data.nameJa}</h2>
+                ) : (
+                  <>
+                    <h2 class="text-3xl">{member.data.nameJa}</h2>
+                    <p class="text-md">{member.data.nameEn}</p>
+                  </>
+                )}
+                <p class="mt-2 text-xs leading-normal">
+                  {member.data.description}
+                </p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+  <JoinUsCTA> 愉快な仲間が皆さんをお待ちしています！</JoinUsCTA>
+</GlobalLayout>

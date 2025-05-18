@@ -1,0 +1,63 @@
+---
+import ActionButton from "+/components/utils/ActionButton.astro";
+import Header from "+/images/headers/contact.jpg";
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import StaticDocumentWrapper from "+/layouts/StaticDocumentWrapper.astro";
+import { Focus } from "+/schema";
+
+// TODO: delete this file
+---
+
+<GlobalLayout
+  title="連絡"
+  description="ut.code(); に連絡する手段"
+  focus={Focus.about}
+  image={Header}
+>
+  <StaticDocumentWrapper
+    title="ut.code(); に連絡する"
+    header={Header}
+    fill="bg-amber-200"
+  >
+    <h2>お問い合わせ</h2>
+    <p>ut.code(); へのお問い合わせは、各種 SNS をご利用ください。</p>
+    <p class="not-prose flex gap-4">
+      <ActionButton to="https://x.com/utokyo_code">
+        X (旧 Twitter)
+      </ActionButton>
+    </p>
+    <p>
+      メールでのお問い合わせをご希望の方は、次のメールアドレスまでご連絡ください。
+    </p>
+    <p id="email-loader">読込中...</p>
+    <script>
+      console.log("loading email...");
+      // スパム対策
+      function showEmail() {
+        const elem = document.getElementById("email-loader");
+        if (!elem) return;
+        const addr = `contact${String.fromCharCode(64)}utcode.net`;
+        if (elem.innerText !== addr) {
+          elem.innerHTML = `<a href="mailto:${addr}">${addr}</a>`;
+        }
+      }
+      // HACK: setTimeout だとブラウザバックで戻った時、うまく実行されない
+      setInterval(showEmail, 3000);
+    </script>
+    <style>
+      #email-loader[data-loading] {
+        text-decoration: none;
+        pointer-events: none;
+        cursor: default;
+      }
+    </style>
+    <h2>ご寄付・ご協賛のお願い</h2>
+    <p>
+      ut.code();
+      では、活動を支援していただける方を募集しております。詳細につきましては、次のページをご覧ください。
+    </p>
+    <p class="not-prose">
+      <ActionButton to="/donation"> ご寄付・ご協賛のお願い </ActionButton>
+    </p>
+  </StaticDocumentWrapper>
+</GlobalLayout>

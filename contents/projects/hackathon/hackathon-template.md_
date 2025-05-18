@@ -1,0 +1,18 @@
+---
+app:
+  name: Title
+  url: https://your-project.pages.dev
+  description: あなたが作った世界で一つだけのアプリ
+  platform: [web] # web / desktop / cli / ...
+  domain: [app] # app / game / tool / ...
+
+date: hackathon-start-date
+kind: hackathon
+status: finished
+
+thumbnail:
+  src: ./thumbnail.png
+
+social:
+  github: https://github.com/ut-code/your-project
+---

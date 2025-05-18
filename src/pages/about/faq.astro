@@ -1,0 +1,19 @@
+---
+import Header from "+/images/activity/develop/solo-dev.jpg";
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import StaticDocumentWrapper from "+/layouts/StaticDocumentWrapper.astro";
+import { Focus } from "+/schema";
+
+// TODO!!
+---
+
+<GlobalLayout
+  title="FAQ"
+  description="よくある質問"
+  focus={Focus.none}
+  image={Header}
+>
+  <StaticDocumentWrapper title="FAQ" header={Header} fill="bg-transparent">
+    <span class="alert alert-error alert-soft">このページは準備中です。</span>
+  </StaticDocumentWrapper>
+</GlobalLayout>

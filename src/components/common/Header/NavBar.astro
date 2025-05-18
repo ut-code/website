@@ -1,0 +1,65 @@
+---
+import Logo from "+/components/utils/Logo.astro";
+import NavPanel from "+/islands/svelte/nav-panel.svelte";
+import { Focus } from "+/schema.ts";
+
+type Props = {
+  links: { href: string; title: string; focus: Focus }[];
+  focus: Focus;
+};
+const { links, focus }: Props = Astro.props;
+---
+
+<div class="flex h-16 bg-gray-50/70 backdrop-blur-lg">
+  <a
+    href="/"
+    aria-label="Go to top page"
+    class="flex items-center px-4"
+    data-astro-prefetch="viewport"
+  >
+    <Logo class="w-36 sm:ml-8" variant="default" />
+  </a>
+  <div aria-hidden="true" class="flex-1"></div>
+  <nav class="hidden md:flex">
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            "navigation-bar flex h-full min-w-24 items-center justify-center px-6 text-center text-sm",
+            focus === link.focus ? "current" : "",
+          ]}
+          data-astro-prefetch="viewport"
+        >
+          {link.title}
+        </a>
+      ))
+    }
+  </nav>
+  <div class="md:hidden">
+    <NavPanel client:load links={links} />
+  </div>
+</div>
+
+<style>
+  .navigation-bar {
+    background: linear-gradient(black 0 0) bottom left/
+      var(--underline-width, 0%) 0.09rem no-repeat;
+    text-decoration: none;
+  }
+  .navigation-bar.current {
+    background: linear-gradient(lawngreen 0 0) bottom left/
+      var(--underline-width, 0%) 0.15rem no-repeat;
+  }
+  .navigation-bar:hover {
+    --underline-width: 100%;
+    @starting-style {
+      --underline-width: 0%;
+    }
+  }
+  @media not (prefers-reduced-motion) {
+    .navigation-bar {
+      transition: background-size 0.5s;
+    }
+  }
+</style>

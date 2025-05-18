@@ -1,0 +1,65 @@
+---
+import ProjectList from "+/components/common/ProjectList.astro";
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import { getProjects } from "+/query";
+import { Focus } from "+/schema";
+import { kinds } from "+contents/project-kinds.ts";
+
+export function getStaticPaths() {
+  return kinds.map((kind) => ({
+    params: { kind: kind.path },
+    props: { kind },
+  }));
+}
+
+const kind = Astro.props.kind;
+
+const projects = await getProjects(kind.frontmatter);
+---
+
+<GlobalLayout
+  title={kind.title}
+  description={kind.description}
+  focus={Focus.projects}
+  image={null}
+>
+  <main class="container mx-auto px-4 py-24">
+    <h1 class="mb-5 min-h-[2.25em] text-center text-4xl">{kind.title}</h1>
+    <div role="tablist" class="tabs tabs-lift">
+      {
+        kinds
+          .filter(
+            (kind) =>
+              kind.path !== "festival" /* TODO: migrate festival projects */,
+          )
+          .map((tab) => (
+            <a>
+              <a
+                role="tab"
+                class:list={["tab", { "tab-active": kind.path === tab.path }]}
+                href={tab.path ? `/projects/${tab.path}` : "/projects"}
+              >
+                {tab.tabTitle}
+              </a>
+            </a>
+          ))
+      }
+    </div>
+    {
+      projects.length === 0 ? (
+        <p class="mt-30 text-center text-gray-500">
+          プロジェクトはまだ反映されていません。
+        </p>
+      ) : (
+        <ProjectList {projects} class="mt-16" variant="full" />
+      )
+    }
+    {
+      projects.length < 10 && (
+        <p class="mt-30 text-center text-gray-500">
+          このページは準備中です。ほとんどのプロジェクトは反映されていません。
+        </p>
+      )
+    }
+  </main>
+</GlobalLayout>

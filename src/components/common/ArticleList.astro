@@ -1,0 +1,136 @@
+---
+import { Picture } from "astro:assets";
+import type { Article } from "+/schema";
+import { format } from "date-fns";
+import { markdownToTxt } from "markdown-to-txt";
+
+interface Props {
+  articles: { id: string; data: Article; body?: string }[];
+  enlarge?: boolean; // 11 記事ごとに大きくする
+  truncate?: boolean; // (index.astro 用) 画面幅に合わせて短くする
+  "max-cols"?: number | `${number}`;
+  loading?: "eager" | "lazy";
+  class?: string;
+}
+const props = Astro.props;
+const {
+  articles,
+  enlarge = false,
+  truncate = false,
+  "max-cols": _maxCols = 4,
+  loading = "lazy",
+} = props;
+
+const maxCols =
+  typeof _maxCols === "string" ? Number.parseInt(_maxCols) : _maxCols;
+
+const MDXSpecialSyntax = /^import ActionButton from ".+";/;
+
+const articlesWithExcerpts = await Promise.all(
+  articles.map(async (article) => {
+    if (!article.body) throw new Error("article doesn't have body!");
+    // 😇 performance
+    const text = markdownToTxt(article.body);
+    return {
+      article,
+      text: text.replace(MDXSpecialSyntax, ""),
+    };
+  }),
+);
+---
+
+<ul
+  class:list={[
+    "grid grid-flow-dense gap-5",
+    maxCols >= 2 && "md:grid-cols-2",
+    maxCols >= 3 && "lg:grid-cols-3",
+    maxCols >= 4 && "xl:grid-cols-4",
+    truncate && "data-truncate",
+    props.class,
+  ]}
+>
+  {
+    articlesWithExcerpts.map(({ article, text }, i) => {
+      const isFeatured = enlarge && i % 11 === 0; // 11 記事ごとに大きく表示する
+      const baseW = 400;
+      const imageWidth = baseW * (isFeatured ? 2 : 1);
+      const imageHeight = baseW * (3 / 5) * (isFeatured ? 2 : 1);
+
+      article.data.thumbnail.fit ??= "cover";
+      article.data.thumbnail.position ??= "center";
+
+      const additionalProps = isFeatured
+        ? {
+            cellClassName: "md:col-span-2 md:row-span-2",
+            excerpt: text.slice(0, 300),
+          }
+        : {
+            cellClassName: "",
+            excerpt: text.slice(0, 80),
+          };
+      return (
+        <li class="contents">
+          <a
+            href={`/articles/${article.id}`}
+            class:list={[
+              "rounded-xl bg-gray-50 p-2 hover:brightness-95",
+              additionalProps.cellClassName,
+            ]}
+          >
+            <Picture
+              loading={i < 5 ? loading : "lazy"}
+              formats={["avif", "webp"]}
+              position={article.data.thumbnail.position}
+              width={imageWidth}
+              height={imageHeight}
+              alt=""
+              fit={article.data.thumbnail.fit}
+              src={article.data.thumbnail.src}
+              class:list={[
+                "aspect-5/3 min-h-0 w-full rounded-xl",
+                !article.data.thumbnail.bg && "skeleton",
+              ]}
+              style={{
+                "object-fit": article.data.thumbnail.fit,
+                ...(article.data.thumbnail.bg
+                  ? {
+                      "background-color": article.data.thumbnail.bg,
+                    }
+                  : {}),
+              }}
+            />
+            <div class="mt-4 p-1">
+              <time class="block text-sm text-gray-500">
+                {format(article.data.date, "yyyy/MM/dd HH:mm")
+                  // 夜中に活動しない
+                  .replace("00:00", "10:00")}
+              </time>
+              <h3 class="text-lg font-bold">{article.data.title}</h3>
+              <p
+                class:list={[
+                  "prose mt-2 line-clamp-3 max-w-none text-gray-500",
+                  isFeatured && "md:line-clamp-6",
+                ]}
+              >
+                {additionalProps.excerpt}...
+              </p>
+            </div>
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  @media (width < 48rem) {
+    .data-truncate > li:nth-child(n + 2) {
+      display: none;
+    }
+  }
+  @media (width < 64rem) {
+    .data-truncate > li:nth-child(n + 3) {
+      display: none;
+    }
+  }
+</style>

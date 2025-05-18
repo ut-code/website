@@ -1,0 +1,84 @@
+---
+import { Picture } from "astro:assets";
+import { render } from "astro:content";
+import JoinUsCTA from "+/components/common/JoinUsCTA.astro";
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import { getArticles, getMember } from "+/query.ts";
+import { Focus } from "+/schema.ts";
+import { format } from "date-fns";
+
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  return articles.map((article) => ({
+    params: { id: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+const author = article.data.author && (await getMember(article.data.author.id));
+---
+
+<GlobalLayout
+  title={article.data.title}
+  description={null}
+  focus={Focus.articles}
+  image={article.data.thumbnail.src}
+  type="article"
+>
+  <div class="mt-2 text-center lg:px-8">
+    <Picture
+      loading="eager"
+      width="1200"
+      quality="90"
+      formats={["avif", "webp"]}
+      class="skeleton mx-auto rounded-none md:max-w-3xl md:rounded-2xl"
+      alt="サムネイル"
+      src={article.data.thumbnail.src}
+      position={article.data.thumbnail.position}
+      fit={article.data.thumbnail.fit}
+    />
+  </div>
+  <div
+    id="meta"
+    class="mx-auto mt-4 flex max-w-xl flex-wrap justify-around px-4 align-middle sm:gap-8"
+  >
+    {
+      author && (
+        <a
+          href={`/members/${author.id}`}
+          class="flex max-w-sm min-w-75 items-center gap-4 rounded-lg px-4 py-2 hover:bg-gray-200"
+        >
+          <Picture
+            alt="著者"
+            formats={["avif", "webp"]}
+            width="256"
+            height="256"
+            fit="cover"
+            src={author.data.faceImage}
+            class="h-16 w-16 overflow-clip rounded-full bg-gray-200"
+          />
+          <div class="flex-1">
+            <div class="text-lg text-gray-800">{author.data.nameJa}</div>
+            <div class="text-sm text-gray-500">{author.data.description}</div>
+          </div>
+        </a>
+      )
+    }
+    <time class="my-auto mt-4 text-gray-500">
+      {format(article.data.date, "yyyy-MM-dd")}
+    </time>
+  </div>
+  <main class="mx-auto max-w-xl px-4 2xl:max-w-4xl">
+    <h1 class="my-8 w-full text-center text-2xl lg:text-3xl">
+      {article.data.title}
+    </h1>
+    <article class="prose w-full max-w-none">
+      <Content />
+    </article>
+  </main>
+  <JoinUsCTA class="mt-24">
+    ut.code(); に参加する準備はできましたか？
+  </JoinUsCTA>
+</GlobalLayout>

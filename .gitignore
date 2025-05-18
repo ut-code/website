@@ -1,0 +1,16 @@
+/node_modules/
+
+# artifact
+/.astro/
+/dist
+src/gatsby-types.d.ts
+dist
+
+# editor
+.DS_Store
+
+# env
+.direnv
+.envrc
+
+.unlighthouse

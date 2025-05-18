@@ -1,0 +1,274 @@
+---
+import { Picture } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+
+import ArticleList from "+/components/common/ArticleList.astro";
+import ProjectList from "+/components/common/ProjectList.astro";
+import SectionHeader from "+/components/index/SectionHeader.astro";
+import ActionButton from "+/components/utils/ActionButton.astro";
+import { getArticles, getProjects } from "+/query.ts";
+import { Focus } from "+/schema.ts";
+
+import LogoGMOMedia from "+/images/donators/gmo-media.png";
+import Hero from "+/images/headers/index.jpg";
+import LabCafe from "+/images/lab-cafe.jpg";
+
+const projects = await getProjects("long-term");
+projects.splice(6);
+
+const articles = await getArticles();
+articles.splice(3);
+---
+
+<GlobalLayout title={null} description={null} image={Hero} focus={Focus.none}>
+  <Picture
+    formats={["avif", "webp"]}
+    alt=""
+    loading="lazy"
+    quality="mid"
+    width="1920"
+    height="1080"
+    class="bg-image bg-neutral-400"
+    src={Hero}
+  />
+  <div class="absolute top-[40%] left-10 mr-10 max-w-lg bg-gray-50 p-8 pb-24">
+    <h1 class="text-2xl md:text-3xl">東京大学のソフトウェア開発サークル</h1>
+    <div class="prose mt-3">
+      <p>
+        ut.code(); は、 2019
+        年に発足した東京大学のソフトウェアエンジニアリングコミュニティ・プログラミングサークルです。
+        プログラミングの学習・教育から、実社会で役立つソフトウェア製作まで、幅広い活動を行っています。
+      </p>
+    </div>
+  </div>
+  <section
+    class="mt-[100vh] border-t-2 border-white bg-gray-100/70 backdrop-blur-lg"
+  >
+    <div class="container mx-auto px-4 py-12">
+      <SectionHeader title="Activities" subtitle="活動内容" />
+      <div class="mt-8 rounded-xl bg-gray-50 p-12 shadow-2xl sm:p-12">
+        <ul class="flex flex-col gap-12 lg:flex-row">
+          {
+            [
+              {
+                key: "learn",
+                title: "学習・教育",
+                description:
+                  "プログラミング未経験の方から経験者まで、共に学び、教え合う学習会を開催しています。また、実践的なスキルを身につけ、サービス開発に取り組めるよう、独自の学習コンテンツやカリキュラムをオープンソースで公開しています。",
+                icon: "feather:book-open",
+              },
+              {
+                key: "share",
+                title: "交流",
+                description:
+                  "定期的なイベントの開催により、メンバー同士の交流を深めています。集中して開発を行う合宿や、新しいサービス開発のアイデアを出し合うブレインストーミング大会などを行っています。",
+                icon: "feather:message-square",
+              },
+              {
+                key: "develop",
+                title: "開発",
+                description:
+                  "大学や社会をより良くするソフトウェアを一緒に開発しましょう。切磋琢磨した仲間はかけがえのないものになるはずです。開発したソフトウェアの多くは GitHub で公開しています。",
+                icon: "feather:box",
+              },
+            ].map((activity) => (
+              <li class="lg:flex-1">
+                <div class="w-max rounded-md bg-black p-2 text-white">
+                  <Icon name={activity.icon} class="h-6 w-6" />
+                </div>
+                <h3 class="mt-3 text-2xl">{activity.title}</h3>
+                <div class="mt-2">
+                  <p class="prose max-w-none">{activity.description}</p>
+                </div>
+                <a
+                  class="hover-underline mt-2 inline flex-0 items-center gap-1"
+                  href={`/activities/${activity.key}/`}
+                  aria-label={activity.title}
+                >
+                  <span>Learn more</span>
+                  <Icon name="feather:arrow-right" class="inline h-4 w-4" />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="bg-gray-50">
+    <div class="px-12 py-12 lg:px-36">
+      <SectionHeader title="Projects" subtitle="実施中のプロジェクト" />
+      <ProjectList {projects} variant="compact" class="mt-10" />
+      <ActionButton to="/projects/" class="mt-8 ml-auto">
+        すべてのプロジェクト
+      </ActionButton>
+    </div>
+  </section>
+  <section class="bg-black pt-60 pb-20 text-white">
+    <div
+      class="mx-auto block items-center justify-evenly gap-12 overflow-hidden px-8 xl:flex xl:flex-row-reverse"
+    >
+      <Picture
+        formats={["avif", "webp"]}
+        alt=""
+        src={LabCafe}
+        width="600"
+        height="600"
+        class="mx-2 flex-1 rounded-3xl object-cover sm:mr-6 sm:ml-auto sm:max-w-xl xl:mb-120"
+      />
+      <article class="mt-12 flex-shrink-0 self-center md:ml-12 lg:w-150">
+        <h1 class="max-w-2xl text-2xl leading-snug sm:text-5xl md:text-6xl">
+          <span
+            id="text-future-software"
+            class="mb-3 inline-block bg-white text-black"
+            onmouseover="document.getElementById('text-future-software')?.setAttribute('data-highlighted', '');"
+            tabindex="0"
+            onfocus="document.getElementById('text-future-software')?.setAttribute('data-highlighted', '');"
+            >未来のソフトウェア</span
+          >を<br /><span>デザインしよう</span>
+        </h1>
+        <p class="mt-3 max-w-xl text-sm leading-loose text-gray-300 sm:text-xl">
+          <span class="inline-block">
+            ut.code(); で一緒にワクワクするソフトウェアを作りませんか？
+            初心者から実務経験者、学年を問わずどなたでも大歓迎です。
+          </span>
+        </p>
+        <ActionButton to="/join/" variant="dark" class="mt-8">
+          JOIN US
+        </ActionButton>
+      </article>
+      <script>
+        var text = document.getElementById("text-future-software");
+        document.onscroll = () => {
+          if (!text) return;
+          if (!document.scrollingElement) return;
+          var screenTop = document.scrollingElement.scrollTop;
+          var screenBottom = screenTop && +innerHeight;
+          var textTop = text.getBoundingClientRect().top;
+
+          if (textTop < screenBottom - 400) {
+            text.setAttribute("data-highlighted", "");
+            document.onscroll = null;
+          }
+        };
+      </script>
+    </div>
+  </section>
+  <section class="bg-gray-50">
+    <div class="container mx-auto px-4 py-12">
+      <SectionHeader title="News" subtitle="最新情報" />
+      <ArticleList truncate {articles} max-cols="3" class="mt-10" />
+      <ActionButton to="/articles" class="mt-8 ml-auto">
+        すべての記事
+      </ActionButton>
+    </div>
+  </section>
+  <section class="bg-gray-100/70 backdrop-blur-sm">
+    <div class="container mx-auto py-16">
+      <SectionHeader title="About us" subtitle="団体概要" />
+      <ul class="mt-16 grid gap-x-8 text-lg text-gray-800 lg:grid-cols-2">
+        {
+          [
+            { title: "団体名", content: "ut.code();" },
+            { title: "部員", content: "30 名程度" },
+            { title: "所属", content: "東京大学工学部丁友会 (2025 年度)" },
+            { title: "部室", content: "駒場キャンパス学生会館 313B 教室" },
+            {
+              title: "X",
+              content: "@utokyo_code",
+              link: "https://x.com/utokyo_code",
+            },
+            {
+              title: "活動場所",
+              content: "オンライン, 部室, 本郷図書館プロジェクトボックス等",
+            },
+            {
+              title: "GitHub",
+              content: "ut-code",
+              link: "https://github.com/ut-code",
+            },
+          ].map(({ title, content, link }) => (
+            <li class="flex gap-4 border-b border-gray-400 px-6 py-3">
+              <div class="w-24">{title}</div>
+              {link ? (
+                <a href={link} target="_blank" rel="noreferrer" class="link">
+                  {content}
+                </a>
+              ) : (
+                <div>{content}</div>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+  <section class="bg-gray-50 py-24">
+    <SectionHeader title="協賛企業様" />
+    <ul
+      class="mx-auto mt-8 flex flex-row flex-wrap items-center justify-center gap-16 px-24"
+    >
+      <li>
+        <Picture
+          alt="GMOメディア株式会社"
+          src={LogoGMOMedia}
+          class="object-contain"
+          width="320"
+        />
+      </li>
+    </ul>
+  </section>
+  <section class="bg-gray-200">
+    <div class="container mx-auto px-8 py-12">
+      <SectionHeader title="ご寄付のお願い" />
+      <div class="prose mt-8 max-w-none text-center">
+        <p>
+          <span class="inline-block">
+            現在、ut.code(); の活動費は寄付によって賄われています。
+          </span>
+          <span class="inline-block">
+            弊団体の継続的な活動のため、ぜひご寄付にご協力ください。
+          </span>
+        </p>
+      </div>
+      <ActionButton to="/donation" class="mx-auto mt-8" no-motion>
+        寄付する
+      </ActionButton>
+    </div>
+  </section>
+</GlobalLayout>
+<style>
+  .hover-underline {
+    background: linear-gradient(currentColor 0 0) bottom left/
+      var(--underline-width, 0%) 0.1em no-repeat;
+    text-decoration: none;
+    transition: background-size 0.1s linear;
+  }
+  .hover-underline:hover {
+    --underline-width: 100%;
+    @starting-style {
+      --underline-width: 0%;
+    }
+  }
+
+  @media not (prefers-reduced-motion) {
+    #text-future-software {
+      text-decoration: underline white;
+      text-underline-offset: 12px;
+      @media (max-width: 40rem) {
+        text-underline-offset: 6px;
+      }
+      --bg-left: 0%;
+      background: linear-gradient(white 0 0) bottom left/var(--bg-left, 0%) 100%
+        no-repeat;
+      transition: background-size 0.8s ease-in-out;
+    }
+    #text-future-software[data-highlighted],
+    #text-future-software:hover,
+    #text-future-software:active {
+      --bg-left: 100%;
+    }
+  }
+</style>

@@ -1,0 +1,132 @@
+---
+import { Picture } from "astro:assets";
+import { render } from "astro:content";
+import ArticleList from "+/components/common/ArticleList.astro";
+import JoinUsCTA from "+/components/common/JoinUsCTA.astro";
+import GlobalLayout from "+/layouts/GlobalLayout.astro";
+import { getArticles, getMembers } from "+/query";
+import { Focus } from "+/schema";
+import { Icon } from "astro-icon/components";
+
+export async function getStaticPaths() {
+  const members = await getMembers();
+  return members.map((member) => ({
+    params: { id: member.id },
+    props: { member },
+  }));
+}
+
+const { member } = Astro.props;
+const { Content } = await render(member);
+
+const articles = await getArticles({
+  where: (article) => article.data.author?.id === member.id,
+});
+---
+
+<GlobalLayout
+  title={member.data.nameJa}
+  description={`ut.code(); のメンバーの${member.data.nameJa}です。`}
+  focus={Focus.members}
+  image={member.data.upperBodyImage}
+  type="profile"
+>
+  <main class="w-full">
+    <div
+      style={`background-color: ${member.data["theme-light"] ?? "#DCFCE7"};`}
+    >
+      <div
+        class="mx-auto flex h-full w-full max-w-5xl items-center justify-around"
+      >
+        <div class="w-fit flex-1 px-4 py-12">
+          {
+            member.data.nameJa === member.data.nameEn ? (
+              <h1 class="pb-6 text-4xl lg:text-7xl">{member.data.nameJa}</h1>
+            ) : (
+              <>
+                <h1 class="text-3xl lg:text-6xl">{member.data.nameJa}</h1>
+                <h2 class="text-md mt-1 md:mt-4 md:text-xl lg:text-2xl">
+                  {member.data.nameEn}
+                </h2>
+              </>
+            )
+          }
+          <div class="mt-4 flex gap-4 text-4xl md:mt-6">
+            {
+              member.data.github && (
+                <a
+                  href={`https://github.com/${member.data.github}`}
+                  target="_blank"
+                  class="-m-1 rounded-xl p-1"
+                  rel="noreferrer"
+                  aria-label="GitHubを見る"
+                >
+                  <Icon name="feather:github" />
+                </a>
+              )
+            }
+            {
+              member.data.twitter && (
+                <a
+                  href={`https://twitter.com/${member.data.twitter}`}
+                  target="_blank"
+                  class="-m-1 rounded-xl p-1"
+                  rel="noreferrer"
+                  aria-label="X (旧 Twitter) を見る"
+                >
+                  <Icon name="feather:twitter" />
+                </a>
+              )
+            }
+            {
+              member.data.website && (
+                <a
+                  href={member.data.website}
+                  target="_blank"
+                  class="-m-1 rounded-xl p-1"
+                  rel="noreferrer"
+                  aria-label="ウェブサイトを見る"
+                >
+                  <Icon name="feather:globe" />
+                </a>
+              )
+            }
+          </div>
+          <hr class="my-4 hidden border-current sm:block md:my-6 lg:my-8" />
+          <p class="sm:text-md mt-6 text-xs sm:mt-0 lg:text-lg">
+            {member.data.description}
+          </p>
+        </div>
+        <div class="flex-1">
+          <Picture
+            fit="cover"
+            class="skeleton w-40 rounded-full sm:w-100 sm:rounded-none lg:w-150"
+            alt="メンバー写真"
+            width="600"
+            height="600"
+            src={member.data.upperBodyImage}
+          />
+        </div>
+      </div>
+    </div>
+    <article class="prose mx-auto mt-12 px-8 lg:max-w-screen-md lg:px-0">
+      <Content />
+    </article>
+  </main>
+  <div class="prose mx-auto max-w-screen-md px-4 py-12">
+    {
+      articles.length > 0 && (
+        <section class="mx-auto max-w-90 md:max-w-none">
+          <h2>{member.data.nameJa} の記事</h2>
+          <div class="not-prose mt-4">
+            <ArticleList max-cols="2" articles={articles} />
+          </div>
+        </section>
+      )
+    }
+  </div>
+
+  <JoinUsCTA class="mt-8">
+    ut.code(); で{member.data.nameJa} に会いましょう
+  </JoinUsCTA>
+</GlobalLayout>

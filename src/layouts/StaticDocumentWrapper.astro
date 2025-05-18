@@ -1,0 +1,30 @@
+---
+import { Picture } from "astro:assets";
+
+interface Props {
+  header: ImageMetadata;
+  title: string;
+  fill: `bg-${string}`; // put header color
+  position?: `object-${string}`;
+}
+
+const { header, fill, title, position } = Astro.props;
+---
+
+<main>
+  <h1 class="mt-12 ml-4 text-3xl sm:mx-10 sm:text-4xl md:text-center">
+    {title}
+  </h1>
+  <Picture
+    formats={["avif", "webp"]}
+    alt=""
+    loading="eager"
+    src={header}
+    width="1920"
+    height={300}
+    class:list={["my-8 h-75 w-full object-cover", fill, position]}
+  />
+  <article class="prose mx-5 mb-20 max-w-xl sm:mx-10 md:mx-auto">
+    <slot />
+  </article>
+</main>

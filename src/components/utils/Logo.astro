@@ -1,0 +1,15 @@
+---
+interface Props {
+  class: string;
+  variant: "default" | "light";
+}
+const props = Astro.props;
+---
+
+<img
+  alt="ut.code();"
+  class={props.class}
+  src={props.variant === "default"
+    ? "/utcode-logo/normal.svg"
+    : "/utcode-logo/light.svg"}
+/>
