@@ -5,7 +5,7 @@ joinYear: 2025
 description: 人工言語が好きなプログラマーです。
 upperBodyImage: ./ski-com.jpg
 faceImage: ./ski-com.jpg
-github: https://github.com/ski-dot-com
+github: ski-dot-com
 twitter: ski_dot_com
 ---
 

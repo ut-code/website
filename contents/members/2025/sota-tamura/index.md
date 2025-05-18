@@ -5,7 +5,7 @@ joinYear: 2025
 description: ジオメトリーダッシュというゲームをガチってます
 upperBodyImage: ./sota-tamura.jpg
 faceImage: ./sota-tamura.jpg
-github: https://github.com/SotaTamura
+github: SotaTamura
 twitter: tamtam_sauce
 ---
 
