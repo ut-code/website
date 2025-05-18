@@ -7,10 +7,6 @@ app:
   domain: [learn]
 
 date: 2025-04-04
-members:
-  - ykobayashi
-  - rtakanaka
-leader: ykobayashi
 kind: long-term
 status: under-development
 tags:

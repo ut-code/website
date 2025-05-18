@@ -8,8 +8,6 @@ app:
 
 date: 2025-01-01
 kind: long-term
-members: [ykobayashi, snakamura, kshibayama, tyasumura]
-leader: ykobayashi
 status: released
 tags:
   - TypeScript
