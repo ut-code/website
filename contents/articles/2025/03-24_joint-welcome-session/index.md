@@ -2,7 +2,7 @@
 title: 東大エンジニア系サークル合同新歓を開催します
 categories:
   - event
-author: ykobayashi
+author: 2023/yuki-kobayashi
 date: 2025-03-24
 thumbnail:
   src: ./thumbnail.png

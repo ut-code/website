@@ -3,7 +3,7 @@ title: 2024 年度夏合宿を開催しました
 date: 2024-09-29T22:00:00+09:00
 thumbnail:
   src: ./thumbnail.webp
-author: snakamura
+author: 2022/shogo-nakamura
 ---
 
 ut.code(); では 9 月 23 日から 25 日にかけて、東京大学山中寮内藤セミナーハウスにて合宿を行いました。本記事ではその様子を皆さんにお伝えします。

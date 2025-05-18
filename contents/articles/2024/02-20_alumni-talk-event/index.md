@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.png
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); では、2 月 20 日に OB / OG トークイベントを開催しました。今回は 2023 年度に卒業した牧村南さん（仮名）に「社会人になって感じるサークル開発の重要性」というテーマで話していただきました。

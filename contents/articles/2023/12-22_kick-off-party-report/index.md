@@ -5,7 +5,7 @@ categories:
   - event
 thumbnail:
   src: ./thumbnail.webp
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); は、2023 年 12 月 22 日（金）に大忘年会を開催しました。みんなでピザを食べながら、新プロジェクト発足に向けてアイディアを出し合いました。

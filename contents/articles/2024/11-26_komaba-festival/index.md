@@ -6,7 +6,7 @@ categories:
 thumbnail:
   src: ./thumbnail.jpg
   position: top
-author: kmanabe
+author: 2023/kaichi-manabe
 ---
 
 ut.code(); は、2024 年 11 月 22 〜 24 日の合計 3 日間駒場祭に企画を出展しました。今回も多くの方にお越しいただきました。3 日間を通して来場してくださった皆様、ありがとうございました！

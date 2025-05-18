@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.jpg
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); では、主に新入生を対象に新歓体験会を開催しました。

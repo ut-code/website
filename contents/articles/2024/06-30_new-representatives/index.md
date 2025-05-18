@@ -3,7 +3,7 @@ title: 代表が交代しました
 date: 2024-06-30T10:00:00+09:00
 thumbnail:
   src: ./thumbnail.jpg
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 このたび、ut.code(); の代表が交代し、また新たに副代表の役職を設けましたので、お知らせします。

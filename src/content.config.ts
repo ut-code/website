@@ -15,7 +15,7 @@ const articles = defineCollection({
 });
 
 const members = defineCollection({
-  loader: glob({ base: "./contents/members", pattern: "*/index.{md,mdx}" }),
+  loader: glob({ base: "./contents/members", pattern: "**/index.{md,mdx}" }),
   schema: CreateMemberSchema,
 });
 const projects = defineCollection({

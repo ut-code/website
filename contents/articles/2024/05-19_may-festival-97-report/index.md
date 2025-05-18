@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.jpg
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); は、5 月 18 日 (土)、19 日 (日) に開催された第 97 回五月祭に参加しました。

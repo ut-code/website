@@ -3,7 +3,7 @@ title: 2025 年度春合宿を開催しました
 date: 2025-03-01
 thumbnail:
   src: ./thumbnail.avif
-author: "tyasumura"
+author: "2024/takuya-yasumura"
 ---
 
 ut.code(); では 2 月 20 日から 22 日まで、東京大学山中寮内藤セミナーハウスにて春合宿を実施しました。

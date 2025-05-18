@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.jpg
-author: snakamura
+author: 2022/shogo-nakamura
 ---
 
 ut.code(); では昨年より、概ね 1 〜 2 か月に 1 度のペースで総会を開催することとなりました。この会では、各プロジェクトの進捗報告や、最近の技術的なトピックの共有などを行うことにしています。

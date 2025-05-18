@@ -3,7 +3,7 @@ title: 全ゼミが終了しました
 date: 2024-07-14T19:00:00+09:00
 thumbnail:
   src: ./thumbnail.jpg
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code();が2024年度のSセメスターに開講していた全学自由研究ゼミナール (モダンWebシステム開発入門) は、7月9日 (火) の第13回講義をもってすべて終了しました。

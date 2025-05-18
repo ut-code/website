@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.jpg
-author: ywatahiki
+author: 2022/yuto-watahiki
 ---
 
 ut.code(); では、5 月 4 日 (土) と 5 月 5 日 (日) に GW 講習会を開催しました。

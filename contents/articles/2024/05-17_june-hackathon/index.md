@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./thumbnail.jpg
-author: kanan
+author: 2023/kiyoka-anan
 ---
 
 ut.code(); は 6/8（土）, 9（日）に、春新歓イベントの総まとめとして、ハッカソンを開催します。

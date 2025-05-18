@@ -5,7 +5,7 @@ categories:
   - events
 thumbnail:
   src: ./image1.webp
-author: hhashimoto
+author: 2022/hideaki-hashimoto
 ---
 
 ut.code(); は、2023 年 11 月 26 日（日）に駒場祭の 3 日目に参加してきました。今日も多くの方にお越しいただきました。3 日間を通して来場してくださった皆様、ありがとうございました！
