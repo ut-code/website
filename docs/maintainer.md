@@ -13,3 +13,16 @@
 - イベント開催者に記事を書かせる (自分で書いてもよい)
 - ut.code(); に参加したメンバーにメンバーページを書かせる
 - プロジェクトにプロジェクトページを書かせる
+
+# 引き継ぎ
+
+## Internal Helper について
+
+`disallow-large-dir` を使うと、サイズの大きなディレクトリを自動で弾いてくれます。
+
+```sh
+#                                                       デフォルト: 5mb contents/[group]/[year]/[article]
+nix run github:ut-code/internal-helpers#disallow-large-dir -- --max 1mb contents/*/*/*
+```
+
+理想は、CI で各ディレクトリ 1MB 以下に強制したいです。 1 MB を超えるディレクトリはもうそんなに多くないので、行けるはず。
