@@ -94,8 +94,8 @@ if (project.data.status !== "dead") {
               },
               {
                 href: project.data.social?.website,
-                icon: "feather:youtube",
-                label: "YouTube",
+                icon: "feather:globe",
+                label: "Website",
               },
             ].map(
               (link) =>
@@ -147,24 +147,29 @@ if (project.data.status !== "dead") {
     </article>
   </main>
   {
-    project.data.kind === "long-term" && (
-      <JoinUsCTA class="mt-8">
-        ut.code(); で{project.data.app.name}を開発しませんか？
-      </JoinUsCTA>
-    )
-  }
-  {
-    project.data.kind === "hackathon" && (
-      <JoinUsCTA class="mt-8">
-        ut.code(); では、定期的にハッカソンイベントを行っています。
-      </JoinUsCTA>
-    )
-  }
-  {
-    project.data.kind === "festival" && (
-      <JoinUsCTA class="mt-8">
-        ut.code(); は、毎年五月祭・駒場祭に参加しています。
-      </JoinUsCTA>
-    )
+    (function (kind: "long-term" | "hackathon" | "festival") {
+      switch (kind) {
+        case "long-term":
+          return (
+            <JoinUsCTA class="mt-8">
+              ut.code(); で{project.data.app.name}を開発しませんか？
+            </JoinUsCTA>
+          );
+        case "hackathon":
+          return (
+            <JoinUsCTA class="mt-8">
+              ut.code(); では、定期的にハッカソンイベントを行っています。
+            </JoinUsCTA>
+          );
+        case "festival":
+          return (
+            <JoinUsCTA class="mt-8">
+              ut.code(); は、毎年五月祭・駒場祭に参加しています。
+            </JoinUsCTA>
+          );
+        default:
+          kind satisfies never;
+      }
+    })(project.data.kind)
   }
 </GlobalLayout>
