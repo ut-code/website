@@ -38,10 +38,10 @@ import { Icon } from "astro-icon/components";
       <a href="/donation/">ご寄付・ご協賛</a>
       <h3 class="footer-title mt-6">ソーシャルリンク</h3>
       <div class="grid grid-flow-col gap-4">
-        <a href="https://github.com/ut-code" target="_blank">
+        <a href="https://github.com/ut-code" target="_blank" data-icon-link>
           <Icon name="flowbite:github-solid" class="text-5xl" />
         </a>
-        <a href="https://x.com/utokyo_code" target="_blank">
+        <a href="https://x.com/utokyo_code" target="_blank" data-icon-link>
           <Icon name="flowbite:x-solid" class="text-5xl" />
         </a>
       </div>
@@ -55,17 +55,17 @@ import { Icon } from "astro-icon/components";
 
 <style>
   @media (prefers-reduced-motion) {
-    a:hover {
+    a:not([data-icon-link]):hover {
       text-decoration: underline;
     }
   }
   @media not (prefers-reduced-motion) {
-    a {
+    a:not([data-icon-link]) {
       background: linear-gradient(currentColor 0 0) bottom left/
         var(--underline-width, 0%) 0.1em no-repeat;
       transition: background-size 0.1s linear;
     }
-    a:hover {
+    a:not([data-icon-link]):hover {
       --underline-width: 100%;
       @starting-style {
         --underline-width: 0%;
