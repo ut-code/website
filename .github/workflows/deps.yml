@@ -1,0 +1,25 @@
+name: Update Deps
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+    # -> run every week
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  pr:
+    name: Auto PR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - uses: cachix/install-nix-action@v31
+      - run: bun install
+      - run: bun update
+      - run: nix flake update
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chore/deps
+          commit-message: "[bot] chore: update deps"
+          title: "[bot] chore: update deps"
