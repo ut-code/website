@@ -38,19 +38,19 @@
     "date-fns": "^4.1.0",
     "markdown-to-txt": "^2.0.1",
     "sharp": "^0.34.2",
-    "svelte": "^5.33.1"
+    "svelte": "^5.33.1",
+    "tailwindcss": "^4.1.7",
+    "@tailwindcss/vite": "^4.1.7"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@biomejs/biome": "^1.9.4",
-    "@tailwindcss/vite": "^4.1.7",
     "lefthook": "^1.11.13",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.4.0",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "rollup-plugin-visualizer": "^5.14.0",
-    "tailwindcss": "^4.1.7",
     "typescript": "^5.8.3"
   }
 }
