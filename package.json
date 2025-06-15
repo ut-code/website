@@ -24,23 +24,23 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
-    "@astrojs/sitemap": "^3.4.0",
+    "@astrojs/sitemap": "^3.4.1",
     "@astrojs/svelte": "^7.1.0",
     "@date-fns/tz": "^1.2.0",
     "@iconify-json/feather": "^1.2.1",
     "@iconify-json/flowbite": "^1.2.5",
     "@tailwindcss/typography": "^0.5.16",
-    "astro": "^5.8.0",
+    "astro": "^5.9.3",
     "astro-icon": "^1.1.5",
     "bits-ui": "^1.8.0",
-    "cheerio": "^1.0.0",
-    "daisyui": "^5.0.37",
+    "cheerio": "^1.1.0",
+    "daisyui": "^5.0.43",
     "date-fns": "^4.1.0",
     "markdown-to-txt": "^2.0.1",
     "sharp": "^0.34.2",
-    "svelte": "^5.33.1",
-    "tailwindcss": "^4.1.7",
-    "@tailwindcss/vite": "^4.1.7"
+    "svelte": "^5.34.3",
+    "tailwindcss": "^4.1.10",
+    "@tailwindcss/vite": "^4.1.10"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
@@ -49,7 +49,7 @@
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.4.0",
-    "prettier-plugin-tailwindcss": "^0.6.11",
+    "prettier-plugin-tailwindcss": "^0.6.12",
     "rollup-plugin-visualizer": "^5.14.0",
     "typescript": "^5.8.3"
   }
